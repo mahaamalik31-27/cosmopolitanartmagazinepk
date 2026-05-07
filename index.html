@@ -105,10 +105,10 @@ section { padding: 4rem 2rem; }
 
 /* EVENTS */
 #events { background: var(--white); }
-.events-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1px; background: #E8E8E8; }
+.events-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #E8E8E8; align-items: start; }
 .event-card { background: var(--white); padding: 0; display: flex; flex-direction: column; transition: background 0.2s; }
 .event-card.highlight { border-top: 2px solid var(--pink-deep); }
-.event-card-img { width: 100%; height: 220px; object-fit: cover; display: block; filter: grayscale(20%); }
+.event-card-img { width: 100%; height: auto; max-height: 320px; object-fit: contain; display: block; background: #f9f9f9; }
 .event-card-body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
 .event-card-date { font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--pink-deep); font-weight: 500; }
 .event-card-name { font-family: var(--serif); font-size: 1.15rem; line-height: 1.3; color: var(--black); }
@@ -214,6 +214,7 @@ footer { background: var(--black); color: rgba(255,255,255,0.4); padding: 2rem; 
   .artist-feature { grid-template-columns: 1fr; gap: 2rem; }
   .artist-img-box { aspect-ratio: 1/1; }
   .ig-grid { grid-template-columns: repeat(3, 1fr); }
+  .events-grid { grid-template-columns: 1fr; }
   footer { flex-direction: column; text-align: center; }
   .share-bar { justify-content: center; }
   .connect-grid { gap: 0; }
@@ -326,30 +327,7 @@ footer { background: var(--black); color: rgba(255,255,255,0.4); padding: 2rem; 
         </div>
       </div>
     </div>
-    <div class="event-card">
-      <div class="event-card-body" style="padding-top:2rem;">
-        <div class="event-card-date">May 10 – 31, 2026</div>
-        <div class="event-card-name">Call for Submissions — Issue 01</div>
-        <div class="event-card-desc">Share your artwork and artist statement along with bio. All mediums welcome — digital, photography, illustration, mixed media.</div>
-        <div class="event-card-location">Via email submission</div>
-        <div class="event-card-footer">
-          <span class="event-tag">Deadline: 31 May</span>
-          <a href="mailto:artcosmomagazine@gmail.com?subject=Issue 01 Submission" class="event-link">Apply →</a>
-        </div>
-      </div>
-    </div>
-    <div class="event-card">
-      <div class="event-card-body" style="padding-top:2rem;">
-        <div class="event-card-date">June 2026</div>
-        <div class="event-card-name">Issue 02 Launch</div>
-        <div class="event-card-desc">Our second issue is in the works. Follow us on Instagram for the announcement and submission call.</div>
-        <div class="event-card-location">@cosmopolitanartmagazine.pk</div>
-        <div class="event-card-footer">
-          <span class="event-tag">Upcoming</span>
-          <a href="https://instagram.com/cosmopolitanartmagazine.pk" class="event-link" target="_blank">Follow →</a>
-        </div>
-      </div>
-    </div>
+
   </div>
 </section>
 
