@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saba Haroon — Featured Artist · Cosmopolitan Art Magazine Pakistan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --black: #111111;
+    --white: #ffffff;
+    --pink: #d4578a;
+    --pink-light: #f0c4d8;
+    --pink-pale: #fdf0f5;
+    --gray: #888888;
+    --light-gray: #f5f5f5;
+    --border: #e8e8e8;
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 2.5rem; height: 60px;
+    background: var(--white); border-bottom: 1px solid var(--border);
+  }
+  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.03em; color: var(--black); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--black); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--pink); }
+  .nav-cta { background: var(--black); color: var(--white); text-decoration: none; padding: 0.55rem 1.4rem; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: background .2s; }
+  .nav-cta:hover { background: var(--pink); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); transition: .3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-menu { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; z-index: 99; background: var(--white); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; gap: 1.2rem; }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: var(--black); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+  /* ALERT */
+  .alert-bar { margin-top: 60px; background: var(--black); color: var(--white); display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0.75rem 1.5rem; flex-wrap: wrap; text-align: center; }
+  .alert-tag { background: var(--pink); color: var(--white); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 2px; font-weight: 600; }
+  .alert-text { font-size: 0.82rem; letter-spacing: 0.04em; font-style: italic; }
+  .alert-text em { font-style: italic; font-family: 'Playfair Display', serif; }
+  .alert-btn { border: 1px solid var(--pink); color: var(--pink); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.85rem; transition: .2s; }
+  .alert-btn:hover { background: var(--pink); color: var(--white); }
+
+  /* BREADCRUMB */
+  .breadcrumb { padding: 1.2rem 2.5rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); border-bottom: 1px solid var(--border); }
+  .breadcrumb a { color: var(--gray); text-decoration: none; }
+  .breadcrumb a:hover { color: var(--pink); }
+  .breadcrumb span { margin: 0 0.5rem; }
+
+  /* HERO */
+  .artist-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 88vh; max-height: 720px; }
+  .artist-hero-img { position: relative; overflow: hidden; background: var(--light-gray); }
+  .artist-hero-img img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+  .issue-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--pink); color: var(--white); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.3rem 0.8rem; font-weight: 600; }
+
+  .artist-hero-info { display: flex; flex-direction: column; justify-content: center; padding: 4rem 4rem 4rem 5rem; border-left: 1px solid var(--border); }
+  .artist-issue-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.6rem; font-weight: 600; }
+  .artist-name { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 4.5vw, 3.8rem); font-weight: 900; line-height: 1.05; margin-bottom: 0.5rem; }
+  .artist-name em { color: var(--pink); font-style: italic; }
+  .artist-medium { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
+  .artist-bio-short { font-size: 0.97rem; line-height: 1.8; color: #444; margin-bottom: 2.5rem; max-width: 480px; }
+  .artist-stats { display: flex; gap: 2.5rem; margin-bottom: 2.5rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: var(--black); display: block; line-height: 1; }
+  .stat-lbl { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); display: block; margin-top: 0.2rem; }
+
+  .social-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+  .social-link { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); color: var(--black); text-decoration: none; padding: 0.5rem 1rem; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; transition: .2s; }
+  .social-link:hover { border-color: var(--pink); color: var(--pink); }
+  .social-link svg { width: 14px; height: 14px; }
+
+  /* BIO SECTION */
+  .bio-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; border-bottom: 1px solid var(--border); }
+  .bio-sidebar-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 2rem; font-weight: 600; }
+  .bio-detail { margin-bottom: 1.5rem; }
+  .bio-detail-key { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.25rem; }
+  .bio-detail-val { font-size: 0.9rem; color: var(--black); font-weight: 500; }
+  .bio-main h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+  .bio-main p { font-size: 0.97rem; line-height: 1.9; color: #444; margin-bottom: 1.2rem; }
+  .pull-quote { margin: 3rem 0; padding: 2.5rem 3rem; border-left: 4px solid var(--pink); background: var(--pink-pale); }
+  .pull-quote p { font-family: 'Playfair Display', serif; font-size: clamp(1.1rem, 2.5vw, 1.45rem); font-style: italic; color: var(--black); line-height: 1.6; margin-bottom: 0.75rem !important; }
+  .pull-quote cite { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); font-style: normal; }
+
+  /* ARTIST STATEMENT */
+  .statement-section { background: var(--black); color: var(--white); padding: 5rem 2.5rem; text-align: center; }
+  .statement-inner { max-width: 780px; margin: 0 auto; }
+  .statement-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 1.5rem; font-weight: 600; }
+  .statement-text { font-family: 'Playfair Display', serif; font-size: clamp(1.05rem, 2.2vw, 1.35rem); font-style: italic; line-height: 1.85; color: #e8e8e8; }
+
+  /* GALLERY */
+  .gallery-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .gallery-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 2.5rem; }
+  .gallery-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; }
+  .gallery-header span { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .gallery-item { position: relative; overflow: hidden; background: var(--light-gray); cursor: pointer; }
+  .gallery-item:first-child { grid-column: span 2; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
+  .gallery-item:first-child img { min-height: 380px; }
+  .gallery-item:not(:first-child) img { min-height: 280px; }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(0,0,0,0.82)); color: var(--white); padding: 2rem 1.2rem 1rem; opacity: 0; transition: opacity .3s; }
+  .gallery-item:hover .gallery-caption { opacity: 1; }
+  .artwork-title { font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; }
+  .artwork-meta { font-size: 0.68rem; color: rgba(255,255,255,0.7); margin-top: 0.25rem; letter-spacing: 0.06em; }
+
+  /* LIGHTBOX */
+  .lightbox { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,0.94); align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lightbox-img { max-width: 88vw; max-height: 88vh; object-fit: contain; }
+  .lightbox-close { position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; color: #fff; font-size: 1.8rem; cursor: pointer; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; }
+  .lightbox-close:hover { color: var(--pink); }
+
+  /* EXHIBITIONS */
+  .exhibitions-section { max-width: 1100px; margin: 0 auto; padding: 5rem 2.5rem; border-bottom: 1px solid var(--border); }
+  .exhibitions-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; margin-bottom: 2.5rem; }
+  .ex-group { margin-bottom: 3rem; }
+  .ex-group-title { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); font-weight: 600; margin-bottom: 1.2rem; padding-bottom: 0.6rem; border-bottom: 1px solid var(--border); }
+  .ex-list { list-style: none; }
+  .ex-list li { display: flex; justify-content: space-between; align-items: baseline; padding: 0.65rem 0; border-bottom: 1px solid #f0f0f0; font-size: 0.9rem; gap: 1rem; flex-wrap: wrap; }
+  .ex-list li:last-child { border-bottom: none; }
+  .ex-name { color: var(--black); flex: 1; }
+  .ex-venue { color: var(--gray); font-size: 0.82rem; }
+  .ex-year { color: var(--pink); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.06em; white-space: nowrap; }
+
+  /* SOCIAL */
+  .social-section { padding: 5rem 2.5rem; background: var(--light-gray); text-align: center; }
+  .social-section .section-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); margin-bottom: 0.5rem; font-weight: 600; }
+  .social-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 700; margin-bottom: 0.75rem; }
+  .social-section p { color: var(--gray); font-size: 0.9rem; margin-bottom: 2.5rem; }
+  .ig-big-btn { display: inline-flex; align-items: center; gap: 0.75rem; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); color: var(--white); text-decoration: none; padding: 1rem 2.5rem; font-size: 0.9rem; font-weight: 600; letter-spacing: 0.06em; border-radius: 3px; transition: opacity .2s; }
+  .ig-big-btn:hover { opacity: 0.88; }
+  .ig-big-btn svg { width: 20px; height: 20px; }
+
+  /* CTA */
+  .more-section { padding: 4rem 2.5rem; border-top: 1px solid var(--border); text-align: center; }
+  .more-section .section-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem; }
+  .more-section h2 { font-family: 'Playfair Display', serif; font-size: 1.6rem; margin-bottom: 2rem; }
+  .more-btn { display: inline-block; background: var(--black); color: var(--white); text-decoration: none; padding: 0.75rem 2.5rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: background .2s; margin: 0 0.4rem 0.5rem; }
+  .more-btn:hover { background: var(--pink); }
+  .more-btn.outline { background: none; color: var(--black); border: 1px solid var(--black); }
+  .more-btn.outline:hover { background: var(--pink); color: var(--white); border-color: var(--pink); }
+
+  /* FOOTER */
+  footer { padding: 2rem 2.5rem; text-align: center; border-top: 1px solid var(--border); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .footer-logo em { color: var(--pink); font-style: italic; }
+  .footer-note { font-size: 0.72rem; color: var(--gray); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    .artist-hero { grid-template-columns: 1fr; max-height: none; }
+    .artist-hero-img { min-height: 480px; }
+    .artist-hero-info { padding: 3rem 1.5rem; border-left: none; border-top: 1px solid var(--border); }
+    .bio-section { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
+    .gallery-section, .exhibitions-section { padding: 3rem 1.5rem; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:first-child { grid-column: span 2; }
+    .pull-quote { padding: 1.5rem; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    nav { padding: 0 1.2rem; }
+    .breadcrumb { padding: 1rem 1.5rem; }
+    .artist-stats { gap: 1.5rem; }
+    .statement-section { padding: 3.5rem 1.5rem; }
+    .social-section { padding: 3rem 1.5rem; }
+    .more-section { padding: 3rem 1.5rem; }
+  }
+  @media (max-width: 520px) {
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:first-child { grid-column: span 1; }
+    .gallery-item:first-child img, .gallery-item:not(:first-child) img { min-height: 260px; }
+    .ex-list li { flex-direction: column; gap: 0.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo-text" href="index.html">Cosmopolitan <em style="color:var(--pink);font-style:italic;font-family:'Playfair Display',serif;">Art</em> Magazine</a>
+  <ul class="nav-links">
+    <li><a href="index.html#events">Events</a></li>
+    <li><a href="saba-haroon.html" class="active">Featured Artist</a></li>
+    <li><a href="index.html#instagram">Instagram</a></li>
+    <li><a href="mailto:artcosmomagazine@gmail.com">Submit</a></li>
+  </ul>
+  <a href="mailto:artcosmomagazine@gmail.com?subject=Get Featured" class="nav-cta">Get Featured</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#events" onclick="closeMenu()">Events</a>
+  <a href="saba-haroon.html" onclick="closeMenu()">Featured Artist</a>
+  <a href="index.html#instagram" onclick="closeMenu()">Instagram</a>
+  <a href="mailto:artcosmomagazine@gmail.com" onclick="closeMenu()">Submit</a>
+</div>
+
+<!-- ALERT -->
+<div class="alert-bar">
+  <span class="alert-tag">Open Now</span>
+  <span class="alert-text"><em>Canvas of Her Journey</em> — Call for Submissions · May 10–31, 2026</span>
+  <a href="mailto:artcosmomagazine@gmail.com?subject=Canvas of Her Journey Submission" class="alert-btn">Submit Now →</a>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <a href="index.html">Home</a>
+  <span>›</span>
+  <a href="#">Featured Artists</a>
+  <span>›</span>
+  Saba Haroon
+</div>
+
+<!-- HERO -->
+<div class="artist-hero">
+  <div class="artist-hero-img">
+    <img src="artwork1.jpg" alt="Saba Haroon — Red origami cranes installation">
+    <span class="issue-badge">Issue 01 · May 2026</span>
+  </div>
+  <div class="artist-hero-info">
+    <p class="artist-issue-label">Featured Artist · Issue 01</p>
+    <h1 class="artist-name">Saba<br><em>Haroon</em></h1>
+    <p class="artist-medium">Origami · Mixed Media · Lahore, Pakistan</p>
+    <p class="artist-bio-short">
+      Guided by Wabi-Sabi — the beauty of impermanence and imperfection — Saba Haroon folds origami cranes as quiet extensions of herself, creating meditative installations that speak of emotion, stillness, and the fragile beauty of what is temporary.
+    </p>
+    <div class="artist-stats">
+      <div>
+        <span class="stat-num">23+</span>
+        <span class="stat-lbl">Exhibitions</span>
+      </div>
+      <div>
+        <span class="stat-num">1</span>
+        <span class="stat-lbl">International Show</span>
+      </div>
+      <div>
+        <span class="stat-num">17+</span>
+        <span class="stat-lbl">Years Active</span>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="https://instagram.com/s.j.artworld" target="_blank" class="social-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @s.j.artworld
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FULL BIO -->
+<div class="bio-section">
+  <div class="bio-sidebar">
+    <p class="bio-sidebar-label">About the Artist</p>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Full Name</p>
+      <p class="bio-detail-val">Saba Haroon</p>
+    </div>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Medium</p>
+      <p class="bio-detail-val">Origami, Mixed Media</p>
+    </div>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Based In</p>
+      <p class="bio-detail-val">Lahore, Pakistan</p>
+    </div>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Born In</p>
+      <p class="bio-detail-val">Jeddah, Saudi Arabia</p>
+    </div>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Education</p>
+      <p class="bio-detail-val">MFA — University of Punjab, 2009<br>M.Interior Design — NCA, 2012</p>
+    </div>
+    <div class="bio-detail">
+      <p class="bio-detail-key">Instagram</p>
+      <p class="bio-detail-val"><a href="https://instagram.com/s.j.artworld" target="_blank" style="color:var(--pink);text-decoration:none;">@s.j.artworld</a></p>
+    </div>
+  </div>
+  <div class="bio-main">
+    <h2>Where Patience Becomes Art</h2>
+    <p>
+      Born and raised in Jeddah, Saudi Arabia — a city of monuments, iconic landmarks, and the rich cultural heritage of old Jeddah set against soaring modern architecture — Saba Haroon grew up surrounded by beauty in its most layered forms. That early impression never left her.
+    </p>
+    <p>
+      When she moved to Pakistan and it was time to choose a direction, the answer was clear: art. She pursued a Master's degree in Fine Arts from the University of Punjab (2007–2009) and a Master's in Interior Design from the National College of Arts (2010–2012), finding mentors along the way who pushed her to think beyond convention, challenge her creativity, and explore what it truly means to express emotion through form.
+    </p>
+    <div class="pull-quote">
+      <p>"I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence."</p>
+      <cite>— Saba Haroon</cite>
+    </div>
+    <p>
+      Her work draws from an ancient Japanese legend in which origami cranes symbolise wish fulfilment — tracing the journey from catastrophe to relief, from fracture to return. Hundreds of hand-folded cranes are arranged into sweeping formations: clouds, spirals, circles, and constellations that carry weight beyond their delicate paper form.
+    </p>
+    <p>
+      Guided by Wabi-Sabi, the Japanese philosophy of finding beauty in impermanence and imperfection, Saba's installations are meditative spaces. Light and shadow move across them. Individual cranes rest beside one another in quiet companionship. Among the red — the dominant hue of emotion and urgency — a few golden cranes appear, soft signals of something precious breaking through the collective.
+    </p>
+  </div>
+</div>
+
+<!-- ARTIST STATEMENT -->
+<div class="statement-section">
+  <div class="statement-inner">
+    <p class="statement-label">Artist Statement</p>
+    <p class="statement-text">
+      "Guided by Wabi-Sabi — the beauty of impermanence and imperfection — I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence. As they gather, drift, or spiral, the cranes reflect changing emotions: stillness, longing, and return, existing in a quiet harmony. Their arrangements show moments of companionship and connection, where each crane rests beside another in a gentle pause. Light and shadow move across them, adding depth. Among them, a few red cranes appear as soft signs of emotion within the calm. In their fragile grouping, the self slowly disappears into repetition and gesture, creating a meditative space where beauty lives in what is temporary, imperfect, and softly unfinished."
+    </p>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<div class="gallery-section">
+  <div class="gallery-header">
+    <h2>Selected Works</h2>
+    <span>Click to enlarge</span>
+  </div>
+  <div class="gallery-grid">
+
+    <div class="gallery-item" onclick="openLightbox('artwork1.jpg', 'Flight Formation', 'Origami cranes · Mixed media installation')">
+      <img src="artwork1.jpg" alt="Red origami cranes flock installation">
+      <div class="gallery-caption">
+        <div class="artwork-title">Flight Formation</div>
+        <div class="artwork-meta">Origami cranes · Mixed media installation</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('artwork2.jpg', 'Circle of Liberation', 'Origami cranes, gold leaf · Mixed media')">
+      <img src="artwork2.jpg" alt="Red and gold origami cranes in circle formation">
+      <div class="gallery-caption">
+        <div class="artwork-title">Circle of Liberation</div>
+        <div class="artwork-meta">Origami cranes, gold leaf · Mixed media</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" onclick="openLightbox('artwork3.jpg', 'Vortex', 'Red and black origami cranes · Wall installation')">
+      <img src="artwork3.jpg" alt="Red and black origami cranes in spiral vortex">
+      <div class="gallery-caption">
+        <div class="artwork-title">Vortex</div>
+        <div class="artwork-meta">Red &amp; black origami cranes · Wall installation</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- EXHIBITIONS -->
+<div class="exhibitions-section">
+  <h2>Exhibition History</h2>
+
+  <div class="ex-group">
+    <p class="ex-group-title">International</p>
+    <ul class="ex-list">
+      <li>
+        <span class="ex-name">World Art Dubai</span>
+        <span class="ex-venue">Dubai</span>
+        <span class="ex-year">2023</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ex-group">
+    <p class="ex-group-title">Two-Person Show</p>
+    <ul class="ex-list">
+      <li>
+        <span class="ex-name">Meraki</span>
+        <span class="ex-venue">Art Chowk Gallery, Karachi</span>
+        <span class="ex-year">2020</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="ex-group">
+    <p class="ex-group-title">Group Shows</p>
+    <ul class="ex-list">
+      <li><span class="ex-name">Living Lexicon: Proverbs Across Cultures</span><span class="ex-venue">ArtSoch Gallery</span><span class="ex-year">2026</span></li>
+      <li><span class="ex-name">For You, With Love</span><span class="ex-venue">ArtSoch Gallery, Lahore</span><span class="ex-year">2025</span></li>
+      <li><span class="ex-name">Aghaaz</span><span class="ex-venue">FW Art Space, Lahore</span><span class="ex-year">2024</span></li>
+      <li><span class="ex-name">Convergence – Lahore Biennale 03</span><span class="ex-venue">Anna Molka Art Gallery, PUCAD</span><span class="ex-year">2024</span></li>
+      <li><span class="ex-name">Symphony of Venus: Melody of Flux</span><span class="ex-venue">Numaish Gah, Lahore</span><span class="ex-year">2024</span></li>
+      <li><span class="ex-name">Carnival of Dreams</span><span class="ex-venue">Ejaz Art Gallery, Lahore</span><span class="ex-year">2024</span></li>
+      <li><span class="ex-name">Greener Pastures</span><span class="ex-venue">Ocean Art Gallery, Lahore</span><span class="ex-year">2024</span></li>
+      <li><span class="ex-name">Oxytocin</span><span class="ex-venue">ArtSoch, Islamabad</span><span class="ex-year">2023</span></li>
+      <li><span class="ex-name">Arjumand Painting Award</span><span class="ex-venue">Alhamra Art Gallery, Lahore</span><span class="ex-year">2023</span></li>
+      <li><span class="ex-name">Cognitive Dissonance</span><span class="ex-venue">Pakistan Art Forum, Lahore</span><span class="ex-year">2023</span></li>
+      <li><span class="ex-name">Enthralling</span><span class="ex-venue">Virtual Exhibition by Cosmopolitan Art Magazine</span><span class="ex-year">2022</span></li>
+      <li><span class="ex-name">Letters to Pakistan</span><span class="ex-venue">ArtSoch Gallery, Lahore</span><span class="ex-year">2021</span></li>
+      <li><span class="ex-name">Interruption 2</span><span class="ex-venue">Ejaz Art Gallery, Lahore</span><span class="ex-year">2021</span></li>
+      <li><span class="ex-name">Pakistan at 100</span><span class="ex-venue">World Bank, Islamabad</span><span class="ex-year">2019</span></li>
+      <li><span class="ex-name">Contemporary Pakistan</span><span class="ex-venue">World Bank, Islamabad</span><span class="ex-year">2019</span></li>
+      <li><span class="ex-name">Learn Fest '19</span><span class="ex-venue">Khudi Art Gallery, Lahore</span><span class="ex-year">2019</span></li>
+      <li><span class="ex-name">WE'19</span><span class="ex-venue">World Bank, Islamabad</span><span class="ex-year">2019</span></li>
+      <li><span class="ex-name">Melding 2</span><span class="ex-venue">Ejaz Art Gallery, Lahore</span><span class="ex-year">2018</span></li>
+      <li><span class="ex-name">Artists' Association of Punjab 23rd Annual Exhibition</span><span class="ex-venue">Al-Hamra Gallery, Lahore</span><span class="ex-year">2018</span></li>
+      <li><span class="ex-name">Emerging Talent</span><span class="ex-venue">VM Art Gallery, Karachi</span><span class="ex-year">2010</span></li>
+      <li><span class="ex-name">Thesis Show</span><span class="ex-venue">Al-Hamra Gallery, Lahore</span><span class="ex-year">2009</span></li>
+      <li><span class="ex-name">Young Artists Exhibition</span><span class="ex-venue">Al-Hamra Gallery, Lahore</span><span class="ex-year">2008 &amp; 2009</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social-section">
+  <p class="section-label">Follow the Artist</p>
+  <h2>Connect with Saba</h2>
+  <p>Follow her origami journey, studio process, and upcoming exhibitions</p>
+  <a href="https://instagram.com/s.j.artworld" target="_blank" class="ig-big-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    @s.j.artworld on Instagram
+  </a>
+</div>
+
+<!-- MORE -->
+<div class="more-section">
+  <p class="section-label">Explore More</p>
+  <h2>Discover More Artists</h2>
+  <a href="index.html" class="more-btn outline">← Back to Home</a>
+  <a href="mailto:artcosmomagazine@gmail.com?subject=Nominate an Artist" class="more-btn">Nominate an Artist</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Cosmopolitan <em>Art</em> Magazine Pakistan</div>
+  <div class="footer-note">cosmopolitanartmagazinepk.online · Issue 01 · May 2026</div>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+function openLightbox(src, title, meta) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+</body>
+</html>
