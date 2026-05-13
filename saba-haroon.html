@@ -1,540 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Saba Haroon — Featured Artist · Cosmopolitan Art Magazine Pakistan</title>
+<!-- GET FEATURED SECTION -->
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---black:#111111;
---white:#ffffff;
---pink:#d4578a;
---gray:#777777;
---border:#e8e8e8;
---light:#fafafa;
-}
-
-body{
-font-family:'DM Sans',sans-serif;
-background:white;
-color:var(--black);
-overflow-x:hidden;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-nav{
-position:sticky;
-top:0;
-z-index:999;
-background:white;
-border-bottom:1px solid var(--border);
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 2rem;
-}
-
-.logo{
-font-family:'Playfair Display',serif;
-font-size:1rem;
-font-weight:700;
-text-decoration:none;
-color:var(--black);
-}
-
-.logo em{
-color:var(--pink);
-font-style:italic;
-}
-
-.nav-links{
-display:flex;
-gap:2rem;
-list-style:none;
-}
-
-.nav-links a{
-text-decoration:none;
-color:var(--black);
-font-size:0.75rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-}
-
-.nav-links a:hover{
-color:var(--pink);
-}
-
-.menu-toggle{
-display:none;
-background:none;
-border:none;
-font-size:1.8rem;
-cursor:pointer;
-}
-
-.hero{
-display:grid;
-grid-template-columns:1fr 1fr;
-min-height:90vh;
-}
-
-.hero-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-object-position:center;
-}
-
-.hero-content{
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:4rem;
-border-left:1px solid var(--border);
-}
-
-.artist-label{
-color:var(--pink);
-font-size:0.72rem;
-letter-spacing:0.2em;
-text-transform:uppercase;
-margin-bottom:1rem;
-}
-
-.artist-name{
-font-family:'Playfair Display',serif;
-font-size:5rem;
-line-height:0.95;
-margin-bottom:1rem;
-}
-
-.artist-name em{
-color:var(--pink);
-font-style:italic;
-}
-
-.artist-medium{
-color:var(--gray);
-font-size:0.75rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-margin-bottom:2rem;
-}
-
-.artist-bio{
-line-height:1.9;
-color:#444;
-margin-bottom:2rem;
-max-width:550px;
-}
-
-.stats{
-display:flex;
-gap:2rem;
-margin-bottom:2rem;
-}
-
-.stat-number{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-font-weight:900;
-}
-
-.stat-label{
-font-size:0.68rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-color:var(--gray);
-}
-
-.instagram-btn{
-display:inline-block;
-background:var(--black);
-color:white;
-text-decoration:none;
-padding:1rem 2rem;
-font-size:0.75rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-width:fit-content;
-}
-
-.instagram-btn:hover{
-background:var(--pink);
-}
-
-.section{
-padding:5rem 2rem;
-max-width:1100px;
-margin:auto;
-}
-
-.section-title{
-font-family:'Playfair Display',serif;
-font-size:2rem;
-margin-bottom:2rem;
-}
-
-.section-title em{
-color:var(--pink);
-}
-
-.bio-text{
-line-height:2;
-color:#444;
-margin-bottom:1.5rem;
-}
-
-.quote{
-background:#faf5f8;
-border-left:4px solid var(--pink);
-padding:2rem;
-margin:3rem 0;
-font-family:'Playfair Display',serif;
-font-style:italic;
-font-size:1.2rem;
-line-height:1.8;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:1rem;
-margin-top:2rem;
-}
-<section class="section">
-
-<h2 class="section-title">
-Selected <em>Works</em>
-</h2>
-
-<div class="gallery">
-
-<img src="_UJS1473%201.jpg" alt="Artwork 1">
-
-<img src="_UJS1498.jpg" alt="Artwork 2">
-
-<img src="_UJS1509%20(1).jpg" alt="Artwork 3">
-
-</div>
-
-</section>
-.gallery img{
-width:100%;
-height:340px;
-object-fit:cover;
-cursor:pointer;
-transition:0.4s;
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-footer{
-padding:4rem 2rem;
-border-top:1px solid var(--border);
+<div class="more-section" style="
 background:#fafafa;
-margin-top:4rem;
-}
-
-.footer-inner{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:3rem;
-}
-
-.footer-title{
-font-family:'Playfair Display',serif;
-font-size:1.3rem;
-margin-bottom:1rem;
-}
-
-.footer-title em{
-color:var(--pink);
-}
-
-.footer-text{
-line-height:1.9;
-color:#666;
-font-size:0.95rem;
-}
-
-.footer-heading{
-font-size:0.72rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-color:var(--pink);
-margin-bottom:1rem;
-}
-
-.footer-links{
-display:flex;
-flex-direction:column;
-gap:0.8rem;
-}
-
-.footer-links a{
-text-decoration:none;
-color:#111;
-}
-
-.copyright{
-margin-top:3rem;
-padding-top:2rem;
 border-top:1px solid var(--border);
-text-align:center;
-font-size:0.75rem;
-color:#777;
-}
-
-@media(max-width:900px){
-
-.menu-toggle{
-display:block;
-}
-
-.nav-links{
-display:none;
-}
-
-.hero{
-grid-template-columns:1fr;
-}
-
-.hero-content{
-border-left:none;
-border-top:1px solid var(--border);
-padding:2rem;
-}
-
-.artist-name{
-font-size:3rem;
-}
-
-.gallery{
-grid-template-columns:1fr;
-}
-
-.footer-inner{
-grid-template-columns:1fr;
-}
-
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-
-<a href="index.html" class="logo">
-Cosmopolitan <em>Art</em> Magazine
-</a>
-
-<button class="menu-toggle">☰</button>
-
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="artist-feature.html">Artists</a></li>
-<li><a href="index.html#instagram">Instagram</a></li>
-</ul>
-
-</nav>
-
-<section class="hero">
-
-<div class="hero-image">
-<img src="_UJS1473%201.jpg" alt="Saba Haroon">
-</div>
-
-<div class="hero-content">
-
-<div class="artist-label">
-Featured Artist · Issue 01
-</div>
-
-<h1 class="artist-name">
-Saba<br>
-<em>Haroon</em>
-</h1>
-
-<div class="artist-medium">
-Origami · Mixed Media · Lahore, Pakistan
-</div>
-
-<div class="artist-bio">
-Guided by Wabi-Sabi — the beauty of impermanence and imperfection — Saba Haroon folds origami cranes as quiet extensions of herself, creating meditative installations that speak of stillness, emotion, and memory.
-</div>
-
-<div class="stats">
-
-<div>
-<div class="stat-number">23+</div>
-<div class="stat-label">Exhibitions</div>
-</div>
-
-<div>
-<div class="stat-number">17+</div>
-<div class="stat-label">Years Active</div>
-</div>
-
-<div>
-<div class="stat-number">1</div>
-<div class="stat-label">International Show</div>
-</div>
-
-</div>
-
-<a href="https://instagram.com/s.j.artworld" target="_blank" class="instagram-btn">
-Follow Artist
-</a>
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-About <em>Saba</em>
-</h2>
-
-<p class="bio-text">
-Born and raised in Jeddah, Saudi Arabia, Saba Haroon grew up surrounded by architecture, monuments, and layered cultural aesthetics that deeply influenced her artistic language.
-</p>
-
-<p class="bio-text">
-After moving to Pakistan, she pursued Fine Arts at the University of Punjab and later Interior Design at NCA, where she refined her approach toward installation art and spatial storytelling.
-</p>
-
-<div class="quote">
-“I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence.”
-</div>
-
-<p class="bio-text">
-Her work draws from Japanese philosophy and symbolism, particularly Wabi-Sabi and the legend of origami cranes representing healing, wishes, and transformation.
-</p>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-Selected <em>Works</em>
-</h2>
-
-<div class="gallery">
-
-<img src="_UJS1473%201.jpg">
-
-<img src="_UJS1498.jpg">
-
-<img src="_UJS1509%20(1).jpg">
-
-</div>
-
-</section>
-<section style="
-padding:5rem 2rem;
-background:#fafafa;
-border-top:1px solid #e8e8e8;
-text-align:center;
 ">
 
-  <div style="
-  max-width:800px;
-  margin:auto;
+  <p class="section-label">
+    Open for Features
+  </p>
+
+  <h2>
+    Want to Get <em style="color:var(--pink);font-style:italic;">Featured?</em>
+  </h2>
+
+  <p style="
+  max-width:650px;
+  margin:0 auto 2rem;
+  color:var(--gray);
+  line-height:1.9;
+  font-size:0.95rem;
   ">
+    We are always looking for emerging and established artists,
+    photographers, sculptors, and visual storytellers redefining
+    contemporary South Asian art.
+  </p>
 
-    <div style="
-    color:#d4578a;
-    text-transform:uppercase;
-    letter-spacing:0.2em;
-    font-size:0.72rem;
-    margin-bottom:1rem;
-    ">
-      Open for Features
-    </div>
+  <button
+    onclick="openFeaturePopup()"
+    class="more-btn"
+  >
+    Apply to Get Featured
+  </button>
 
-    <h2 style="
-    font-family:'Playfair Display',serif;
-    font-size:clamp(2rem,4vw,3.5rem);
-    line-height:1;
-    margin-bottom:1.5rem;
-    ">
-      Want to Get <em style="color:#d4578a;">Featured?</em>
-    </h2>
-
-    <p style="
-    color:#555;
-    line-height:1.9;
-    max-width:620px;
-    margin:auto auto 2rem;
-    ">
-      We are always looking for emerging and established artists,
-      photographers, sculptors, and visual storytellers redefining
-      contemporary South Asian art.
-    </p>
-
-    <button
-      onclick="openFeaturePopup()"
-      style="
-      background:#111;
-      color:white;
-      border:none;
-      padding:1rem 2rem;
-      font-size:0.75rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      cursor:pointer;
-      "
-    >
-      Apply to Get Featured
-    </button>
-
-  </div>
-
-</section>
+</div>
 
 <!-- FEATURE POPUP -->
 
-<div
-id="featurePopup"
-style="
+<div id="featurePopup" style="
 display:none;
 position:fixed;
 inset:0;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.92);
 z-index:9999;
 justify-content:center;
 align-items:center;
 padding:2rem;
-"
->
+">
 
   <div style="
   background:white;
-  max-width:600px;
+  max-width:620px;
   width:100%;
   padding:3rem;
   position:relative;
@@ -547,54 +62,40 @@ padding:2rem;
       position:absolute;
       top:1rem;
       right:1rem;
-      border:none;
       background:none;
-      font-size:1.5rem;
+      border:none;
+      font-size:1.8rem;
       cursor:pointer;
       "
     >
       ×
     </button>
 
-    <div style="
-    color:#d4578a;
-    text-transform:uppercase;
-    letter-spacing:0.2em;
-    font-size:0.72rem;
-    margin-bottom:1rem;
-    ">
+    <p class="section-label" style="margin-bottom:1rem;">
       Artist Submission
-    </div>
+    </p>
 
-    <h3 style="
+    <h2 style="
     font-family:'Playfair Display',serif;
     font-size:2.5rem;
     margin-bottom:1rem;
     ">
       Get Featured
-    </h3>
+    </h2>
 
     <p style="
-    color:#555;
+    color:var(--gray);
     line-height:1.9;
     margin-bottom:2rem;
     ">
       Share your portfolio, artist statement,
-      biography, and social media links with us.
+      biography, exhibition history, and social links with us.
     </p>
 
     <a
       href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission"
-      style="
-      display:inline-block;
-      background:#111;
-      color:white;
-      text-decoration:none;
-      padding:1rem 2rem;
-      font-size:0.75rem;
-      letter-spacing:0.14em;
-      text-transform:uppercase;
-      "
+      class="more-btn"
+      style="display:inline-block;text-decoration:none;"
     >
       Email Submission
     </a>
@@ -602,62 +103,17 @@ padding:2rem;
   </div>
 
 </div>
-<footer>
 
-<div class="footer-inner">
+<!-- ADD THIS TO YOUR SCRIPT -->
 
-<div>
+<script>
 
-<div class="footer-title">
-Cosmopolitan <em>Art</em> Magazine
-</div>
+function openFeaturePopup() {
+  document.getElementById('featurePopup').style.display='flex';
+}
 
-<p class="footer-text">
-Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, exhibitions, visual storytelling, and creative culture across South Asia.
-</p>
+function closeFeaturePopup() {
+  document.getElementById('featurePopup').style.display='none';
+}
 
-</div>
-
-<div>
-
-<div class="footer-heading">
-Quick Links
-</div>
-
-<div class="footer-links">
-<a href="index.html">Home</a>
-<a href="artist-feature.html">Featured Artists</a>
-<a href="index.html#instagram">Instagram</a>
-</div>
-
-</div>
-
-<div>
-
-<div class="footer-heading">
-Contact
-</div>
-
-<div class="footer-links">
-<a href="mailto:artcosmomagazine@gmail.com">
-artcosmomagazine@gmail.com
-</a>
-
-<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
-@cosmopolitanartmagazine.pk
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="copyright">
-© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
-</div>
-
-</footer>
-
-</body>
-</html>
+</script>
