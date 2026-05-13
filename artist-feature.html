@@ -99,6 +99,15 @@ nav {
   background: var(--pink);
 }
 
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+
 /* HEADER */
 .page-header {
   padding: 7rem 2rem 4rem;
@@ -364,6 +373,27 @@ footer {
 /* MOBILE */
 @media(max-width:900px){
 
+.menu-toggle {
+  display: block;
+}
+
+.nav-links {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: white;
+  width: 100%;
+  flex-direction: column;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+
 .nav-links,
 .nav-btn {
   display:none;
@@ -401,7 +431,9 @@ footer {
     Cosmopolitan <span>Art</span> Magazine
   </a>
 
-  <ul class="nav-links">
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="mobileMenu">
     <li><a href="index.html">Home</a></li>
     <li><a href="artist-feature.html" class="active">Featured Artists</a></li>
     <li><a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">Instagram</a></li>
@@ -436,7 +468,7 @@ footer {
 
   <a href="saba-haroon.html" class="featured-card">
 
-    <img src="_UJS1509 (1).jpg" alt="Saba Haroon">
+    <img src="saba-haroon-portrait.jpg.png" alt="Saba Haroon">
 
     <div class="featured-content">
 
@@ -507,7 +539,7 @@ footer {
   <div class="artist-grid">
 
     <div class="artist-card">
-      <img src="_UJS1473 1.jpg">
+      <img src="saba-artwork-1.jpg">
       <div class="artist-card-content">
         <div class="artist-card-label">Issue 02 · Coming Soon</div>
         <div class="artist-card-title">Next Featured Artist</div>
@@ -518,7 +550,7 @@ footer {
     </div>
 
     <div class="artist-card">
-      <img src="_UJS1498.jpg">
+      <img src="saba-artwork-2.jpg">
       <div class="artist-card-content">
         <div class="artist-card-label">Issue 03 · Coming Soon</div>
         <div class="artist-card-title">New Voices</div>
@@ -574,6 +606,12 @@ footer {
 
 </footer>
 
+<script>
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
+
 </body>
 </html>
 ```
@@ -587,5 +625,4 @@ _UJS1509 (1).jpg
 _UJS1473 1.jpg
 _UJS1498.jpg
 canvas-of-her-journey.jpg
-```
-
+```.
