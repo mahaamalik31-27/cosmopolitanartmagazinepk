@@ -6,11 +6,11 @@
 
 <title>Cosmopolitan Art Magazine Pakistan</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-*, *::before, *::after{
+*,*::before,*::after{
 margin:0;
 padding:0;
 box-sizing:border-box;
@@ -90,7 +90,7 @@ color:var(--pink);
 .nav-btn{
 background:var(--black);
 color:white;
-padding:0.6rem 1.3rem;
+padding:0.6rem 1.2rem;
 font-size:0.68rem;
 letter-spacing:0.12em;
 text-transform:uppercase;
@@ -103,21 +103,13 @@ background:var(--pink);
 /* HERO */
 
 .hero{
-margin-top:60px;
-display:grid;
-grid-template-columns:1.1fr 1fr;
-min-height:90vh;
-}
-
-.hero-content{
-display:flex;
-flex-direction:column;
-justify-content:center;
-padding:5rem;
+padding:9rem 2rem 5rem;
+text-align:center;
+border-bottom:1px solid var(--border);
 }
 
 .hero-label{
-font-size:0.68rem;
+font-size:0.7rem;
 letter-spacing:0.2em;
 text-transform:uppercase;
 color:var(--pink);
@@ -126,9 +118,9 @@ margin-bottom:1rem;
 
 .hero-title{
 font-family:'Playfair Display',serif;
-font-size:clamp(3rem,7vw,6rem);
-line-height:0.95;
-margin-bottom:1.5rem;
+font-size:clamp(4rem,10vw,8rem);
+line-height:0.9;
+margin-bottom:2rem;
 }
 
 .hero-title em{
@@ -137,20 +129,23 @@ font-style:italic;
 }
 
 .hero-text{
-max-width:540px;
-line-height:1.9;
+max-width:800px;
+margin:auto;
+line-height:2;
 color:#555;
-margin-bottom:2rem;
+font-size:1.05rem;
+margin-bottom:3rem;
 }
 
 .hero-buttons{
 display:flex;
+justify-content:center;
 gap:1rem;
 flex-wrap:wrap;
 }
 
 .hero-btn{
-padding:0.9rem 1.8rem;
+padding:1rem 2rem;
 font-size:0.72rem;
 letter-spacing:0.12em;
 text-transform:uppercase;
@@ -176,24 +171,12 @@ border-color:var(--pink);
 color:white;
 }
 
-.hero-image{
-overflow:hidden;
-background:#f4f4f4;
-}
-
-.hero-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
 /* OPEN CALL */
 
 .open-call{
-padding:5rem 2rem;
+padding:6rem 2rem;
 background:var(--light);
 text-align:center;
-border-top:1px solid var(--border);
 border-bottom:1px solid var(--border);
 }
 
@@ -207,7 +190,7 @@ margin-bottom:1rem;
 
 .section-title{
 font-family:'Playfair Display',serif;
-font-size:clamp(2rem,5vw,4rem);
+font-size:clamp(2.5rem,6vw,5rem);
 line-height:1;
 margin-bottom:1.5rem;
 }
@@ -220,16 +203,16 @@ font-style:italic;
 .section-text{
 max-width:720px;
 margin:auto;
-line-height:1.9;
+line-height:2;
 color:#555;
 margin-bottom:2rem;
 }
 
 .open-call-image{
-max-width:800px;
+max-width:700px;
 margin:3rem auto 0;
-overflow:hidden;
 border:1px solid var(--border);
+overflow:hidden;
 }
 
 .open-call-image img{
@@ -261,7 +244,7 @@ object-fit:cover;
 
 .artist-label{
 font-size:0.68rem;
-letter-spacing:0.2em;
+letter-spacing:0.18em;
 text-transform:uppercase;
 color:var(--pink);
 margin-bottom:1rem;
@@ -288,7 +271,7 @@ margin-bottom:2rem;
 }
 
 .artist-desc{
-line-height:1.9;
+line-height:2;
 color:#555;
 margin-bottom:2rem;
 }
@@ -297,7 +280,7 @@ margin-bottom:2rem;
 display:inline-block;
 background:var(--black);
 color:white;
-padding:0.9rem 1.8rem;
+padding:1rem 2rem;
 font-size:0.72rem;
 letter-spacing:0.12em;
 text-transform:uppercase;
@@ -307,18 +290,18 @@ text-transform:uppercase;
 background:var(--pink);
 }
 
-/* FOLLOW SECTION */
+/* FOLLOW */
 
 .follow-section{
 padding:5rem 2rem;
-background:var(--black);
-color:white;
+background:#111111;
 text-align:center;
+color:white;
 }
 
 .follow-title{
 font-family:'Playfair Display',serif;
-font-size:clamp(2rem,5vw,3.5rem);
+font-size:clamp(2.5rem,5vw,4rem);
 margin-bottom:1rem;
 }
 
@@ -330,7 +313,7 @@ font-style:italic;
 .follow-text{
 max-width:700px;
 margin:auto;
-line-height:1.9;
+line-height:2;
 color:#d0d0d0;
 margin-bottom:2rem;
 }
@@ -340,7 +323,7 @@ display:inline-block;
 background:var(--pink);
 color:white;
 padding:1rem 2rem;
-font-size:0.75rem;
+font-size:0.72rem;
 letter-spacing:0.12em;
 text-transform:uppercase;
 }
@@ -379,7 +362,6 @@ font-style:italic;
 .footer-text{
 line-height:1.9;
 color:#666;
-font-size:0.95rem;
 }
 
 .footer-heading{
@@ -398,7 +380,6 @@ gap:0.8rem;
 
 .footer-links a{
 color:var(--black);
-font-size:0.92rem;
 }
 
 .footer-links a:hover{
@@ -418,16 +399,21 @@ color:#777;
 
 @media(max-width:900px){
 
+.nav-links,
+.nav-btn{
+display:none;
+}
+
 .hero{
-grid-template-columns:1fr;
+padding:7rem 1.5rem 4rem;
 }
 
-.hero-content{
-padding:3rem 1.5rem;
+.hero-title{
+font-size:4.5rem;
 }
 
-.hero-image{
-min-height:420px;
+.hero-text{
+font-size:1rem;
 }
 
 .artist-grid{
@@ -453,15 +439,6 @@ padding:4rem 1.5rem;
 line-height:1.2;
 }
 
-.follow-text{
-font-size:0.95rem;
-}
-
-.nav-links,
-.nav-btn{
-display:none;
-}
-
 }
 
 </style>
@@ -478,7 +455,7 @@ Cosmopolitan <em>Art</em> Magazine
 </a>
 
 <ul class="nav-links">
-<li><a href="#events">Events</a></li>
+<li><a href="events.html">Events</a></li>
 <li><a href="artist-feature.html">Featured Artists</a></li>
 <li><a href="#follow">Follow</a></li>
 </ul>
@@ -492,8 +469,6 @@ Submit Work
 <!-- HERO -->
 
 <section class="hero">
-
-<div class="hero-content">
 
 <p class="hero-label">
 Pakistan's Contemporary Art Platform
@@ -520,12 +495,6 @@ Featured Artists
 
 </div>
 
-</div>
-
-<div class="hero-image">
-<img src="canvas-of-her-journey.jpg" alt="Canvas of Her Journey">
-</div>
-
 </section>
 
 <!-- OPEN CALL -->
@@ -541,7 +510,7 @@ Canvas of Her <em>Journey</em>
 </h2>
 
 <p class="section-text">
-A contemporary group exhibition celebrating women's stories, emotions, identity, resilience, and artistic expression through painting, sculpture, photography, textile, installation, and mixed media.
+A contemporary group exhibition celebrating women's stories, resilience, identity, and artistic expression through painting, sculpture, photography, textile, installation, and mixed media.
 </p>
 
 <a href="mailto:artcosmomagazine@gmail.com?subject=Canvas of Her Journey Submission" class="hero-btn primary">
@@ -549,7 +518,9 @@ Submit Artwork
 </a>
 
 <div class="open-call-image">
+
 <img src="canvas-of-her-journey.jpg" alt="Canvas of Her Journey">
+
 </div>
 
 </section>
@@ -561,7 +532,9 @@ Submit Artwork
 <div class="artist-grid">
 
 <div class="artist-image">
+
 <img src="saba-haroon-portrait.jpg.png" alt="Saba Haroon">
+
 </div>
 
 <div>
@@ -606,7 +579,7 @@ Join Our <em>Creative</em> Community
 </h2>
 
 <p class="follow-text">
-Stay connected with upcoming exhibitions, artist features, open calls, editorial stories, and behind-the-scenes moments from Pakistan's evolving contemporary art landscape.
+Stay connected with upcoming exhibitions, featured artists, editorial stories, open calls, and behind-the-scenes moments from Pakistan's evolving contemporary art landscape.
 </p>
 
 <a
@@ -632,7 +605,7 @@ Cosmopolitan <em>Art</em> Magazine
 </div>
 
 <p class="footer-text">
-Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, visual storytelling, exhibitions, and creative culture across South Asia.
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, exhibitions, editorial storytelling, and creative culture across South Asia.
 </p>
 
 </div>
@@ -644,7 +617,7 @@ Quick Links
 </div>
 
 <div class="footer-links">
-<a href="#events">Open Calls</a>
+<a href="events.html">Events</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="#follow">Follow Us</a>
 </div>
