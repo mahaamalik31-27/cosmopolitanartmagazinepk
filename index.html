@@ -15,7 +15,6 @@
 
 :root {
   --pink: #d4578a;
-  --pink-light: #fdf0f5;
   --black: #111111;
   --white: #ffffff;
   --gray: #777777;
@@ -29,16 +28,11 @@ body {
   overflow-x: hidden;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 img {
   max-width: 100%;
   display: block;
 }
 
-/* NAV */
 nav {
   position: sticky;
   top: 0;
@@ -77,11 +71,18 @@ nav {
   font-size: 0.75rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-weight: 500;
 }
 
 .nav-links a:hover {
   color: var(--pink);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
 .nav-btn {
@@ -94,19 +95,13 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-btn:hover {
-  background: var(--pink);
-}
-
-/* HERO */
 .hero {
-  min-height: 88vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 4rem 2rem;
-  background: white;
 }
 
 .hero-content {
@@ -159,10 +154,6 @@ nav {
   text-transform: uppercase;
 }
 
-.hero-btn:hover {
-  background: var(--pink);
-}
-
 .hero-btn-outline {
   border: 1px solid var(--border);
   color: var(--black);
@@ -173,19 +164,14 @@ nav {
   text-transform: uppercase;
 }
 
-.hero-btn-outline:hover {
-  border-color: var(--black);
-}
-
-/* SECTION */
 section {
   padding: 5rem 2rem;
 }
 
 .section-head {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 2rem;
   border-bottom: 1px solid var(--border);
   padding-bottom: 1rem;
@@ -198,28 +184,17 @@ section {
 
 .section-title em {
   color: var(--pink);
-  font-style: italic;
 }
 
-.section-link {
-  text-decoration: none;
-  color: var(--pink);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-/* OPEN CALL */
 .open-call-card {
   max-width: 900px;
   margin: auto;
   border: 1px solid var(--border);
   overflow: hidden;
-  background: white;
 }
 
 .open-call-card img {
-  height: 650px;
+  height: 460px;
   width: 100%;
   object-fit: cover;
   cursor: pointer;
@@ -230,36 +205,12 @@ section {
   text-align: center;
 }
 
-.open-call-date {
-  color: var(--pink);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
-}
-
 .open-call-title {
   font-family: 'Playfair Display', serif;
   font-size: 3rem;
   margin-bottom: 1rem;
 }
 
-.open-call-desc {
-  max-width: 650px;
-  margin: auto;
-  line-height: 1.9;
-  color: #555;
-}
-
-.open-call-actions {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-/* FEATURED ARTIST */
 .artist-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -269,16 +220,9 @@ section {
 
 .artist-grid img {
   width: 100%;
-  aspect-ratio: 4/5;
+  max-height: 620px;
   object-fit: cover;
-}
-
-.artist-label {
-  color: var(--pink);
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+  object-position: center top;
 }
 
 .artist-name {
@@ -290,15 +234,6 @@ section {
 
 .artist-name em {
   color: var(--pink);
-  font-style: italic;
-}
-
-.artist-medium {
-  text-transform: uppercase;
-  color: var(--gray);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  margin-bottom: 2rem;
 }
 
 .artist-bio {
@@ -307,7 +242,6 @@ section {
   margin-bottom: 2rem;
 }
 
-/* INSTAGRAM */
 .instagram-grid {
   display: grid;
   grid-template-columns: repeat(3,1fr);
@@ -316,38 +250,16 @@ section {
 
 .instagram-grid img {
   width: 100%;
-  height: 340px;
+  height: 320px;
   object-fit: cover;
-  transition: 0.4s;
 }
 
-.instagram-grid img:hover {
-  transform: scale(1.03);
-}
-
-/* FOOTER */
 footer {
   padding: 3rem 2rem;
   border-top: 1px solid var(--border);
   text-align: center;
 }
 
-.footer-logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer-logo em {
-  color: var(--pink);
-}
-
-.footer-note {
-  color: var(--gray);
-  font-size: 0.75rem;
-}
-
-/* POPUP */
 #exhibitionPopup {
   display: none;
   position: fixed;
@@ -376,10 +288,28 @@ footer {
   cursor: pointer;
 }
 
-/* MOBILE */
 @media(max-width:900px){
 
-.nav-links,
+.menu-toggle {
+  display: block;
+}
+
+.nav-links {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  background: white;
+  flex-direction: column;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  display: none;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
 .nav-btn {
   display:none;
 }
@@ -393,15 +323,11 @@ footer {
 }
 
 .open-call-card img {
-  height: 420px;
+  height: 300px;
 }
 
 .artist-name {
   font-size: 3rem;
-}
-
-.hero-title {
-  font-size: 3.5rem;
 }
 
 }
@@ -410,13 +336,14 @@ footer {
 
 <body>
 
-<!-- NAV -->
 <nav>
   <a href="index.html" class="logo">
     Cosmopolitan <span>Art</span> Magazine
   </a>
 
-  <ul class="nav-links">
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
+  <ul class="nav-links" id="mobileMenu">
     <li><a href="#open-call">Open Call</a></li>
     <li><a href="artist-feature.html">Featured Artists</a></li>
     <li><a href="#instagram">Instagram</a></li>
@@ -427,9 +354,7 @@ footer {
   </a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-
   <div class="hero-content">
 
     <div class="hero-label">
@@ -443,27 +368,17 @@ footer {
 
     <p class="hero-sub">
       Celebrating Pakistani contemporary art, emerging voices,
-      exhibitions, visual culture, and artists reshaping the future
-      of South Asian creativity.
+      exhibitions, visual culture, and artists reshaping the future.
     </p>
 
     <div class="hero-actions">
-
-      <a href="#open-call" class="hero-btn">
-        Explore Open Call
-      </a>
-
-      <a href="artist-feature.html" class="hero-btn-outline">
-        Featured Artists
-      </a>
-
+      <a href="#open-call" class="hero-btn">Explore Open Call</a>
+      <a href="artist-feature.html" class="hero-btn-outline">Featured Artists</a>
     </div>
 
   </div>
-
 </section>
 
-<!-- OPEN CALL -->
 <section id="open-call">
 
   <div class="section-head">
@@ -482,38 +397,14 @@ footer {
 
     <div class="open-call-content">
 
-      <div class="open-call-date">
-        OPEN CALL · MAY 10–31, 2026
-      </div>
-
       <div class="open-call-title">
         Canvas of Her Journey
       </div>
 
-      <div class="open-call-desc">
+      <p style="line-height:1.9;color:#555;max-width:650px;margin:auto;">
         Behind every artwork is a woman with a story worth telling.
-        Cosmopolitan Art Magazine invites artists across Pakistan
-        to submit their work for our upcoming exhibition.
-      </div>
-
-      <div class="open-call-actions">
-
-        <a
-          href="mailto:artcosmomagazine@gmail.com?subject=Canvas of Her Journey Submission"
-          class="hero-btn"
-        >
-          Submit Artwork
-        </a>
-
-        <a
-          href="#"
-          onclick="openExhibitionPopup()"
-          class="hero-btn-outline"
-        >
-          View Poster
-        </a>
-
-      </div>
+        Submit your work for our upcoming exhibition.
+      </p>
 
     </div>
 
@@ -521,26 +412,21 @@ footer {
 
 </section>
 
-<!-- FEATURED ARTIST -->
 <section>
 
   <div class="section-head">
     <div class="section-title">
       Featured <em>Artist</em>
     </div>
-
-    <a href="artist-feature.html" class="section-link">
-      View All →
-    </a>
   </div>
 
   <div class="artist-grid">
 
-    <img src="_UJS1509 (1).jpg" alt="Saba Haroon">
+    <img src="saba-haroon-portrait.jpg.png" alt="Saba Haroon">
 
     <div>
 
-      <div class="artist-label">
+      <div style="color:var(--pink);margin-bottom:1rem;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.15em;">
         Featured Artist · Issue 01
       </div>
 
@@ -549,15 +435,13 @@ footer {
         <em>Haroon</em>
       </div>
 
-      <div class="artist-medium">
+      <div style="color:#777;margin-bottom:2rem;text-transform:uppercase;font-size:0.75rem;letter-spacing:0.12em;">
         Origami · Mixed Media · Lahore, Pakistan
       </div>
 
       <div class="artist-bio">
         Guided by Wabi-Sabi — the beauty of impermanence and imperfection —
-        Saba Haroon folds origami cranes as quiet extensions of herself,
-        creating meditative installations that speak of stillness,
-        memory, and emotion.
+        Saba Haroon folds origami cranes as quiet extensions of herself.
       </div>
 
       <a href="saba-haroon.html" class="hero-btn">
@@ -570,58 +454,32 @@ footer {
 
 </section>
 
-<!-- INSTAGRAM -->
 <section id="instagram" style="background:#fafafa;">
 
   <div class="section-head">
-
     <div class="section-title">
       Follow Our <em>Journey</em>
     </div>
-
-    <a
-      href="https://instagram.com/cosmopolitanartmagazine.pk"
-      target="_blank"
-      class="section-link"
-    >
-      @cosmopolitanartmagazine.pk →
-    </a>
-
   </div>
 
   <div class="instagram-grid">
 
-    <a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
-      <img src="_UJS1473 1.jpg">
-    </a>
-
-    <a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
-      <img src="_UJS1498.jpg">
-    </a>
-
-    <a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
-      <img src="_UJS1509 (1).jpg">
-    </a>
+    <img src="saba-artwork-1.jpg">
+    <img src="saba-artwork-2.jpg">
+    <img src="saba-artwork-3.jpg">
 
   </div>
 
 </section>
 
-<!-- POPUP -->
 <div id="exhibitionPopup">
 
   <div class="popup-inner">
 
-    <button
-      class="popup-close"
-      onclick="closeExhibitionPopup()"
-    >
-      ×
-    </button>
+    <button class="popup-close" onclick="closeExhibitionPopup()">×</button>
 
     <img
       src="canvas-of-her-journey.jpg"
-      alt="Canvas of Her Journey"
       style="width:100%;max-height:90vh;object-fit:contain;"
     >
 
@@ -629,14 +487,13 @@ footer {
 
 </div>
 
-<!-- FOOTER -->
 <footer>
 
-  <div class="footer-logo">
-    Cosmopolitan <em>Art</em> Magazine Pakistan
+  <div style="font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:0.5rem;">
+    Cosmopolitan <em style="color:#d4578a;">Art</em> Magazine Pakistan
   </div>
 
-  <div class="footer-note">
+  <div style="color:#777;font-size:0.75rem;">
     © 2026 · Pakistan's Digital Art Magazine
   </div>
 
@@ -645,12 +502,14 @@ footer {
 <script>
 function openExhibitionPopup() {
   document.getElementById('exhibitionPopup').style.display = 'flex';
-  document.body.style.overflow = 'hidden';
 }
 
 function closeExhibitionPopup() {
   document.getElementById('exhibitionPopup').style.display = 'none';
-  document.body.style.overflow = 'auto';
+}
+
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('active');
 }
 </script>
 
@@ -658,12 +517,4 @@ function closeExhibitionPopup() {
 </html>
 ```
 
-# IMPORTANT
 
-Upload this image to GitHub:
-
-```plaintext
-canvas-of-her-journey.jpg
-```
-
-Then replace your ENTIRE current `index.html` with this code and commit changes.
