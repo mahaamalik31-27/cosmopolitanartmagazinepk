@@ -1,284 +1,597 @@
+# COMPLETE NEW artist-feature.html
+
+Replace your ENTIRE current `artist-feature.html` with this code.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Featured Artists — Cosmopolitan Art Magazine Pakistan</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Featured Artists — Cosmopolitan Art Magazine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --black: #111111; --white: #ffffff; --pink: #d4578a;
-    --pink-pale: #fdf0f5; --gray: #888888; --light-gray: #f5f5f5; --border: #e8e8e8;
-  }
-  body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--black); overflow-x: hidden; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 0 2.5rem; height: 60px; background: var(--white); border-bottom: 1px solid var(--border); }
-  .nav-logo-text { font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; color: var(--black); text-decoration: none; }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a { color: var(--black); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: color .2s; }
-  .nav-links a:hover, .nav-links a.active { color: var(--pink); }
-  .nav-cta { background: var(--black); color: var(--white); text-decoration: none; padding: 0.55rem 1.4rem; font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: background .2s; }
-  .nav-cta:hover { background: var(--pink); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
-  .hamburger span { display: block; width: 22px; height: 2px; background: var(--black); transition: .3s; }
-  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .hamburger.open span:nth-child(2) { opacity: 0; }
-  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .mobile-menu { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; z-index: 99; background: var(--white); border-bottom: 1px solid var(--border); padding: 1.5rem 2rem; gap: 1.2rem; }
-  .mobile-menu.open { display: flex; }
-  .mobile-menu a { color: var(--black); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.08em; text-transform: uppercase; }
+:root {
+  --pink: #d4578a;
+  --pink-light: #fdf0f5;
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #777777;
+  --border: #e8e8e8;
+}
 
-  .alert-bar { margin-top: 60px; background: var(--black); color: var(--white); display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 0.75rem 1.5rem; flex-wrap: wrap; text-align: center; }
-  .alert-tag { background: var(--pink); color: var(--white); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.2rem 0.65rem; border-radius: 2px; font-weight: 600; }
-  .alert-text { font-size: 0.82rem; font-style: italic; }
-  .alert-text em { font-family: 'Playfair Display', serif; }
-  .alert-btn { border: 1px solid var(--pink); color: var(--pink); text-decoration: none; font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.3rem 0.85rem; transition: .2s; }
-  .alert-btn:hover { background: var(--pink); color: var(--white); }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  overflow-x: hidden;
+}
 
-  /* PAGE HEADER */
-  .page-header { padding: 5rem 2.5rem 3rem; border-bottom: 1px solid var(--border); display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-  .page-label { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--pink); font-weight: 600; margin-bottom: 0.6rem; }
-  .page-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 900; line-height: 1.05; }
-  .page-title em { color: var(--pink); font-style: italic; }
-  .page-desc { color: var(--gray); font-size: 0.92rem; margin-top: 1rem; max-width: 500px; line-height: 1.7; }
-  .issue-count { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 900; color: var(--pink); line-height: 1; }
-  .issue-count-lbl { font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray); }
+html {
+  scroll-behavior: smooth;
+}
 
-  /* SECTION DIVIDER LABEL */
-  .section-label-row { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray); font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
-  .section-label-row::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+img {
+  max-width: 100%;
+  display: block;
+}
 
-  /* FEATURED BIG CARD */
-  .featured-wrap { max-width: 1200px; margin: 0 auto; padding: 3rem 2.5rem; border-bottom: 1px solid var(--border); }
-  .featured-card { display: grid; grid-template-columns: 1.1fr 1fr; border: 1px solid var(--border); text-decoration: none; color: var(--black); transition: border-color .25s; overflow: hidden; }
-  .featured-card:hover { border-color: var(--pink); }
-  .featured-img { position: relative; overflow: hidden; background: var(--light-gray); min-height: 520px; }
-  .featured-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s ease; }
-  .featured-card:hover .featured-img img { transform: scale(1.04); }
-  .featured-badge { position: absolute; top: 1.5rem; left: 1.5rem; background: var(--pink); color: var(--white); font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; padding: 0.28rem 0.75rem; font-weight: 700; }
-  .featured-issue-tag { position: absolute; bottom: 1.5rem; left: 1.5rem; background: rgba(0,0,0,0.7); color: var(--white); font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.25rem 0.65rem; }
-  .featured-info { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--border); }
-  .featured-info .art-label { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--pink); font-weight: 600; margin-bottom: 0.6rem; }
-  .featured-info h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 900; line-height: 1.08; margin-bottom: 0.4rem; }
-  .featured-info h2 em { color: var(--pink); font-style: italic; }
-  .featured-info .medium { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .featured-info .excerpt { font-size: 0.97rem; line-height: 1.85; color: #444; margin-bottom: 2rem; }
-  .featured-info .pull { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.05rem; color: var(--black); line-height: 1.6; margin-bottom: 2rem; padding-left: 1.2rem; border-left: 3px solid var(--pink); }
-  .featured-stats { display: flex; gap: 2rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid var(--border); }
-  .featured-stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; display: block; }
-  .featured-stat-lbl { font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gray); }
-  .read-more { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; color: var(--black); transition: color .2s; }
-  .read-more svg { width: 16px; height: 16px; transition: transform .2s; }
-  .featured-card:hover .read-more { color: var(--pink); }
-  .featured-card:hover .read-more svg { transform: translateX(4px); }
+/* NAV */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: white;
+  border-bottom: 1px solid var(--border);
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
 
-  /* MORE ARTISTS GRID */
-  .more-wrap { max-width: 1200px; margin: 0 auto; padding: 3rem 2.5rem; }
-  .artists-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  .artist-card { border: 1px solid var(--border); text-decoration: none; color: var(--black); transition: border-color .25s; display: block; overflow: hidden; }
-  .artist-card:hover { border-color: var(--pink); }
-  .artist-card-img { position: relative; overflow: hidden; background: var(--light-gray); aspect-ratio: 3/4; }
-  .artist-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .5s ease; }
-  .artist-card:hover .artist-card-img img { transform: scale(1.05); }
-  .placeholder-box { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem; aspect-ratio: 3/4; background: var(--light-gray); }
-  .placeholder-box .ph-icon { font-size: 2rem; opacity: 0.2; }
-  .placeholder-box .ph-text { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray); }
-  .cs-badge { position: absolute; top: 1rem; left: 1rem; background: var(--black); color: var(--white); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; padding: 0.22rem 0.65rem; font-weight: 600; }
-  .artist-card-info { padding: 1.4rem 1.4rem 1.6rem; }
-  .artist-card-issue { font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--pink); font-weight: 600; margin-bottom: 0.3rem; }
-  .artist-card-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; margin-bottom: 0.25rem; line-height: 1.2; }
-  .artist-card-medium { font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray); margin-bottom: 0.8rem; }
-  .artist-card-excerpt { font-size: 0.85rem; line-height: 1.7; color: #555; margin-bottom: 1rem; }
-  .artist-card-cta { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 600; color: var(--pink); }
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 700;
+}
 
-  /* NOMINATE BANNER */
-  .nominate-section { max-width: 1200px; margin: 0 2.5rem 4rem; margin-left: auto; margin-right: auto; border: 1px solid var(--border); padding: 3.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem; background: var(--pink-pale); }
-  .nominate-text h3 { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 2.5vw, 1.8rem); font-weight: 700; margin-bottom: 0.5rem; }
-  .nominate-text p { font-size: 0.9rem; color: var(--gray); max-width: 480px; line-height: 1.6; }
-  .nominate-btn { display: inline-block; background: var(--pink); color: var(--white); text-decoration: none; padding: 0.85rem 2.2rem; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 600; transition: background .2s; white-space: nowrap; }
-  .nominate-btn:hover { background: var(--black); }
+.logo span {
+  color: var(--pink);
+  font-style: italic;
+}
 
-  footer { padding: 2rem 2.5rem; text-align: center; border-top: 1px solid var(--border); }
-  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
-  .footer-logo em { color: var(--pink); font-style: italic; }
-  .footer-note { font-size: 0.72rem; color: var(--gray); }
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
 
-  @media (max-width: 960px) {
-    .featured-card { grid-template-columns: 1fr; }
-    .featured-img { min-height: 380px; }
-    .featured-info { padding: 2.5rem 2rem; border-left: none; border-top: 1px solid var(--border); }
-    .artists-grid { grid-template-columns: 1fr 1fr; }
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    nav { padding: 0 1.2rem; }
-    .page-header, .featured-wrap, .more-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
-    .nominate-section { margin: 0 1.5rem 3rem; padding: 2rem 1.5rem; }
-  }
-  @media (max-width: 580px) {
-    .artists-grid { grid-template-columns: 1fr; }
-    .page-header { flex-direction: column; }
-  }
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: var(--pink);
+}
+
+.nav-btn {
+  background: var(--black);
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-btn:hover {
+  background: var(--pink);
+}
+
+/* HEADER */
+.page-header {
+  padding: 7rem 2rem 4rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-label {
+  color: var(--pink);
+  font-size: 0.72rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+.page-title em {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.page-desc {
+  max-width: 750px;
+  margin: auto;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* FEATURED ARTIST */
+.featured-section {
+  padding: 5rem 2rem;
+}
+
+.featured-card {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--black);
+  transition: 0.4s;
+}
+
+.featured-card:hover {
+  border-color: var(--pink);
+}
+
+.featured-card img {
+  width: 100%;
+  height: 100%;
+  min-height: 700px;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.featured-label {
+  color: var(--pink);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  margin-bottom: 1rem;
+}
+
+.featured-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 5rem;
+  line-height: 0.95;
+  margin-bottom: 1rem;
+}
+
+.featured-name em {
+  color: var(--pink);
+  font-style: italic;
+}
+
+.featured-medium {
+  color: var(--gray);
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+
+.featured-bio {
+  line-height: 2;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.pull-quote {
+  border-left: 3px solid var(--pink);
+  padding-left: 1.5rem;
+  margin-bottom: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.stat-label {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--gray);
+}
+
+.hero-btn {
+  background: var(--black);
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  width: fit-content;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+}
+
+.hero-btn:hover {
+  background: var(--pink);
+}
+
+/* MORE ARTISTS */
+.more-artists {
+  padding: 5rem 2rem;
+  background: #fafafa;
+}
+
+.section-head {
+  max-width: 1250px;
+  margin: auto auto 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+}
+
+.section-title em {
+  color: var(--pink);
+}
+
+.artist-grid {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.5rem;
+}
+
+.artist-card {
+  background: white;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.artist-card img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.artist-card-content {
+  padding: 1.5rem;
+}
+
+.artist-card-label {
+  color: var(--pink);
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+.artist-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-card-desc {
+  color: #555;
+  line-height: 1.8;
+  font-size: 0.92rem;
+}
+
+/* CTA */
+.cta-section {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.cta-title em {
+  color: var(--pink);
+}
+
+.cta-desc {
+  max-width: 650px;
+  margin: auto auto 2rem;
+  line-height: 1.9;
+  color: #555;
+}
+
+/* FOOTER */
+footer {
+  padding: 3rem 2rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo em {
+  color: var(--pink);
+}
+
+.footer-note {
+  color: var(--gray);
+  font-size: 0.75rem;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+
+.nav-links,
+.nav-btn {
+  display:none;
+}
+
+.featured-card {
+  grid-template-columns: 1fr;
+}
+
+.featured-content {
+  padding: 2rem;
+}
+
+.featured-name {
+  font-size: 3rem;
+}
+
+.artist-grid {
+  grid-template-columns: 1fr;
+}
+
+.stats {
+  flex-wrap: wrap;
+}
+
+}
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <nav>
-  <a class="nav-logo-text" href="index.html">Cosmopolitan <em style="color:var(--pink);font-style:italic;font-family:'Playfair Display',serif;">Art</em> Magazine</a>
+  <a href="index.html" class="logo">
+    Cosmopolitan <span>Art</span> Magazine
+  </a>
+
   <ul class="nav-links">
-    <li><a href="index.html#events">Events</a></li>
+    <li><a href="index.html">Home</a></li>
     <li><a href="artist-feature.html" class="active">Featured Artists</a></li>
-    <li><a href="index.html#instagram">Instagram</a></li>
-    <li><a href="mailto:artcosmomagazine@gmail.com">Submit</a></li>
+    <li><a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">Instagram</a></li>
   </ul>
-  <a href="mailto:artcosmomagazine@gmail.com?subject=Get Featured" class="nav-cta">Get Featured</a>
-  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+
+  <a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
+    Submit Work
+  </a>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#events" onclick="closeMenu()">Events</a>
-  <a href="artist-feature.html" onclick="closeMenu()">Featured Artists</a>
-  <a href="index.html#instagram" onclick="closeMenu()">Instagram</a>
-  <a href="mailto:artcosmomagazine@gmail.com" onclick="closeMenu()">Submit</a>
-</div>
+<!-- HEADER -->
+<section class="page-header">
 
-<div class="alert-bar">
-  <span class="alert-tag">Open Now</span>
-  <span class="alert-text"><em>Canvas of Her Journey</em> — Call for Submissions · May 10–31, 2026</span>
-  <a href="mailto:artcosmomagazine@gmail.com?subject=Canvas of Her Journey Submission" class="alert-btn">Submit Now →</a>
-</div>
-
-<!-- PAGE HEADER -->
-<div class="page-header">
-  <div>
-    <p class="page-label">Issue 01 · May 2026</p>
-    <h1 class="page-title">Featured<br><em>Artists</em></h1>
-    <p class="page-desc">Celebrating the voices, visions, and stories of Pakistani artists — from emerging talent to celebrated masters.</p>
+  <div class="page-label">
+    Issue 01 · May 2026
   </div>
-  <div style="text-align:right;">
-    <div class="issue-count">01</div>
-    <div class="issue-count-lbl">Artists Featured</div>
-  </div>
-</div>
 
-<!-- SABA HAROON — COVER FEATURE -->
-<div class="featured-wrap">
-  <p class="section-label-row">Issue 01 Cover Feature</p>
+  <h1 class="page-title">
+    Featured<br>
+    <em>Artists</em>
+  </h1>
+
+  <div class="page-desc">
+    Celebrating Pakistani contemporary artists, visual storytellers,
+    sculptors, photographers, and creators redefining South Asian art.
+  </div>
+
+</section>
+
+<!-- FEATURED ARTIST -->
+<section class="featured-section">
+
   <a href="saba-haroon.html" class="featured-card">
-    <div class="featured-img">
-      <img src="_UJS1473 1.jpg" alt="Saba Haroon — Red origami cranes">
-      <span class="featured-badge">✦ Cover Feature</span>
-      <span class="featured-issue-tag">Issue 01 · May 2026</span>
-    </div>
-    <div class="featured-info">
-      <p class="art-label">Featured Artist · Origami · Mixed Media</p>
-      <h2>Saba<br><em>Haroon</em></h2>
-      <p class="medium">Origami · Mixed Media · Lahore, Pakistan</p>
-      <p class="excerpt">Born in Jeddah, shaped by Lahore — Saba Haroon folds hundreds of origami cranes into sweeping formations that carry the weight of emotion, memory, and the quiet beauty of impermanence.</p>
-      <p class="pull">"I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence."</p>
-      <div class="featured-stats">
-        <div>
-          <span class="featured-stat-num">23+</span>
-          <span class="featured-stat-lbl">Exhibitions</span>
-        </div>
-        <div>
-          <span class="featured-stat-num">1</span>
-          <span class="featured-stat-lbl">International</span>
-        </div>
-        <div>
-          <span class="featured-stat-num">17+</span>
-          <span class="featured-stat-lbl">Years Active</span>
-        </div>
+
+    <img src="_UJS1509 (1).jpg" alt="Saba Haroon">
+
+    <div class="featured-content">
+
+      <div class="featured-label">
+        Cover Feature · Issue 01
       </div>
-      <span class="read-more">Read Full Feature
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </span>
+
+      <div class="featured-name">
+        Saba<br>
+        <em>Haroon</em>
+      </div>
+
+      <div class="featured-medium">
+        Origami · Mixed Media · Lahore, Pakistan
+      </div>
+
+      <div class="featured-bio">
+        Guided by Wabi-Sabi — the beauty of impermanence and imperfection —
+        Saba Haroon folds origami cranes as quiet extensions of herself,
+        creating meditative installations that speak of stillness,
+        memory, and emotion.
+      </div>
+
+      <div class="pull-quote">
+        “I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence.”
+      </div>
+
+      <div class="stats">
+
+        <div>
+          <div class="stat-number">23+</div>
+          <div class="stat-label">Exhibitions</div>
+        </div>
+
+        <div>
+          <div class="stat-number">17+</div>
+          <div class="stat-label">Years Active</div>
+        </div>
+
+        <div>
+          <div class="stat-number">1</div>
+          <div class="stat-label">International Show</div>
+        </div>
+
+      </div>
+
+      <div class="hero-btn">
+        Read Full Feature
+      </div>
+
     </div>
+
   </a>
-</div>
+
+</section>
 
 <!-- MORE ARTISTS -->
-<div class="more-wrap">
-  <p class="section-label-row">More Artists</p>
-  <div class="artists-grid">
+<section class="more-artists">
 
-    <!-- COMING SOON 1 -->
-    <div class="artist-card" style="cursor:default;">
-      <div class="artist-card-img">
-        <div class="placeholder-box">
-          <span class="ph-icon">🎨</span>
-          <span class="ph-text">Coming Soon</span>
+  <div class="section-head">
+
+    <div class="section-title">
+      More <em>Artists</em>
+    </div>
+
+  </div>
+
+  <div class="artist-grid">
+
+    <div class="artist-card">
+      <img src="_UJS1473 1.jpg">
+      <div class="artist-card-content">
+        <div class="artist-card-label">Issue 02 · Coming Soon</div>
+        <div class="artist-card-title">Next Featured Artist</div>
+        <div class="artist-card-desc">
+          We are currently selecting our next featured artist for the upcoming issue.
         </div>
-        <span class="cs-badge">Issue 02</span>
-      </div>
-      <div class="artist-card-info">
-        <p class="artist-card-issue">Issue 02 · Coming Soon</p>
-        <h3 class="artist-card-name">Next Featured Artist</h3>
-        <p class="artist-card-medium">Medium · City, Pakistan</p>
-        <p class="artist-card-excerpt">We are currently selecting the next featured artist. Stay tuned.</p>
       </div>
     </div>
 
-    <!-- COMING SOON 2 -->
-    <div class="artist-card" style="cursor:default;">
-      <div class="artist-card-img">
-        <div class="placeholder-box">
-          <span class="ph-icon">🎨</span>
-          <span class="ph-text">Coming Soon</span>
+    <div class="artist-card">
+      <img src="_UJS1498.jpg">
+      <div class="artist-card-content">
+        <div class="artist-card-label">Issue 03 · Coming Soon</div>
+        <div class="artist-card-title">New Voices</div>
+        <div class="artist-card-desc">
+          Discover emerging Pakistani artists reshaping contemporary art.
         </div>
-        <span class="cs-badge">Issue 03</span>
-      </div>
-      <div class="artist-card-info">
-        <p class="artist-card-issue">Issue 03 · Coming Soon</p>
-        <h3 class="artist-card-name">Next Featured Artist</h3>
-        <p class="artist-card-medium">Medium · City, Pakistan</p>
-        <p class="artist-card-excerpt">We are currently selecting the next featured artist. Stay tuned.</p>
       </div>
     </div>
 
-    <!-- NOMINATE CARD -->
-    <div class="artist-card" style="cursor:default; background: var(--pink-pale);">
-      <div class="artist-card-img">
-        <div class="placeholder-box" style="background:var(--pink-pale);">
-          <span class="ph-icon" style="opacity:0.35;">✦</span>
-          <span class="ph-text">Could Be You</span>
+    <div class="artist-card">
+      <img src="canvas-of-her-journey.jpg">
+      <div class="artist-card-content">
+        <div class="artist-card-label">Open Call · 2026</div>
+        <div class="artist-card-title">Could This Be You?</div>
+        <div class="artist-card-desc">
+          Submit your portfolio and artist statement for a chance to be featured.
         </div>
-      </div>
-      <div class="artist-card-info">
-        <p class="artist-card-issue">Open Call · 2026</p>
-        <h3 class="artist-card-name">Are You a Pakistani Artist?</h3>
-        <p class="artist-card-medium">All Mediums Welcome</p>
-        <p class="artist-card-excerpt">Nominate yourself or another artist to be featured in an upcoming issue.</p>
-        <a href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Nomination" class="artist-card-cta">Submit Nomination →</a>
       </div>
     </div>
 
   </div>
-</div>
 
-<!-- NOMINATE BANNER -->
-<div class="nominate-section">
-  <div class="nominate-text">
-    <h3>Know a Pakistani Artist Who Deserves to be Featured?</h3>
-    <p>We are always looking for voices redefining Pakistani contemporary art. Nominate an artist — or yourself — for an upcoming issue.</p>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+
+  <div class="cta-title">
+    Become a Featured <em>Artist</em>
   </div>
-  <a href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Nomination" class="nominate-btn">Nominate an Artist →</a>
-</div>
 
+  <div class="cta-desc">
+    We are always looking for extraordinary Pakistani artists and creatives
+    pushing boundaries through visual storytelling and contemporary practice.
+  </div>
+
+  <a href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission" class="hero-btn">
+    Submit Your Portfolio
+  </a>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Cosmopolitan <em>Art</em> Magazine Pakistan</div>
-  <div class="footer-note">cosmopolitanartmagazinepk.online · Issue 01 · May 2026</div>
+
+  <div class="footer-logo">
+    Cosmopolitan <em>Art</em> Magazine Pakistan
+  </div>
+
+  <div class="footer-note">
+    © 2026 · Pakistan's Digital Art Magazine
+  </div>
+
 </footer>
 
-<script>
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.getElementById('hamburger').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-</script>
 </body>
 </html>
+```
+
+# IMPORTANT
+
+Upload these images to GitHub:
+
+```plaintext
+_UJS1509 (1).jpg
+_UJS1473 1.jpg
+_UJS1498.jpg
+canvas-of-her-journey.jpg
+```
+
+Then replace your ENTIRE current `artist-feature.html` with this code and commit changes.
