@@ -1,42 +1,483 @@
-<!-- GET FEATURED SECTION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saba Haroon — Featured Artist · Cosmopolitan Art Magazine Pakistan</title>
 
-<div class="more-section" style="
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*, *::before, *::after{
+box-sizing:border-box;
+margin:0;
+padding:0;
+}
+
+:root{
+--black:#111111;
+--white:#ffffff;
+--pink:#d4578a;
+--pink-pale:#fdf0f5;
+--gray:#888888;
+--light-gray:#f5f5f5;
+--border:#e8e8e8;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:var(--white);
+color:var(--black);
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:100;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 2rem;
+height:60px;
+background:white;
+border-bottom:1px solid var(--border);
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:0.9rem;
+font-weight:700;
+text-decoration:none;
+color:var(--black);
+}
+
+.logo em{
+color:var(--pink);
+font-style:italic;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--black);
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.nav-links a:hover{
+color:var(--pink);
+}
+
+.nav-btn{
+background:var(--black);
+color:white;
+text-decoration:none;
+padding:0.6rem 1.2rem;
+font-size:0.7rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.nav-btn:hover{
+background:var(--pink);
+}
+
+/* ALERT */
+
+.alert-bar{
+margin-top:60px;
+background:var(--black);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:1rem;
+padding:0.8rem 1rem;
+flex-wrap:wrap;
+text-align:center;
+}
+
+.alert-tag{
+background:var(--pink);
+padding:0.2rem 0.7rem;
+font-size:0.65rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.alert-text{
+font-size:0.8rem;
+}
+
+.alert-btn{
+border:1px solid var(--pink);
+color:var(--pink);
+padding:0.3rem 0.8rem;
+text-decoration:none;
+font-size:0.68rem;
+letter-spacing:0.1em;
+text-transform:uppercase;
+}
+
+.alert-btn:hover{
+background:var(--pink);
+color:white;
+}
+
+/* HERO */
+
+.artist-hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:90vh;
+}
+
+.artist-hero-img{
+position:relative;
+background:var(--light-gray);
+}
+
+.artist-hero-img img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.issue-badge{
+position:absolute;
+top:1.5rem;
+left:1.5rem;
+background:var(--pink);
+color:white;
+padding:0.3rem 0.8rem;
+font-size:0.65rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.artist-info{
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:4rem;
+border-left:1px solid var(--border);
+}
+
+.artist-label{
+font-size:0.68rem;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.artist-name{
+font-family:'Playfair Display',serif;
+font-size:4rem;
+line-height:0.95;
+margin-bottom:1rem;
+}
+
+.artist-name em{
+color:var(--pink);
+font-style:italic;
+}
+
+.artist-medium{
+font-size:0.75rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--gray);
+margin-bottom:2rem;
+}
+
+.artist-bio{
+line-height:1.9;
+color:#444;
+margin-bottom:2rem;
+max-width:520px;
+}
+
+.artist-stats{
+display:flex;
+gap:2rem;
+margin-bottom:2rem;
+}
+
+.stat-number{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+font-weight:900;
+}
+
+.stat-label{
+font-size:0.68rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--gray);
+}
+
+.social-link{
+display:inline-block;
+border:1px solid var(--border);
+padding:0.7rem 1.2rem;
+text-decoration:none;
+color:var(--black);
+font-size:0.72rem;
+letter-spacing:0.08em;
+text-transform:uppercase;
+}
+
+.social-link:hover{
+border-color:var(--pink);
+color:var(--pink);
+}
+
+/* SECTION */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:5rem 2rem;
+border-bottom:1px solid var(--border);
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:2rem;
+}
+
+.section-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.bio-text{
+line-height:2;
+color:#444;
+margin-bottom:1.5rem;
+}
+
+.quote{
+background:var(--pink-pale);
+border-left:4px solid var(--pink);
+padding:2rem;
+margin:3rem 0;
+}
+
+.quote p{
+font-family:'Playfair Display',serif;
+font-style:italic;
+font-size:1.3rem;
+line-height:1.7;
+margin-bottom:0.7rem;
+}
+
+.quote cite{
+font-size:0.72rem;
+letter-spacing:0.1em;
+text-transform:uppercase;
+color:var(--gray);
+}
+
+/* GALLERY */
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:1rem;
+}
+
+.gallery-item{
+position:relative;
+overflow:hidden;
+cursor:pointer;
+}
+
+.gallery-item:first-child{
+grid-column:span 2;
+}
+
+.gallery-item img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.gallery-item:first-child img{
+min-height:400px;
+}
+
+.gallery-item:not(:first-child) img{
+min-height:300px;
+}
+
+.gallery-item:hover img{
+transform:scale(1.04);
+}
+
+.gallery-caption{
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+background:linear-gradient(transparent,rgba(0,0,0,0.8));
+color:white;
+padding:2rem 1rem 1rem;
+opacity:0;
+transition:0.3s;
+}
+
+.gallery-item:hover .gallery-caption{
+opacity:1;
+}
+
+.artwork-title{
+font-family:'Playfair Display',serif;
+font-style:italic;
+font-size:1rem;
+}
+
+.artwork-meta{
+font-size:0.68rem;
+margin-top:0.3rem;
+letter-spacing:0.06em;
+color:rgba(255,255,255,0.75);
+}
+
+/* EXHIBITIONS */
+
+.exhibitions-list{
+list-style:none;
+margin-top:2rem;
+}
+
+.exhibitions-list li{
+display:flex;
+justify-content:space-between;
+padding:1rem 0;
+border-bottom:1px solid #f0f0f0;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.ex-title{
+font-weight:500;
+}
+
+.ex-year{
+color:var(--pink);
+font-size:0.8rem;
+font-weight:600;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.94);
+z-index:999;
+justify-content:center;
+align-items:center;
+}
+
+.lightbox.open{
+display:flex;
+}
+
+.lightbox img{
+max-width:88vw;
+max-height:88vh;
+object-fit:contain;
+}
+
+.lightbox-close{
+position:absolute;
+top:1rem;
+right:1rem;
+background:none;
+border:none;
+color:white;
+font-size:2rem;
+cursor:pointer;
+}
+
+/* FEATURE SECTION */
+
+.more-section{
+padding:5rem 2rem;
+text-align:center;
 background:#fafafa;
-border-top:1px solid var(--border);
-">
+}
 
-  <p class="section-label">
-    Open for Features
-  </p>
+.section-label{
+font-size:0.68rem;
+letter-spacing:0.2em;
+text-transform:uppercase;
+color:var(--gray);
+margin-bottom:0.8rem;
+}
 
-  <h2>
-    Want to Get <em style="color:var(--pink);font-style:italic;">Featured?</em>
-  </h2>
+.more-section h2{
+font-family:'Playfair Display',serif;
+font-size:2.5rem;
+margin-bottom:1.5rem;
+}
 
-  <p style="
-  max-width:650px;
-  margin:0 auto 2rem;
-  color:var(--gray);
-  line-height:1.9;
-  font-size:0.95rem;
-  ">
-    We are always looking for emerging and established artists,
-    photographers, sculptors, and visual storytellers redefining
-    contemporary South Asian art.
-  </p>
+.more-btn{
+display:inline-block;
+background:var(--black);
+color:white;
+text-decoration:none;
+padding:0.9rem 2rem;
+font-size:0.75rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+border:none;
+cursor:pointer;
+margin:0.5rem;
+}
 
-  <button
-    onclick="openFeaturePopup()"
-    class="more-btn"
-  >
-    Apply to Get Featured
-  </button>
+.more-btn:hover{
+background:var(--pink);
+}
 
-</div>
+.more-btn.outline{
+background:none;
+color:var(--black);
+border:1px solid var(--black);
+}
 
-<!-- FEATURE POPUP -->
+.more-btn.outline:hover{
+background:var(--pink);
+color:white;
+border-color:var(--pink);
+}
 
-<div id="featurePopup" style="
+/* POPUP */
+
+#featurePopup{
 display:none;
 position:fixed;
 inset:0;
@@ -45,75 +486,458 @@ z-index:9999;
 justify-content:center;
 align-items:center;
 padding:2rem;
-">
+}
 
-  <div style="
-  background:white;
-  max-width:620px;
-  width:100%;
-  padding:3rem;
-  position:relative;
-  text-align:center;
-  ">
+.popup-box{
+background:white;
+max-width:620px;
+width:100%;
+padding:3rem;
+position:relative;
+text-align:center;
+}
 
-    <button
-      onclick="closeFeaturePopup()"
-      style="
-      position:absolute;
-      top:1rem;
-      right:1rem;
-      background:none;
-      border:none;
-      font-size:1.8rem;
-      cursor:pointer;
-      "
-    >
-      ×
-    </button>
+.popup-close{
+position:absolute;
+top:1rem;
+right:1rem;
+background:none;
+border:none;
+font-size:1.8rem;
+cursor:pointer;
+}
 
-    <p class="section-label" style="margin-bottom:1rem;">
-      Artist Submission
-    </p>
+/* FOOTER */
 
-    <h2 style="
-    font-family:'Playfair Display',serif;
-    font-size:2.5rem;
-    margin-bottom:1rem;
-    ">
-      Get Featured
-    </h2>
+footer{
+padding:2rem;
+text-align:center;
+border-top:1px solid var(--border);
+}
 
-    <p style="
-    color:var(--gray);
-    line-height:1.9;
-    margin-bottom:2rem;
-    ">
-      Share your portfolio, artist statement,
-      biography, exhibition history, and social links with us.
-    </p>
+.footer-logo{
+font-family:'Playfair Display',serif;
+font-size:1rem;
+font-weight:700;
+margin-bottom:0.5rem;
+}
 
-    <a
-      href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission"
-      class="more-btn"
-      style="display:inline-block;text-decoration:none;"
-    >
-      Email Submission
-    </a>
+.footer-logo em{
+color:var(--pink);
+font-style:italic;
+}
 
-  </div>
+.footer-note{
+font-size:0.72rem;
+color:var(--gray);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.artist-hero{
+grid-template-columns:1fr;
+}
+
+.artist-info{
+border-left:none;
+border-top:1px solid var(--border);
+padding:2rem;
+}
+
+.artist-name{
+font-size:3rem;
+}
+
+.gallery-grid{
+grid-template-columns:1fr;
+}
+
+.gallery-item:first-child{
+grid-column:span 1;
+}
+
+.gallery-item:first-child img,
+.gallery-item:not(:first-child) img{
+min-height:280px;
+}
+
+.nav-links,
+.nav-btn{
+display:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html" class="logo">
+Cosmopolitan <em>Art</em> Magazine
+</a>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+<li><a href="index.html#events">Events</a></li>
+<li><a href="index.html#instagram">Instagram</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
+Get Featured
+</a>
+
+</nav>
+
+<div class="alert-bar">
+<span class="alert-tag">Open Call</span>
+<span class="alert-text">
+Canvas of Her Journey — May 2026
+</span>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="alert-btn">
+Submit Now
+</a>
+</div>
+
+<!-- HERO -->
+
+<div class="artist-hero">
+
+<div class="artist-hero-img">
+
+<img src="_UJS1473 1.jpg" alt="Saba Haroon">
+
+<span class="issue-badge">
+Issue 01 · May 2026
+</span>
 
 </div>
 
-<!-- ADD THIS TO YOUR SCRIPT -->
+<div class="artist-info">
+
+<p class="artist-label">
+Featured Artist
+</p>
+
+<h1 class="artist-name">
+Saba<br>
+<em>Haroon</em>
+</h1>
+
+<p class="artist-medium">
+Origami · Mixed Media · Lahore
+</p>
+
+<p class="artist-bio">
+Guided by Wabi-Sabi — the beauty of impermanence and imperfection — Saba Haroon folds origami cranes as quiet extensions of herself, creating meditative installations inspired by healing, transformation, and memory.
+</p>
+
+<div class="artist-stats">
+
+<div>
+<div class="stat-number">23+</div>
+<div class="stat-label">Exhibitions</div>
+</div>
+
+<div>
+<div class="stat-number">17+</div>
+<div class="stat-label">Years Active</div>
+</div>
+
+<div>
+<div class="stat-number">1</div>
+<div class="stat-label">International Show</div>
+</div>
+
+</div>
+
+<a href="https://instagram.com/s.j.artworld" target="_blank" class="social-link">
+@s.j.artworld
+</a>
+
+</div>
+
+</div>
+
+<!-- BIO -->
+
+<div class="section">
+
+<h2 class="section-title">
+About <em>Saba</em>
+</h2>
+
+<p class="bio-text">
+Born and raised in Jeddah, Saudi Arabia, Saba Haroon grew up surrounded by architecture, monuments, and layered cultural aesthetics that deeply influenced her artistic language.
+</p>
+
+<p class="bio-text">
+After moving to Pakistan, she pursued Fine Arts at the University of Punjab and later Interior Design at NCA, where she refined her approach toward installation art and spatial storytelling.
+</p>
+
+<div class="quote">
+
+<p>
+“I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence.”
+</p>
+
+<cite>
+— Saba Haroon
+</cite>
+
+</div>
+
+<p class="bio-text">
+Her work draws from Japanese philosophy and symbolism, particularly Wabi-Sabi and the legend of origami cranes representing healing, wishes, and transformation.
+</p>
+
+</div>
+
+<!-- GALLERY -->
+
+<div class="section">
+
+<h2 class="section-title">
+Selected <em>Works</em>
+</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item" onclick="openLightbox('_UJS1473 1.jpg')">
+
+<img src="_UJS1473 1.jpg">
+
+<div class="gallery-caption">
+<div class="artwork-title">Flight Formation</div>
+<div class="artwork-meta">
+Origami cranes · Mixed media installation
+</div>
+</div>
+
+</div>
+
+<div class="gallery-item" onclick="openLightbox('_UJS1498.jpg')">
+
+<img src="_UJS1498.jpg">
+
+<div class="gallery-caption">
+<div class="artwork-title">Circle of Liberation</div>
+<div class="artwork-meta">
+Origami cranes, gold leaf · Mixed media
+</div>
+</div>
+
+</div>
+
+<div class="gallery-item" onclick="openLightbox('_UJS1509 (1).jpg')">
+
+<img src="_UJS1509 (1).jpg">
+
+<div class="gallery-caption">
+<div class="artwork-title">Vortex</div>
+<div class="artwork-meta">
+Red & black origami cranes
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- EXHIBITIONS -->
+
+<div class="section">
+
+<h2 class="section-title">
+Exhibition <em>History</em>
+</h2>
+
+<ul class="exhibitions-list">
+
+<li>
+<span class="ex-title">
+World Art Dubai
+</span>
+
+<span class="ex-year">
+2023
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Meraki — Art Chowk Gallery Karachi
+</span>
+
+<span class="ex-year">
+2020
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Convergence — Lahore Biennale
+</span>
+
+<span class="ex-year">
+2024
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Letters to Pakistan — ArtSoch Gallery
+</span>
+
+<span class="ex-year">
+2021
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Pakistan at 100 — World Bank Islamabad
+</span>
+
+<span class="ex-year">
+2019
+</span>
+</li>
+
+</ul>
+
+</div>
+
+<!-- FEATURE -->
+
+<div class="more-section">
+
+<p class="section-label">
+Open for Features
+</p>
+
+<h2>
+Want to Get <em style="color:var(--pink);font-style:italic;">Featured?</em>
+</h2>
+
+<p style="
+max-width:650px;
+margin:0 auto 2rem;
+color:var(--gray);
+line-height:1.9;
+">
+We are always looking for emerging and established artists,
+photographers, sculptors, and visual storytellers redefining contemporary South Asian art.
+</p>
+
+<button onclick="openFeaturePopup()" class="more-btn">
+Apply to Get Featured
+</button>
+
+<a href="index.html" class="more-btn outline">
+← Back to Home
+</a>
+
+</div>
+
+<!-- POPUP -->
+
+<div id="featurePopup">
+
+<div class="popup-box">
+
+<button class="popup-close" onclick="closeFeaturePopup()">
+×
+</button>
+
+<p class="section-label">
+Artist Submission
+</p>
+
+<h2 style="
+font-family:'Playfair Display',serif;
+font-size:2.5rem;
+margin-bottom:1rem;
+">
+Get Featured
+</h2>
+
+<p style="
+color:var(--gray);
+line-height:1.9;
+margin-bottom:2rem;
+">
+Share your portfolio, artist statement,
+biography, exhibition history, and social media links with us.
+</p>
+
+<a
+href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission"
+class="more-btn"
+style="display:inline-block;text-decoration:none;"
+>
+Email Submission
+</a>
+
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox">
+
+<button class="lightbox-close" onclick="closeLightbox()">
+✕
+</button>
+
+<img id="lightboxImg">
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-logo">
+Cosmopolitan <em>Art</em> Magazine Pakistan
+</div>
+
+<div class="footer-note">
+cosmopolitanartmagazinepk.online · Issue 01 · May 2026
+</div>
+
+</footer>
 
 <script>
 
-function openFeaturePopup() {
-  document.getElementById('featurePopup').style.display='flex';
+function openLightbox(src){
+document.getElementById('lightbox').classList.add('open');
+document.getElementById('lightboxImg').src=src;
+document.body.style.overflow='hidden';
 }
 
-function closeFeaturePopup() {
-  document.getElementById('featurePopup').style.display='none';
+function closeLightbox(){
+document.getElementById('lightbox').classList.remove('open');
+document.body.style.overflow='';
+}
+
+function openFeaturePopup(){
+document.getElementById('featurePopup').style.display='flex';
+}
+
+function closeFeaturePopup(){
+document.getElementById('featurePopup').style.display='none';
 }
 
 </script>
+
+</body>
+</html>
