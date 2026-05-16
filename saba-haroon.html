@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
+     crossorigin="anonymous"></script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -132,7 +136,6 @@ font-size:0.8rem;
 border:1px solid var(--pink);
 color:var(--pink);
 padding:0.3rem 0.8rem;
-text-decoration:none;
 font-size:0.68rem;
 letter-spacing:0.1em;
 text-transform:uppercase;
@@ -425,7 +428,7 @@ font-size:0.8rem;
 font-weight:600;
 }
 
-/* FEATURE SECTION */
+/* FEATURE */
 
 .more-section{
 padding:5rem 2rem;
@@ -537,14 +540,37 @@ color:var(--gray);
 
 @media(max-width:900px){
 
+.nav-links,
+.nav-btn{
+display:none;
+}
+
+nav{
+padding:0 1rem;
+}
+
+.logo{
+font-size:0.82rem;
+}
+
 .hero{
 grid-template-columns:1fr;
 }
 
 .hero-content{
-padding:2rem;
+padding:2rem 1.5rem 4rem;
 border-left:none;
 border-top:1px solid var(--border);
+}
+
+.hero-title{
+font-size:3rem;
+line-height:1;
+}
+
+.hero-text{
+font-size:0.95rem;
+line-height:1.8;
 }
 
 .gallery-grid{
@@ -560,13 +586,17 @@ grid-column:span 1;
 min-height:280px;
 }
 
-.nav-links,
-.nav-btn{
-display:none;
+.hero-stats{
+flex-wrap:wrap;
+gap:1.5rem;
 }
 
-.hero-title{
-font-size:3rem;
+.more-section{
+padding:4rem 1.5rem;
+}
+
+footer{
+padding:3rem 1.5rem;
 }
 
 }
@@ -583,9 +613,9 @@ Cosmopolitan <em>Art</em> Magazine
 </a>
 
 <ul class="nav-links">
-<li><a href="index.html">Home</a></li>
+<li><a href="events.html">Events</a></li>
 <li><a href="artist-feature.html">Featured Artists</a></li>
-<li><a href="index.html#events">Events</a></li>
+<li><a href="index.html#follow">Follow</a></li>
 </ul>
 
 <a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
@@ -609,8 +639,6 @@ Submit Now
 </a>
 
 </div>
-
-<!-- HERO -->
 
 <section class="hero">
 
@@ -670,8 +698,6 @@ Guided by Wabi-Sabi — the beauty of impermanence and imperfection — Saba Har
 
 </section>
 
-<!-- BIO -->
-
 <section class="section">
 
 <h2 class="section-title">
@@ -689,7 +715,7 @@ After moving to Pakistan, she pursued Fine Arts at the University of Punjab and 
 <div class="quote">
 
 <p>
-“I fold cranes as quiet extensions of myself. Each delicate fold holds time, patience, and a sense of presence.”
+“Each fold becomes a silent conversation between fragility and resilience.”
 </p>
 
 <cite>
@@ -703,8 +729,6 @@ Her work draws from Japanese philosophy and symbolism, particularly Wabi-Sabi an
 </p>
 
 </section>
-
-<!-- GALLERY -->
 
 <section class="section">
 
@@ -772,8 +796,6 @@ Red & black origami cranes
 
 </section>
 
-<!-- EXHIBITIONS -->
-
 <section class="section">
 
 <h2 class="section-title">
@@ -836,8 +858,6 @@ Pakistan at 100 — World Bank Islamabad
 
 </section>
 
-<!-- FEATURE -->
-
 <section class="more-section">
 
 <p class="section-label">
@@ -867,8 +887,6 @@ Apply to Get Featured
 </a>
 
 </section>
-
-<!-- POPUP -->
 
 <div id="featurePopup">
 
@@ -911,8 +929,6 @@ Email Submission
 
 </div>
 
-<!-- LIGHTBOX -->
-
 <div class="lightbox" id="lightbox">
 
 <button class="lightbox-close" onclick="closeLightbox()">
@@ -922,8 +938,6 @@ Email Submission
 <img id="lightboxImg">
 
 </div>
-
-<!-- FOOTER -->
 
 <footer>
 
