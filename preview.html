@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
+crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
+
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QV0REXZN5D');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ramzan Jafri — Featured Artist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*,*::before,*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+:root{
+--black:#111111;
+--white:#ffffff;
+--pink:#d4578a;
+--gray:#777777;
+--light:#fafafa;
+--border:#e8e8e8;
+--pink-light:#fdf0f5;
+}
+
+body{
+font-family:'DM Sans',sans-serif;
+background:white;
+color:var(--black);
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+a{
+text-decoration:none;
+}
+
+/* NAV */
+
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:60px;
+background:white;
+border-bottom:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 2rem;
+z-index:1000;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:0.9rem;
+font-weight:700;
+color:var(--black);
+}
+
+.logo em{
+color:var(--pink);
+font-style:italic;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+
+.nav-links a{
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--black);
+}
+
+.nav-links a:hover{
+color:var(--pink);
+}
+
+.nav-btn{
+background:var(--black);
+color:white;
+padding:0.6rem 1.2rem;
+font-size:0.68rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.nav-btn:hover{
+background:var(--pink);
+}
+
+/* HERO */
+
+.hero{
+display:grid;
+grid-template-columns:1fr 1fr;
+min-height:90vh;
+margin-top:60px;
+}
+
+.hero-image img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.hero-content{
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding:5rem;
+border-left:1px solid var(--border);
+}
+
+.hero-label{
+font-size:0.68rem;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(3rem,7vw,5rem);
+line-height:0.95;
+margin-bottom:1rem;
+}
+
+.hero-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.hero-meta{
+font-size:0.75rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--gray);
+margin-bottom:2rem;
+}
+
+.hero-text{
+line-height:1.9;
+color:#555;
+margin-bottom:2rem;
+max-width:540px;
+}
+
+.instagram-btn{
+display:inline-block;
+border:1px solid var(--border);
+padding:0.8rem 1.3rem;
+font-size:0.72rem;
+letter-spacing:0.08em;
+text-transform:uppercase;
+color:var(--black);
+width:max-content;
+}
+
+.instagram-btn:hover{
+border-color:var(--pink);
+color:var(--pink);
+}
+
+/* SECTION */
+
+.section{
+max-width:1100px;
+margin:auto;
+padding:5rem 2rem;
+border-bottom:1px solid var(--border);
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:2rem;
+margin-bottom:2rem;
+}
+
+.section-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.bio-text{
+line-height:2;
+color:#444;
+margin-bottom:1.5rem;
+}
+
+.quote{
+background:var(--pink-light);
+border-left:4px solid var(--pink);
+padding:2rem;
+margin:3rem 0;
+}
+
+.quote p{
+font-family:'Playfair Display',serif;
+font-style:italic;
+font-size:1.3rem;
+line-height:1.7;
+margin-bottom:0.7rem;
+}
+
+.quote cite{
+font-size:0.72rem;
+letter-spacing:0.1em;
+text-transform:uppercase;
+color:var(--gray);
+}
+
+/* ARTWORK */
+
+.artwork-image{
+margin-top:3rem;
+border:1px solid var(--border);
+overflow:hidden;
+}
+
+.artwork-image img{
+width:100%;
+}
+
+/* EXHIBITIONS */
+
+.exhibitions-list{
+list-style:none;
+margin-top:2rem;
+}
+
+.exhibitions-list li{
+display:flex;
+justify-content:space-between;
+padding:1rem 0;
+border-bottom:1px solid #f0f0f0;
+gap:1rem;
+flex-wrap:wrap;
+}
+
+.ex-title{
+font-weight:500;
+}
+
+.ex-year{
+color:var(--pink);
+font-size:0.8rem;
+font-weight:600;
+}
+
+/* FEATURE */
+
+.more-section{
+padding:5rem 2rem;
+text-align:center;
+background:var(--light);
+}
+
+.more-section h2{
+font-family:'Playfair Display',serif;
+font-size:clamp(2rem,5vw,3rem);
+margin-bottom:1.5rem;
+}
+
+.more-btn{
+display:inline-block;
+background:var(--black);
+color:white;
+padding:0.9rem 2rem;
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+margin:0.5rem;
+}
+
+.more-btn:hover{
+background:var(--pink);
+}
+
+/* FOOTER */
+
+footer{
+padding:3rem 2rem;
+text-align:center;
+border-top:1px solid var(--border);
+}
+
+.footer-logo{
+font-family:'Playfair Display',serif;
+font-size:1rem;
+margin-bottom:0.5rem;
+}
+
+.footer-logo em{
+color:var(--pink);
+font-style:italic;
+}
+
+.footer-note{
+font-size:0.72rem;
+color:var(--gray);
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links,
+.nav-btn{
+display:none;
+}
+
+nav{
+padding:0 1rem;
+}
+
+.logo{
+font-size:0.82rem;
+}
+
+.hero{
+grid-template-columns:1fr;
+}
+
+.hero-content{
+padding:2rem 1.5rem 4rem;
+border-left:none;
+border-top:1px solid var(--border);
+}
+
+.hero-title{
+font-size:3rem;
+line-height:1;
+}
+
+.hero-text{
+font-size:0.95rem;
+line-height:1.8;
+}
+
+.section{
+padding:4rem 1.5rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a href="index.html" class="logo">
+Cosmopolitan <em>Art</em> Magazine
+</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
+Submit Work
+</a>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-image">
+
+<img src="ramzan-jafri-portrait.jpg" alt="Ramzan Jafri">
+
+</div>
+
+<div class="hero-content">
+
+<p class="hero-label">
+Featured Artist
+</p>
+
+<h1 class="hero-title">
+Ramzan<br>
+<em>Jafri</em>
+</h1>
+
+<p class="hero-meta">
+Miniature Painting · Contemporary Book Art · NCA Lahore
+</p>
+
+<p class="hero-text">
+Ramzan Jafri is a contemporary Pakistani artist whose practice bridges Mughal miniature traditions with contemporary visual storytelling. Through illuminated book structures, symbolic imagery, and deeply reflective compositions, his work explores memory, devotion, artistic inheritance, and the timeless relationship between knowledge and creativity.
+</p>
+
+<a href="https://instagram.com/qalmkarramzanjafri/" target="_blank" class="instagram-btn">
+@qalmkarramzanjafri
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+The Poetry of <em>Love</em>
+</h2>
+
+<p class="bio-text">
+Created on a sculptural book cover, The Poetry of Love brings together tradition, artistic devotion, and contemporary reflection. The work features Ramzan Jafri alongside Abul Hasan — the legendary Mughal miniature painter — creating a visual dialogue between historical mastery and present-day artistic practice.
+</p>
+
+<p class="bio-text">
+The illuminated spine references traditional manuscript embellishment, connecting the piece to the aesthetics of historical Islamic book art. Through self-portraiture, symbolism, and intricate craftsmanship, the work reflects on the perseverance, discipline, and emotional labor embedded within every artist’s journey.
+</p>
+
+<div class="quote">
+
+<p>
+“Art becomes timeless when memory, devotion, and tradition speak through the same surface.”
+</p>
+
+<cite>
+— Ramzan Jafri
+</cite>
+
+</div>
+
+<p class="bio-text">
+The piece ultimately becomes a meditation on memory, artistic inheritance, and the enduring spiritual connection between artist and art across generations.
+</p>
+
+<div class="artwork-image">
+
+<img src="ramzan-jafri-artwork-1.jpg" alt="The Poetry of Love">
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Exhibition <em>History</em>
+</h2>
+
+<ul class="exhibitions-list">
+
+<li>
+<span class="ex-title">
+Kitab Ghar (House of Books) — NCA Lahore 150th Anniversary Exhibition
+</span>
+
+<span class="ex-year">
+2026
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Curated by Venetia Porter
+</span>
+
+<span class="ex-year">
+Lahore
+</span>
+</li>
+
+<li>
+<span class="ex-title">
+Contemporary Miniature & Book Art Showcase
+</span>
+
+<span class="ex-year">
+NCA
+</span>
+</li>
+
+</ul>
+
+<p class="bio-text" style="margin-top:2rem;">
+The exhibition celebrated 150 years of NCA Lahore through contemporary works engaging with literature, archives, manuscripts, and visual storytelling traditions.
+</p>
+
+</section>
+
+<section class="more-section">
+
+<h2>
+Want to Get <em style="color:#d4578a;font-style:italic;">Featured?</em>
+</h2>
+
+<p style="
+max-width:650px;
+margin:0 auto 2rem;
+color:#777;
+line-height:1.9;
+">
+We are always looking for emerging and established artists redefining contemporary South Asian art and visual culture.
+</p>
+
+<a
+href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission"
+class="more-btn"
+>
+Submit Portfolio
+</a>
+
+<a href="artist-feature.html" class="more-btn">
+View More Artists
+</a>
+
+</section>
+
+<footer>
+
+<div class="footer-logo">
+Cosmopolitan <em>Art</em> Magazine Pakistan
+</div>
+
+<div class="footer-note">
+Issue 01 · Featured Artist · 2026
+</div>
+
+</footer>
+
+</body>
+</html>
