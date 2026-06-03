@@ -2,13 +2,10 @@
 <html lang="en">
 <head>
 
-<!-- ADSENSE -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
 crossorigin="anonymous"></script>
 
-<!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
-
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -18,507 +15,101 @@ gtag('config', 'G-QV0REXZN5D');
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Cosmopolitan Art Magazine Pakistan</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-
-*,*::before,*::after{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-:root{
---black:#111111;
---white:#ffffff;
---pink:#d4578a;
---gray:#777777;
---light:#fafafa;
---border:#e8e8e8;
-}
-
-body{
-font-family:'DM Sans',sans-serif;
-background:white;
-color:var(--black);
-overflow-x:hidden;
-}
-
-img{
-max-width:100%;
-display:block;
-}
-
-a{
-text-decoration:none;
-}
-
-/* NAV */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-right:0;
-height:60px;
-background:white;
-border-bottom:1px solid var(--border);
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:0 2rem;
-z-index:1000;
-}
-
-.logo{
-font-family:'Playfair Display',serif;
-font-size:0.9rem;
-font-weight:700;
-color:var(--black);
-z-index:1002;
-}
-
-.logo em{
-color:var(--pink);
-font-style:italic;
-}
-
-.nav-links{
-display:flex;
-gap:2rem;
-list-style:none;
-}
-
-.nav-links a{
-font-size:0.72rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-color:var(--black);
-}
-
-.nav-links a:hover{
-color:var(--pink);
-}
-
-.nav-btn{
-background:var(--black);
-color:white;
-padding:0.6rem 1.2rem;
-font-size:0.68rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-}
-
-.nav-btn:hover{
-background:var(--pink);
-}
-
-/* MOBILE MENU */
-
-.menu-toggle{
-display:none;
-font-size:1.6rem;
-cursor:pointer;
-z-index:1002;
-}
-
-.mobile-menu{
-position:fixed;
-top:0;
-right:-100%;
-width:100%;
-height:100vh;
-background:white;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-gap:2rem;
-transition:0.4s;
-z-index:1001;
-}
-
-.mobile-menu.active{
-right:0;
-}
-
-.mobile-menu a{
-font-size:1rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-color:var(--black);
-}
-
-.mobile-menu a:hover{
-color:var(--pink);
-}
-
-/* HERO */
-
-.hero{
-padding:9rem 2rem 5rem;
-text-align:center;
-border-bottom:1px solid var(--border);
-}
-
-.hero-label{
-font-size:0.7rem;
-letter-spacing:0.2em;
-text-transform:uppercase;
-color:var(--pink);
-margin-bottom:1rem;
-}
-
-.hero-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(4rem,10vw,8rem);
-line-height:0.9;
-margin-bottom:2rem;
-}
-
-.hero-title em{
-color:var(--pink);
-font-style:italic;
-}
-
-.hero-text{
-max-width:800px;
-margin:auto;
-line-height:2;
-color:#555;
-font-size:1.05rem;
-margin-bottom:3rem;
-}
-
-.hero-buttons{
-display:flex;
-justify-content:center;
-gap:1rem;
-flex-wrap:wrap;
-}
-
-.hero-btn{
-padding:1rem 2rem;
-font-size:0.72rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-}
-
-.hero-btn.primary{
-background:var(--black);
-color:white;
-}
-
-.hero-btn.primary:hover{
-background:var(--pink);
-}
-
-.hero-btn.secondary{
-border:1px solid var(--black);
-color:var(--black);
-}
-
-.hero-btn.secondary:hover{
-background:var(--pink);
-border-color:var(--pink);
-color:white;
-}
-
-/* OPEN CALL */
-
-.open-call{
-padding:6rem 2rem;
-background:var(--light);
-text-align:center;
-border-bottom:1px solid var(--border);
-}
-
-.section-label{
-font-size:0.68rem;
-letter-spacing:0.2em;
-text-transform:uppercase;
-color:var(--pink);
-margin-bottom:1rem;
-}
-
-.section-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(2.5rem,6vw,5rem);
-line-height:1;
-margin-bottom:1.5rem;
-}
-
-.section-title em{
-color:var(--pink);
-font-style:italic;
-}
-
-.section-text{
-max-width:720px;
-margin:auto;
-line-height:2;
-color:#555;
-margin-bottom:2rem;
-}
-
-.open-call-image{
-max-width:700px;
-margin:3rem auto 0;
-border:1px solid var(--border);
-overflow:hidden;
-}
-
-.open-call-image img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* FEATURED ARTISTS */
-
-.featured-artist{
-padding:6rem 2rem;
-max-width:1300px;
-margin:auto;
-}
-
-.artist-image img{
-width:100%;
-height:420px;
-object-fit:cover;
-}
-
-.artist-label{
-font-size:0.68rem;
-letter-spacing:0.18em;
-text-transform:uppercase;
-color:var(--pink);
-margin-bottom:1rem;
-}
-
-.artist-name{
-font-family:'Playfair Display',serif;
-font-size:2.5rem;
-line-height:0.95;
-margin-bottom:0.7rem;
-}
-
-.artist-name em{
-color:var(--pink);
-font-style:italic;
-}
-
-.artist-meta{
-font-size:0.75rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-color:var(--gray);
-margin-bottom:1.5rem;
-}
-
-.artist-desc{
-line-height:1.9;
-color:#555;
-margin-bottom:2rem;
-}
-
-.artist-btn{
-display:inline-block;
-background:var(--black);
-color:white;
-padding:1rem 2rem;
-font-size:0.72rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-}
-
-.artist-btn:hover{
-background:var(--pink);
-}
-
-/* FOLLOW */
-
-.follow-section{
-padding:5rem 2rem;
-background:#111111;
-text-align:center;
-color:white;
-}
-
-.follow-title{
-font-family:'Playfair Display',serif;
-font-size:clamp(2.5rem,5vw,4rem);
-margin-bottom:1rem;
-}
-
-.follow-title em{
-color:var(--pink);
-font-style:italic;
-}
-
-.follow-text{
-max-width:700px;
-margin:auto;
-line-height:2;
-color:#d0d0d0;
-margin-bottom:2rem;
-}
-
-.follow-btn{
-display:inline-block;
-background:var(--pink);
-color:white;
-padding:1rem 2rem;
-font-size:0.72rem;
-letter-spacing:0.12em;
-text-transform:uppercase;
-}
-
-.follow-btn:hover{
-opacity:0.9;
-}
-
-/* FOOTER */
-
-footer{
-padding:4rem 2rem;
-background:#fafafa;
-border-top:1px solid var(--border);
-}
-
-.footer-grid{
-max-width:1200px;
-margin:auto;
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:3rem;
-}
-
-.footer-logo{
-font-family:'Playfair Display',serif;
-font-size:1.3rem;
-margin-bottom:1rem;
-}
-
-.footer-logo em{
-color:var(--pink);
-font-style:italic;
-}
-
-.footer-text{
-line-height:1.9;
-color:#666;
-}
-
-.footer-heading{
-font-size:0.72rem;
-letter-spacing:0.14em;
-text-transform:uppercase;
-color:var(--pink);
-margin-bottom:1rem;
-}
-
-.footer-links{
-display:flex;
-flex-direction:column;
-gap:0.8rem;
-}
-
-.footer-links a{
-color:var(--black);
-}
-
-.footer-links a:hover{
-color:var(--pink);
-}
-
-.footer-bottom{
-margin-top:3rem;
-padding-top:2rem;
-border-top:1px solid var(--border);
-text-align:center;
-font-size:0.75rem;
-color:#777;
-}
-
-/* MOBILE */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--white:#fff;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);z-index:1002;}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+.nav-btn:hover{background:var(--pink);}
+
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
+.mobile-menu a:hover{color:var(--pink);}
+
+.hero{padding:9rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border);}
+.hero-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,10vw,8rem);line-height:.9;margin-bottom:2rem;}
+.hero-title em{color:var(--pink);font-style:italic;}
+.hero-text{max-width:800px;margin:auto;line-height:2;color:#555;font-size:1.05rem;margin-bottom:3rem;}
+.hero-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.hero-btn{padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
+.hero-btn.primary{background:var(--black);color:white;}
+.hero-btn.primary:hover{background:var(--pink);}
+.hero-btn.secondary{border:1px solid var(--black);color:var(--black);}
+.hero-btn.secondary:hover{background:var(--pink);border-color:var(--pink);color:white;}
+
+.open-call{padding:6rem 2rem;background:var(--light);text-align:center;border-bottom:1px solid var(--border);}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.section-text{max-width:720px;margin:auto;line-height:2;color:#555;margin-bottom:2rem;}
+.open-call-image{max-width:700px;margin:3rem auto 0;border:1px solid var(--border);overflow:hidden;}
+.open-call-image img{width:100%;height:100%;object-fit:cover;}
+
+.featured-artist{padding:6rem 2rem;max-width:1300px;margin:auto;}
+.artist-scroll{display:flex;gap:2rem;overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory;}
+.artist-card{min-width:340px;max-width:340px;scroll-snap-align:start;flex-shrink:0;}
+.artist-image img{width:100%;height:420px;object-fit:cover;}
+.artist-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.artist-name{font-family:'Playfair Display',serif;font-size:2.5rem;line-height:.95;margin-bottom:.7rem;}
+.artist-name em{color:var(--pink);font-style:italic;}
+.artist-meta{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:1.5rem;}
+.artist-desc{line-height:1.9;color:#555;margin-bottom:2rem;}
+.artist-btn{display:inline-block;background:var(--black);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
+.artist-btn:hover{background:var(--pink);}
+
+.follow-section{padding:5rem 2rem;background:#111;text-align:center;color:white;}
+.follow-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);margin-bottom:1rem;}
+.follow-title em{color:var(--pink);font-style:italic;}
+.follow-text{max-width:700px;margin:auto;line-height:2;color:#d0d0d0;margin-bottom:2rem;}
+.follow-btn{display:inline-block;background:var(--pink);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
+
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
 
 @media(max-width:900px){
-
-.nav-links,
-.nav-btn{
-display:none;
+.nav-links,.nav-btn{display:none;}
+.menu-toggle{display:block;}
+nav{padding:0 1rem;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{padding:7rem 1.5rem 4rem;}
+.hero-title{font-size:3rem;line-height:1;margin-bottom:1.5rem;}
+.hero-text{font-size:.95rem;line-height:1.8;}
+.hero-buttons{flex-direction:column;align-items:center;}
+.hero-btn{width:100%;max-width:280px;text-align:center;}
+.follow-title{font-size:2.3rem;line-height:1.2;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
 }
-
-.menu-toggle{
-display:block;
-}
-
-nav{
-padding:0 1rem;
-}
-
-.logo{
-font-size:0.8rem;
-max-width:220px;
-line-height:1.1;
-}
-
-.hero{
-padding:7rem 1.5rem 4rem;
-}
-
-.hero-title{
-font-size:3rem;
-line-height:1;
-margin-bottom:1.5rem;
-}
-
-.hero-text{
-font-size:0.95rem;
-line-height:1.8;
-}
-
-.hero-buttons{
-flex-direction:column;
-align-items:center;
-}
-
-.hero-btn{
-width:100%;
-max-width:280px;
-text-align:center;
-}
-
-.follow-title{
-font-size:2.3rem;
-line-height:1.2;
-}
-
-.footer-grid{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.footer-links{
-align-items:center;
-}
-
-}
-
 </style>
 </head>
 
 <body>
 
 <nav>
-
-<a href="index.html" class="logo">
-Cosmopolitan <em>Art</em> Magazine
-</a>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
 
 <ul class="nav-links">
 <li><a href="events.html">Events</a></li>
@@ -527,31 +118,21 @@ Cosmopolitan <em>Art</em> Magazine
 <li><a href="#follow">Follow</a></li>
 </ul>
 
-<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
-Submit Work
-</a>
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Work</a>
 
-<div class="menu-toggle" onclick="toggleMenu()">
-☰
-</div>
-
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-
 <a href="events.html">Events</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 <a href="#follow" onclick="toggleMenu()">Follow</a>
 <a href="mailto:artcosmomagazine@gmail.com">Submit Work</a>
-
 </div>
 
 <section class="hero">
-
-<p class="hero-label">
-Pakistan's Contemporary Art Platform
-</p>
+<p class="hero-label">Pakistan's Contemporary Art Platform</p>
 
 <h1 class="hero-title">
 Cosmopolitan<br>
@@ -563,24 +144,13 @@ Celebrating emerging and established artists across Pakistan through exhibitions
 </p>
 
 <div class="hero-buttons">
-
-<a href="#events" class="hero-btn primary">
-Current Open Call
-</a>
-
-<a href="artist-feature.html" class="hero-btn secondary">
-Featured Artists
-</a>
-
+<a href="events.html" class="hero-btn primary">View Events</a>
+<a href="artist-feature.html" class="hero-btn secondary">Featured Artists</a>
 </div>
-
 </section>
 
-<section class="open-call" id="events">
-
-<p class="section-label">
-Open Exhibition Call
-</p>
+<section class="open-call">
+<p class="section-label">Open Exhibition Call</p>
 
 <h2 class="section-title">
 Canvas of Her <em>Journey</em>
@@ -590,28 +160,17 @@ Canvas of Her <em>Journey</em>
 A contemporary group exhibition celebrating women's stories, resilience, identity, and artistic expression through painting, sculpture, photography, textile, installation, and mixed media.
 </p>
 
-<a href="mailto:artcosmomagazine@gmail.com?subject=Canvas of Her Journey Submission" class="hero-btn primary">
-Submit Artwork
-</a>
+<a href="events.html" class="hero-btn primary">View Event</a>
 
 <div class="open-call-image">
-
 <img src="canvas-of-her-journey.jpg" alt="Canvas of Her Journey">
-
 </div>
-
 </section>
 
 <section class="featured-artist">
 
-<div style="
-text-align:center;
-margin-bottom:5rem;
-">
-
-<p class="section-label">
-Featured Artists
-</p>
+<div style="text-align:center;margin-bottom:5rem;">
+<p class="section-label">Featured Artists</p>
 
 <h2 class="section-title">
 Contemporary <em>Voices</em>
@@ -620,120 +179,59 @@ Contemporary <em>Voices</em>
 <p class="section-text">
 Discover emerging and established artists shaping contemporary South Asian visual culture through installation, miniature painting, sculpture, mixed media, and experimental storytelling.
 </p>
-
 </div>
 
-<div style="
-display:flex;
-gap:2rem;
-overflow-x:auto;
-padding-bottom:1rem;
-scroll-snap-type:x mandatory;
-">
+<div class="artist-scroll">
 
-<div style="
-min-width:340px;
-max-width:340px;
-scroll-snap-align:start;
-flex-shrink:0;
-">
-
+<div class="artist-card">
 <div class="artist-image">
-
 <img src="saba-haroon-portrait.jpg.png" alt="Saba Haroon">
-
 </div>
-
 <div style="padding-top:1.5rem;">
-
-<p class="artist-label">
-Featured Artist 01
-</p>
-
-<h2 class="artist-name">
-Saba<br>
-<em>Haroon</em>
-</h2>
-
-<p class="artist-meta">
-Origami · Mixed Media
-</p>
-
-<p class="artist-desc">
-Meditative installations inspired by memory, healing, symbolism, and transformation.
-</p>
-
-<a href="saba-haroon.html" class="artist-btn">
-Read Feature
-</a>
-
+<p class="artist-label">Featured Artist 01</p>
+<h2 class="artist-name">Saba<br><em>Haroon</em></h2>
+<p class="artist-meta">Origami · Mixed Media</p>
+<p class="artist-desc">Meditative installations inspired by memory, healing, symbolism, and transformation.</p>
+<a href="saba-haroon.html" class="artist-btn">Read Feature</a>
+</div>
 </div>
 
-</div>
-
-<div style="
-min-width:340px;
-max-width:340px;
-scroll-snap-align:start;
-flex-shrink:0;
-">
-
+<div class="artist-card">
 <div class="artist-image">
-
 <img src="ramzan-jafri-portrait.jpg" alt="Ramzan Jafri">
-
 </div>
-
 <div style="padding-top:1.5rem;">
+<p class="artist-label">Featured Artist 02</p>
+<h2 class="artist-name">Ramzan<br><em>Jafri</em></h2>
+<p class="artist-meta">Miniature · Book Art</p>
+<p class="artist-desc">Bridging Mughal miniature traditions with contemporary manuscript aesthetics.</p>
+<a href="ramzan-jafri.html" class="artist-btn">Read Feature</a>
+</div>
+</div>
 
-<p class="artist-label">
-Featured Artist 02
-</p>
-
-<h2 class="artist-name">
-Ramzan<br>
-<em>Jafri</em>
-</h2>
-
-<p class="artist-meta">
-Miniature · Book Art
-</p>
-
-<p class="artist-desc">
-Bridging Mughal miniature traditions with contemporary manuscript aesthetics.
-</p>
-
-<a href="ramzan-jafri.html" class="artist-btn">
-Read Feature
-</a>
-
+<div class="artist-card">
+<div class="artist-image">
+<img src="saqiba-suleman-portrait.jpg" alt="Saqiba Suleman">
+</div>
+<div style="padding-top:1.5rem;">
+<p class="artist-label">Featured Artist 03</p>
+<h2 class="artist-name">Saqiba<br><em>Suleman</em></h2>
+<p class="artist-meta">Figurative · Floral Painting</p>
+<p class="artist-desc">Exploring magical realism through human figures, floral patterns, sensory memory, and visual pleasure.</p>
+<a href="saqiba-suleman.html" class="artist-btn">Read Feature</a>
+</div>
 </div>
 
 </div>
 
-</div>
-
-<div style="
-text-align:center;
-margin-top:4rem;
-">
-
-<a
-href="artist-feature.html"
-class="artist-btn"
->
-Click to View More Artists
-</a>
-
+<div style="text-align:center;margin-top:4rem;">
+<a href="artist-feature.html" class="artist-btn">Click to View More Artists</a>
 </div>
 
 </section>
 
 <section class="follow-section" id="follow">
-
-<p class="section-label">
-Follow Our Journey
-</p>
+<p class="section-label">Follow Our Journey</p>
 
 <h2 class="follow-title">
 Join Our <em>Creative</em> Community
@@ -743,65 +241,37 @@ Join Our <em>Creative</em> Community
 Stay connected with upcoming exhibitions, featured artists, editorial stories, open calls, and behind-the-scenes moments from Pakistan's evolving contemporary art landscape.
 </p>
 
-<a
-href="https://instagram.com/cosmopolitanartmagazine.pk"
-target="_blank"
-class="follow-btn"
->
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank" class="follow-btn">
 Follow on Instagram
 </a>
-
 </section>
 
 <footer>
-
 <div class="footer-grid">
 
 <div>
-
-<div class="footer-logo">
-Cosmopolitan <em>Art</em> Magazine
-</div>
-
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
 <p class="footer-text">
 Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, exhibitions, editorial storytelling, and creative culture across South Asia.
 </p>
-
 </div>
 
 <div>
-
-<div class="footer-heading">
-Quick Links
-</div>
-
+<div class="footer-heading">Quick Links</div>
 <div class="footer-links">
 <a href="events.html">Events</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 <a href="#follow">Follow Us</a>
 </div>
-
 </div>
 
 <div>
-
-<div class="footer-heading">
-Contact
-</div>
-
+<div class="footer-heading">Contact</div>
 <div class="footer-links">
-
-<a href="mailto:artcosmomagazine@gmail.com">
-artcosmomagazine@gmail.com
-</a>
-
-<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
-@cosmopolitanartmagazine.pk
-</a>
-
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
 </div>
-
 </div>
 
 </div>
@@ -809,15 +279,12 @@ artcosmomagazine@gmail.com
 <div class="footer-bottom">
 © 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
 </div>
-
 </footer>
 
 <script>
-
 function toggleMenu(){
 document.getElementById('mobileMenu').classList.toggle('active');
 }
-
 </script>
 
 </body>
