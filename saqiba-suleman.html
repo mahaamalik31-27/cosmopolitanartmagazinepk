@@ -1,1 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
+crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-QV0REXZN5D');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Saqiba Suleman — Featured Artist</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--white:#fff;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;--pink-light:#fdf0f5;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+.nav-btn:hover{background:var(--pink);}
+
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:90vh;margin-top:60px;}
+.hero-image{position:relative;background:#f4f4f4;overflow:hidden;}
+.hero-image img{width:100%;height:100%;object-fit:cover;}
+.issue-badge{position:absolute;top:1.5rem;left:1.5rem;background:var(--pink);color:white;padding:.3rem .8rem;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:5rem;border-left:1px solid var(--border);}
+.hero-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,5rem);line-height:.95;margin-bottom:1rem;}
+.hero-title em{color:var(--pink);font-style:italic;}
+.hero-meta{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:2rem;}
+.hero-text{line-height:1.9;color:#555;margin-bottom:2rem;max-width:540px;}
+.hero-stats{display:flex;gap:2rem;margin-bottom:2rem;}
+.stat-number{font-family:'Playfair Display',serif;font-size:2rem;font-weight:900;}
+.stat-label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);}
+
+.section{max-width:1100px;margin:auto;padding:5rem 2rem;border-bottom:1px solid var(--border);}
+.section-title{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:2rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.bio-text{line-height:2;color:#444;margin-bottom:1.5rem;}
+.quote{background:var(--pink-light);border-left:4px solid var(--pink);padding:2rem;margin:3rem 0;}
+.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.3rem;line-height:1.7;margin-bottom:.7rem;}
+.quote cite{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gray);}
+
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;}
+.gallery-item{position:relative;overflow:hidden;cursor:pointer;background:#f5f5f5;}
+.gallery-item img{width:100%;height:520px;object-fit:cover;transition:.5s;}
+.gallery-item:hover img{transform:scale(1.04);}
+.gallery-caption{position:absolute;bottom:0;left:0;right:0;padding:2rem 1rem 1rem;background:linear-gradient(transparent,rgba(0,0,0,.8));color:white;opacity:0;transition:.3s;}
+.gallery-item:hover .gallery-caption{opacity:1;}
+.artwork-title{font-family:'Playfair Display',serif;font-style:italic;font-size:1rem;}
+.artwork-meta{font-size:.68rem;margin-top:.3rem;letter-spacing:.06em;color:rgba(255,255,255,.75);}
+
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;justify-content:center;align-items:center;}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:90vw;max-height:90vh;object-fit:contain;}
+.lightbox-close{position:absolute;top:1rem;right:1rem;background:none;border:none;color:white;font-size:2rem;cursor:pointer;}
+
+.exhibitions-list{list-style:none;margin-top:2rem;}
+.exhibitions-list li{display:flex;justify-content:space-between;padding:1rem 0;border-bottom:1px solid #f0f0f0;gap:1rem;flex-wrap:wrap;}
+.ex-title{font-weight:500;}
+.ex-year{color:var(--pink);font-size:.8rem;font-weight:600;}
+
+.more-section{padding:5rem 2rem;text-align:center;background:var(--light);}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gray);margin-bottom:1rem;}
+.more-section h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3rem);margin-bottom:1.5rem;}
+.more-btn{display:inline-block;background:var(--black);color:white;padding:.9rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:.5rem;border:none;cursor:pointer;}
+.more-btn:hover{background:var(--pink);}
+.more-btn.outline{background:none;color:var(--black);border:1px solid var(--black);}
+.more-btn.outline:hover{background:var(--pink);color:white;border-color:var(--pink);}
+
+#featurePopup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:99999;justify-content:center;align-items:center;padding:2rem;}
+.popup-box{background:white;max-width:620px;width:100%;padding:3rem;position:relative;text-align:center;}
+.popup-close{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:2rem;cursor:pointer;}
+
+footer{padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:.5rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-note{font-size:.72rem;color:var(--gray);}
+
+@media(max-width:900px){
+.nav-links,.nav-btn{display:none;}
+nav{padding:0 1rem;}
+.logo{font-size:.82rem;}
+.hero{grid-template-columns:1fr;}
+.hero-content{padding:2rem 1.5rem 4rem;border-left:none;border-top:1px solid var(--border);}
+.hero-title{font-size:3rem;line-height:1;}
+.hero-text{font-size:.95rem;line-height:1.8;}
+.hero-stats{flex-wrap:wrap;gap:1.5rem;}
+.gallery-grid{grid-template-columns:1fr;}
+.gallery-item img{height:420px;}
+.section{padding:4rem 1.5rem;}
+.more-section{padding:4rem 1.5rem;}
+footer{padding:3rem 1.5rem;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="issue-01.html">Issue 01</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Get Featured</a>
+</nav>
+
+<section class="hero">
+
+<div class="hero-image">
+<img src="saqiba-suleman-portrait.jpg" alt="Saqiba Suleman">
+<div class="issue-badge">Featured Artist 03</div>
+</div>
+
+<div class="hero-content">
+
+<p class="hero-label">Featured Artist</p>
+
+<h1 class="hero-title">
+Saqiba<br>
+<em>Suleman</em>
+</h1>
+
+<p class="hero-meta">
+Figurative Painting · Floral Symbolism · Magical Realism
+</p>
+
+<p class="hero-text">
+Saqiba Suleman is a contemporary Pakistani artist whose practice explores the delicate balance between the human figure and richly adorned floral backgrounds. Working primarily in oil and acrylic on canvas, her visual language transforms everyday imagery into poetic spaces of memory, beauty, and magical realism.
+</p>
+
+<div class="hero-stats">
+
+<div>
+<div class="stat-number">3</div>
+<div class="stat-label">Solo Shows</div>
+</div>
+
+<div>
+<div class="stat-number">2005</div>
+<div class="stat-label">Gold Medal</div>
+</div>
+
+<div>
+<div class="stat-number">3+</div>
+<div class="stat-label">Countries</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+About <em>Saqiba</em>
+</h2>
+
+<p class="bio-text">
+Saqiba Suleman was born in 1984 and raised in Hasilpur, Punjab. She completed her Master's Degree in Fine Arts from the College of Art & Design, Punjab University in 2005 and graduated with a Gold Medal.
+</p>
+
+<p class="bio-text">
+Over the years, she has presented three solo exhibitions and participated in numerous group exhibitions across Pakistan, Dubai, and London. Her work is mostly created in oil and acrylic on canvas, with a signature practice rooted in figurative poses and strong floral visual effects.
+</p>
+
+<div class="quote">
+
+<p>
+“When a delicate balance between the human figure and adorned backgrounds is achieved, ordinary imagery transforms into magical realism.”
+</p>
+
+<cite>
+— Saqiba Suleman
+</cite>
+
+</div>
+
+<p class="bio-text">
+Her paintings explore the pleasure of seeing, sensory awareness, and the relationship between painted bodies, floral environments, patterns, and emotional memory.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Artist <em>Statement</em>
+</h2>
+
+<p class="bio-text">
+My influences come from my sensory instincts — primarily touch and sight. Through these experiences, I have developed a fascination with patterns, textures, and floral backgrounds.
+</p>
+
+<p class="bio-text">
+For me, painting is about the pleasure of seeing and becoming aware of the world around me while discovering an alchemy between paint, subject, and moment.
+</p>
+
+<p class="bio-text">
+My work focuses on the interesting juxtaposition of figures and floral patterns, creating visual spaces where human presence, nature, ornamentation, and imagination coexist.
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Selected <em>Works</em>
+</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-item" onclick="openLightbox('1000023879.jpg')">
+<img src="1000023879.jpg" alt="Saqiba Suleman Artwork">
+<div class="gallery-caption">
+<div class="artwork-title">Floral Crane</div>
+<div class="artwork-meta">Oil & Acrylic on Canvas</div>
+</div>
+</div>
+
+<div class="gallery-item" onclick="openLightbox('1000023880.jpg')">
+<img src="1000023880.jpg" alt="Saqiba Suleman Artwork">
+<div class="gallery-caption">
+<div class="artwork-title">Figure with Birds</div>
+<div class="artwork-meta">Figurative Painting</div>
+</div>
+</div>
+
+<div class="gallery-item" onclick="openLightbox('1000023881.jpg')">
+<img src="1000023881.jpg" alt="Saqiba Suleman Artwork">
+<div class="gallery-caption">
+<div class="artwork-title">Floral Presence</div>
+<div class="artwork-meta">Oil & Acrylic on Canvas</div>
+</div>
+</div>
+
+<div class="gallery-item" onclick="openLightbox('1000030226.jpg')">
+<img src="1000030226.jpg" alt="Saqiba Suleman Artwork">
+<div class="gallery-caption">
+<div class="artwork-title">Patterned Memory</div>
+<div class="artwork-meta">Contemporary Figurative Work</div>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+Exhibition <em>History</em>
+</h2>
+
+<ul class="exhibitions-list">
+
+<li>
+<span class="ex-title">Three Solo Exhibitions</span>
+<span class="ex-year">Pakistan</span>
+</li>
+
+<li>
+<span class="ex-title">Numerous Group Exhibitions</span>
+<span class="ex-year">Pakistan</span>
+</li>
+
+<li>
+<span class="ex-title">International Group Exhibitions</span>
+<span class="ex-year">Dubai</span>
+</li>
+
+<li>
+<span class="ex-title">International Group Exhibitions</span>
+<span class="ex-year">London</span>
+</li>
+
+</ul>
+
+</section>
+
+<section class="more-section">
+
+<p class="section-label">
+Open for Features
+</p>
+
+<h2>
+Want to Get <em style="color:var(--pink);font-style:italic;">Featured?</em>
+</h2>
+
+<p style="max-width:650px;margin:0 auto 2rem;color:var(--gray);line-height:1.9;">
+We are always looking for emerging and established artists, photographers, sculptors, painters, and visual storytellers redefining contemporary South Asian art.
+</p>
+
+<button onclick="openFeaturePopup()" class="more-btn">
+Apply to Get Featured
+</button>
+
+<a href="artist-feature.html" class="more-btn outline">
+View More Artists
+</a>
+
+</section>
+
+<div id="featurePopup">
+
+<div class="popup-box">
+
+<button class="popup-close" onclick="closeFeaturePopup()">×</button>
+
+<p class="section-label">Artist Submission</p>
+
+<h2 style="font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1rem;">
+Get Featured
+</h2>
+
+<p style="color:var(--gray);line-height:1.9;margin-bottom:2rem;">
+Share your portfolio, artist statement, biography, exhibition history, and social media links with us.
+</p>
+
+<a href="mailto:artcosmomagazine@gmail.com?subject=Artist Feature Submission" class="more-btn">
+Email Submission
+</a>
+
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+
+<button class="lightbox-close" onclick="closeLightbox()">✕</button>
+
+<img id="lightboxImg">
+
+</div>
+
+<footer>
+
+<div class="footer-logo">
+<a href="index.html" style="color:#111;">
+Cosmopolitan <em>Art</em> Magazine Pakistan
+</a>
+</div>
+
+<div class="footer-note">
+Issue 01 · Featured Artist · 2026
+</div>
+
+</footer>
+
+<script>
+function openLightbox(src){
+document.getElementById('lightbox').classList.add('open');
+document.getElementById('lightboxImg').src=src;
+document.body.style.overflow='hidden';
+}
+
+function closeLightbox(){
+document.getElementById('lightbox').classList.remove('open');
+document.body.style.overflow='';
+}
+
+function openFeaturePopup(){
+document.getElementById('featurePopup').style.display='flex';
+}
+
+function closeFeaturePopup(){
+document.getElementById('featurePopup').style.display='none';
+}
+</script>
+
+</body>
+</html>
