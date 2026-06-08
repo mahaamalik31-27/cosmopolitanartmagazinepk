@@ -15,76 +15,105 @@ gtag('config', 'G-QV0REXZN5D');
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Gadrung — Food & Culture Feature</title>
+<title>Events & Culture — Cosmopolitan Art Magazine Pakistan</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
 :root{--black:#111;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
-body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black);overflow-x:hidden;}
 img{max-width:100%;display:block;}
 a{text-decoration:none;}
 
 nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
-.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);z-index:1002;}
 .logo em{color:var(--pink);font-style:italic;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
-.nav-links a:hover{color:var(--pink);}
+.nav-links a:hover,.nav-links .active{color:var(--pink);}
 .nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
 .nav-btn:hover{background:var(--pink);}
 
-.hero{margin-top:60px;display:grid;grid-template-columns:1fr 1fr;min-height:90vh;border-bottom:1px solid var(--border);}
-.hero-img img{width:100%;height:100%;object-fit:cover;}
-.hero-content{display:flex;flex-direction:column;justify-content:center;padding:5rem;}
-.label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.title{font-family:'Playfair Display',serif;font-size:clamp(4rem,8vw,7rem);line-height:.9;margin-bottom:1.5rem;}
-.title em{color:var(--pink);font-style:italic;}
-.meta{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:2rem;}
-.text{line-height:2;color:#555;margin-bottom:1.5rem;}
-.btn{display:inline-block;background:var(--black);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;width:max-content;}
-.btn:hover{background:var(--pink);}
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
 
-.section{max-width:1100px;margin:auto;padding:5rem 2rem;border-bottom:1px solid var(--border);}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);line-height:1;margin-bottom:2rem;}
+.hero{padding:10rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border);}
+.hero-label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,9vw,7rem);line-height:.9;margin-bottom:2rem;}
+.hero-title em{color:var(--pink);font-style:italic;}
+.hero-text{max-width:780px;margin:auto;line-height:2;color:#555;font-size:1.05rem;}
+
+.category-nav{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:2rem;border-bottom:1px solid var(--border);background:#fafafa;}
+.category-nav a{border:1px solid var(--border);padding:.8rem 1.2rem;color:var(--black);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:white;}
+.category-nav a:hover,.category-nav .active{background:var(--black);color:white;border-color:var(--black);}
+
+.featured-story{display:grid;grid-template-columns:.85fr 1.15fr;border-bottom:1px solid var(--border);min-height:650px;}
+.featured-image{display:flex;align-items:center;justify-content:center;background:#fafafa;padding:3rem;}
+.featured-image img{width:100%;max-width:520px;height:620px;object-fit:cover;object-position:center;border:1px solid var(--border);}
+.featured-content{display:flex;flex-direction:column;justify-content:center;padding:5rem;}
+.category{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.featured-content h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);line-height:.95;margin-bottom:2rem;}
+.featured-content h2 em{color:var(--pink);font-style:italic;}
+.featured-content p{line-height:2;color:#555;margin-bottom:2rem;}
+.read-more{display:inline-block;background:var(--black);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;width:max-content;}
+.read-more:hover{background:var(--pink);}
+
+.section{padding:6rem 2rem;border-bottom:1px solid var(--border);}
+.section-inner{max-width:1300px;margin:auto;}
+.section-head{text-align:center;margin-bottom:4rem;}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
 .section-title em{color:var(--pink);font-style:italic;}
-.quote{background:#fdf0f5;border-left:4px solid var(--pink);padding:2rem;margin:3rem 0;}
-.quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.5rem;line-height:1.7;}
+.section-text{max-width:720px;margin:auto;line-height:2;color:#555;}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;}
-.split img{width:100%;height:650px;object-fit:cover;}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.feature-card{background:white;border:1px solid var(--border);overflow:hidden;color:var(--black);transition:.3s;}
+.feature-card:hover{transform:translateY(-6px);}
+.feature-card img{width:100%;height:260px;object-fit:cover;}
+.feature-info{padding:2rem;}
+.feature-info span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:1rem;}
+.feature-info h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.05;margin-bottom:1rem;}
+.feature-info p{line-height:1.8;color:#666;margin-bottom:1.5rem;}
+.card-link{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);font-weight:700;}
 
-.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem;}
-.gallery img{width:100%;height:360px;object-fit:cover;}
+.submit-section{padding:6rem 2rem;text-align:center;background:#111;color:white;}
+.submit-section .section-title{color:white;}
+.submit-section .section-text{color:#d0d0d0;}
+.submit-section .read-more{background:var(--pink);margin-top:2rem;}
 
-.info-list{list-style:none;margin-top:2rem;}
-.info-list li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-bottom:1px solid #eee;flex-wrap:wrap;}
-.info-list strong{font-weight:700;}
-.info-list span{color:var(--pink);font-size:.85rem;font-weight:700;}
-
-.cta{padding:5rem 2rem;text-align:center;background:#111;color:white;}
-.cta .section-title{color:white;}
-.cta .text{max-width:700px;margin:0 auto 2rem;color:#d0d0d0;}
-.cta .btn{background:var(--pink);}
-
-footer{padding:3rem 2rem;text-align:center;background:#fafafa;border-top:1px solid var(--border);}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:.5rem;}
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
 .footer-logo em{color:var(--pink);font-style:italic;}
-.footer-note{font-size:.75rem;color:#777;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
 
 @media(max-width:900px){
 .nav-links,.nav-btn{display:none;}
+.menu-toggle{display:block;}
 nav{padding:0 1rem;}
-.logo{font-size:.82rem;}
-.hero{grid-template-columns:1fr;}
-.hero-content{padding:3rem 1.5rem;}
-.title{font-size:3.4rem;}
-.split{grid-template-columns:1fr;gap:2rem;}
-.split img{height:420px;}
-.gallery{grid-template-columns:1fr;}
-.gallery img{height:360px;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{padding:8rem 1.5rem 4rem;}
+.hero-title{font-size:3rem;line-height:1;}
+.hero-text{font-size:.95rem;line-height:1.8;}
+.category-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:1rem;}
+.category-nav a{white-space:nowrap;}
+.featured-story{grid-template-columns:1fr;min-height:auto;}
+.featured-image{padding:2rem 1.5rem;}
+.featured-image img{max-width:100%;height:430px;}
+.featured-content{padding:3rem 1.5rem;}
+.featured-content h2{font-size:3rem;}
 .section{padding:4rem 1.5rem;}
+.feature-grid{grid-template-columns:1fr;}
+.feature-card img{height:260px;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
 }
 </style>
 </head>
@@ -95,222 +124,196 @@ nav{padding:0 1rem;}
 <a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
 
 <ul class="nav-links">
-<li><a href="events.html">Events & Culture</a></li>
+<li><a href="events.html" class="active">Events & Culture</a></li>
 <li><a href="artist-feature.html">Featured Artists</a></li>
 <li><a href="issue-01.html">Issue 01</a></li>
 <li><a href="index.html#follow">Follow</a></li>
 </ul>
 
 <a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+<a href="mailto:artcosmomagazine@gmail.com">Submit Feature</a>
+</div>
 
 <section class="hero">
 
-<div class="hero-img">
-<img src="1000779668.jpg" alt="Gadrung Food">
-</div>
+<p class="hero-label">Events · Art Exhibitions · Reviews · Food Culture</p>
 
-<div class="hero-content">
-<p class="label">Food & Culture Feature</p>
-
-<h1 class="title">
-Gadrung
+<h1 class="hero-title">
+Events &<br>
+<em>Culture</em>
 </h1>
 
-<p class="meta">
-Hyderabad Deccani Cuisine · Art · Heritage
+<p class="hero-text">
+A curated space for exhibitions, artist talks, food culture, reviews, launches, pop-ups, creative spaces, and cultural stories across Pakistan.
 </p>
-
-<p class="text">
-Gadrung is a Hyderabad Deccani restaurant located in DHA Lahore, founded in February 2025 by Shireen Bano Rizvi — a visual artist, miniature painter, and chef.
-</p>
-
-<p class="text">
-Rooted in authentic family recipes, pure ingredients, and traditional cooking methods, Gadrung brings the rich culinary memory of Hyderabad Deccan to Lahore.
-</p>
-
-<a href="#story" class="btn">Read Story</a>
-</div>
 
 </section>
 
-<section class="section" id="story">
+<div class="category-nav">
+<a href="#" class="active">All</a>
+<a href="#art-exhibitions">Art Exhibitions</a>
+<a href="#food-culture">Food & Culture</a>
+<a href="#reviews">Reviews</a>
+<a href="#events">Events</a>
+</div>
 
-<h2 class="section-title">
-A Taste of <em>Hyderabad Deccan</em>
+<section class="featured-story" id="food-culture">
+
+<div class="featured-image">
+<img src="shireen.jpg" alt="Shireen Bano Rizvi">
+</div>
+
+<div class="featured-content">
+
+<span class="category">Food & Culture Feature</span>
+
+<h2>
+Gadrung:<br>
+<em>Hyderabad Deccani Cuisine</em>
 </h2>
 
-<p class="text">
-Located in DHA Lahore, Gadrung was created with the vision of offering authentic and healthy Hyderabadi cuisine. Every dish is cooked strictly in pure mustard oil and desi ghee, with organic wheat flour specially sourced from real wheat.
-</p>
-
-<p class="text">
-All spices are true to their recipes and personally sourced by Shireen from Lahore’s inner city, with no quick or ready-made pastes used. Each recipe is followed with careful detail to preserve its traditional taste, aroma, and character.
-</p>
-
-<div class="quote">
 <p>
-“Food, like art, preserves memory.”
-</p>
-</div>
-
-<p class="text">
-The use of pure ingredients also makes Gadrung’s food lighter, easier to digest, and, in Shireen’s words, “healthier than home.”
+Founded by artist and chef Shireen Bano Rizvi, Gadrung brings the authentic flavours of Hyderabad Deccan to Lahore through traditional recipes, pure ingredients, and a deep connection between food, memory, and art.
 </p>
 
-</section>
-
-<section class="section">
-
-<div class="split">
-
-<img src="shireen.png" alt="Shireen Bano Rizvi">
-
-<div>
-<p class="label">Meet the Founder</p>
-
-<h2 class="section-title">
-Shireen Bano <em>Rizvi</em>
-</h2>
-
-<p class="text">
-Shireen Bano Rizvi is a visual artist, miniature painter, and chef. Her family hailed from the historic city of Hyderabad Deccan, where generations before her perfected recipes passed from mother to daughter and grandmother to grandchild.
-</p>
-
-<p class="text">
-Growing up, she listened to stories while the aroma of baghara baingan, khatti daal, and khubani ka meetha filled the house. To her, those dishes were as much a work of art as any painting.
-</p>
-
-</div>
+<a href="gadrung.html" class="read-more">
+Read Feature
+</a>
 
 </div>
 
 </section>
 
 <section class="section">
+<div class="section-inner">
+
+<div class="section-head">
+<p class="section-label">Latest Features</p>
 
 <h2 class="section-title">
-The Story Behind <em>the Name</em>
+Explore by <em>Category</em>
 </h2>
 
-<p class="text">
-Though she loved academia, Shireen often felt the flavors of her heritage deserved a wider audience. One evening, while preparing a family feast for friends, an idea took root: if paintings could preserve memory on canvas, perhaps food could preserve memory on a plate.
-</p>
-
-<p class="text">
-A coloring technique in miniature painting is known as Gadrung, and the word also refers to opaque foods like meat. A friend, Shajia, suggested that the name could paint both canvases at the same time — visual art and culinary art.
-</p>
-
-<p class="text">
-A year later, Shireen opened a restaurant dedicated to the cuisine of Hyderabad Deccan. The walls displayed her own paintings, and the kitchen followed treasured family recipes with the same care an artist gives to a masterpiece.
-</p>
-
-<div class="quote">
-<p>
-“She had never truly changed careers — she had simply found a larger canvas.”
+<p class="section-text">
+Browse our growing archive of cultural features, exhibition updates, reviews, food stories, and creative events.
 </p>
 </div>
 
-</section>
+<div class="feature-grid">
 
-<section class="section">
-
-<h2 class="section-title">
-A Feast of <em>Tradition</em>
-</h2>
-
-<p class="text">
-From aromatic rice and slow-cooked curries to rich gravies and traditional desserts, Gadrung celebrates the detail, patience, and generosity of Hyderabad Deccan cuisine.
-</p>
-
-<div class="gallery">
-
-<img src="1000779653.jpg" alt="Gadrung Food">
-<img src="1000779650.jpg" alt="Gadrung Food">
-<img src="1000779668.jpg" alt="Gadrung Food">
-<img src="1000779662.jpg" alt="Gadrung Food">
-<img src="1000779653%20%281%29.jpg" alt="Gadrung Food">
-<img src="1000779647.jpg" alt="Gadrung Food">
-<img src="1000779653%20%282%29.jpg" alt="Gadrung Food">
-<img src="1000779659.jpg" alt="Gadrung Food">
-<img src="1000779483.jpg" alt="Gadrung Dining">
-
-</div>
-
-</section>
-
-<section class="section">
-
-<h2 class="section-title">
-Current Focus & <em>Upcoming Work</em>
-</h2>
-
-<ul class="info-list">
-<li>
-<strong>Location</strong>
-<span>DHA Lahore</span>
-</li>
-
-<li>
-<strong>Founder</strong>
-<span>Shireen Bano Rizvi</span>
-</li>
-
-<li>
-<strong>Cuisine</strong>
-<span>Hyderabad Deccani</span>
-</li>
-
-<li>
-<strong>Category</strong>
+<a href="gadrung.html" class="feature-card">
+<img src="shireen.jpg" alt="Gadrung">
+<div class="feature-info">
 <span>Food & Culture</span>
-</li>
+<h3>Gadrung – Hyderabad Deccani Cuisine in Lahore</h3>
+<p>A culinary journey through heritage, miniature art, pure ingredients, and authentic Deccan flavours.</p>
+<div class="card-link">Read Feature →</div>
+</div>
+</a>
 
-<li>
-<strong>Upcoming</strong>
-<span>Lahore exhibition date to be announced</span>
-</li>
-</ul>
+<a href="canvas-of-her-journey.html" class="feature-card" id="art-exhibitions">
+<img src="canvas-of-her-journey.jpg" alt="Canvas of Her Journey">
+<div class="feature-info">
+<span>Art Exhibition</span>
+<h3>Canvas of Her Journey</h3>
+<p>A contemporary group exhibition celebrating women, identity, memory, and artistic storytelling.</p>
+<div class="card-link">View Exhibition →</div>
+</div>
+</a>
 
-<p class="text" style="margin-top:2rem;">
-Gadrung has hosted several pop-ups across Lahore, but Shireen now feels it is time to focus fully on her own space and continue improving Gadrung’s internal systems, service, and dining experience.
-</p>
+<a href="#" class="feature-card" id="reviews">
+<img src="review.jpg" alt="Reviews">
+<div class="feature-info">
+<span>Reviews</span>
+<h3>Reviews Coming Soon</h3>
+<p>Restaurant reviews, exhibition reviews, creative spaces, galleries, cafés, and cultural experiences.</p>
+<div class="card-link">Coming Soon →</div>
+</div>
+</a>
 
-<p class="text">
-Shireen recently exhibited her artwork in Karachi and continues to participate in exhibitions. Another exhibition is expected in Lahore, with details to be announced soon.
-</p>
+<a href="#" class="feature-card" id="events">
+<img src="event.jpg" alt="Events">
+<div class="feature-info">
+<span>Events</span>
+<h3>Events Coming Soon</h3>
+<p>Pop-ups, launches, gatherings, artist talks, cultural programs, and city-based creative updates.</p>
+<div class="card-link">Coming Soon →</div>
+</div>
+</a>
 
+</div>
+
+</div>
 </section>
 
-<section class="cta">
+<section class="submit-section">
 
-<p class="label">Culture Feature</p>
+<p class="section-label">Submit a Feature</p>
 
 <h2 class="section-title">
-Where Food Becomes <em>Memory</em>
+Have an Event or <em>Culture Story?</em>
 </h2>
 
-<p class="text">
-Gadrung stands as a rare example of how artistic practice can move beyond the gallery — preserving heritage through taste, storytelling, and tradition.
+<p class="section-text">
+Send us exhibitions, restaurant stories, reviews, pop-ups, launches, creative spaces, artist talks, and cultural events for possible publication.
 </p>
 
-<a href="events.html" class="btn">Back to More Events</a>
+<a href="mailto:artcosmomagazine@gmail.com?subject=Events and Culture Feature Submission" class="read-more">
+Email Submission
+</a>
 
 </section>
 
 <footer>
 
-<div class="footer-logo">
-<a href="index.html" style="color:#111;">
-Cosmopolitan <em>Art</em> Magazine Pakistan
-</a>
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, food stories, exhibitions, creative spaces, and visual storytelling.
+</p>
 </div>
 
-<div class="footer-note">
-Food & Culture Feature · Gadrung · 2026
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
 </div>
 
 </footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
