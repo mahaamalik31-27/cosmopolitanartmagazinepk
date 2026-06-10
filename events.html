@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
+crossorigin="anonymous"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
+
 <script>
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -20,106 +22,453 @@ gtag('config', 'G-QV0REXZN5D');
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--black:#111;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
-body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black);overflow-x:hidden;}
-img{max-width:100%;display:block;}
-a{text-decoration:none;}
 
-nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
-.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);z-index:1002;}
-.logo em{color:var(--pink);font-style:italic;}
-.nav-links{display:flex;gap:2rem;list-style:none;}
-.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
-.nav-links a:hover,.nav-links .active{color:var(--pink);}
-.nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
-.nav-btn:hover{background:var(--pink);}
+*,*::before,*::after{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
-.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
-.mobile-menu.active{right:0;}
-.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
+:root{
+--black:#111111;
+--white:#ffffff;
+--pink:#d4578a;
+--gray:#777777;
+--light:#fafafa;
+--border:#e8e8e8;
+}
 
-.hero{padding:10rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border);}
-.hero-label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,9vw,7rem);line-height:.9;margin-bottom:2rem;}
-.hero-title em{color:var(--pink);font-style:italic;}
-.hero-text{max-width:780px;margin:auto;line-height:2;color:#555;font-size:1.05rem;}
+body{
+font-family:'DM Sans',sans-serif;
+background:white;
+color:var(--black);
+overflow-x:hidden;
+}
 
-.category-nav{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;padding:2rem;border-bottom:1px solid var(--border);background:#fafafa;}
-.category-nav a{border:1px solid var(--border);padding:.8rem 1.2rem;color:var(--black);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;background:white;}
-.category-nav a:hover,.category-nav .active{background:var(--black);color:white;border-color:var(--black);}
+img{
+max-width:100%;
+display:block;
+}
 
-.featured-story{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--border);min-height:760px;}
-.featured-image img{width:100%;height:100%;object-fit:cover;}
-.featured-content{display:flex;flex-direction:column;justify-content:center;padding:5rem;}
-.category{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.featured-content h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5rem);line-height:.95;margin-bottom:2rem;}
-.featured-content h2 em{color:var(--pink);font-style:italic;}
-.featured-content p{line-height:2;color:#555;margin-bottom:2rem;}
-.read-more{display:inline-block;background:var(--black);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;width:max-content;}
-.read-more:hover{background:var(--pink);}
+a{
+text-decoration:none;
+}
 
-.section{padding:6rem 2rem;border-bottom:1px solid var(--border);}
-.section-inner{max-width:1300px;margin:auto;}
-.section-head{text-align:center;margin-bottom:4rem;}
-.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
-.section-title em{color:var(--pink);font-style:italic;}
-.section-text{max-width:720px;margin:auto;line-height:2;color:#555;}
+/* NAV */
 
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
-.feature-card{background:white;border:1px solid var(--border);overflow:hidden;color:var(--black);transition:.3s;}
-.feature-card:hover{transform:translateY(-6px);}
-.feature-card img{width:100%;height:330px;object-fit:cover;}
-.feature-info{padding:2rem;}
-.feature-info span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:1rem;}
-.feature-info h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.05;margin-bottom:1rem;}
-.feature-info p{line-height:1.8;color:#666;margin-bottom:1.5rem;}
-.card-link{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);font-weight:700;}
+nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+height:60px;
+background:white;
+border-bottom:1px solid var(--border);
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 2rem;
+z-index:1000;
+}
 
-.submit-section{padding:6rem 2rem;text-align:center;background:#111;color:white;}
-.submit-section .section-title{color:white;}
-.submit-section .section-text{color:#d0d0d0;}
-.submit-section .read-more{background:var(--pink);margin-top:2rem;}
+.logo{
+font-family:'Playfair Display',serif;
+font-size:0.9rem;
+font-weight:700;
+color:var(--black);
+z-index:1002;
+}
 
-footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
-.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
-.footer-logo em{color:var(--pink);font-style:italic;}
-.footer-text{line-height:1.9;color:#666;}
-.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.footer-links{display:flex;flex-direction:column;gap:.8rem;}
-.footer-links a{color:var(--black);}
-.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+.logo em{
+color:var(--pink);
+font-style:italic;
+}
+
+.nav-links{
+display:flex;
+gap:2rem;
+list-style:none;
+}
+
+.nav-links a{
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--black);
+}
+
+.nav-links a:hover,
+.nav-links .active{
+color:var(--pink);
+}
+
+.nav-btn{
+background:var(--black);
+color:white;
+padding:0.6rem 1.2rem;
+font-size:0.68rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+}
+
+.nav-btn:hover{
+background:var(--pink);
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+display:none;
+font-size:1.6rem;
+cursor:pointer;
+z-index:1002;
+}
+
+.mobile-menu{
+position:fixed;
+top:0;
+right:-100%;
+width:100%;
+height:100vh;
+background:white;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:2rem;
+transition:0.4s;
+z-index:1001;
+}
+
+.mobile-menu.active{
+right:0;
+}
+
+.mobile-menu a{
+font-size:1rem;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--black);
+}
+
+/* HERO */
+
+.hero{
+padding:10rem 2rem 6rem;
+text-align:center;
+border-bottom:1px solid var(--border);
+}
+
+.hero-label{
+font-size:0.7rem;
+letter-spacing:0.2em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.hero-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(4rem,9vw,7rem);
+line-height:0.9;
+margin-bottom:2rem;
+}
+
+.hero-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.hero-text{
+max-width:780px;
+margin:auto;
+line-height:2;
+color:#555;
+font-size:1.05rem;
+}
+
+/* MAIN */
+
+.section{
+padding:6rem 2rem;
+border-bottom:1px solid var(--border);
+}
+
+.section-inner{
+max-width:1300px;
+margin:auto;
+}
+
+.section-head{
+text-align:center;
+margin-bottom:4rem;
+}
+
+.section-label{
+font-size:0.68rem;
+letter-spacing:0.2em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.section-title{
+font-family:'Playfair Display',serif;
+font-size:clamp(2.5rem,6vw,5rem);
+line-height:1;
+margin-bottom:1.5rem;
+}
+
+.section-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.section-text{
+max-width:720px;
+margin:auto;
+line-height:2;
+color:#555;
+}
+
+/* FEATURE GRID */
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:2rem;
+}
+
+.feature-card{
+background:white;
+border:1px solid var(--border);
+overflow:hidden;
+display:flex;
+flex-direction:column;
+}
+
+.feature-card img{
+width:100%;
+height:430px;
+object-fit:cover;
+}
+
+.feature-content{
+padding:2.5rem;
+display:flex;
+flex-direction:column;
+flex:1;
+}
+
+.card-label{
+font-size:0.68rem;
+letter-spacing:0.18em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.card-title{
+font-family:'Playfair Display',serif;
+font-size:2.7rem;
+line-height:1;
+margin-bottom:1.2rem;
+}
+
+.card-title em{
+color:var(--pink);
+font-style:italic;
+}
+
+.card-meta{
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+color:var(--gray);
+margin-bottom:1.5rem;
+}
+
+.card-text{
+line-height:1.9;
+color:#555;
+margin-bottom:2rem;
+}
+
+.btn{
+display:inline-block;
+background:var(--black);
+color:white;
+padding:1rem 2rem;
+font-size:0.72rem;
+letter-spacing:0.12em;
+text-transform:uppercase;
+width:max-content;
+margin-top:auto;
+}
+
+.btn:hover{
+background:var(--pink);
+}
+
+/* SUBMIT */
+
+.submit-section{
+padding:6rem 2rem;
+text-align:center;
+background:#111;
+color:white;
+}
+
+.submit-section .section-text{
+color:#d0d0d0;
+}
+
+.submit-section .btn{
+background:var(--pink);
+margin-top:2rem;
+}
+
+/* FOOTER */
+
+footer{
+padding:4rem 2rem;
+background:#fafafa;
+border-top:1px solid var(--border);
+}
+
+.footer-grid{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:3rem;
+}
+
+.footer-logo{
+font-family:'Playfair Display',serif;
+font-size:1.3rem;
+margin-bottom:1rem;
+}
+
+.footer-logo em{
+color:var(--pink);
+font-style:italic;
+}
+
+.footer-text{
+line-height:1.9;
+color:#666;
+}
+
+.footer-heading{
+font-size:0.72rem;
+letter-spacing:0.14em;
+text-transform:uppercase;
+color:var(--pink);
+margin-bottom:1rem;
+}
+
+.footer-links{
+display:flex;
+flex-direction:column;
+gap:0.8rem;
+}
+
+.footer-links a{
+color:var(--black);
+}
+
+.footer-links a:hover{
+color:var(--pink);
+}
+
+.footer-bottom{
+margin-top:3rem;
+padding-top:2rem;
+border-top:1px solid var(--border);
+text-align:center;
+font-size:0.75rem;
+color:#777;
+}
+
+/* MOBILE */
 
 @media(max-width:900px){
-.nav-links,.nav-btn{display:none;}
-.menu-toggle{display:block;}
-nav{padding:0 1rem;}
-.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
-.hero{padding:8rem 1.5rem 4rem;}
-.hero-title{font-size:3rem;line-height:1;}
-.hero-text{font-size:.95rem;line-height:1.8;}
-.category-nav{justify-content:flex-start;overflow-x:auto;flex-wrap:nowrap;padding:1rem;}
-.category-nav a{white-space:nowrap;}
-.featured-story{grid-template-columns:1fr;min-height:auto;}
-.featured-image img{height:430px;}
-.featured-content{padding:3rem 1.5rem;}
-.featured-content h2{font-size:3rem;}
-.section{padding:4rem 1.5rem;}
-.feature-grid{grid-template-columns:1fr;}
-.feature-card img{height:300px;}
-.footer-grid{grid-template-columns:1fr;text-align:center;}
-.footer-links{align-items:center;}
+
+.nav-links,
+.nav-btn{
+display:none;
 }
+
+.menu-toggle{
+display:block;
+}
+
+nav{
+padding:0 1rem;
+}
+
+.logo{
+font-size:0.8rem;
+max-width:220px;
+line-height:1.1;
+}
+
+.hero{
+padding:8rem 1.5rem 4rem;
+}
+
+.hero-title{
+font-size:3rem;
+line-height:1;
+}
+
+.hero-text{
+font-size:0.95rem;
+line-height:1.8;
+}
+
+.section{
+padding:4rem 1.5rem;
+}
+
+.feature-grid{
+grid-template-columns:1fr;
+}
+
+.feature-card img{
+height:330px;
+}
+
+.feature-content{
+padding:2rem;
+}
+
+.card-title{
+font-size:2.3rem;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.footer-links{
+align-items:center;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <nav>
-<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<a href="index.html" class="logo">
+Cosmopolitan <em>Art</em> Magazine
+</a>
 
 <ul class="nav-links">
 <li><a href="events.html" class="active">Events & Culture</a></li>
@@ -128,21 +477,31 @@ nav{padding:0 1rem;}
 <li><a href="index.html#follow">Follow</a></li>
 </ul>
 
-<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">
+Submit Feature
+</a>
+
+<div class="menu-toggle" onclick="toggleMenu()">
+☰
+</div>
+
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
+
 <a href="index.html">Home</a>
 <a href="events.html">Events & Culture</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 <a href="mailto:artcosmomagazine@gmail.com">Submit Feature</a>
+
 </div>
 
 <section class="hero">
 
-<p class="hero-label">Events · Art Exhibitions · Reviews · Food Culture</p>
+<p class="hero-label">
+Events · Culture · Food · Reviews
+</p>
 
 <h1 class="hero-title">
 Events &<br>
@@ -150,137 +509,186 @@ Events &<br>
 </h1>
 
 <p class="hero-text">
-A curated space for exhibitions, artist talks, food culture, reviews, launches, pop-ups, creative spaces, and cultural stories across Pakistan.
+A curated space for exhibitions, artist talks, cultural features, restaurant stories, food reviews, pop-ups, launches, and creative experiences across Pakistan.
 </p>
 
 </section>
 
-<div class="category-nav">
-<a href="#" class="active">All</a>
-<a href="#art-exhibitions">Art Exhibitions</a>
-<a href="#food-culture">Food & Culture</a>
-<a href="#reviews">Reviews</a>
-<a href="#events">Events</a>
-</div>
+<section class="section">
 
-<section class="featured-story" id="food-culture">
+<div class="section-inner">
 
-<div class="featured-image">
-<img src="shireen.jpg" alt="Shireen Bano Rizvi">
-</div>
+<div class="section-head">
 
-<div class="featured-content">
-
-<span class="category">Food & Culture Feature</span>
-
-<h2>
-Gadrung:<br>
-<em>Hyderabad Deccani Cuisine</em>
-</h2>
-
-<p>
-Founded by artist and chef Shireen Bano Rizvi, Gadrung brings the authentic flavours of Hyderabad Deccan to Lahore through traditional recipes, pure ingredients, and a deep connection between food, memory, and art.
+<p class="section-label">
+Latest Features
 </p>
 
-<a href="gadrung.html" class="read-more">
+<h2 class="section-title">
+Stories from <em>Culture</em>
+</h2>
+
+<p class="section-text">
+Explore exhibitions, food culture, artist-led spaces, creative gatherings, pop-ups, openings and contemporary cultural features.
+</p>
+
+</div>
+
+<div class="feature-grid">
+
+<!-- GADRUNG -->
+
+<div class="feature-card">
+
+<img src="gadrung-cover.jpg" alt="Gadrung Restaurant">
+
+<div class="feature-content">
+
+<p class="card-label">
+Food & Culture
+</p>
+
+<h3 class="card-title">
+Gadrung:<br>
+<em>Hyderabad Deccani Cuisine</em>
+</h3>
+
+<p class="card-meta">
+DHA Lahore · Shireen Bano Rizvi
+</p>
+
+<p class="card-text">
+Founded by artist and chef Shireen Bano Rizvi, Gadrung brings the authentic flavours of Hyderabad Deccan to Lahore through traditional recipes, pure ingredients and a deeply personal cultural vision.
+</p>
+
+<a href="gadrung.html" class="btn">
 Read Feature
 </a>
 
 </div>
 
-</section>
-<div class="small-card">
+</div>
+
+<!-- KINNAIRD -->
+
+<div class="feature-card">
+
 <img src="WhatsApp Image 2026-06-10 at 4.26.57 AM (1).jpeg" alt="Kinnaird College Fine Arts Degree Show 2026">
 
-<div class="small-card-content">
-<p class="card-label">Exhibition · Lahore</p>
+<div class="feature-content">
 
-<h3>Kinnaird College Fine Arts Degree Show 2026</h3>
+<p class="card-label">
+Art Exhibition
+</p>
 
-<p>
+<h3 class="card-title">
+Kinnaird College<br>
+<em>Fine Arts Degree Show 2026</em>
+</h3>
+
+<p class="card-meta">
+Ejaz Art Gallery · Lahore
+</p>
+
+<p class="card-text">
 A thoughtful degree show featuring emerging women artists exploring memory, spirituality, identity, resilience and contemporary visual storytelling.
 </p>
 
 <a href="kinnaird-degree-show-2026.html" class="btn">
-View Feature
-</a>
-</div>
-</div>
-<section class="section">
-<div class="section-inner">
-
-<div class="section-head">
-<p class="section-label">Latest Features</p>
-
-<h2 class="section-title">
-Explore by <em>Category</em>
-</h2>
-
-<p class="section-text">
-Browse our growing archive of cultural features, exhibition updates, reviews, food stories, and creative events.
-</p>
-</div>
-
-<div class="feature-grid">
-
-<a href="gadrung.html" class="feature-card">
-<img src="shireen.jpg" alt="Gadrung">
-<div class="feature-info">
-<span>Food & Culture</span>
-<h3>Gadrung – Hyderabad Deccani Cuisine in Lahore</h3>
-<p>A culinary journey through heritage, miniature art, pure ingredients, and authentic Deccan flavours.</p>
-<div class="card-link">Read Feature →</div>
-</div>
+Read Feature
 </a>
 
-<a href="canvas-of-her-journey.html" class="feature-card" id="art-exhibitions">
+</div>
+
+</div>
+
+<!-- CANVAS -->
+
+<div class="feature-card">
+
 <img src="canvas-of-her-journey.jpg" alt="Canvas of Her Journey">
-<div class="feature-info">
-<span>Art Exhibition</span>
-<h3>Canvas of Her Journey</h3>
-<p>A contemporary group exhibition celebrating women, identity, memory, and artistic storytelling.</p>
-<div class="card-link">View Exhibition →</div>
-</div>
-</a>
 
-<a href="#" class="feature-card" id="reviews">
-<img src="review.jpg" alt="Reviews">
-<div class="feature-info">
-<span>Reviews</span>
-<h3>Reviews Coming Soon</h3>
-<p>Restaurant reviews, exhibition reviews, creative spaces, galleries, cafés, and cultural experiences.</p>
-<div class="card-link">Coming Soon →</div>
-</div>
-</a>
+<div class="feature-content">
 
-<a href="#" class="feature-card" id="events">
-<img src="event.jpg" alt="Events">
-<div class="feature-info">
-<span>Events</span>
-<h3>Events Coming Soon</h3>
-<p>Pop-ups, launches, gatherings, artist talks, cultural programs, and city-based creative updates.</p>
-<div class="card-link">Coming Soon →</div>
-</div>
+<p class="card-label">
+Open Exhibition Call
+</p>
+
+<h3 class="card-title">
+Canvas of Her<br>
+<em>Journey</em>
+</h3>
+
+<p class="card-meta">
+Upcoming Exhibition · Lahore
+</p>
+
+<p class="card-text">
+A contemporary group exhibition celebrating women's stories, resilience, identity and artistic expression through multiple visual practices.
+</p>
+
+<a href="canvas-of-her-journey.html" class="btn">
+View Event
 </a>
 
 </div>
 
 </div>
+
+<!-- COMING SOON -->
+
+<div class="feature-card">
+
+<img src="coming-soon.jpg" alt="Coming Soon">
+
+<div class="feature-content">
+
+<p class="card-label">
+Coming Soon
+</p>
+
+<h3 class="card-title">
+More Culture<br>
+<em>Features</em>
+</h3>
+
+<p class="card-meta">
+Exhibitions · Food · Talks · Reviews
+</p>
+
+<p class="card-text">
+More events, food stories, restaurants, exhibitions, talks and cultural spaces will be added soon.
+</p>
+
+<a href="mailto:artcosmomagazine@gmail.com?subject=Events and Culture Feature Submission" class="btn">
+Submit Feature
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <section class="submit-section">
 
-<p class="section-label">Submit a Feature</p>
+<p class="section-label">
+Submit a Feature
+</p>
 
 <h2 class="section-title">
 Have an Event or <em>Culture Story?</em>
 </h2>
 
 <p class="section-text">
-Send us exhibitions, restaurant stories, reviews, pop-ups, launches, creative spaces, artist talks, and cultural events for possible publication.
+Send us exhibitions, restaurant stories, pop-ups, launches, creative spaces, artist talks and cultural events for possible publication.
 </p>
 
-<a href="mailto:artcosmomagazine@gmail.com?subject=Events and Culture Feature Submission" class="read-more">
+<a href="mailto:artcosmomagazine@gmail.com?subject=Events and Culture Feature Submission" class="btn">
 Email Submission
 </a>
 
@@ -291,28 +699,50 @@ Email Submission
 <div class="footer-grid">
 
 <div>
-<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+
+<div class="footer-logo">
+Cosmopolitan <em>Art</em> Magazine
+</div>
+
 <p class="footer-text">
-Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, food stories, exhibitions, creative spaces, and visual storytelling.
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, food stories, exhibitions, creative spaces and visual storytelling.
 </p>
+
 </div>
 
 <div>
-<div class="footer-heading">Quick Links</div>
+
+<div class="footer-heading">
+Quick Links
+</div>
+
 <div class="footer-links">
 <a href="index.html">Home</a>
 <a href="events.html">Events & Culture</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 </div>
+
 </div>
 
 <div>
-<div class="footer-heading">Contact</div>
-<div class="footer-links">
-<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
-<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+
+<div class="footer-heading">
+Contact
 </div>
+
+<div class="footer-links">
+
+<a href="mailto:artcosmomagazine@gmail.com">
+artcosmomagazine@gmail.com
+</a>
+
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">
+@cosmopolitanartmagazine.pk
+</a>
+
+</div>
+
 </div>
 
 </div>
@@ -324,9 +754,11 @@ Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporar
 </footer>
 
 <script>
+
 function toggleMenu(){
 document.getElementById('mobileMenu').classList.toggle('active');
 }
+
 </script>
 
 </body>
