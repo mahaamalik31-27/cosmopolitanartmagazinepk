@@ -21,68 +21,99 @@ gtag('config','G-QV0REXZN5D');
 
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-:root{--black:#111;--pink:#d4578a;--gray:#777;--border:#e8e8e8;--light:#fafafa;}
+:root{--black:#111;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
 body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
 img{max-width:100%;display:block;}
 a{text-decoration:none;}
 
 nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
-.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);z-index:1002;}
 .logo em{color:var(--pink);font-style:italic;}
 .nav-links{display:flex;gap:2rem;list-style:none;}
 .nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
 .nav-links a:hover{color:var(--pink);}
 .nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
 
 .hero{padding:10rem 2rem 6rem;text-align:center;border-bottom:1px solid var(--border);}
 .hero-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,9vw,7rem);line-height:.9;margin-bottom:2rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,8vw,7rem);line-height:.92;margin-bottom:2rem;}
 .hero-title em{color:var(--pink);font-style:italic;}
 .hero-text{max-width:820px;margin:auto;line-height:2;color:#555;font-size:1.05rem;}
 .meta{margin-top:2rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);}
 
-.cover{max-width:1000px;margin:auto;padding:4rem 2rem;}
-.cover img{width:100%;height:650px;object-fit:cover;border:1px solid var(--border);}
+.cover{max-width:1100px;margin:0 auto;padding:4rem 2rem;}
+.cover img{width:100%;height:620px;object-fit:cover;border:1px solid var(--border);}
 
 .article{max-width:900px;margin:auto;padding:3rem 2rem 6rem;}
-.article h2{font-family:'Playfair Display',serif;font-size:2.6rem;margin:3rem 0 1.5rem;}
+.article h2{font-family:'Playfair Display',serif;font-size:2.5rem;line-height:1.1;margin:3rem 0 1.5rem;}
 .article h2 em{color:var(--pink);font-style:italic;}
 .article p{line-height:2;color:#444;margin-bottom:1.5rem;font-size:1.02rem;}
+.dropcap:first-letter{font-family:'Playfair Display',serif;font-size:4rem;float:left;line-height:.8;padding-right:.6rem;color:var(--pink);}
 
-.artist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin:3rem 0;}
-.artist-box{background:#fafafa;border:1px solid var(--border);padding:2rem;}
-.artist-box h3{font-family:'Playfair Display',serif;font-size:1.7rem;margin-bottom:.8rem;}
-.artist-box p{font-size:.95rem;line-height:1.8;color:#555;margin:0;}
+.quote{background:#fdf0f5;border-left:4px solid var(--pink);padding:2rem;margin:3rem 0;}
+.quote p{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;line-height:1.6;color:#111;margin:0;}
+
+.artist-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin:3rem 0;}
+.artist-box{border:1px solid var(--border);padding:2rem;background:#fafafa;}
+.artist-box h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;}
+.artist-box p{font-size:.95rem;line-height:1.8;margin:0;color:#555;}
 
 .info-box{border:1px solid var(--border);background:#fafafa;padding:2rem;margin-top:3rem;}
 .info-row{display:flex;justify-content:space-between;gap:2rem;padding:1rem 0;border-bottom:1px solid var(--border);}
 .info-row:last-child{border-bottom:none;}
 .info-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);}
-.info-value{text-align:right;color:#444;}
+.info-value{color:#444;text-align:right;}
 
-.related{padding:5rem 2rem;text-align:center;background:#fafafa;border-top:1px solid var(--border);}
+.gallery{padding:6rem 2rem;background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.gallery-inner{max-width:1200px;margin:auto;}
+.gallery-head{text-align:center;margin-bottom:4rem;}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.artwork{background:white;border:1px solid var(--border);padding:1rem;}
+.artwork img{width:100%;height:420px;object-fit:cover;}
+.artwork h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin:1rem 0 .3rem;}
+.artwork p{font-size:.85rem;color:#666;line-height:1.7;}
+
+.related{padding:5rem 2rem;text-align:center;}
 .btn{display:inline-block;background:#111;color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:.5rem;}
 .btn:hover{background:var(--pink);}
 
-footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);text-align:center;}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.2rem;margin-bottom:.5rem;}
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
 .footer-logo em{color:var(--pink);font-style:italic;}
-.footer-note{font-size:.75rem;color:#777;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
 
 @media(max-width:900px){
 .nav-links,.nav-btn{display:none;}
+.menu-toggle{display:block;}
 nav{padding:0 1rem;}
 .logo{font-size:.8rem;max-width:220px;line-height:1.1;}
 .hero{padding:8rem 1.5rem 4rem;}
 .hero-title{font-size:3rem;line-height:1;}
 .hero-text{font-size:.95rem;line-height:1.8;}
 .cover{padding:3rem 1.5rem;}
-.cover img{height:420px;}
+.cover img{height:360px;}
 .article{padding:2rem 1.5rem 4rem;}
 .article h2{font-size:2rem;}
-.artist-grid{grid-template-columns:1fr;}
+.artist-list{grid-template-columns:1fr;}
 .info-row{flex-direction:column;gap:.5rem;}
 .info-value{text-align:left;}
+.gallery{padding:4rem 1.5rem;}
+.gallery-grid{grid-template-columns:1fr;}
+.artwork img{height:320px;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
 }
 </style>
 </head>
@@ -100,10 +131,18 @@ nav{padding:0 1rem;}
 </ul>
 
 <a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
-<section class="hero">
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+<a href="mailto:artcosmomagazine@gmail.com">Submit Feature</a>
+</div>
 
+<section class="hero">
 <p class="hero-label">Art Exhibition · Ejaz Art Gallery</p>
 
 <h1 class="hero-title">
@@ -116,9 +155,8 @@ A contemplative group exhibition exploring silence, restraint, minimal form and 
 </p>
 
 <div class="meta">
-Opening: 12 June 2026 · 6:00 PM · Exhibition continues till 20 June 2026
+By Cosmopolitan Art Magazine Team · Opening 12 June 2026 · 6:00 PM
 </div>
-
 </section>
 
 <section class="cover">
@@ -127,70 +165,96 @@ Opening: 12 June 2026 · 6:00 PM · Exhibition continues till 20 June 2026
 
 <article class="article">
 
-<h2>
-About the <em>Exhibition</em>
-</h2>
-
-<p>
+<p class="dropcap">
 Muted Dialogues emerges from a cultural moment saturated with noise, speed and relentless visual stimulation. Against this backdrop, the works gathered in this exhibition embrace reduction, restraint and pause.
 </p>
 
 <p>
-Rather than competing for attention, the exhibition invites a slower mode of looking — one grounded in presence, contemplation and sustained engagement.
+Rather than competing for attention, the exhibition invites a slower mode of looking, one grounded in presence, contemplation and sustained engagement.
 </p>
 
 <p>
-Working through minimal form, restrained palettes and subtle material interventions, the artists explore the expressive potential of quietness. Small shifts in tone, texture, scale and light become significant, revealing themselves gradually over time.
+Working through minimal form, restrained palettes and subtle material interventions, the artists presented here explore the expressive potential of quietness. Small shifts in tone, texture, scale and light become significant, revealing themselves gradually over time.
+</p>
+
+<div class="quote">
+<p>
+“Quietness can be profoundly communicative, and within moments of stillness, perception deepens and meaning emerges.”
+</p>
+</div>
+
+<h2>
+About <em>Ejaz Art Gallery</em>
+</h2>
+
+<p>
+Presented at Ejaz Art Gallery, Lahore, Muted Dialogues continues the gallery's engagement with contemporary visual culture through exhibitions that bring together diverse artistic voices and reflective curatorial narratives.
 </p>
 
 <p>
-The exhibition approaches minimalism not as absence or emptiness, but as concentration — a deliberate distillation of form and gesture.
+The exhibition offers viewers a space of stillness and reflection, encouraging them to move beyond immediacy and engage with works that unfold through time, attention and close looking.
+</p>
+
+<h2>
+Curatorial <em>Statement</em>
+</h2>
+
+<p>
+The exhibition approaches minimalism not as absence or emptiness, but as concentration — a deliberate distillation of form and gesture. Each mark, surface and spatial relationship carries weight, creating a visual language that resists excess while remaining deeply evocative.
+</p>
+
+<p>
+Negative space functions not as a void but as an active field of possibility, opening space for reflection, interpretation and personal encounter.
+</p>
+
+<p>
+In an era shaped by digital acceleration and infinite scrolling, Muted Dialogues proposes slowness as a subtle act of resistance. It encourages viewers to linger, attune themselves to nuance and engage with works that reveal their complexities gradually.
 </p>
 
 <h2>
 Featured <em>Artists</em>
 </h2>
 
-<div class="artist-grid">
+<div class="artist-list">
 
 <div class="artist-box">
 <h3>Arif Hussain Khokhar</h3>
-<p>Explores residue, gesture, material traces and the visual tension between permanence and disappearance.</p>
+<p>His work explores residue, gesture, memory and the tension between permanence and disappearance through expressive monochromatic surfaces.</p>
 </div>
 
 <div class="artist-box">
 <h3>Bazil Habib</h3>
-<p>Works with light, space and architectural motifs to create surreal, minimal environments.</p>
+<p>His practice explores light, space and surreal environments, using architectural forms as symbolic motifs of growth, darkness and transformation.</p>
 </div>
 
 <div class="artist-box">
 <h3>Faheem Abbas</h3>
-<p>Uses simple forms and intimate visual language to reflect self, memory and personal objects.</p>
+<p>His works reflect intimate moments of self, memory and relatable objects through simple forms and quiet visual narratives.</p>
 </div>
 
 <div class="artist-box">
 <h3>Faizan Riedinger</h3>
-<p>Creates hyper-minimal calligraphic abstractions rooted in rhythm, repetition and meditative detail.</p>
+<p>His hyper-minimal calligraphic abstractions explore rhythm, repetition, movement, vibration and meditative detail.</p>
 </div>
 
 <div class="artist-box">
 <h3>Noshad Batoti</h3>
-<p>Builds freehand line-based works that ask viewers to slow down and remain present with the surface.</p>
+<p>His freehand line-based works ask viewers to slow down, remain present and encounter the surface through sustained attention.</p>
 </div>
 
 <div class="artist-box">
 <h3>Sabir Ali Talpur</h3>
-<p>Explores repeated patterns, precision and the architecture of personal conviction.</p>
+<p>His compositions investigate repeating patterns, precision, ambition, conviction and the personal structures we build through belief.</p>
 </div>
 
 <div class="artist-box">
 <h3>Sajid Ali</h3>
-<p>Investigates repetition, randomness, grids, colour and optical perception.</p>
+<p>His work explores visual perception through optical illusions, geometric forms, grids, colour relationships and layered square configurations.</p>
 </div>
 
 <div class="artist-box">
 <h3>Sara Riaz Khan</h3>
-<p>Creates layered abstract works exploring personal experience, dual truths and natural connection.</p>
+<p>Her layered abstract paintings explore personal experience, two truths, texture, orientation and the emotional complexity of human moments.</p>
 </div>
 
 </div>
@@ -235,11 +299,74 @@ Exhibition <em>Information</em>
 
 </article>
 
+<section class="gallery">
+<div class="gallery-inner">
+
+<div class="gallery-head">
+<p class="section-label">Selected Works</p>
+<h2 class="section-title">Exhibition <em>Gallery</em></h2>
+</div>
+
+<div class="gallery-grid">
+
+<div class="artwork">
+<img src="arif-natural-remnants.jpg" alt="Natural Remnants by Arif Hussain Khokhar">
+<h3>Natural Remnants</h3>
+<p>Arif Hussain Khokhar · Organic pigment / oil-based work on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="bazil-between-dimensions.jpg" alt="Between Dimensions by Bazil Habib">
+<h3>Between Dimensions</h3>
+<p>Bazil Habib · Acrylic on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="faheem-between-flower-you.jpg" alt="Between A Flower and You by Faheem Abbas">
+<h3>Between A Flower & You</h3>
+<p>Faheem Abbas · Acrylic on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="faizan-alluring-prospects.jpg" alt="Alluring Prospects by Faizan Riedinger">
+<h3>Alluring Prospects</h3>
+<p>Faizan Riedinger · Ink and acrylic on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="noshad-untitled-i.jpg" alt="Untitled I by Noshad Batoti">
+<h3>Untitled I</h3>
+<p>Noshad Batoti · Acrylic on paper</p>
+</div>
+
+<div class="artwork">
+<img src="sabir-ascendance.jpg" alt="Ascendance by Sabir Ali Talpur">
+<h3>Ascendance</h3>
+<p>Sabir Ali Talpur · Acrylic on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="sajid-untitled-i.jpg" alt="Untitled I by Sajid Ali">
+<h3>Untitled I</h3>
+<p>Sajid Ali · Acrylic on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="sara-two-truths-i.jpg" alt="Two Truths I by Sara Riaz Khan">
+<h3>Two Truths I</h3>
+<p>Sara Riaz Khan · Oil and gesso on canvas</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
 <section class="related">
 
-<p class="hero-label">Explore More</p>
+<p class="section-label">Explore More</p>
 
-<h2 class="hero-title" style="font-size:clamp(2.5rem,5vw,4rem);">
+<h2 class="section-title">
 Events & <em>Culture</em>
 </h2>
 
@@ -249,9 +376,45 @@ Events & <em>Culture</em>
 </section>
 
 <footer>
+<div class="footer-grid">
+
+<div>
 <div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
-<div class="footer-note">Events & Culture · Art Exhibition · 2026</div>
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, food stories, exhibitions, creative spaces and visual storytelling.
+</p>
+</div>
+
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
+</div>
 </footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
 
 </body>
 </html>
