@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','G-QV0REXZN5D');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ummeed e Bahar — Taseer Art Gallery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--pink:#d4578a;--green:#2f5f2f;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);z-index:1002;}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
+
+.hero{padding:10rem 2rem 6rem;text-align:center;border-bottom:1px solid var(--border);}
+.hero-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,8vw,7rem);line-height:.92;margin-bottom:2rem;color:var(--green);}
+.hero-title em{color:var(--pink);font-style:italic;}
+.hero-text{max-width:820px;margin:auto;line-height:2;color:#555;font-size:1.05rem;}
+.meta{margin-top:2rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gray);}
+
+.cover{max-width:850px;margin:auto;padding:4rem 2rem;text-align:center;}
+.cover img{width:100%;height:auto;display:block;margin:auto;border:1px solid var(--border);object-fit:contain;}
+
+.article{max-width:900px;margin:auto;padding:3rem 2rem 6rem;}
+.article h2{font-family:'Playfair Display',serif;font-size:2.5rem;line-height:1.1;margin:3rem 0 1.5rem;}
+.article h2 em{color:var(--pink);font-style:italic;}
+.article p{line-height:2;color:#444;margin-bottom:1.5rem;font-size:1.02rem;}
+.dropcap:first-letter{font-family:'Playfair Display',serif;font-size:4rem;float:left;line-height:.8;padding-right:.6rem;color:var(--green);}
+
+.quote{background:#f4f8f1;border-left:4px solid var(--green);padding:2rem;margin:3rem 0;}
+.quote p{font-family:'Playfair Display',serif;font-size:1.5rem;font-style:italic;line-height:1.6;color:#111;margin:0;}
+
+.artist-list{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin:3rem 0;}
+.artist-box{border:1px solid var(--border);padding:2rem;background:#fafafa;}
+.artist-box h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:1rem;}
+.artist-box p{font-size:.95rem;line-height:1.8;margin:0;color:#555;}
+
+.info-box{border:1px solid var(--border);background:#fafafa;padding:2rem;margin-top:3rem;}
+.info-row{display:flex;justify-content:space-between;gap:2rem;padding:1rem 0;border-bottom:1px solid var(--border);}
+.info-row:last-child{border-bottom:none;}
+.info-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);}
+.info-value{color:#444;text-align:right;}
+
+.gallery{padding:6rem 2rem;background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.gallery-inner{max-width:1200px;margin:auto;}
+.gallery-head{text-align:center;margin-bottom:4rem;}
+.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+.artwork{background:white;border:1px solid var(--border);padding:1rem;}
+.artwork img{width:100%;height:auto;display:block;object-fit:contain;background:white;}
+.artwork h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin:1rem 0 .3rem;}
+.artwork p{font-size:.85rem;color:#666;line-height:1.7;}
+
+.related{padding:5rem 2rem;text-align:center;}
+.btn{display:inline-block;background:#111;color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:.5rem;}
+.btn:hover{background:var(--pink);}
+
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+
+@media(max-width:900px){
+.nav-links,.nav-btn{display:none;}
+.menu-toggle{display:block;}
+nav{padding:0 1rem;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{padding:8rem 1.5rem 4rem;}
+.hero-title{font-size:3rem;line-height:1;}
+.hero-text{font-size:.95rem;line-height:1.8;}
+.cover{padding:3rem 1.5rem;max-width:100%;}
+.article{padding:2rem 1.5rem 4rem;}
+.article h2{font-size:2rem;}
+.artist-list{grid-template-columns:1fr;}
+.info-row{flex-direction:column;gap:.5rem;}
+.info-value{text-align:left;}
+.gallery{padding:4rem 1.5rem;}
+.gallery-grid{grid-template-columns:1fr;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events & Culture</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="issue-01.html">Issue 01</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+<a href="mailto:artcosmomagazine@gmail.com">Submit Feature</a>
+</div>
+
+<section class="hero">
+<p class="hero-label">Art Exhibition · Taseer Art Gallery</p>
+
+<h1 class="hero-title">
+Ummeed e Bahar<br>
+<em>A Ray of Hope</em>
+</h1>
+
+<p class="hero-text">
+A thoughtfully curated exhibition exploring hope, landscape, memory, resilience and the evolving relationship between humanity and nature.
+</p>
+
+<div class="meta">
+By Cosmopolitan Art Magazine Team · Opening Friday, June 12, 2026 · 5:00 PM – 8:00 PM
+</div>
+</section>
+
+<section class="cover">
+<img src="ummeed-e-bahar-cover.jpg" alt="Ummeed e Bahar Exhibition">
+</section>
+
+<article class="article">
+
+<p class="dropcap">
+Ummeed e Bahar: A Ray of Hope brings together a sensitive selection of artists whose works move beyond traditional representations of scenery and open a wider conversation around landscape, memory, place and renewal.
+</p>
+
+<p>
+Presented at Taseer Art Gallery, Lahore, the exhibition reflects on nature not only as a visual subject, but as an emotional, cultural and spiritual space. Through different artistic languages, the participating artists explore how landscapes can carry memory, identity, longing and hope.
+</p>
+
+<p>
+The exhibition was very well curated in both concept and work, bringing together artists whose practices approach landscape through drawing, painting, soft pastels, charcoal, oil, graphite and watercolour. Together, their works create a calm yet deeply reflective experience for viewers.
+</p>
+
+<div class="quote">
+<p>
+“Ummeed e Bahar feels like a quiet return to hope — a reminder that landscape can hold memory, healing and the possibility of renewal.”
+</p>
+</div>
+
+<h2>
+Curatorial <em>Note</em>
+</h2>
+
+<p>
+The exhibition moves beyond scenery as a decorative subject and instead presents landscape as a living archive. Across the works, land becomes memory, atmosphere becomes emotion, and natural forms become symbols of endurance and transformation.
+</p>
+
+<p>
+From Irfan Channa's quiet graphite landscapes to Rabbia Khalid Khan's soft, almost dissolving urban views, and from Nasir Shehzad's mountainous stillness to Raja Najam ul Hassan's intimate moments of nature, the exhibition creates a dialogue between observation and feeling.
+</p>
+
+<p>
+The idea of “bahar” appears here not only as spring, but as renewal — a state of returning, beginning again, and finding hope within changing terrains.
+</p>
+
+<h2>
+Featured <em>Artists</em>
+</h2>
+
+<div class="artist-list">
+
+<div class="artist-box">
+<h3>Irfan Channa</h3>
+<p>His practice centers on landscapes shaped by native places and journeys, blending memory, terrain and human presence through delicate monochrome works.</p>
+</div>
+
+<div class="artist-box">
+<h3>Kaleem Khan</h3>
+<p>A distinguished Pakistani artist whose landscapes are inseparable from memory, culture and lived experience, revealing land as a living archive.</p>
+</div>
+
+<div class="artist-box">
+<h3>Nasir Shehzad</h3>
+<p>His paintings celebrate Pakistan's northern regions, capturing natural beauty, cultural heritage and the emotional depth of place.</p>
+</div>
+
+<div class="artist-box">
+<h3>Rabbia Khalid Khan</h3>
+<p>Her work explores human presence within landscapes through soft pastels and cyanotype processes, creating images that feel meditative and indistinct.</p>
+</div>
+
+<div class="artist-box">
+<h3>Raja Najam ul Hassan</h3>
+<p>His paintings reflect a personal connection with nature, capturing mood, atmosphere, scent and stillness through intimate landscape studies.</p>
+</div>
+
+<div class="artist-box">
+<h3>Sajjad Nawaz</h3>
+<p>His drawings investigate the hidden geographies of Cholistan, transforming terrain into memory, trace and visual reflection.</p>
+</div>
+
+<div class="artist-box">
+<h3>Yawar Abbas</h3>
+<p>His work reflects the transition from monochrome to colour, drawing from observation, memory and the textures of nature.</p>
+</div>
+
+</div>
+
+<h2>
+Exhibition <em>Information</em>
+</h2>
+
+<div class="info-box">
+
+<div class="info-row">
+<div class="info-label">Exhibition</div>
+<div class="info-value">Ummeed e Bahar: A Ray of Hope</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Venue</div>
+<div class="info-value">Taseer Art Gallery, Lahore</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Opening</div>
+<div class="info-value">Friday, June 12, 2026 · 5:00 PM – 8:00 PM</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Address</div>
+<div class="info-value">8 Arif Jan Road, Lahore Cantonment, Pakistan</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Category</div>
+<div class="info-value">Group Exhibition · Contemporary Landscape</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Published By</div>
+<div class="info-value">Cosmopolitan Art Magazine Team</div>
+</div>
+
+</div>
+
+</article>
+
+<section class="gallery">
+<div class="gallery-inner">
+
+<div class="gallery-head">
+<p class="section-label">Selected Works</p>
+<h2 class="section-title">Exhibition <em>Gallery</em></h2>
+</div>
+
+<div class="gallery-grid">
+
+<div class="artwork">
+<img src="irfan-channa-dust.jpg" alt="Dust by Irfan Channa">
+<h3>Dust</h3>
+<p>Irfan Channa · Graphite and ink on paper</p>
+</div>
+
+<div class="artwork">
+<img src="kaleem-khan-self.jpg" alt="Self by Kaleem Khan">
+<h3>Self</h3>
+<p>Kaleem Khan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="nasir-shehzad-echoes-green-silence.jpg" alt="Echoes of Green Silence by Nasir Shehzad">
+<h3>Echoes of Green Silence</h3>
+<p>Nasir Shehzad · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="rabbia-khalid-factory.jpg" alt="Factory by Rabbia Khalid Khan">
+<h3>Factory</h3>
+<p>Rabbia Khalid Khan · Soft pastels on paper</p>
+</div>
+
+<div class="artwork">
+<img src="raja-najam-morning-rays.jpg" alt="Morning Rays by Raja Najam ul Hassan">
+<h3>Morning Rays</h3>
+<p>Raja Najam ul Hassan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="sajjad-nawaz-celestial-palimpest.jpg" alt="Celestial Palimpsest by Sajjad Nawaz">
+<h3>Celestial Palimpsest</h3>
+<p>Sajjad Nawaz · Charcoal on paper</p>
+</div>
+
+<div class="artwork">
+<img src="yawar-abbas-rugged-dence-trees.jpg" alt="Rugged Dence Trees With Foliage by Yawar Abbas">
+<h3>Rugged Dence Trees With Foliage</h3>
+<p>Yawar Abbas · Ink and watercolour on paper</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="related">
+
+<p class="section-label">Explore More</p>
+
+<h2 class="section-title">
+Events & <em>Culture</em>
+</h2>
+
+<a href="events.html" class="btn">Back to Events</a>
+<a href="artist-feature.html" class="btn">Featured Artists</a>
+
+</section>
+
+<footer>
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, food stories, exhibitions, creative spaces and visual storytelling.
+</p>
+</div>
+
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
