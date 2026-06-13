@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020"
+crossorigin="anonymous"></script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
 <script>
@@ -39,24 +40,20 @@ nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bott
 .mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
 .mobile-menu.active{right:0;}
 .mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
-.mobile-menu a:hover{color:var(--pink);}
 
 .hero{padding:9rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border);}
-.hero-label{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.hero-label,.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
 .hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,10vw,8rem);line-height:.9;margin-bottom:2rem;}
-.hero-title em{color:var(--pink);font-style:italic;}
+.hero-title em,.section-title em,.artist-name em,.follow-title em{color:var(--pink);font-style:italic;}
 .hero-text{max-width:800px;margin:auto;line-height:2;color:#555;font-size:1.05rem;margin-bottom:3rem;}
 .hero-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
 .hero-btn{padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
 .hero-btn.primary{background:var(--black);color:white;}
-.hero-btn.primary:hover{background:var(--pink);}
 .hero-btn.secondary{border:1px solid var(--black);color:var(--black);}
-.hero-btn.secondary:hover{background:var(--pink);border-color:var(--pink);color:white;}
+.hero-btn.primary:hover,.hero-btn.secondary:hover{background:var(--pink);border-color:var(--pink);color:white;}
 
 .open-call{padding:6rem 2rem;background:var(--light);text-align:center;border-bottom:1px solid var(--border);}
-.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
-.section-title em{color:var(--pink);font-style:italic;}
 .section-text{max-width:720px;margin:auto;line-height:2;color:#555;margin-bottom:2rem;}
 .open-call-image{max-width:700px;margin:3rem auto 0;border:1px solid var(--border);overflow:hidden;}
 .open-call-image img{width:100%;height:100%;object-fit:cover;}
@@ -67,15 +64,30 @@ nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bott
 .artist-image img{width:100%;height:420px;object-fit:cover;}
 .artist-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
 .artist-name{font-family:'Playfair Display',serif;font-size:2.5rem;line-height:.95;margin-bottom:.7rem;}
-.artist-name em{color:var(--pink);font-style:italic;}
 .artist-meta{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:1.5rem;}
 .artist-desc{line-height:1.9;color:#555;margin-bottom:2rem;}
 .artist-btn{display:inline-block;background:var(--black);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
 .artist-btn:hover{background:var(--pink);}
 
+.home-events{padding:6rem 2rem;border-top:1px solid var(--border);background:#fafafa;}
+.section-header{text-align:center;max-width:780px;margin:auto;}
+.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
+.section-header h2 em{color:var(--pink);font-style:italic;}
+.section-header p{line-height:2;color:#555;}
+.events-grid{max-width:1200px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+.event-card{border:1px solid var(--border);background:white;color:var(--black);overflow:hidden;transition:.3s;}
+.event-card:hover{transform:translateY(-6px);}
+.event-card img{width:100%;height:320px;object-fit:cover;}
+.event-info{padding:2rem;}
+.event-info span{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:1rem;}
+.event-info h3{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;line-height:1.05;}
+.event-info p{line-height:1.8;color:#666;}
+.view-all{text-align:center;margin-top:3rem;}
+.view-events-btn{background:#111;color:white;padding:1rem 2rem;display:inline-block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
+.view-events-btn:hover{background:var(--pink);}
+
 .follow-section{padding:5rem 2rem;background:#111;text-align:center;color:white;}
 .follow-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,5vw,4rem);margin-bottom:1rem;}
-.follow-title em{color:var(--pink);font-style:italic;}
 .follow-text{max-width:700px;margin:auto;line-height:2;color:#d0d0d0;margin-bottom:2rem;}
 .follow-btn{display:inline-block;background:var(--pink);color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
 
@@ -100,6 +112,8 @@ nav{padding:0 1rem;}
 .hero-text{font-size:.95rem;line-height:1.8;}
 .hero-buttons{flex-direction:column;align-items:center;}
 .hero-btn{width:100%;max-width:280px;text-align:center;}
+.events-grid{grid-template-columns:1fr;}
+.event-card img{height:280px;}
 .follow-title{font-size:2.3rem;line-height:1.2;}
 .footer-grid{grid-template-columns:1fr;text-align:center;}
 .footer-links{align-items:center;}
@@ -113,19 +127,18 @@ nav{padding:0 1rem;}
 <a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
 
 <ul class="nav-links">
-<li><a href="events.html">Events</a></li>
+<li><a href="events.html">Events & Culture</a></li>
 <li><a href="artist-feature.html">Featured Artists</a></li>
 <li><a href="issue-01.html">Issue 01</a></li>
 <li><a href="#follow">Follow</a></li>
 </ul>
 
 <a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Work</a>
-
 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-<a href="events.html">Events</a>
+<a href="events.html">Events & Culture</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 <a href="#follow" onclick="toggleMenu()">Follow</a>
@@ -145,7 +158,7 @@ Celebrating emerging and established artists across Pakistan through exhibitions
 </p>
 
 <div class="hero-buttons">
-<a href="events.html" class="hero-btn primary">View Events</a>
+<a href="events.html" class="hero-btn primary">Events & Culture</a>
 <a href="artist-feature.html" class="hero-btn secondary">Featured Artists</a>
 </div>
 </section>
@@ -240,6 +253,92 @@ Discover emerging and established artists shaping contemporary South Asian visua
 
 </section>
 
+<section class="home-events">
+
+<div class="section-header">
+
+<p class="section-label">
+Events & Culture
+</p>
+
+<h2>
+Featured <em>Events</em>
+</h2>
+
+<p>
+Discover exhibitions, artist talks, cultural experiences, restaurant stories and creative gatherings from across Pakistan.
+</p>
+
+</div>
+
+<div class="events-grid">
+
+<a href="ummeed-e-bahar.html" class="event-card">
+
+<img src="page_01.png" alt="Ummeed e Bahar">
+
+<div class="event-info">
+
+<span>Exhibition</span>
+
+<h3>Ummeed e Bahar</h3>
+
+<p>
+A thoughtfully curated exhibition exploring hope, memory, renewal and landscape through the works of seven distinguished artists.
+</p>
+
+</div>
+
+</a>
+
+<a href="muted-dialogues.html" class="event-card">
+
+<img src="muted-dialogues-cover.jpg" alt="Muted Dialogues">
+
+<div class="event-info">
+
+<span>Exhibition</span>
+
+<h3>Muted Dialogues</h3>
+
+<p>
+A contemplative group exhibition at Ejaz Art Gallery exploring silence, restraint and the expressive power of minimal form.
+</p>
+
+</div>
+
+</a>
+
+<a href="gadrung.html" class="event-card">
+
+<img src="1000779653.jpg" alt="Gadrung">
+
+<div class="event-info">
+
+<span>Food & Culture</span>
+
+<h3>Gadrung</h3>
+
+<p>
+Authentic Hyderabad Deccani cuisine in Lahore by artist and chef Shireen Bano Rizvi.
+</p>
+
+</div>
+
+</a>
+
+</div>
+
+<div class="view-all">
+
+<a href="events.html" class="view-events-btn">
+View All Events →
+</a>
+
+</div>
+
+</section>
+
 <section class="follow-section" id="follow">
 <p class="section-label">Follow Our Journey</p>
 
@@ -269,7 +368,7 @@ Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporar
 <div>
 <div class="footer-heading">Quick Links</div>
 <div class="footer-links">
-<a href="events.html">Events</a>
+<a href="events.html">Events & Culture</a>
 <a href="artist-feature.html">Featured Artists</a>
 <a href="issue-01.html">Issue 01</a>
 <a href="#follow">Follow Us</a>
