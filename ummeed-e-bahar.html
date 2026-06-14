@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -70,15 +69,16 @@ nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bott
 .info-value{color:#444;text-align:right;}
 
 .gallery{padding:6rem 2rem;background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
-.gallery-inner{max-width:1200px;margin:auto;}
+.gallery-inner{max-width:1400px;margin:auto;}
 .gallery-head{text-align:center;margin-bottom:4rem;}
 .section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--green);margin-bottom:1rem;}
 .section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1rem;}
 .section-title em{color:var(--pink);font-style:italic;}
-.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;}
-.artwork{background:white;border:1px solid var(--border);padding:1rem;}
-.artwork img{width:100%;height:auto;display:block;object-fit:contain;background:white;}
-.artwork h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin:1rem 0 .3rem;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.artwork{background:white;border:1px solid var(--border);padding:1rem;transition:.3s;}
+.artwork:hover{transform:translateY(-4px);}
+.artwork img{width:100%;height:420px;object-fit:cover;background:#fafafa;border:1px solid var(--border);}
+.artwork h3{font-family:'Playfair Display',serif;font-size:1.35rem;margin:1rem 0 .3rem;}
 .artwork p{font-size:.85rem;color:#666;line-height:1.7;}
 
 .related{padding:5rem 2rem;text-align:center;}
@@ -111,6 +111,7 @@ nav{padding:0 1rem;}
 .info-value{text-align:left;}
 .gallery{padding:4rem 1.5rem;}
 .gallery-grid{grid-template-columns:1fr;}
+.artwork img{height:auto;object-fit:contain;}
 .footer-grid{grid-template-columns:1fr;text-align:center;}
 .footer-links{align-items:center;}
 }
@@ -159,7 +160,7 @@ By Cosmopolitan Art Magazine Team · Opening Friday, June 12, 2026 · 5:00 PM �
 </section>
 
 <section class="cover">
-<img src="ummeed-e-bahar-cover.jpg" alt="Ummeed e Bahar Exhibition">
+<img src="page_01.png" alt="Ummeed e Bahar Exhibition">
 </section>
 
 <article class="article">
@@ -292,45 +293,129 @@ Exhibition <em>Information</em>
 <div class="gallery-grid">
 
 <div class="artwork">
-<img src="irfan-channa-dust.jpg" alt="Dust by Irfan Channa">
+<img src="01 - Irfan Channa - Dust.jpg" alt="Dust by Irfan Channa">
 <h3>Dust</h3>
 <p>Irfan Channa · Graphite and ink on paper</p>
 </div>
 
 <div class="artwork">
-<img src="kaleem-khan-self.jpg" alt="Self by Kaleem Khan">
+<img src="02 - Irfan Channa - Pause.jpg" alt="Pause by Irfan Channa">
+<h3>Pause</h3>
+<p>Irfan Channa · Graphite and ink on paper</p>
+</div>
+
+<div class="artwork">
+<img src="03 - Irfan Channa - Tear of the Earth.jpg" alt="Tear of the Earth by Irfan Channa">
+<h3>Tear of the Earth</h3>
+<p>Irfan Channa · Graphite and coffee on paper</p>
+</div>
+
+<div class="artwork">
+<img src="04 - Kaleem Khan - Self.jpg" alt="Self by Kaleem Khan">
 <h3>Self</h3>
 <p>Kaleem Khan · Oil on canvas</p>
 </div>
 
 <div class="artwork">
-<img src="nasir-shehzad-echoes-green-silence.jpg" alt="Echoes of Green Silence by Nasir Shehzad">
+<img src="05 - Kaleem Khan - Landscape 1.jpg" alt="Landscape 1 by Kaleem Khan">
+<h3>Landscape 1</h3>
+<p>Kaleem Khan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="06 - Kaleem Khan - Landscape 2.jpg" alt="Landscape 2 by Kaleem Khan">
+<h3>Landscape 2</h3>
+<p>Kaleem Khan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="07 - Nasir Shehzad - Echoes of Green Silence.jpg" alt="Echoes of Green Silence by Nasir Shehzad">
 <h3>Echoes of Green Silence</h3>
 <p>Nasir Shehzad · Oil on canvas</p>
 </div>
 
 <div class="artwork">
-<img src="rabbia-khalid-factory.jpg" alt="Factory by Rabbia Khalid Khan">
+<img src="08 - Nasir Shehzad - Where the Earth Pauses.jpg" alt="Where the Earth Pauses by Nasir Shehzad">
+<h3>Where the Earth Pauses</h3>
+<p>Nasir Shehzad · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="09 - Nasir Shehzad - Stillness on the Hillside.jpg" alt="Stillness on the Hillside by Nasir Shehzad">
+<h3>Stillness on the Hillside</h3>
+<p>Nasir Shehzad · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="10 - Nasir Shehzad - The Path Beyond the Stone.jpg" alt="The Path Beyond the Stone by Nasir Shehzad">
+<h3>The Path Beyond the Stone</h3>
+<p>Nasir Shehzad · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="11 - Rababa Khalid Khan - Factory.jpg" alt="Factory by Rabbia Khalid Khan">
 <h3>Factory</h3>
 <p>Rabbia Khalid Khan · Soft pastels on paper</p>
 </div>
 
 <div class="artwork">
-<img src="raja-najam-morning-rays.jpg" alt="Morning Rays by Raja Najam ul Hassan">
+<img src="12 - Rababa Khalid Khan - Railway Station.jpg" alt="Railway Station by Rabbia Khalid Khan">
+<h3>Railway Station</h3>
+<p>Rabbia Khalid Khan · Soft pastels on paper</p>
+</div>
+
+<div class="artwork">
+<img src="13 - Rana Naim Ul Hassan - Morning Rays.jpg" alt="Morning Rays by Raja Najam ul Hassan">
 <h3>Morning Rays</h3>
 <p>Raja Najam ul Hassan · Oil on canvas</p>
 </div>
 
 <div class="artwork">
-<img src="sajjad-nawaz-celestial-palimpest.jpg" alt="Celestial Palimpsest by Sajjad Nawaz">
+<img src="14 - Rana Naim Ul Hassan - Tranquility.jpg" alt="Tranquility by Raja Najam ul Hassan">
+<h3>Tranquility</h3>
+<p>Raja Najam ul Hassan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="15 - Rana Naim Ul Hassan - Yellow Field.jpg" alt="Yellow Field by Raja Najam ul Hassan">
+<h3>Yellow Field</h3>
+<p>Raja Najam ul Hassan · Oil on canvas</p>
+</div>
+
+<div class="artwork">
+<img src="16 - Sajid Nawaz - Celestial Palimpsest.jpg" alt="Celestial Palimpsest by Sajjad Nawaz">
 <h3>Celestial Palimpsest</h3>
 <p>Sajjad Nawaz · Charcoal on paper</p>
 </div>
 
 <div class="artwork">
-<img src="yawar-abbas-rugged-dence-trees.jpg" alt="Rugged Dence Trees With Foliage by Yawar Abbas">
-<h3>Rugged Dence Trees With Foliage</h3>
+<img src="17 - Sajid Nawaz - Terrestrial Palimpsest Diptych.jpg" alt="Terrestrial Palimpsest Diptych by Sajjad Nawaz">
+<h3>Terrestrial Palimpsest</h3>
+<p>Sajjad Nawaz · Charcoal on paper</p>
+</div>
+
+<div class="artwork">
+<img src="18 - Yawar Abbas - Rugged Dense Trees With Foliage.jpg" alt="Rugged Dense Trees With Foliage by Yawar Abbas">
+<h3>Rugged Dense Trees With Foliage</h3>
 <p>Yawar Abbas · Ink and watercolour on paper</p>
+</div>
+
+<div class="artwork">
+<img src="19 - Yawar Abbas - Afternoon In Parachinar.jpg" alt="Afternoon In Parachinar by Yawar Abbas">
+<h3>Afternoon In Parachinar</h3>
+<p>Yawar Abbas · Ink and watercolour on paper</p>
+</div>
+
+<div class="artwork">
+<img src="20 - Yawar Abbas - Rolling Hills and Clumps of Trees.jpg" alt="Rolling Hills and Clumps of Trees by Yawar Abbas">
+<h3>Rolling Hills and Clumps of Trees</h3>
+<p>Yawar Abbas · Watercolour on paper</p>
+</div>
+
+<div class="artwork">
+<img src="21 - Yawar Abbas - Brown and Deep Teal Trees.jpg" alt="Brown and Deep Teal Trees by Yawar Abbas">
+<h3>Brown and Deep Teal Trees</h3>
+<p>Yawar Abbas · Oil on canvas</p>
 </div>
 
 </div>
