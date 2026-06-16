@@ -1,1 +1,414 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rashid Rana — Cosmopolitan Art Magazine Pakistan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#0e0e0e;--white:#fff;--pink:#d4578a;--gray:#777;--border:#e8e8e8;--light:#fafafa;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+img,video{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:#111;}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#111;}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:#111;color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+
+.hero{min-height:100vh;background:#0e0e0e;color:white;display:grid;grid-template-columns:1fr 1fr;margin-top:60px;}
+.hero-image img{width:100%;height:100%;object-fit:cover;}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:6rem;}
+.label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin-bottom:1.5rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(4rem,9vw,8rem);line-height:.9;margin-bottom:2rem;}
+.hero h1 em{color:var(--pink);font-style:italic;}
+.hero p{line-height:2;color:#d8d8d8;max-width:650px;}
+.meta{margin-top:2rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#aaa;}
+
+.editorial-note{padding:4rem 2rem;background:#fafafa;border-bottom:1px solid var(--border);}
+.editorial-inner{max-width:900px;margin:auto;text-align:center;}
+.editorial-note h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;margin-bottom:1.5rem;}
+.editorial-note h2 em{color:var(--pink);font-style:italic;}
+.editorial-note p{line-height:2;color:#555;font-size:1.05rem;margin-bottom:1.2rem;}
+
+.section{padding:6rem 2rem;}
+.inner{max-width:1200px;margin:auto;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,5rem);line-height:1;margin-bottom:2rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.text{line-height:2;color:#444;font-size:1.02rem;margin-bottom:1.5rem;}
+
+.portrait-block{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:center;}
+.portrait-block img{width:100%;height:620px;object-fit:cover;border:1px solid var(--border);}
+.info-tags{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem;}
+.info-tags span{border:1px solid var(--border);padding:.8rem 1rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:#fafafa;}
+
+.video-section{background:#111;color:white;padding:6rem 2rem;}
+.video-inner{max-width:1000px;margin:auto;text-align:center;}
+.video-inner video{width:100%;margin-top:3rem;border:1px solid #333;background:#000;}
+.video-inner p{color:#cfcfcf;line-height:2;margin-top:1.5rem;}
+
+.statement{background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.quote{max-width:900px;margin:3rem auto;background:white;border-left:4px solid var(--pink);padding:2.5rem;}
+.quote p{font-family:'Playfair Display',serif;font-size:1.7rem;line-height:1.6;font-style:italic;}
+
+.gallery{background:#fafafa;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.art-card{background:white;border:1px solid var(--border);padding:1rem;}
+.art-card img{width:100%;height:380px;object-fit:cover;background:#f7f7f7;}
+.art-card h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin:1rem 0 .4rem;}
+.art-card p{font-size:.85rem;color:#666;line-height:1.6;}
+
+.dark-feature{background:#111;color:white;}
+.dark-feature .text{color:#d0d0d0;}
+.dark-feature .inner{max-width:900px;}
+
+.related{text-align:center;padding:5rem 2rem;}
+.btn{display:inline-block;background:#111;color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:.5rem;}
+.btn:hover{background:var(--pink);}
+
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a:hover{color:var(--pink);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+
+@media(max-width:900px){
+.nav-links,.nav-btn{display:none;}
+nav{padding:0 1rem;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{grid-template-columns:1fr;min-height:auto;}
+.hero-image img{height:420px;}
+.hero-content{padding:3rem 1.5rem;}
+.hero h1{font-size:3.5rem;}
+.section{padding:4rem 1.5rem;}
+.portrait-block{grid-template-columns:1fr;gap:2rem;}
+.portrait-block img{height:auto;}
+.gallery-grid{grid-template-columns:1fr;}
+.art-card img{height:auto;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events & Culture</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="issue-01.html">Issue 01</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+</nav>
+
+<section class="hero">
+
+<div class="hero-image">
+<img src="rashid-rana-hero.jpg" alt="Rashid Rana artwork">
+</div>
+
+<div class="hero-content">
+<p class="label">Featured Artist · Contemporary Art Pioneer</p>
+
+<h1>
+Rashid<br>
+<em>Rana</em>
+</h1>
+
+<p>
+A pioneering figure in contemporary South Asian art, Rashid Rana’s practice spans digital works, paintings, stainless steel sculptures, video installations, photo-sculptures and photo mosaics.
+</p>
+
+<div class="meta">
+By Cosmopolitan Art Magazine Team
+</div>
+</div>
+
+</section>
+
+<section class="editorial-note">
+
+<div class="editorial-inner">
+
+<p class="label">Editorial Note</p>
+
+<h2>
+A Privilege to <em>Feature</em>
+</h2>
+
+<p>
+At Cosmopolitan Art Magazine Pakistan, we are deeply humbled and honoured to feature <strong>Mr. Rashid Rana</strong>, one of the most influential contemporary artists to emerge from Pakistan.
+</p>
+
+<p>
+His pioneering contributions to visual art, education, curatorial practice and international cultural dialogue have transformed the landscape of contemporary art across the region and beyond.
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="inner portrait-block">
+
+<img src="rashid-rana-portrait.jpg" alt="Rashid Rana Portrait">
+
+<div>
+
+<p class="label">About the Artist</p>
+
+<h2 class="section-title">
+Parallel <em>Realities</em>
+</h2>
+
+<p class="text">
+Rashid Rana, with his pioneering digital works from Pakistan at the start of the 21st century and a creative practice spanning over three decades, is considered among the most influential visual artists in the subcontinent today.
+</p>
+
+<p class="text">
+His work has been exhibited at prestigious venues globally and is part of major collections including the British Museum, London, and the Metropolitan Museum of Art, New York.
+</p>
+
+<p class="text">
+His oeuvre encompasses paintings, stainless steel sculptures, video installations, photo-sculptures and photo mosaics, with each medium becoming a site of inquiry into dualities, paradoxes and parallel realities.
+</p>
+
+<div class="info-tags">
+<span>Sitara-e-Imtiaz</span>
+<span>Game Changer Asia Art Award</span>
+<span>British Museum</span>
+<span>Metropolitan Museum of Art</span>
+<span>BNU</span>
+<span>UNESCO Chair</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="video-section">
+
+<div class="video-inner">
+
+<p class="label">Featured Video</p>
+
+<h2 class="section-title">
+Inside the <em>Practice</em>
+</h2>
+
+<video controls>
+<source src="rashid-rana-video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<p>
+A visual glimpse into Rashid Rana’s world of image-making, perception, duality, contradiction and contemporary visual thought.
+</p>
+
+</div>
+
+</section>
+
+<section class="section statement">
+
+<div class="inner">
+
+<p class="label">Artist Statement</p>
+
+<h2 class="section-title">
+Identity, Duality & <em>Location</em>
+</h2>
+
+<p class="text">
+Unburdening from self-imposed pressure of prescriptive and dogmatic ideas of affiliating one’s identity to political and cultural boundaries has been one of the core ideas in Rashid Rana’s practice.
+</p>
+
+<p class="text">
+His early interest in the duality of space expanded into a wider investigation of paradoxes, contradictions, polarities and parallel realities — a way of negotiating the burden of representing reality.
+</p>
+
+<p class="text">
+Rana considers the binaries of “actual” and “remote” more plausible than the overplayed binaries of East and West. His expression emerges through a negotiation between what is directly experienced and what is amassed indirectly across time and space.
+</p>
+
+<div class="quote">
+<p>
+“My art-making, exhibition-making and curriculum-making overlap and converge. To me, these different practices are all forms of production.”
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section dark-feature">
+
+<div class="inner">
+
+<p class="label">Work Highlight</p>
+
+<h2 class="section-title">
+Everything and <em>Nothing</em>
+</h2>
+
+<p class="text">
+In <em>Everything and Nothing</em>, thousands of European paintings from the 16th to the 19th century formulate a large image of two identical bookshelves — one sharp and one blurred.
+</p>
+
+<p class="text">
+The work creates a constant experience of registering something and its absence simultaneously, reflecting the limitation that exists between the translation of verbal and visual languages.
+</p>
+
+</div>
+
+</section>
+
+<section class="section gallery">
+
+<div class="inner">
+
+<p class="label">Selected Works</p>
+
+<h2 class="section-title">
+Visual <em>Archive</em>
+</h2>
+
+<div class="gallery-grid">
+
+<div class="art-card">
+<img src="rashid-work-1.jpg" alt="Rashid Rana Work">
+<h3>Selected Work I</h3>
+<p>Rashid Rana · Image-based practice</p>
+</div>
+
+<div class="art-card">
+<img src="rashid-work-2.jpg" alt="Rashid Rana Work">
+<h3>Selected Work II</h3>
+<p>Rashid Rana · Digital / photographic work</p>
+</div>
+
+<div class="art-card">
+<img src="rashid-work-3.jpg" alt="Rashid Rana Work">
+<h3>Selected Work III</h3>
+<p>Rashid Rana · Contemporary visual practice</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="inner">
+
+<p class="label">Legacy</p>
+
+<h2 class="section-title">
+Artist, Educator & <em>Curator</em>
+</h2>
+
+<p class="text">
+Parallel to his art practice, Rashid Rana is known for his curatorial work and significant contributions to art academia in Pakistan.
+</p>
+
+<p class="text">
+As a founding faculty member and dean of the School of Visual Arts and Design at BNU, he has played a pivotal role in nurturing Pakistan’s next generation of artists while curating major projects such as the BNU Design Summit.
+</p>
+
+<p class="text">
+As founding chairholder of the UNESCO Chair on Inclusion through Art, he has actively promoted human diversity and inclusion through an expanded and transdisciplinary approach to creative practice.
+</p>
+
+</div>
+
+</section>
+
+<section class="related">
+
+<p class="label">Explore More</p>
+
+<h2 class="section-title">
+Featured <em>Artists</em>
+</h2>
+
+<a href="artist-feature.html" class="btn">Back to Artists</a>
+<a href="index.html" class="btn">Home</a>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+
+<div class="footer-logo">
+Cosmopolitan <em>Art</em> Magazine
+</div>
+
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, culture, exhibitions, artist features and visual storytelling.
+</p>
+
+</div>
+
+<div>
+
+<div class="footer-heading">
+Quick Links
+</div>
+
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="events.html">Events & Culture</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+
+</div>
+
+<div>
+
+<div class="footer-heading">
+Contact
+</div>
+
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
+</div>
+
+</footer>
+
+</body>
+</html>
