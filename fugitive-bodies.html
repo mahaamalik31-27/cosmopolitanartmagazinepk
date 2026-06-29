@@ -1,1 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Fugitive Bodies, Speculative Borderlands — Cosmopolitan Art Magazine Pakistan</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:#111;}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#111;}
+.nav-links a:hover{color:var(--pink);}
+.nav-btn{background:#111;color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+
+.hero{margin-top:60px;min-height:92vh;display:grid;grid-template-columns:1fr 1fr;background:#111;color:white;}
+.hero-image img{width:100%;height:100%;object-fit:cover;}
+.hero-content{display:flex;flex-direction:column;justify-content:center;padding:6rem;}
+.label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin-bottom:1.5rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,7vw,6.5rem);line-height:.9;margin-bottom:2rem;}
+.hero h1 em{color:var(--pink);font-style:italic;}
+.hero p{line-height:2;color:#d8d8d8;max-width:650px;font-size:1.05rem;}
+.meta{margin-top:2rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#aaa;}
+
+.section{padding:6rem 2rem;}
+.inner{max-width:1200px;margin:auto;}
+.article{max-width:900px;margin:auto;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:2rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.text{line-height:2;color:#444;font-size:1.02rem;margin-bottom:1.5rem;}
+.dropcap:first-letter{font-family:'Playfair Display',serif;font-size:4rem;float:left;line-height:.8;padding-right:.6rem;color:var(--pink);}
+
+.quote{max-width:900px;margin:3rem auto;background:#fafafa;border-left:4px solid var(--pink);padding:2.5rem;}
+.quote p{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.6;font-style:italic;color:#111;}
+
+.info-box{border:1px solid var(--border);background:#fafafa;padding:2rem;margin-top:3rem;}
+.info-row{display:flex;justify-content:space-between;gap:2rem;padding:1rem 0;border-bottom:1px solid var(--border);}
+.info-row:last-child{border-bottom:none;}
+.info-label{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);}
+.info-value{text-align:right;color:#444;}
+
+.artist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;}
+.artist-card{border:1px solid var(--border);background:white;overflow:hidden;}
+.artist-card img{width:100%;height:420px;object-fit:cover;background:#fafafa;}
+.artist-info{padding:2rem;}
+.artist-info h3{font-family:'Playfair Display',serif;font-size:2rem;margin-bottom:1rem;}
+.artist-info p{line-height:1.8;color:#555;margin-bottom:1rem;}
+.caption{font-size:.82rem;color:#777;font-style:italic;}
+
+.dark{background:#111;color:white;}
+.dark .text{color:#d0d0d0;}
+.dark .inner{max-width:900px;}
+
+.gallery{background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.gallery-card{background:white;border:1px solid var(--border);padding:1rem;}
+.gallery-card img{width:100%;height:360px;object-fit:cover;background:#f7f7f7;}
+.gallery-card p{font-size:.85rem;line-height:1.6;color:#666;margin-top:1rem;}
+
+.related{text-align:center;padding:5rem 2rem;}
+.btn{display:inline-block;background:#111;color:white;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin:.5rem;}
+.btn:hover{background:var(--pink);}
+
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a:hover{color:var(--pink);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+
+@media(max-width:900px){
+.nav-links,.nav-btn{display:none;}
+nav{padding:0 1rem;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{grid-template-columns:1fr;min-height:auto;}
+.hero-image img{height:420px;}
+.hero-content{padding:3rem 1.5rem;}
+.hero h1{font-size:3.2rem;}
+.section{padding:4rem 1.5rem;}
+.artist-grid,.gallery-grid{grid-template-columns:1fr;}
+.artist-card img,.gallery-card img{height:auto;}
+.info-row{flex-direction:column;gap:.5rem;}
+.info-value{text-align:left;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events & Culture</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="issue-01.html">Issue 01</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+</nav>
+
+<section class="hero">
+<div class="hero-image">
+<img src="fugitive-bodies-hero.jpg" alt="Fugitive Bodies Speculative Borderlands exhibition">
+</div>
+
+<div class="hero-content">
+<p class="label">Art Exhibition · Olomopolo Lahore</p>
+
+<h1>
+Fugitive Bodies,<br>
+<em>Speculative Borderlands</em>
+</h1>
+
+<p>
+A quiet but powerful exhibition on memory, movement, archives, migration, identity and the politics of belonging.
+</p>
+
+<div class="meta">
+Curated by Abdullah Qureshi · May 20 – June 25, 2026
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="article">
+
+<p class="label">Exhibition Feature</p>
+
+<h2 class="section-title">
+Memory, Movement & <em>Belonging</em>
+</h2>
+
+<p class="text dropcap">
+There are exhibitions that ask you to look, and then there are exhibitions that ask you to stay with what you have seen. <em>Fugitive Bodies, Speculative Borderlands</em> belongs to the second kind.
+</p>
+
+<p class="text">
+Curated by Abdullah Qureshi and presented at Olomopolo, Lahore, the exhibition brings together works by Tamara Al-Mashouk, Sara Khan, Syowia Kyambi, Sandeep Johal and Risham Hosain Syed.
+</p>
+
+<p class="text">
+At first glance, the show appears gentle in its visual rhythm. There is space, silence, fabric, water, archival imagery, soft gestures and familiar fragments of place. But the longer one engages with the works, the more the exhibition opens into questions that are urgent, layered and deeply political.
+</p>
+
+<div class="quote">
+<p>
+“What does it mean to belong to a place that has shifted? What does the body remember when history forgets?”
+</p>
+</div>
+
+<p class="text">
+The exhibition does not treat the border as a simple line. It approaches the borderland as a lived condition — a place of rupture, but also of imagination; a place of loss, but also of survival.
+</p>
+
+<div class="info-box">
+
+<div class="info-row">
+<div class="info-label">Exhibition</div>
+<div class="info-value">Fugitive Bodies, Speculative Borderlands</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Curator</div>
+<div class="info-value">Abdullah Qureshi</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Artists</div>
+<div class="info-value">Tamara Al-Mashouk, Sara Khan, Syowia Kyambi, Sandeep Johal, Risham Hosain Syed</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Venue</div>
+<div class="info-value">Olomopolo, 43A Block D, New Muslim Town, Lahore</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Dates</div>
+<div class="info-value">May 20 to June 25, 2026</div>
+</div>
+
+<div class="info-row">
+<div class="info-label">Published By</div>
+<div class="info-value">Cosmopolitan Art Magazine Team</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section dark">
+<div class="inner">
+
+<p class="label">Curatorial Conversation</p>
+
+<h2 class="section-title">
+Borders as <em>Lived Conditions</em>
+</h2>
+
+<p class="text">
+The exhibition builds on decolonial, feminist and transnational concerns. It reflects on the histories and movements of racialized and migratory subjects while questioning how identity, territory and belonging are often fixed by systems of power.
+</p>
+
+<p class="text">
+What makes the exhibition compelling is that it does not reduce these subjects to pain alone. Instead, it allows space for refusal, tenderness, myth-making, recovery and possibility.
+</p>
+
+<p class="text">
+Through drawing, painting, photography, textiles, video, installation, archival research and fieldwork, the artists create a shared language of resistance and re-imagination.
+</p>
+
+</div>
+</section>
+
+<section class="section">
+<div class="inner">
+
+<p class="label">Featured Artists</p>
+
+<h2 class="section-title">
+Five Practices, <em>One Borderland</em>
+</h2>
+
+<div class="artist-grid">
+
+<div class="artist-card">
+<img src="tamara-al-mashouk.jpg" alt="Tamara Al-Mashouk">
+<div class="artist-info">
+<h3>Tamara Al-Mashouk</h3>
+<p>Tamara Al-Mashouk’s work brings the exhibition into the territory of memory, land, water and longing. Her practice explores where memory lives — inside the body, within the land, or in the spaces we build around ourselves.</p>
+<p class="caption">Her work reflects on water, soil, memory and the emotional architecture of home.</p>
+</div>
+</div>
+
+<div class="artist-card">
+<img src="sara-khan-borderlands.jpg" alt="Sara Khan">
+<div class="artist-info">
+<h3>Sara Khan</h3>
+<p>Sara Khan’s work enters the exhibition through magical realism, hybridity and transformation. Working across watercolor, textiles, ceramics and installation, she explores migration, heritage, the feminine experience, motherhood and survival.</p>
+<p class="caption">Her works explore migration, femininity, hybridity and the changing forms we take in order to survive.</p>
+</div>
+</div>
+
+<div class="artist-card">
+<img src="syowia-kyambi.jpg" alt="Syowia Kyambi">
+<div class="artist-info">
+<h3>Syowia Kyambi</h3>
+<p>Syowia Kyambi’s work brings the archive under pressure. Her practice questions who gets remembered, who is erased and how colonial histories continue to shape the present.</p>
+<p class="caption">Her work disrupts colonial archives, turning memory into an active site of questioning and resistance.</p>
+</div>
+</div>
+
+<div class="artist-card">
+<img src="sandeep-johal.jpg" alt="Sandeep Johal">
+<div class="artist-info">
+<h3>Sandeep Johal</h3>
+<p>Sandeep Johal’s textile works bring bold visual energy into the exhibition. Through thread, pattern, symbol and colour, her Guardian series creates forms that feel protective, spiritual and alive.</p>
+<p class="caption">Her textile works create a language of protection, presence and feminist resistance.</p>
+</div>
+</div>
+
+<div class="artist-card">
+<img src="risham-hosain-syed.jpg" alt="Risham Hosain Syed">
+<div class="artist-info">
+<h3>Risham Hosain Syed</h3>
+<p>Risham Hosain Syed’s work brings the exhibition back to Lahore in a direct and powerful way. Her practice looks closely at the city as a place constantly in transition, familiar but unsettled.</p>
+<p class="caption">Her work reflects on Lahore as a city in transition, shaped by memory, construction, power and historical residue.</p>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="section gallery">
+<div class="inner">
+
+<p class="label">Exhibition Views</p>
+
+<h2 class="section-title">
+A Quiet but Powerful <em>Visual Rhythm</em>
+</h2>
+
+<div class="gallery-grid">
+
+<div class="gallery-card">
+<img src="borderlands-installation-1.jpg" alt="Exhibition installation view">
+<p>Installation view from Fugitive Bodies, Speculative Borderlands.</p>
+</div>
+
+<div class="gallery-card">
+<img src="borderlands-installation-2.jpg" alt="Exhibition installation view">
+<p>Space, silence, fabric, archival imagery and soft gestures form the atmosphere of the exhibition.</p>
+</div>
+
+<div class="gallery-card">
+<img src="borderlands-installation-3.jpg" alt="Exhibition installation view">
+<p>The exhibition asks viewers to stay with what they have seen.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="section">
+<div class="article">
+
+<p class="label">Cosmo Reflection</p>
+
+<h2 class="section-title">
+What Stayed <em>With Us</em>
+</h2>
+
+<p class="text">
+What stayed with us after experiencing <em>Fugitive Bodies, Speculative Borderlands</em> was not just the imagery, but the quiet insistence of its ideas.
+</p>
+
+<p class="text">
+This is an exhibition that reminds us that not everything needs to be resolved to be understood. Sometimes, to sit with uncertainty is itself a form of knowledge.
+</p>
+
+<p class="text">
+There is also a sense of care running through the show — care in how histories are approached, how bodies are represented and how stories are held.
+</p>
+
+<div class="quote">
+<p>
+“Borders are not only drawn on maps. They are carried within us — in language, relationships and memory.”
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="section dark">
+<div class="inner">
+
+<p class="label">Why It Matters</p>
+
+<h2 class="section-title">
+A Space of <em>Imagination</em>
+</h2>
+
+<p class="text">
+The exhibition is significant because it opens a conversation around identity without reducing it to something decorative or simplified. It uses beauty, material, image and space to engage with difficult histories with sensitivity and depth.
+</p>
+
+<p class="text">
+Most importantly, it presents the borderland not only as a site of rupture and violence, but also as a space of imagination, connection and transformative possibility.
+</p>
+
+</div>
+</section>
+
+<section class="related">
+<p class="label">Explore More</p>
+<h2 class="section-title">Events & <em>Culture</em></h2>
+<a href="events.html" class="btn">Back to Events</a>
+<a href="index.html" class="btn">Home</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, exhibitions, food culture, creative spaces and visual storytelling.
+</p>
+</div>
+
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
+</div>
+</footer>
+
+</body>
+</html>
