@@ -1,1 +1,448 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QV0REXZN5D"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config','G-QV0REXZN5D');
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Issue 01 — Cosmopolitan Art Magazine Pakistan</title>
+<meta name="description" content="Issue 01 of Cosmopolitan Art Magazine Pakistan celebrates contemporary art, exhibitions, food culture, creative spaces and visual storytelling across Pakistan. Order the printed edition by DM on Instagram.">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--black:#111;--white:#fff;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8;}
+body{font-family:'DM Sans',sans-serif;background:white;color:var(--black);overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:white;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000;}
+.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700;color:var(--black);}
+.logo em{color:var(--pink);font-style:italic;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--black);}
+.nav-links a:hover,.nav-links .active{color:var(--pink);}
+.nav-btn{background:var(--black);color:white;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;}
+.nav-btn:hover{background:var(--pink);}
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
+
+.hero{padding:11rem 2rem 6rem;text-align:center;background:#111;color:white;border-bottom:1px solid var(--border);}
+.label{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(4rem,11vw,9rem);line-height:.85;margin-bottom:2rem;}
+.hero h1 em{color:var(--pink);font-style:italic;}
+.hero p{max-width:820px;margin:auto;line-height:2;color:#d8d8d8;font-size:1.08rem;}
+.hero-buttons{margin-top:3rem;display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+.btn{display:inline-block;background:white;color:#111;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid white;}
+.btn.dark{background:#111;color:white;border-color:#111;}
+.btn.outline{background:transparent;color:white;border-color:white;}
+.btn:hover{background:var(--pink);border-color:var(--pink);color:white;}
+
+.section{padding:6rem 2rem;}
+.inner{max-width:1200px;margin:auto;}
+.article{max-width:900px;margin:auto;text-align:center;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.5rem;}
+.section-title em{color:var(--pink);font-style:italic;}
+.text{line-height:2;color:#555;font-size:1.02rem;margin-bottom:1.5rem;}
+
+.issue-info{background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+.info-card{background:white;border:1px solid var(--border);padding:2rem;text-align:center;}
+.info-card span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:1rem;}
+.info-card h3{font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1.1;}
+
+.inside-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+.inside-card{border:1px solid var(--border);background:white;padding:2rem;transition:.3s;}
+.inside-card:hover{transform:translateY(-6px);}
+.inside-card span{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--pink);display:block;margin-bottom:1rem;}
+.inside-card h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1.05;margin-bottom:1rem;}
+.inside-card p{line-height:1.8;color:#666;}
+
+.print-section{background:#111;color:white;text-align:center;}
+.print-section .text{color:#d0d0d0;max-width:780px;margin-left:auto;margin-right:auto;}
+.print-box{max-width:850px;margin:3rem auto 0;border:1px solid #333;padding:3rem;background:rgba(255,255,255,.03);}
+.print-box h3{font-family:'Playfair Display',serif;font-size:2.5rem;margin-bottom:1.5rem;}
+.print-box p{line-height:2;color:#d0d0d0;margin-bottom:2rem;}
+
+.collect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;}
+.collect-card{border:1px solid var(--border);background:#fafafa;padding:2rem;text-align:center;}
+.collect-card h3{font-family:'Playfair Display',serif;font-size:1.6rem;margin-bottom:.8rem;}
+.collect-card p{line-height:1.7;color:#666;font-size:.95rem;}
+
+.submit-section{background:#fafafa;border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center;}
+.submit-tags{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin:2rem auto;max-width:900px;}
+.submit-tags span{border:1px solid var(--border);background:white;padding:.8rem 1rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;}
+
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-links a:hover{color:var(--pink);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+
+@media(max-width:900px){
+.nav-links,.nav-btn{display:none;}
+.menu-toggle{display:block;}
+nav{padding:0 1rem;}
+.logo{font-size:.8rem;max-width:220px;line-height:1.1;}
+.hero{padding:8rem 1.5rem 4rem;}
+.hero h1{font-size:3.5rem;}
+.hero-buttons{flex-direction:column;align-items:center;}
+.btn{width:100%;max-width:280px;text-align:center;}
+.section{padding:4rem 1.5rem;}
+.info-grid,.inside-grid,.collect-grid{grid-template-columns:1fr;}
+.print-box{padding:2rem 1.5rem;}
+.footer-grid{grid-template-columns:1fr;text-align:center;}
+.footer-links{align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+
+<ul class="nav-links">
+<li><a href="events.html">Events & Culture</a></li>
+<li><a href="artist-feature.html">Featured Artists</a></li>
+<li><a href="issue-01.html" class="active">Issue 01</a></li>
+<li><a href="index.html#follow">Follow</a></li>
+</ul>
+
+<a href="mailto:artcosmomagazine@gmail.com" class="nav-btn">Submit Feature</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+<a href="mailto:artcosmomagazine@gmail.com">Submit Feature</a>
+</div>
+
+<section class="hero">
+
+<p class="label">Digital & Printed Edition</p>
+
+<h1>
+Issue <em>01</em>
+</h1>
+
+<p>
+The first issue of Cosmopolitan Art Magazine Pakistan celebrates contemporary art, exhibitions, food culture, creative spaces and the people shaping Pakistan’s visual and cultural landscape.
+</p>
+
+<div class="hero-buttons">
+<a href="#inside" class="btn">Explore Issue</a>
+<a href="#print" class="btn outline">Order Printed Copy</a>
+<a href="https://www.instagram.com/cosmopolitanartmagazine.pk/" target="_blank" class="btn outline">DM on Instagram</a>
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="article">
+
+<p class="label">About Issue 01</p>
+
+<h2 class="section-title">
+A New Creative <em>Archive</em>
+</h2>
+
+<p class="text">
+The inaugural issue of Cosmopolitan Art Magazine Pakistan marks the beginning of a platform dedicated to documenting Pakistan’s evolving creative landscape. From leading contemporary artists and emerging voices to exhibitions, food culture, architecture and design, Issue 01 brings together stories that deserve to be preserved and shared.
+</p>
+
+<p class="text">
+This issue is built as both a digital experience and a future printed collectible for artists, readers, galleries, universities and creative communities across Pakistan.
+</p>
+
+</div>
+
+</section>
+
+<section class="section issue-info">
+
+<div class="inner">
+
+<div class="article">
+
+<p class="label">Issue Details</p>
+
+<h2 class="section-title">
+What This Issue <em>Represents</em>
+</h2>
+
+<p class="text">
+Issue 01 brings together a curated mix of artist features, exhibition highlights, cultural stories and creative documentation.
+</p>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+<span>Edition</span>
+<h3>Issue 01</h3>
+</div>
+
+<div class="info-card">
+<span>Format</span>
+<h3>Digital + Print</h3>
+</div>
+
+<div class="info-card">
+<span>Category</span>
+<h3>Art & Culture</h3>
+</div>
+
+<div class="info-card">
+<span>Published By</span>
+<h3>Cosmo Team</h3>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="inside">
+
+<div class="inner">
+
+<div class="article">
+
+<p class="label">Inside the Issue</p>
+
+<h2 class="section-title">
+Stories in <em>Issue 01</em>
+</h2>
+
+<p class="text">
+A curated selection of contemporary art, exhibitions, food culture and creative stories from across Pakistan.
+</p>
+
+</div>
+
+<div class="inside-grid">
+
+<div class="inside-card">
+<span>Featured Artist</span>
+<h3>Rashid Rana</h3>
+<p>A special feature on one of the leading contemporary artists from South Asia today.</p>
+</div>
+
+<div class="inside-card">
+<span>Exhibition</span>
+<h3>Fugitive Bodies</h3>
+<p>A powerful exhibition on memory, movement, archives, migration, identity and belonging.</p>
+</div>
+
+<div class="inside-card">
+<span>Exhibition</span>
+<h3>Ummeed e Bahar</h3>
+<p>A thoughtfully curated show exploring hope, landscape, memory and renewal.</p>
+</div>
+
+<div class="inside-card">
+<span>Exhibition</span>
+<h3>Muted Dialogues</h3>
+<p>A contemplative exhibition exploring silence, restraint and the expressive power of minimal form.</p>
+</div>
+
+<div class="inside-card">
+<span>Food & Culture</span>
+<h3>ATALVI Gelato</h3>
+<p>A handcrafted Italian gelato experience in Lahore, built around real flavour and craft.</p>
+</div>
+
+<div class="inside-card">
+<span>Food & Culture</span>
+<h3>Gadrung</h3>
+<p>A Hyderabad Deccani restaurant story rooted in heritage, memory and authentic flavour.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section print-section" id="print">
+
+<div class="article">
+
+<p class="label">Printed Edition</p>
+
+<h2 class="section-title">
+Get Issue 01 <em>Delivered</em>
+</h2>
+
+<p class="text">
+Our printed version of Cosmopolitan Art Magazine Pakistan Issue 01 will be available for readers, artists, collectors, galleries, universities and creative communities.
+</p>
+
+<div class="print-box">
+
+<h3>
+Want a Printed Copy?
+</h3>
+
+<p>
+If you would like the printed version of our magazine delivered to your home, please DM us on Instagram. Limited first-edition printed copies will be available.
+</p>
+
+<a href="https://www.instagram.com/cosmopolitanartmagazine.pk/" target="_blank" class="btn">
+DM Us on Instagram
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="inner">
+
+<div class="article">
+
+<p class="label">Why Collect It?</p>
+
+<h2 class="section-title">
+Print. Preserve. <em>Collect.</em>
+</h2>
+
+<p class="text">
+Every issue documents the people, places and practices shaping Pakistan’s creative future.
+</p>
+
+</div>
+
+<div class="collect-grid">
+
+<div class="collect-card">
+<h3>Collector’s Edition</h3>
+<p>A first issue made to be saved, shared and remembered.</p>
+</div>
+
+<div class="collect-card">
+<h3>Home Delivery</h3>
+<p>Printed copies can be delivered directly to your home.</p>
+</div>
+
+<div class="collect-card">
+<h3>Creative Archive</h3>
+<p>Preserving artists, exhibitions and cultural stories in print.</p>
+</div>
+
+<div class="collect-card">
+<h3>Support Art Media</h3>
+<p>Support independent documentation of Pakistan’s creative scene.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section submit-section">
+
+<div class="article">
+
+<p class="label">Issue 02</p>
+
+<h2 class="section-title">
+Become Part of <em>Our Next Issue</em>
+</h2>
+
+<p class="text">
+We welcome artists, curators, galleries, architects, designers, food creators, creative businesses and cultural spaces to share their stories with Cosmopolitan Art Magazine Pakistan.
+</p>
+
+<div class="submit-tags">
+<span>Artists</span>
+<span>Curators</span>
+<span>Galleries</span>
+<span>Architects</span>
+<span>Food Creators</span>
+<span>Creative Businesses</span>
+</div>
+
+<a href="mailto:artcosmomagazine@gmail.com?subject=Issue 02 Feature Submission" class="btn dark">
+Submit Your Story
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-grid">
+
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">
+Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, exhibitions, food culture, creative spaces and visual storytelling.
+</p>
+</div>
+
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="mailto:artcosmomagazine@gmail.com">artcosmomagazine@gmail.com</a>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank">@cosmopolitanartmagazine.pk</a>
+</div>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved
+</div>
+
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('mobileMenu').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>
