@@ -1,0 +1,52 @@
+name: Fix Get Featured mobile menu once
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  fix-mobile-menu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add Get Featured to mobile menus
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          email='feature@cosmopolitanartmagazinepk.online'
+          for path in Path('.').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              new = text
+              # Add Get Featured after Issue 01 inside mobile menus where missing before Submit link
+              old = '<a href="issue-01.html">Issue 01</a>\n<a href="mailto:' + email + '"'
+              repl = '<a href="issue-01.html">Issue 01</a>\n<a href="get-featured.html">Get Featured</a>\n<a href="mailto:' + email + '"'
+              if old in new and repl not in new:
+                  new = new.replace(old, repl)
+              # Make Get Featured page have a mobile menu/toggle like the homepage
+              if path.name == 'get-featured.html':
+                  if '.menu-toggle' not in new:
+                      new = new.replace('.nav-btn:hover{background:var(--pink);}', '.nav-btn:hover{background:var(--pink);}.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}.mobile-menu.active{right:0;}.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:#111;}')
+                      new = new.replace('@media(max-width:700px){nav{padding:0 1rem;}.nav-links,.nav-btn{display:none;}', '@media(max-width:700px){nav{padding:0 1rem;}.nav-links,.nav-btn{display:none;}.menu-toggle{display:block;}')
+                  if '<div class="mobile-menu" id="mobileMenu">' not in new:
+                      new = new.replace('</ul><a href="mailto:feature@cosmopolitanartmagazinepk.online" class="nav-btn">Submit Work</a></nav>', '</ul><a href="mailto:feature@cosmopolitanartmagazinepk.online" class="nav-btn">Submit Work</a><div class="menu-toggle" onclick="toggleMenu()">☰</div></nav><div class="mobile-menu" id="mobileMenu"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a><a href="get-featured.html" onclick="toggleMenu()">Get Featured</a><a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a></div>')
+                  if 'function toggleMenu()' not in new:
+                      new = new.replace('</body>', '<script>function toggleMenu(){document.getElementById("mobileMenu").classList.toggle("active");}</script>\n</body>')
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+          Path('.github/workflows/fix-get-featured-mobile-menu-once.yml').unlink(missing_ok=True)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No mobile menu changes needed."
+          else
+            git commit -m "Add Get Featured to mobile menus"
+            git push
+          fi
