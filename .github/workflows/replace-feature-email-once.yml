@@ -1,0 +1,32 @@
+name: Replace feature email once
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  replace-email:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Replace old email across HTML pages
+        run: |
+          OLD="artcosmomagazine@gmail.com"
+          NEW="feature@cosmopolitanartmagazinepk.online"
+          find . -type f -name "*.html" -print0 | xargs -0 sed -i "s/${OLD}/${NEW}/g"
+          rm -f .github/workflows/replace-feature-email-once.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "Update feature email across site"
+            git push
+          fi
