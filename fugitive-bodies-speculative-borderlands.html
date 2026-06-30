@@ -447,7 +447,7 @@ If this feature stayed with you, send it to someone who follows art, culture, ex
 
 <div class="share-icons">
 
-<a class="share-icon" href="javascript:void(0)" onclick="shareFeature(event)" aria-label="Share this feature" title="Share this feature">
+<a class="share-icon" href="javascript:void(0)" onclick="shareToInstagram(event)" aria-label="Share to Instagram Story or DM" title="Instagram Story / DM">
 <svg viewBox="0 0 24 24" aria-hidden="true">
 <rect x="5" y="5" width="14" height="14" rx="4"></rect>
 <circle cx="12" cy="12" r="3.2"></circle>
@@ -518,19 +518,27 @@ Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporar
 </footer>
 
 <script>
-function shareFeature(event){
+function shareToInstagram(event){
 event.preventDefault();
 const articleUrl='https://cosmopolitanartmagazinepk.online/fugitive-bodies-speculative-borderlands.html';
 const articleTitle='Fugitive Bodies, Speculative Borderlands — Cosmopolitan Art Magazine Pakistan';
+const shareText='Read this feature on Cosmopolitan Art Magazine Pakistan.';
+const isMobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
 if(navigator.share){
-navigator.share({title:articleTitle,url:articleUrl}).catch(function(){});
+navigator.share({title:articleTitle,text:shareText,url:articleUrl}).catch(function(){});
 return;
 }
 if(navigator.clipboard){
-navigator.clipboard.writeText(articleUrl).then(function(){alert('Feature link copied. You can paste it on Instagram, stories, or DMs.');});
+navigator.clipboard.writeText(articleUrl).then(function(){
+if(isMobile && confirm('Feature link copied. Open Instagram Story camera now? Paste it using the link sticker.')){
+window.location.href='instagram://story-camera';
+}else{
+alert('Feature link copied. You can paste it into an Instagram Story using the link sticker, or send it in DMs.');
+}
+});
 return;
 }
-window.prompt('Copy this feature link:',articleUrl);
+window.prompt('Copy this feature link for Instagram Story or DMs:',articleUrl);
 }
 </script>
 
