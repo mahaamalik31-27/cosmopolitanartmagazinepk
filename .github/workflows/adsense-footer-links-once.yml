@@ -1,0 +1,47 @@
+name: Add AdSense and footer links once
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Add AdSense code and small footer links
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          ads = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>'
+          small_links = '<a href="about.html">About</a>\n<a href="contact.html">Contact</a>\n<a href="privacy-policy.html">Privacy Policy</a>\n<a href="get-featured.html">Get Featured</a>'
+          for path in Path('.').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              new = text
+              if 'ca-pub-4139752120547020' not in new:
+                  new = new.replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' + ads, 1)
+              if '<a href="privacy-policy.html">Privacy Policy</a>' not in new:
+                  if '<div class="footer-links">' in new:
+                      start = new.rfind('<div class="footer-links">')
+                      end = new.find('</div>', start)
+                      if start != -1 and end != -1:
+                          new = new[:start] + '<div class="footer-links">\n' + small_links + '\n' + new[end:]
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+          Path('.github/workflows/adsense-footer-links-once.yml').unlink(missing_ok=True)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "Add AdSense code and footer policy links"
+            git push
+          fi
