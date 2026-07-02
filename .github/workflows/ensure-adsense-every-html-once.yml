@@ -1,0 +1,43 @@
+name: Ensure AdSense every HTML once
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  ensure-adsense:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Ensure AdSense code exists on every HTML page
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          ads = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4139752120547020" crossorigin="anonymous"></script>'
+          for path in Path('.').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              new = text
+              if 'ca-pub-4139752120547020' not in new:
+                  if '<meta name="viewport" content="width=device-width, initial-scale=1.0">' in new:
+                      new = new.replace('<meta name="viewport" content="width=device-width, initial-scale=1.0">', '<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' + ads, 1)
+                  elif '<head>' in new:
+                      new = new.replace('<head>', '<head>\n' + ads, 1)
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+          Path('.github/workflows/ensure-adsense-every-html-once.yml').unlink(missing_ok=True)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "All HTML pages already have AdSense."
+          else
+            git commit -m "Ensure AdSense code on every HTML page"
+            git push
+          fi
