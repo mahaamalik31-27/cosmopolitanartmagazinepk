@@ -1,0 +1,1 @@
+run sana jpgjpg path update
