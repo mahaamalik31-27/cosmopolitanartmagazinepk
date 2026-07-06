@@ -1,0 +1,154 @@
+name: Sana live fixes once
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  update-sana:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Download and optimize Sana images, fix pages
+        run: |
+          set -e
+          python3 -m pip install --quiet pillow
+          mkdir -p _sana_download
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-cae8-7208-8178-04ad4040ef35/raw?se=2026-07-06T07:53:06Z&sp=r&sv=2026-02-06&sr=b&scid=7570a196-f731-5747-9995-8f1013797a68&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-05T18:45:35Z&ske=2026-07-07T18:45:35Z&sks=b&skv=2026-02-06&sig=oB6U7LH7pUK1DBlRJIfqO%2BqoBUXIlj6hH5%2BssSDutkY%3D" -o _sana_download/Sana_Dar_Portrait.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-6960-7208-b2d6-7905289c5acb/raw?se=2026-07-06T07:53:13Z&sp=r&sv=2026-02-06&sr=b&scid=63f20986-5fbf-5cf6-b41f-12a67fad6946&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T01:45:03Z&ske=2026-07-08T01:45:03Z&sks=b&skv=2026-02-06&sig=hf%2BzNSPlS%2BztUy46eevRTi69JKn8tZFTCy/wO2is1cU%3D" -o _sana_download/Irises_by_Day_2026.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-a11c-7208-9cb4-18d66f899554/raw?se=2026-07-06T07:53:19Z&sp=r&sv=2026-02-06&sr=b&scid=c0aad5d4-b48f-5425-8f41-d58daa89b91f&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T01:25:57Z&ske=2026-07-08T01:25:57Z&sks=b&skv=2026-02-06&sig=mBQRnaAni4/60FvAsaiCaOqaAayAtpHarQf1SItI%2Bdc%3D" -o _sana_download/Irises_by_Night_2024.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-9228-7208-b8ea-dc3d7024d595/raw?se=2026-07-06T07:53:27Z&sp=r&sv=2026-02-06&sr=b&scid=7545dc3e-b9db-50bb-ac6a-6250b830ea84&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T02:05:10Z&ske=2026-07-08T02:05:10Z&sks=b&skv=2026-02-06&sig=p19a7Szi6joevM5n%2BKbZYaJTG9YQQB2HMWspt5zmguM%3D" -o _sana_download/Seen_and_Unforeseen_2026.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-df78-7208-be61-033d7c5c157a/raw?se=2026-07-06T07:53:33Z&sp=r&sv=2026-02-06&sr=b&scid=d37a05d1-2931-52f5-afef-b35dac0d8f2c&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T01:07:56Z&ske=2026-07-08T01:07:56Z&sks=b&skv=2026-02-06&sig=2uMzPSBxxMomxCjwbkKMZYIIAoWb80cjixKB6mmAlHc%3D" -o _sana_download/Before_Sunrise_2026.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-55c8-7208-894b-d975f47f41b2/raw?se=2026-07-06T07:53:40Z&sp=r&sv=2026-02-06&sr=b&scid=ce7890d4-e36a-5671-8710-9b7c62ff695a&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T00:31:01Z&ske=2026-07-08T00:31:01Z&sks=b&skv=2026-02-06&sig=y%2B9l0VKywIr2jzW2AAGyDKHaoAOmGVzcUOEK54uv%2B4k%3D" -o _sana_download/Before_Sunset_2026.jpg
+          curl -L "https://sdmntprcentralindia.oaiusercontent.com/files/00000000-785c-7208-821f-7b8a9a301390/raw?se=2026-07-06T07:53:46Z&sp=r&sv=2026-02-06&sr=b&scid=e2cf3701-df38-5548-b5af-045df44316c9&skoid=f2622f62-3126-45cd-85e0-0bc840c3afdc&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-07-06T01:44:58Z&ske=2026-07-08T01:44:58Z&sks=b&skv=2026-02-06&sig=xrtbXy9BRUQKBmoQgjA1wCM9kVurB97Vehyh07DYEBI%3D" -o _sana_download/Quinta_da_Ria_2026.jpg
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          from PIL import Image
+          src = Path('_sana_download')
+          for p in src.glob('*.jpg'):
+              im = Image.open(p).convert('RGB')
+              im.thumbnail((1800, 1800))
+              im.save(p.name, quality=84, optimize=True, progressive=True)
+          nav = '''<nav>
+<a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
+<ul class="nav-links">
+<li><a href="events.html">Events</a></li>
+<li><a href="artist-feature.html" class="active">Featured Artists</a></li>
+<li><a href="issue-01.html">Issue 01</a></li>
+<li><a href="get-featured.html">Get Featured</a></li>
+</ul>
+<a href="mailto:feature@cosmopolitanartmagazinepk.online" class="nav-btn">Submit Work</a>
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+<a href="events.html">Events</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+<a href="get-featured.html" onclick="toggleMenu()">Get Featured</a>
+<a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a>
+</div>'''
+          css = '''
+.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;}
+.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001;}
+.mobile-menu.active{right:0;}
+.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase;color:var(--black);}
+.mobile-menu a:hover{color:var(--pink);}
+'''
+          footer = '''<footer>
+<div class="footer-grid">
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, exhibitions, editorial storytelling, and creative culture across South Asia.</p>
+</div>
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="get-featured.html">Get Featured</a>
+</div>
+</div>
+</div>
+<div class="footer-bottom">© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved</div>
+</footer>'''
+          footer_css = '''
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border);}
+.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem;}
+.footer-logo em{color:var(--pink);font-style:italic;}
+.footer-text{line-height:1.9;color:#666;}
+.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem;}
+.footer-links{display:flex;flex-direction:column;gap:.8rem;}
+.footer-links a{color:var(--black);}
+.footer-links a:hover{color:var(--pink);}
+.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777;}
+'''
+          for name in ['saba-haroon.html','sana-dar.html']:
+              path = Path(name)
+              text = path.read_text(encoding='utf-8')
+              if '.menu-toggle' not in text:
+                  if '/* ALERT */' in text:
+                      text = text.replace('/* ALERT */', css + '\n/* ALERT */', 1)
+                  else:
+                      text = text.replace('.alert-bar{', css + '\n.alert-bar{', 1)
+              if '.footer-grid' not in text:
+                  text = text.replace('footer{padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;}\n.footer-logo{font-family:\'Playfair Display\',serif;font-size:1rem;font-weight:700;margin-bottom:0.5rem;}\n.footer-logo em{color:var(--pink);font-style:italic;}\n.footer-note{font-size:0.72rem;color:var(--gray);}', footer_css, 1)
+              text = re.sub(r'<nav>.*?</nav>(?:\s*<div class="mobile-menu".*?</div>)?', nav, text, count=1, flags=re.S)
+              text = re.sub(r'<footer>.*?</footer>', footer, text, count=1, flags=re.S)
+              if 'function toggleMenu()' not in text:
+                  text = text.replace('<script>', "<script>\nfunction toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active');}\n", 1)
+              text = text.replace('.nav-links,.nav-btn{display:none;}', '.nav-links,.nav-btn{display:none;}.menu-toggle{display:block;}')
+              text = text.replace('.nav-links,\n.nav-btn{\ndisplay:none;\n}', '.nav-links,\n.nav-btn{\ndisplay:none;\n}\n.menu-toggle{display:block;}')
+              text = text.replace('footer{padding:3rem 1.5rem;}', 'footer{padding:3rem 1.5rem;}.footer-grid{grid-template-columns:1fr;text-align:center;}.footer-links{align-items:center;}')
+              path.write_text(text, encoding='utf-8')
+          af = Path('artist-feature.html')
+          text = af.read_text(encoding='utf-8')
+          text = text.replace('<a href="index.html#follow" onclick="toggleMenu()">Follow</a>', '<a href="get-featured.html" onclick="toggleMenu()">Get Featured</a>')
+          if 'sana-dar.html' not in text:
+              card = '''
+<div class="artist-card reverse">
+<div class="artist-image">
+<a href="sana-dar.html">
+<img src="Sana_Dar_Portrait.jpg" alt="Sana Dar">
+</a>
+</div>
+<div class="artist-content">
+<p class="artist-label">Featured Artist 04</p>
+<h2 class="artist-name">Sana<br><em>Dar</em></h2>
+<p class="artist-meta">Abstract Expressionism · Acrylic · Collage · Islamabad</p>
+<p class="artist-desc">Sana Dar’s work moves through colour, instinct, contrast, and emotional intensity. Working across acrylic, ink, emulsion paint, collage, and hand cut paper, she builds abstract worlds that explore duality, memory, emotion, and the harmony between opposing forces.</p>
+<a href="sana-dar.html" class="artist-btn">Read Feature</a>
+</div>
+</div>
+'''
+              text = text.replace('\n</section>\n\n<section class="feature-section">', card + '\n</section>\n\n<section class="feature-section">', 1)
+          af.write_text(text, encoding='utf-8')
+          Path('.github/workflows/sana-live-fixes-once.yml').unlink(missing_ok=True)
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes needed."
+          else
+            git commit -m "Make Sana Dar feature live and fix artist headers footers"
+            git push
+          fi
