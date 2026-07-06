@@ -1,1 +1,1 @@
-trigger pages deploy
+trigger pages deploy after Sana image fix
