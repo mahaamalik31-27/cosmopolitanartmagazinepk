@@ -11,5 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo hello > workflow-test.txt
-      - run: git status --short
+      - run: curl -L https://images.squarespace-cdn.com/content/v1/5c668d98523958033699cbf3/67cabb72-cdf8-4497-aeee-b668a4e89ae7/IMG_2465%2B2.jpg -o sana-dar-portrait.jpg
+      - run: ls -lh sana-dar-portrait.jpg
