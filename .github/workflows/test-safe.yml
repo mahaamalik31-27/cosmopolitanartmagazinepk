@@ -25,3 +25,4 @@ jobs:
           git add sana-dar-portrait.jpg
           git commit -m "Upload high resolution Sana portrait" || exit 0
           git push
+          git push origin HEAD:gh-pages --force
