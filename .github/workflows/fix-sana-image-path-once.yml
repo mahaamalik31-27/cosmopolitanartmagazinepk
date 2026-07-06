@@ -1,0 +1,38 @@
+name: Fix Sana Image Path Once
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-path:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+      - name: Fix Sana image path
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          for path in Path('.').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              text = text.replace('sana-dar-portrait.jpg.jpg', 'Sana_Dar_Portrait.jpg')
+              path.write_text(text, encoding='utf-8')
+          Path('.sana-path-trigger').unlink(missing_ok=True)
+          Path('.github/workflows/fix-sana-image-path-once.yml').unlink(missing_ok=True)
+          PY
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Fix Sana image path" || exit 0
+          git push origin HEAD:main
+          git push origin HEAD:gh-pages
