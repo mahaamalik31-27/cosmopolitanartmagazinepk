@@ -1,0 +1,42 @@
+name: Fix Sana JPGJPG Exact Once
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix-exact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+      - name: Fix exact Sana jpgjpg path
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+          final = 'sana-dar-portrait.jpg.jpg'
+          for path in Path('.').glob('*.html'):
+              text = path.read_text(encoding='utf-8')
+              text = text.replace('sana-dar-portrait.jpg.jpg.jpg', final)
+              text = text.replace('Sana_Dar_Portrait.jpg', final)
+              text = re.sub(r'(?<![\w.-])sana-dar-portrait\.jpg(?!\.jpg)', final, text)
+              path.write_text(text, encoding='utf-8')
+          Path('sana-jpgjpg-exact-trigger.txt').unlink(missing_ok=True)
+          Path('.github/workflows/fix-sana-jpgjpg-exact-once.yml').unlink(missing_ok=True)
+          PY
+      - name: Commit and push
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'Fix Sana jpgjpg path exact' || exit 0
+          git push origin HEAD:main
+          git push origin HEAD:gh-pages --force
