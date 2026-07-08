@@ -11,52 +11,60 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--bg:#090909;--panel:#111;--panel-soft:#151515;--white:#fff;--text:#d3d3d3;--muted:#9a9a9a;--pink:#d4578a;--line:rgba(255,255,255,.1)}
+    :root{--bg:#090909;--bg2:#111;--panel:#141414;--white:#fff;--text:#d6d6d6;--muted:#9a9a9a;--pink:#d4578a;--line:rgba(255,255,255,.10)}
+    html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--white);overflow-x:hidden;line-height:1.75}
     a{text-decoration:none;color:inherit}
-    .ambient{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 15% 10%,rgba(212,87,138,.12),transparent 20%),radial-gradient(circle at 85% 0,rgba(255,255,255,.04),transparent 15%),radial-gradient(circle at 60% 100%,rgba(212,87,138,.07),transparent 25%);opacity:1}
+    .ambient{position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 10%,rgba(212,87,138,.12),transparent 20%),radial-gradient(circle at 85% 5%,rgba(255,255,255,.05),transparent 18%),radial-gradient(circle at 70% 100%,rgba(212,87,138,.08),transparent 25%)}
     .wrap{position:relative}
-    .topbar{position:fixed;top:0;left:0;right:0;height:68px;background:rgba(9,9,9,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:99}
-    .brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800}.brand em{color:var(--pink);font-style:italic}
-    .tag{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:.55rem .8rem;border-radius:999px}
+    .topbar{position:fixed;top:0;left:0;right:0;height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(9,9,9,.86);backdrop-filter:blur(18px);border-bottom:1px solid var(--line);z-index:50}
+    .brand{font-family:'Playfair Display',serif;font-size:1rem;font-weight:800} .brand em{color:var(--pink);font-style:italic}
+    .tag{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:.55rem .8rem;border-radius:999px}
     .hero{min-height:100vh;padding:10rem 6vw 6rem;display:grid;grid-template-columns:1.15fr .85fr;gap:3rem;align-items:end;border-bottom:1px solid var(--line)}
-    .eyebrow,.section-label{font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:1rem}
-    h1{font-family:'Playfair Display',serif;font-size:clamp(4.2rem,9vw,8rem);line-height:.84;letter-spacing:-.05em;margin-bottom:1.6rem}
-    h1 em,.section-title em,.stat h3 em{color:var(--pink);font-style:italic}
-    .hero-copy{max-width:780px;font-size:1.08rem;color:var(--text);line-height:2}
+    .eyebrow,.section-label{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:1rem}
+    h1{font-family:'Playfair Display',serif;font-size:clamp(4.2rem,9vw,8rem);line-height:.83;letter-spacing:-.05em;margin-bottom:1.5rem} h1 em,.section-title em{color:var(--pink);font-style:italic}
+    .hero-copy{max-width:760px;color:var(--text);font-size:1.08rem;line-height:2}
     .hero-pills{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-    .pill{font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:.8rem 1rem;border-radius:999px;background:rgba(255,255,255,.03);color:#ddd}
+    .pill{font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);padding:.78rem 1rem;border-radius:999px;background:rgba(255,255,255,.03);color:#e0e0e0}
     .intro-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));padding:2rem;box-shadow:0 30px 70px rgba(0,0,0,.28)}
-    .intro-card .num{font-family:'Playfair Display',serif;font-size:6rem;line-height:.8;color:rgba(212,87,138,.3)}
-    .intro-card h2{font-family:'Playfair Display',serif;font-size:2.3rem;line-height:.95;margin:.5rem 0 1rem}
+    .intro-card .num{font-family:'Playfair Display',serif;font-size:6rem;line-height:.8;color:rgba(212,87,138,.28)}
+    .intro-card h2{font-family:'Playfair Display',serif;font-size:2.25rem;line-height:.95;margin:.5rem 0 1rem}
     .intro-card p{color:var(--text)}
     .mini-lines{display:grid;gap:.85rem;margin-top:1.8rem}
     .mini-lines div{display:flex;justify-content:space-between;gap:1rem;border-top:1px solid var(--line);padding-top:.85rem;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:#bbb}
     .mini-lines span:last-child{color:var(--pink)}
     section{padding:5rem 6vw;border-bottom:1px solid var(--line)}
-    .section-head{max-width:900px;margin-bottom:2.3rem}
-    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,5.2rem);line-height:.92;letter-spacing:-.04em;margin-bottom:1rem}
+    .section-head{max-width:920px;margin-bottom:2.5rem}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.4rem);line-height:.92;letter-spacing:-.04em;margin-bottom:1rem}
     .section-head p{max-width:760px;color:var(--text)}
-    .grid-2,.grid-3{display:grid;gap:1.2rem}.grid-2{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(3,1fr)}
-    .card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));padding:1.6rem;min-height:250px;display:flex;flex-direction:column}
-    .card small{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}
-    .card h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1;margin-bottom:1rem}
-    .card p{color:var(--text)}
+    .quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+    .quick-card{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:1.4rem}
+    .quick-card strong{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;line-height:1.05;margin-bottom:.5rem}
+    .quick-card p{color:var(--text);font-size:.95rem}
+    .brands{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem}
+    .brand-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.02));padding:1.6rem;display:flex;flex-direction:column;min-height:250px}
+    .brand-card small{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}
+    .brand-card h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1;margin-bottom:1rem}
+    .brand-card p{color:var(--text)}
     .links{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:auto;padding-top:1.2rem}
     .links a,.links span{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--line);padding:.7rem .95rem;border-radius:999px;background:rgba(255,255,255,.03);color:#ddd}
-    .feature-list{display:grid;gap:1rem}
-    .feature-item{display:grid;grid-template-columns:230px 1fr;gap:2rem;border-top:1px solid var(--line);padding-top:1rem}
-    .feature-item span{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink)}
-    .feature-item h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.45rem}
-    .feature-item p{color:var(--text)}
-    .stat{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:1.5rem}
-    .stat h3{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.05;margin-bottom:.75rem}
-    .stat p{color:var(--text)}
+    .gallery{display:grid;gap:1.4rem}
+    .work{border:1px solid var(--line);background:rgba(255,255,255,.02);overflow:hidden}
+    .work img{display:block;width:100%;height:auto;background:#111}
+    .work-info{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:end;padding:1.4rem 1.4rem 1.6rem;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(255,255,255,.03))}
+    .work-info small{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);margin-bottom:.65rem}
+    .work-info h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1;margin-bottom:.6rem}
+    .work-info p{color:var(--text);max-width:880px}
+    .work-info a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);white-space:nowrap}
+    .capabilities{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .cap{border:1px solid var(--line);background:rgba(255,255,255,.03);padding:1.45rem}
+    .cap h3{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1.05;margin-bottom:.7rem}
+    .cap p{color:var(--text)}
     .closing{text-align:center}
     .closing p{max-width:820px;margin:0 auto;color:var(--text)}
     .footer-note{padding:2rem 6vw;text-align:center;color:#888;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase}
-    @media(max-width:980px){.hero,.grid-2,.grid-3,.feature-item{grid-template-columns:1fr}.feature-item{gap:.6rem}.hero{padding-top:8.5rem}}
-    @media(max-width:640px){.topbar{padding:0 1rem}.tag{display:none}.hero,section{padding-left:1.25rem;padding-right:1.25rem}h1{font-size:3.8rem}}
+    @media(max-width:980px){.hero,.brands,.quick-grid,.capabilities,.work-info{grid-template-columns:1fr}.hero{padding-top:8.5rem}.work-info{align-items:start}}
+    @media(max-width:640px){.topbar{padding:0 1rem} .tag{display:none} .hero,section{padding-left:1.25rem;padding-right:1.25rem} h1{font-size:3.7rem} .work-info h3{font-size:1.6rem}}
   </style>
 </head>
 <body>
@@ -72,19 +80,19 @@
         <div>
           <p class="eyebrow">Digital Marketing · SEO · Content · Web · Creative Direction</p>
           <h1>Mahaa<br><em>Ashraf</em></h1>
-          <p class="hero-copy">Hi, I’m Mahaa Ashraf — a digital marketing manager and multidisciplinary creative based in Lahore. I work across SEO, content strategy, website layouts, ad campaigns, social media direction, editorial storytelling, and video content. My portfolio brings together business-focused thinking with polished visual execution for marketplaces, consumer brands, service campaigns, and contemporary art platforms.</p>
+          <p class="hero-copy">Hi, I’m Mahaa Ashraf — a digital marketing manager and multidisciplinary creative based in Lahore. I work across SEO, content strategy, website layouts, ad campaigns, social media direction, editorial storytelling, and video content. This private portfolio brings together my actual work across marketplaces, consumer brands, service campaigns, and contemporary art platforms.</p>
           <div class="hero-pills">
             <span class="pill">SellAnyBiz</span>
             <span class="pill">Grocer</span>
             <span class="pill">Cosmopolitan Art Magazine PK</span>
-            <span class="pill">Campaign Creatives</span>
+            <span class="pill">Ads & Campaigns</span>
             <span class="pill">YouTube & Reels</span>
           </div>
         </div>
         <aside class="intro-card">
           <div class="num">01</div>
-          <h2>Structured marketing with a visual eye.</h2>
-          <p>This hidden page is designed as a private showcase of selected work — page layouts, campaigns, social content, and editorial projects — all presented in the same dark editorial spirit as the Cosmo brand aesthetic.</p>
+          <h2>My work, now added into the page.</h2>
+          <p>This hidden page now includes real visual work samples so it feels like an actual portfolio, not just a description. It stays private, unlinked from the main website, and is meant for direct sharing only.</p>
           <div class="mini-lines">
             <div><span>Theme</span><span>Cosmo Editorial</span></div>
             <div><span>Status</span><span>Unlisted / Noindex</span></div>
@@ -95,21 +103,35 @@
 
       <section>
         <div class="section-head">
+          <p class="section-label">At a Glance</p>
+          <h2 class="section-title">What I <em>do</em></h2>
+          <p>I usually work at the intersection of strategy and execution — where websites, SEO, campaigns, social content, and brand direction need to come together in one clean system.</p>
+        </div>
+        <div class="quick-grid">
+          <div class="quick-card"><strong>SEO & Content</strong><p>Keyword planning, content structure, AEO/LLM-aware thinking, and user-focused messaging.</p></div>
+          <div class="quick-card"><strong>Website Layouts</strong><p>Page-by-page planning, landing sections, editorial pages, and polished brand-aligned copy.</p></div>
+          <div class="quick-card"><strong>Campaign Creatives</strong><p>Offer posts, story systems, branded social grids, and fast-moving promotional content.</p></div>
+          <div class="quick-card"><strong>Editorial Storytelling</strong><p>Artist features, exhibition coverage, open calls, and magazine-style digital publishing.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
           <p class="section-label">Projects</p>
           <h2 class="section-title">Platforms & <em>Brands</em></h2>
-          <p>A selection of the brands and digital platforms I have created work for, including website content, social media campaigns, editorial features, and performance-driven creative systems.</p>
+          <p>A selection of the brands and digital platforms I have created work for, including website content, social campaigns, editorial features, and performance-driven creative systems.</p>
         </div>
-        <div class="grid-2">
-          <article class="card">
+        <div class="brands">
+          <article class="brand-card">
             <small>Business Marketplace</small>
             <h3>SellAnyBiz</h3>
-            <p>Website page planning, use-case content, SEO structures, migration thinking, listing creatives, LinkedIn-style assets, and business-oriented brand communication for brokers, buyers, and sellers.</p>
+            <p>Website page planning, use-case content, SEO structures, listing creatives, LinkedIn-style assets, and business-oriented brand communication for brokers, buyers, and sellers.</p>
             <div class="links">
               <a href="https://sellanybiz.com/" target="_blank" rel="noopener">sellanybiz.com</a>
               <span>SEO · Web · Social</span>
             </div>
           </article>
-          <article class="card">
+          <article class="brand-card">
             <small>Editorial Platform</small>
             <h3>Cosmopolitan Art Magazine PK</h3>
             <p>Artist features, exhibition pages, open calls, event storytelling, newsletter ideas, website sections, and social-first editorial design direction for a digital art publication.</p>
@@ -118,16 +140,15 @@
               <span>Editorial · Website · Social</span>
             </div>
           </article>
-          <article class="card">
+          <article class="brand-card">
             <small>Consumer Brand</small>
             <h3>Grocer</h3>
             <p>Daily promotional stories, product-led layouts, price-card systems, seasonal campaigns, sports tie-ins, and fast-moving visual content built around a strong orange-led brand identity.</p>
             <div class="links">
-              <span>App-Based Brand</span>
               <span>Stories · Offers · Campaigns</span>
             </div>
           </article>
-          <article class="card">
+          <article class="brand-card">
             <small>Service Campaigns</small>
             <h3>Dubai Home Services Work</h3>
             <p>Offer-based performance creatives for service businesses including cleaning, pest control, maintenance, moving, and recurring monthly service promotions.</p>
@@ -141,39 +162,68 @@
 
       <section>
         <div class="section-head">
-          <p class="section-label">Work Highlights</p>
-          <h2 class="section-title">What this portfolio <em>includes</em></h2>
-          <p>The page is structured to reflect the range of work I create, from strategy-backed copy and SEO to highly visual campaign execution.</p>
+          <p class="section-label">Actual Work Samples</p>
+          <h2 class="section-title">Selected <em>Visuals</em></h2>
+          <p>Real screenshots and campaign previews from my work across editorial publishing, marketplace content, service campaigns, and consumer brand creatives.</p>
         </div>
-        <div class="feature-list">
-          <div class="feature-item">
-            <span>01 · Website Layouts</span>
-            <div>
-              <h3>Page-by-page web content and structure</h3>
-              <p>Landing pages, use-case pages, home sections, editorial pages, CTA structures, and clean website content written with both brand tone and conversion in mind.</p>
+        <div class="gallery">
+          <article class="work">
+            <img src="data:image/webp;base64,UklGRmR+AABXRUJQVlA4IFh+AADQGgCdASqEA2IBPm00l0mkIyIhKAgAgA2JaW7hd2H5OLIf+4xv6dO95/5v/2W3p7ppVOz8f/vv6NhLSr2f+z+vcp3+v2qHp0f2MsauLQqf07+2E53JLW+5qk+eY2pCxW+7j70+PnB2B3zLTuyXX55mPtvr78Cm1U6n2s5yD4X4q9/uLf5v/rSl47+Nkl3f6oI6r+qtg8fcn0N5YeGd4WCBxPwkzrfyqP7/6Pl3rWvd9g/b6d+zj/q1i3K/v+w8lZyA4H6JY8B8n5A+SLuF4DRiK4b4P4vaf/fllbzh4O+39u1Zt/R8Jb8c+lf8+GqPLbEcP+34e4QpLSO79u2r2DeTn6Pt+o9H+zAXfIYJW62xct3qGdpOzHcdP4v5yq2zB8nF5g2hAw6D6kgwCbj+6OgN5fM7y8+L6mYr5dSr8u2mAz2n+v0u3jW7lGOrI5g/xy1sD/Qm5pNtY0gXG8uJp2v3aJf87xvx9twPfbUl8W6lJ8mF7Nt25tuq+YtZ+kdxyVf7HdDq8T9D5Yx4SrY4Ntr3ntm2XbwVg0k3jY6BxKcekn2d5nfd+T36tW+f5eTQm8H9Hq7Skf/8LhFQv8A3nF5bm3+f9g3y1vOm+zYx8c2ub1m+9q4NT4hpJ+m3l1x3jeX3B7r6f2n+2P2u7q4X+5D+nUqDq2trrWT5r3v/FzY8yhuv3yJ2m1iZ6m8N5df5mXmO+IbrlwvW1h7iI8s7Vj8pD6+edG2Dvf4rOYzT5O7s05Y3KXji4e7P6f6qk2s9aQqlZ5Q4hyS1rIpM8cKzlPt4o9Pq0GvW0mMzPnz4mXEf2eqx0Pq7vqul3xDtI9jaZ6mr9XKnJvZiG7avzD7s8St/9bWZs6m8b6vG9yF3V1GvLyGq1iGbxGrFvxYV8gB7qH7eDru8f6KX7O5n9sXn2Q2DkfshR3nQvYul7K04B1D7mO9kL+Nyr6jL2mM9C+3s6ns6zm6O7Rxs7dqcJ4D3gB7OFx8AYGXppQHdnBa1R6J4cF9w8kRxgHZpwyvcrf+G9Y8W2bo7ErT3nI9mWz3yt4wH7c4o5g0M9C4tvplrP+f0m4r44csLhZ2zrzbQyYcF4q+W6H2z6jjiO6h3mEYo9jv1n6gdz7Pr6sdb1H+vUrPUNz5gU3dsH2vIu36GmjsJ6Nqrs0nZ+1jkbNQnKq2cR7W+DyW1qH8qVkmWlxnXk4Jrzt1Uq7ve0VJ1Nv5Q6tNQ7G9T+/z0E9jTh58nM4e2c5A1HjL61rxt6bj7D9ltXUr8R9ltP7sKfO+qX2xut0nO/abOGQ7bcmcvZQ4j8D9I+3eR0g0/uJr7Pcd5zfh2Vt0G7z+fWWMdm9ykZzR8zR2QZ6e6rfr5i4cA8m0iEfIkSzmfP3ePAWWj3dQr0aPgsp9pnm5m0N3YCrSvx5+8Y4uL7DfMpkwep8+cfxX9Kz8wR2rVnN1Q2tG8auX6XGuM7t0s7Q63rS0a0QdR1+EXS4aM8a2F8mM2YBItpR3Y1tY3w7qln1i2wPk3h4W3vS3x0tw7J6/FWPlj4iGm7rN5yqp3Q6eZ2z9m3svkdbz1pSV+tuZps9vbB3/Jbxm3k7H7mXRhLzvC0vXnb5ktn0V5Y4NfSYG9p8n1nY7yG0r5EfdJ1Mq3eC3z2uzVsG0C0MknjvLZfLBXv7xvJdWv3Q2sn9FdS67aL7dCcPr2fE+v8rpl+4xt4v0wxYAA/vh3S9d1itqX8m9JgA==" alt="Cosmopolitan Art Magazine PK work samples">
+            <div class="work-info">
+              <div>
+                <small>Editorial Design & Publishing</small>
+                <h3>Cosmopolitan Art Magazine PK</h3>
+                <p>Magazine-style artist features, cultural stories, and exhibition-focused social layouts created in a visually refined editorial direction.</p>
+              </div>
+              <a href="https://cosmopolitanartmagazinepk.online/" target="_blank" rel="noopener">Visit website ↗</a>
             </div>
-          </div>
-          <div class="feature-item">
-            <span>02 · SEO & Strategy</span>
-            <div>
-              <h3>Search-focused thinking behind the content</h3>
-              <p>Keyword planning, migration roadmaps, AEO/LLM-ready ideas, content hierarchy, schema thinking, and practical growth planning that supports the visual work.</p>
+          </article>
+
+          <article class="work">
+            <img src="data:image/webp;base64,UklGRrKCAABXRUJQVlA4IKaCAADwGwCdASqEA28BPm02lUikIqIhKAgAgA2JaW7hd2H5OJb8L5IO+7Jz/3fe3m/zf/3fb+Kf+39WlW3z7F8+f6d7vH/1rr3f4fH/4f+v8R3o7g2R6v/2F1Vn6T3lXW5T5vX1k+3b7L3nyfWWTfTXtOyj6mJXf2br7qcd0r7Jw1V6Y5KfK7p8P7v+5x+77vyV7+Mb+f/2/9f7OusV4FZ6yCb9o+1Y7R3cL4zjJ4hC7dJ7HnqjKqfQnT9Ub5k2Dd4+hcKh2aF7qzqzcF5z+S6r2/0m+e7zvNf6+9m3L0a2Pbw0oM0PXg+2WqvK7k+uYOz3kmfD0P0X+f+z9uYyQjQSn6g7TQ8Lx9U5r2hGgMY0Qb8wnkrqO1ddJ9Yz2j0eudX7mLcHtiZJ7q8C3pM3S6fdsyJ4mc7b0i9QX6lZ0w2Q2k9P/0JeOf3z9w3N4+J8R7G+eR2X8+T7c7At3Yq+8R6v++s7q4V+Y9f+qsC3P8P9HfeV3h0Dzo6yX7X9ZHGuyj1r1h0B6e7xg1NddvP6em9v7l3Wt7O6/WHfPsA/qWj8y1M9fkfXh6l7x9f8m+Tb7l8d5th2T2t3V2iTd7z8B2PzovL9h3h3V0Q6zj0LZ4b+f4K2cH1r4Pz8v1o8P1X5f4wZV2v1oX9n0j1S5/uj7b6Y3FhLrZr0oV2G0W5cH2tS+3V7c0Gm17dG+9sQH+1yNvc8m3nMry8pW2i2Zd3n9aZ1nR7nXn9jt4j0sm5H2xFmxcd2n1f5j7g0bG8r6dr0z2SmQ7GHm49D7e1fW3vGdlvWvWjFQHh7gX8U3k6r4Hws3+tvOzgk6vru7q3nO6nGHd2K9r9zt43+2D4d7rj1+3JX8nlq+3N4Q7M29v7l5r+8D5zH2T7NQ0bP0lUu9qRkpc1w9m8u1/7tW0B1fn3Z9v7S9Zj8E6f8oYf4Vg+sF1vO7H3f3UsH9v3eLT1J7m2w7n7H1+buT3m54bH2cT7j7Vx+1b7YxM9s3kP6rK+QpT7RnyqM2w8dMN5zdNb2z1T7gXx11Rkdl03f2sLzGdtm0pcdM5cP9xH6T9N29fJY9x5xUzx4fd7Z8VdBbOa6/5Sp1i+0S4H6f7V80vbtP0nuv3vr+Lri5jMVa+V2o7P7LdD37gN31V0mLwN5e7f0sPb4kA==" alt="Service campaign creatives">
+            <div class="work-info">
+              <div>
+                <small>Promotional Campaigns</small>
+                <h3>Dubai Home Services Creatives</h3>
+                <p>A campaign grid built around offers, service categories, and recurring promotions for cleaning, moving, pest control, and maintenance campaigns.</p>
+              </div>
             </div>
-          </div>
-          <div class="feature-item">
-            <span>03 · Social Media Design</span>
-            <div>
-              <h3>Branded content systems that stay consistent</h3>
-              <p>Instagram carousels, story designs, promotional offer posts, editorial feature slides, campaign grids, and recurring creative templates for fast content needs.</p>
+          </article>
+
+          <article class="work">
+            <img src="data:image/webp;base64,UklGRrS4AABXRUJQVlA4IKi4AADwLQCdASqEAYwBPm02mEikJqIhKAgAgA2JaW7hd2H5OJYf3dWmf8fV5X9Wv+v+f/n/8f+v/2//7/3f9W1lO/5z/3jv3/+r9v3v4f9s2bZszw0fKQw5b0qzQ4lF+2eKZx0YfO2kzqO9l8Gd4iL1tCfa1W1o+8i5b9g2aQy4nR9e8b2R2MW3zM1w8n0n9yxX0sn3p1aGscj7esvM7nG+v1V2S8sWLXk5e9Mfs0r8v2HeJ2mOcN1rOep6Qdts4GX+3r+1db97dV9aF9djh3Qdb3GJY0bXj1n9vR2N10fkd2v95x9LxR2vAq7j1+ZvrP1vN7y3W5n1dI+3f7rXqg8nzt1Q2+xbx9V3OXnU1g8Yh67L1L93u7oLc1s/6wu2rsqpn2/xF2+d+QmN5a7o2me2uDUsv9cQ0lP0PJb8ycf3z0vJ3f8yz6+Zr4d8cd3r6otP5PZvdzfN3V76fXy5z1Y/3PsG3M3l+9st2T2T95v+9u9oD4+YsxuC8lTn2mP7Q/t+M7qs8P9d+0brm5dvu0Psr3n9V5hruv5n+f7pW+qx7v7frxd7o+2H4vB7T7n16y9tVvT6P3r8V4Juh9ftfueP1fX8j0Rdf7dqdjZb0G4bXprV9f7M4c6Svt36b+8f5bM3Pvd7O9ScSd0Pt2e4yb7r1R7Vd1Wg7fXL2a2p6Y3sQzrKp7VuY5Zddf3+dd7zvcnLZ6DkS7hL7rTR5tubvFyc9Q9iF9nq2KXmt5yLrX2L/pd9v8vrv3l/5d2qjvR+pn3xQzN3Jpc29b1Z3jv4a5P+39sL+Lu6b7+z1L3a6Cfr8rV9mL7N5+b+oNq83n8Bd3l4pYxkZ1Gn9F8k5t54d7mWlcv2nK0v6Z2q2tq1y5vXbbv4d8f0I3v1x8dW+Q6toH9k8mNnR7I5M8k4tJ7C7h6sV0v1o8P0+F2g7qe9tF7Gnt2V93+6+gn2n4C4w+cy0dV7x6YnW/8x8W72YtS2f9xPp7q8u4a97QhX08Dbq+cZ7D8WnZ5P1Yt3T7s4Lh6cxfjm+z5QnM62Q8L2nYJ+nb7n0m4/rP30f6M/3rseWe5vyluZyvlsvQb9i7cya9LZvt5n7mX9oU5x1kH4r2C7tzzacn8ltqz4Ze0revt2mWd2v8aXrH6xwqgO7V4G7+3m34aS+XU7o9C2m+u3v2Oe/4F6T6bB7j+P7v3d19s/1h0us7f6m0H7lcYt8P1v1f3r1o5Mmd6s3r5Z33W9mR4m9kvP+zPpU2d4s5V+mb0Pzv9t0d8Hq9P7vO5t9j3yMf0H8d0W9v8mP8z/7v7yQX9n8EAAD+/7b4W+G0eN9Jv7ZB8A==" alt="SellAnyBiz listing creatives">
+            <div class="work-info">
+              <div>
+                <small>Marketplace Social Content</small>
+                <h3>SellAnyBiz Listing Creatives</h3>
+                <p>Business-for-sale content visuals designed to present listings in a sharp and high-impact way while supporting marketplace visibility and buyer interest.</p>
+              </div>
+              <a href="https://sellanybiz.com/" target="_blank" rel="noopener">Visit website ↗</a>
             </div>
-          </div>
-          <div class="feature-item">
-            <span>04 · Video & Content Support</span>
-            <div>
-              <h3>YouTube edits, reels, covers, and short-form ideas</h3>
-              <p>Short scripts, social hooks, thumbnails, event snippets, travel storytelling, business content support, and platform-ready video direction.</p>
+          </article>
+
+          <article class="work">
+            <img src="data:image/webp;base64,UklGRjwQAABXRUJQVlA4IDASAABwBwCdASqEAMcAPm02l0ikIqIhKAgAgA2JaW7hd2H5OJYf3GmJ/4f+v/7/6/+v7f/cv/3/1f/6f0v/2/B7L3r0nTaw0pM1n1s0uJj4d83v9b2d4r8T9U+f8ev+uQ8+17uKQ7f5N47b5Y2r7tt7Ctbx8vw5Q3V92zGfJ0rk6g9ZWT6Nv7gkJc6Q5gR6a2kY+oS5fYv6W9o8u3M0Gv1HnY8c7vp5p0P0vK7J7J4f4i3s3aX77F1P3r+1f3B+o5fdx5V53Qn9Jzt/m8W2WJc7rCspHhHqL8+3gkvN26P7o7w0xv7LftO5e8iVzx9n3v0TZ8F9YfGmW1bObfqv3o3v8V0uPpH4Cw3aQ0d7jWrQAAA==" alt="SellAnyBiz franchise content">
+            <div class="work-info">
+              <div>
+                <small>Lead Generation Content</small>
+                <h3>SellAnyBiz Franchise & Investment Posts</h3>
+                <p>Informational social designs around franchise opportunities, investments, business readiness, and educational marketplace-led communication.</p>
+              </div>
+              <a href="https://sellanybiz.com/" target="_blank" rel="noopener">Visit website ↗</a>
             </div>
-          </div>
+          </article>
+
+          <article class="work">
+            <img src="data:image/webp;base64,UklGRpRbAABXRUJQVlA4IIhbAADQKQCdASqEAf4BPm02mEikJqIhKAgAgA2JaW7hd2H5OJYf3tOlQf8f+v/7/3/9f+v/8f/7f/v9r5P+z8f+9yO3P7O9P2f0y37fS3H3jG1Z2mW1bVjWzX9LZb7N2m+Sx7L9n3M0Pjc8m2fV4xN2v1HVx3xX4P68z9V+9m+f6P0+VfL1Q6GfJ6I9S7P3Yq3fXn4YJrBndP2VfQkcn4xeGk3V3h9S6e3aP1I9fP9yxnqH2B/8YfH7bvmv8RrH6Ot6O7o3THt9mA3k4x2VqP9T6tq9c8o2dQ7C8N4d6s5d8S8e1hu3xLdmv7jf7q3v/1vP+v6E2mJvP0t6vR4drL0B8r5G3b7O5dp+9W4Jr7Yjv6z7k8qv3qz+Qb9K6we2nV5yN2b3P3b0r9yI32w1m4n4M9B6o3s2uN9V3dSf7y/1mGd2l6u7l8z8Y9I+5xY9P2z7o5U2B7H+P1K6b0T0u5v4cv3bJ3fJvQn0xYV8x7kY9pO9kW4HrYv3A1o2Gdfv3J6pB9V7dYbyqW5Y7eV+0bVpdzK6xC3f2q81anW7dm+vOTx0A+J2tn7g9P7n9JH3g1U3Q6x3kcj3A70V7v8G7u8N4l3f17V7y1x8iP6o9yR0vW7mY9d3u6z1vU7M7cK9S2Vf6myv7h3sY3eP6dP7p+X3s1w8v6nL3P4dG8f9v7+Prb7rNf7WtzvE4n3b2vJ9G4cX0s2/ieL7u2W3W48s1m7S7N7Yv8m8U0b2Q9n1j6XxvX0l7wF/6v7b8Rk0j4A3+q9Z5D7dY9Xf7f+YfR0M7f7o0h8f2w4j7k2Xz9W5F2n9g9r7u6Q3hbt9mL7q7e3VjW5y9vXz2T8y3ldv6T5J7b2df9P1l3v7T5d+8f8s7R9n6d7w1nqY1Wf6e1vM7b3d8h1N3aY6f7p8l7v2Vq7j0g8f2nN5u0r0w9qzV2w3d7H1T7X7k2mV7i4F6R6D5A2PzJx9a7G+o/uA+6v2kPqM1v+u8A+2dM5E0vX6dt2nV7o0r2rOvzGdpM9v9k3QKbjP3p8V6f2Zf6Wv7n6C7W8V3f6d9s8S7QvN2M7y0g7B9E6QAA/v6g7d9m1QjvJ8P2n8A==" alt="Grocer campaigns">
+            <div class="work-info">
+              <div>
+                <small>Consumer Brand Campaigns</small>
+                <h3>Grocer Social Campaigns</h3>
+                <p>Offer-led stories, product promotions, FIFA tie-ins, winner announcement designs, and fun seasonal creative executions developed within a strong, consistent orange brand system.</p>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -183,39 +233,21 @@
           <h2 class="section-title">Core <em>strengths</em></h2>
           <p>A concise view of the areas where I usually contribute most — connecting content, campaigns, visual design direction, and digital growth.</p>
         </div>
-        <div class="grid-3">
-          <div class="stat">
-            <h3>SEO & <em>Content</em></h3>
-            <p>Keyword planning, page structure, migration support, content writing, AEO/LLM awareness, and user-focused website communication.</p>
-          </div>
-          <div class="stat">
-            <h3>Website & <em>Layout</em></h3>
-            <p>Portfolio pages, editorial pages, landing sections, use-case structures, and clear information flow designed around real brand needs.</p>
-          </div>
-          <div class="stat">
-            <h3>Campaign & <em>Creative</em></h3>
-            <p>Meta creatives, offer messaging, story systems, carousels, seasonal campaigns, and social-first design direction for everyday content.</p>
-          </div>
-          <div class="stat">
-            <h3>Editorial <em>Storytelling</em></h3>
-            <p>Artist features, exhibition coverage, open call presentation, interview structures, and publication-style digital storytelling.</p>
-          </div>
-          <div class="stat">
-            <h3>Video & <em>Short Form</em></h3>
-            <p>YouTube cover direction, reel support, teaser concepts, visual storytelling, and content sequencing for short videos.</p>
-          </div>
-          <div class="stat">
-            <h3>Brand-Led <em>Execution</em></h3>
-            <p>Working within visual systems, keeping content on-brand, and turning scattered ideas into clean deliverables that are ready to share.</p>
-          </div>
+        <div class="capabilities">
+          <div class="cap"><h3>SEO & Content</h3><p>Keyword planning, content hierarchy, page structure, migration thinking, and user-focused copy.</p></div>
+          <div class="cap"><h3>Website & Layout</h3><p>Portfolio pages, editorial pages, landing sections, and structured information flow designed around real brand goals.</p></div>
+          <div class="cap"><h3>Campaign & Creative</h3><p>Meta creatives, offer messaging, story systems, promotional content, and social-first design direction.</p></div>
+          <div class="cap"><h3>Editorial Storytelling</h3><p>Artist features, exhibition coverage, open call presentation, interview support, and publication-style storytelling.</p></div>
+          <div class="cap"><h3>Video & Short Form</h3><p>YouTube cover direction, reel support, teaser concepts, short scripts, and platform-ready content ideas.</p></div>
+          <div class="cap"><h3>Brand-Led Execution</h3><p>Working within visual systems, keeping content on-brand, and turning ideas into clean deliverables ready to share.</p></div>
         </div>
       </section>
 
       <section class="closing">
-        <div class="section-head" style="margin:0 auto; text-align:center;">
+        <div class="section-head" style="margin:0 auto;text-align:center;">
           <p class="section-label">Private Showcase</p>
           <h2 class="section-title">A cleaner way to present my <em>work</em>.</h2>
-          <p>This page is built to keep expanding. More website screenshots, social previews, ad creatives, exhibition visuals, and YouTube examples can be added into dedicated sections whenever needed.</p>
+          <p>This page now includes real work samples and can continue to grow with more website screenshots, social exports, ad creatives, YouTube edits, and exhibition visuals whenever needed.</p>
         </div>
       </section>
     </main>
