@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="googlebot" content="noindex,nofollow,noarchive,nosnippet">
+  <title>Mahaa Ashraf | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--black:#080808;--soft-black:#111;--charcoal:#171717;--ink:#202020;--white:#fff;--cream:#f6f0e8;--muted:#aaa;--pink:#d4578a;--line:rgba(255,255,255,.13);--gold:#bfa16a}
+    html{scroll-behavior:smooth}
+    body{font-family:'DM Sans',sans-serif;background:var(--black);color:var(--white);overflow-x:hidden;line-height:1.7}
+    a{text-decoration:none;color:inherit}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.18;z-index:0;background-image:radial-gradient(rgba(255,255,255,.16) 1px,transparent 1px);background-size:4px 4px;mix-blend-mode:overlay}
+    .wrap{position:relative;z-index:1}
+    .topbar{position:fixed;top:0;left:0;right:0;height:64px;border-bottom:1px solid var(--line);background:rgba(8,8,8,.82);backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:10}
+    .brand{font-family:'Playfair Display',serif;font-weight:900;letter-spacing:.02em;font-size:1rem}.brand em{color:var(--pink);font-style:italic}.private-tag{font-size:.66rem;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);border:1px solid var(--line);padding:.55rem .75rem;border-radius:999px}
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:4rem;padding:9rem 6vw 6rem;border-bottom:1px solid var(--line);background:radial-gradient(circle at 15% 20%,rgba(212,87,138,.18),transparent 28%),radial-gradient(circle at 80% 5%,rgba(191,161,106,.16),transparent 30%),linear-gradient(135deg,#070707,#111 55%,#050505)}
+    .eyebrow,.section-label{font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--pink);font-weight:700;margin-bottom:1rem}.hero h1{font-family:'Playfair Display',serif;font-size:clamp(4.5rem,10vw,9rem);line-height:.82;letter-spacing:-.05em;margin-bottom:2rem}.hero h1 em{color:var(--pink);font-style:italic}.hero-copy{max-width:760px;color:#d5d5d5;font-size:1.08rem;line-height:2;margin-bottom:2rem}.hero-meta{display:flex;gap:1rem;flex-wrap:wrap}.pill{border:1px solid var(--line);padding:.75rem 1rem;border-radius:999px;color:#ddd;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.04)}
+    .hero-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.025));padding:2rem;min-height:540px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 30px 80px rgba(0,0,0,.4)}.hero-card .number{font-family:'Playfair Display',serif;font-size:8rem;line-height:.8;color:rgba(212,87,138,.35)}.hero-card h2{font-family:'Playfair Display',serif;font-size:2.6rem;line-height:.95;margin-bottom:1.5rem}.hero-card p{color:#c9c9c9}.hero-lines{display:grid;gap:.8rem;margin-top:2rem}.hero-line{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:.8rem;font-size:.82rem;text-transform:uppercase;letter-spacing:.12em;color:#bbb}.hero-line span:last-child{color:var(--pink)}
+    section{padding:6rem 6vw;border-bottom:1px solid var(--line)}.intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem;align-items:start;background:#0d0d0d}.intro h2,.section-title{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,6vw,5.6rem);line-height:.92;letter-spacing:-.04em;margin-bottom:1.5rem}.intro h2 em,.section-title em{color:var(--pink);font-style:italic}.intro p{color:#d1d1d1;line-height:2;margin-bottom:1.2rem}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}.stat{border:1px solid var(--line);padding:1.35rem;background:rgba(255,255,255,.03)}.stat strong{font-family:'Playfair Display',serif;font-size:2rem;color:var(--pink);display:block;line-height:1}.stat span{display:block;margin-top:.55rem;color:#bbb;font-size:.75rem;text-transform:uppercase;letter-spacing:.12em}
+    .grid{display:grid;gap:1.4rem}.grid.two{grid-template-columns:repeat(2,1fr)}.grid.three{grid-template-columns:repeat(3,1fr)}.card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.02));padding:2rem;min-height:280px;transition:.35s}.card:hover{transform:translateY(-6px);border-color:rgba(212,87,138,.55)}.card small{display:block;color:var(--pink);font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem}.card h3{font-family:'Playfair Display',serif;font-size:2rem;line-height:1;margin-bottom:1rem}.card p{color:#c8c8c8}.card ul{margin-top:1.2rem;list-style:none;display:grid;gap:.65rem}.card li{color:#cfcfcf;border-top:1px solid rgba(255,255,255,.08);padding-top:.65rem}.card li::before{content:'•';color:var(--pink);margin-right:.6rem}
+    .section-head{max-width:900px;margin-bottom:3.5rem}.section-head p{color:#cfcfcf;line-height:2;max-width:760px}.project{display:grid;grid-template-columns:.75fr 1.25fr;gap:2rem;border:1px solid var(--line);margin-bottom:2rem;background:rgba(255,255,255,.025)}.project-side{padding:2rem;border-right:1px solid var(--line);background:rgba(255,255,255,.03)}.project-side span{color:var(--pink);font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}.project-side h3{font-family:'Playfair Display',serif;font-size:3rem;line-height:.92;margin-top:1rem}.project-side p{margin-top:1rem;color:#bdbdbd}.project-body{padding:2rem;display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}.mini{border:1px solid rgba(255,255,255,.1);padding:1.2rem;background:rgba(0,0,0,.18)}.mini strong{display:block;font-family:'Playfair Display',serif;font-size:1.35rem;margin-bottom:.5rem}.mini p{color:#c8c8c8;font-size:.92rem}
+    .samples{background:#0d0d0d}.sample-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}.sample-box{height:360px;border:1px dashed rgba(255,255,255,.28);background:linear-gradient(135deg,rgba(255,255,255,.07),rgba(255,255,255,.015));display:flex;align-items:flex-end;padding:1.2rem;position:relative;overflow:hidden}.sample-box::before{content:'';position:absolute;inset:18px;border:1px solid rgba(212,87,138,.22)}.sample-box::after{content:'WORK SAMPLE';position:absolute;top:2rem;left:2rem;font-size:.62rem;letter-spacing:.2em;color:rgba(255,255,255,.38)}.sample-box h4{position:relative;z-index:1;font-family:'Playfair Display',serif;font-size:1.8rem;line-height:1}.sample-box p{position:relative;z-index:1;color:#aaa;font-size:.82rem;margin-top:.5rem}.sample-content{position:relative;z-index:1}
+    .timeline{display:grid;gap:1rem}.timeline-item{display:grid;grid-template-columns:220px 1fr;gap:2rem;border-top:1px solid var(--line);padding:1.6rem 0}.timeline-item span{color:var(--pink);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase}.timeline-item h3{font-family:'Playfair Display',serif;font-size:1.8rem;margin-bottom:.4rem}.timeline-item p{color:#c8c8c8}
+    .closing{text-align:center;background:radial-gradient(circle at 50% 0,rgba(212,87,138,.18),transparent 35%),#070707}.closing h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6.5rem);line-height:.9;margin-bottom:1.5rem}.closing h2 em{color:var(--pink);font-style:italic}.closing p{max-width:780px;margin:0 auto 2rem;color:#d0d0d0;line-height:2}.footer-note{padding:2rem 6vw;color:#888;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-align:center;background:#050505}
+    @media(max-width:980px){.hero,.intro,.project{grid-template-columns:1fr}.hero{padding-top:8rem}.hero-card{min-height:420px}.stats,.grid.three,.sample-grid{grid-template-columns:1fr 1fr}.project-side{border-right:0;border-bottom:1px solid var(--line)}.project-body{grid-template-columns:1fr}.timeline-item{grid-template-columns:1fr;gap:.5rem}}
+    @media(max-width:640px){.topbar{padding:0 1rem}.brand{font-size:.86rem}.private-tag{font-size:.55rem;padding:.45rem .6rem}.hero h1{font-size:4rem}.hero,.intro,section{padding-left:1.25rem;padding-right:1.25rem}.stats,.grid.two,.grid.three,.sample-grid{grid-template-columns:1fr}.sample-box{height:300px}.project-side h3{font-size:2.4rem}}
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">Mahaa <em>Ashraf</em></div>
+      <div class="private-tag">Unlisted Portfolio · Direct Link Only</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Digital Marketing · Creative Direction · Editorial Websites</p>
+          <h1>Mahaa<br><em>Ashraf</em></h1>
+          <p class="hero-copy">A curated portfolio of brand campaigns, website layouts, SEO roadmaps, social media systems, video edits, art features, exhibition coverage, and digital storytelling created across business, grocery, lifestyle, and contemporary art platforms.</p>
+          <div class="hero-meta">
+            <span class="pill">Lahore, Pakistan</span>
+            <span class="pill">SEO + AEO</span>
+            <span class="pill">Web Content</span>
+            <span class="pill">Ads + Social</span>
+            <span class="pill">Art Editorial</span>
+          </div>
+        </div>
+        <aside class="hero-card">
+          <div>
+            <div class="number">01</div>
+            <h2>Portfolio<br>Overview</h2>
+            <p>This page is designed as a clean, black editorial portfolio that can be shared privately with clients, teams, publications, or collaborators.</p>
+          </div>
+          <div class="hero-lines">
+            <div class="hero-line"><span>Theme</span><span>Cosmo Black</span></div>
+            <div class="hero-line"><span>Status</span><span>Unlisted</span></div>
+            <div class="hero-line"><span>Format</span><span>Page by Page</span></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="intro">
+        <div>
+          <p class="section-label">Profile</p>
+          <h2>Marketing with <em>visual</em> storytelling.</h2>
+        </div>
+        <div>
+          <p>I work across digital marketing, SEO, content strategy, web page planning, campaign design, social media creatives, video editing, and editorial storytelling. My work combines business-focused growth with visual direction, helping brands communicate clearly across websites, social media, campaigns, and presentations.</p>
+          <p>From SellAnyBiz and SAB ecosystem campaigns to Grocer App daily creatives and Cosmopolitan Art Magazine Pakistan features, I create practical digital assets that are structured, branded, and ready for real audiences.</p>
+          <div class="stats">
+            <div class="stat"><strong>SEO</strong><span>Roadmaps, keywords, schema</span></div>
+            <div class="stat"><strong>Ads</strong><span>Meta, LinkedIn, awareness</span></div>
+            <div class="stat"><strong>Web</strong><span>Layouts, copy, pages</span></div>
+            <div class="stat"><strong>Art</strong><span>Features, events, open calls</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="section-label">Core Skills</p>
+          <h2 class="section-title">What I <em>Create</em></h2>
+          <p>A focused mix of creative and performance work: content systems, brand campaigns, website sections, reels, newsletters, SEO structures, reporting sheets, outreach messages, and portfolio-ready layouts.</p>
+        </div>
+        <div class="grid three">
+          <div class="card"><small>01</small><h3>SEO & AEO</h3><p>Keyword planning, migration roadmaps, schema recommendations, website content structures, backlink planning, SERP checks, and LLM/AEO-friendly content.</p></div>
+          <div class="card"><small>02</small><h3>Web Layouts</h3><p>Page-by-page website content, section planning, landing page copy, CTA structure, footer/navigation ideas, and clean UI direction.</p></div>
+          <div class="card"><small>03</small><h3>Social Campaigns</h3><p>Instagram carousels, stories, brand awareness creatives, daily price cards, open calls, captions, outreach messages, and campaign calendars.</p></div>
+          <div class="card"><small>04</small><h3>Video Edits</h3><p>YouTube covers, reel scripts, event snippets, travel edits, podcast teasers, business tour videos, and social-first video storytelling.</p></div>
+          <div class="card"><small>05</small><h3>Editorial Features</h3><p>Artist profiles, exhibition write-ups, gallery coverage, interview questions, Q&A structures, and cultural storytelling for digital publishing.</p></div>
+          <div class="card"><small>06</small><h3>Reporting</h3><p>Campaign sheets, SEO plans, monthly updates, performance summaries, roadmap documents, and structured reporting for clients or bosses.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="section-label">Selected Work</p>
+          <h2 class="section-title">Brand & Project <em>Portfolio</em></h2>
+          <p>Organized by the main platforms and campaigns I have worked on. Each section can later include final screenshots, links, thumbnails, carousel exports, website images, and video covers.</p>
+        </div>
+
+        <article class="project">
+          <div class="project-side"><span>Business Marketplace</span><h3>SellAnyBiz</h3><p>Digital marketing, SEO, web content, campaign concepts, business marketplace communication, and seller/buyer education content.</p></div>
+          <div class="project-body">
+            <div class="mini"><strong>Website Content</strong><p>Workspace pages, use cases, CTA planning, AI matchmaking content, platform structure, and conversion-focused copy.</p></div>
+            <div class="mini"><strong>SEO Roadmaps</strong><p>SellAnyBiz.ai to SellAnyBiz.com migration planning, keyword lists, schema ideas, backlink planning, and AEO/LLM direction.</p></div>
+            <div class="mini"><strong>Campaign Assets</strong><p>LinkedIn covers, newsletters, LOI carousels, funding content, broker/advisor messaging, and discovery-call CTAs.</p></div>
+            <div class="mini"><strong>Video & Social</strong><p>YouTube covers, reel scripts, business tour snippets, webinar promotion, podcast teasers, and event captions.</p></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-side"><span>Grocery Delivery</span><h3>Grocer App</h3><p>Daily creative direction for a Lahore grocery delivery brand using strong orange/teal identity, clean product layouts, and campaign-ready stories.</p></div>
+          <div class="project-body">
+            <div class="mini"><strong>Story Creatives</strong><p>Daily fruit and vegetable rate cards, Friday mandi style posts, 9:16 story layouts, and simplified product-led designs.</p></div>
+            <div class="mini"><strong>Brand Rules</strong><p>Gilroy font direction, #FF6000 orange, clean logo usage, fewer products per slide, and non-crowded layouts.</p></div>
+            <div class="mini"><strong>Category Campaigns</strong><p>Fruits, vegetables, frozen items, breakfast essentials, chicken, meat, and mutton creatives with quick-delivery messaging.</p></div>
+            <div class="mini"><strong>Performance Copy</strong><p>60 mins delivery messaging, area disclaimers, order-now CTAs, Eid slot closing posts, and service-area campaigns.</p></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-side"><span>Digital Art Magazine</span><h3>Cosmopolitan Art Magazine PK</h3><p>Founder-led editorial platform work including artist features, exhibition pages, open calls, newsletter ideas, and social media carousels.</p></div>
+          <div class="project-body">
+            <div class="mini"><strong>Website Pages</strong><p>Home page, artist feature pages, events pages, issue pages, open call pages, feature forms, and mobile layout fixes.</p></div>
+            <div class="mini"><strong>Artist Features</strong><p>Saba Haroon, Ramzan Jafri, Saqiba Suleman, Sana Dar and other artist-focused editorial layouts and approval workflows.</p></div>
+            <div class="mini"><strong>Exhibition Coverage</strong><p>Kinnaird Degree Show, Umeed-e-Bahar, Muted Dialogues, Fugitive Bodies, and gallery/event storytelling.</p></div>
+            <div class="mini"><strong>Outreach</strong><p>Artist invitations, feature approvals, collaboration messages, open calls, workshop proposals, and publication communication.</p></div>
+          </div>
+        </article>
+
+        <article class="project">
+          <div class="project-side"><span>Creative Video</span><h3>YouTube & Reels</h3><p>Short-form and long-form video support for business, travel, event, and lifestyle content across YouTube, Instagram, and LinkedIn.</p></div>
+          <div class="project-body">
+            <div class="mini"><strong>Business Videos</strong><p>Just Business Talk teasers, assisted living tours, TABB conference snippets, investment opportunity hooks, and office/event edits.</p></div>
+            <div class="mini"><strong>Travel Edits</strong><p>Manchester, Dublin, Dubai, Doha, Riyadh, Italy, Scotland, California, Dallas and other travel/story videos.</p></div>
+            <div class="mini"><strong>Social Covers</strong><p>YouTube thumbnails, reel covers, podcast intro/outro visuals, and LinkedIn-ready visual storytelling.</p></div>
+            <div class="mini"><strong>Scripts & Captions</strong><p>Short hooks, structured scripts, captions, storytelling sequences, and platform-ready descriptions.</p></div>
+          </div>
+        </article>
+      </section>
+
+      <section class="samples">
+        <div class="section-head">
+          <p class="section-label">Drop-in Gallery</p>
+          <h2 class="section-title">Work Sample <em>Frames</em></h2>
+          <p>These boxes are ready for screenshots and exports. Share the images/files, and each frame can be replaced with your actual work: websites, ads, YouTube covers, Instagram carousels, Grocer stories, SellAnyBiz pages, and exhibition layouts.</p>
+        </div>
+        <div class="sample-grid">
+          <div class="sample-box"><div class="sample-content"><h4>SellAnyBiz Website</h4><p>Page layouts · SEO · platform copy</p></div></div>
+          <div class="sample-box"><div class="sample-content"><h4>Grocer Creatives</h4><p>Stories · price cards · campaigns</p></div></div>
+          <div class="sample-box"><div class="sample-content"><h4>Cosmo Pages</h4><p>Artist features · exhibitions · open calls</p></div></div>
+          <div class="sample-box"><div class="sample-content"><h4>YouTube Edits</h4><p>Thumbnails · reels · video stories</p></div></div>
+          <div class="sample-box"><div class="sample-content"><h4>Ads & Reports</h4><p>Meta · LinkedIn · campaign sheets</p></div></div>
+          <div class="sample-box"><div class="sample-content"><h4>Exhibitions</h4><p>Coverage · invitations · social posts</p></div></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <p class="section-label">Portfolio Narrative</p>
+          <h2 class="section-title">Work Journey <em>Timeline</em></h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item"><span>Business Growth</span><div><h3>SellAnyBiz & SAB Ecosystem</h3><p>Marketplace content, business owner/buyer/broker/advisor workflows, SEO planning, funding content, equity partner campaigns, video ideas, and LinkedIn-ready brand material.</p></div></div>
+          <div class="timeline-item"><span>Local Commerce</span><div><h3>Grocer App Campaign Design</h3><p>Daily product-led creatives, fast delivery messaging, grocery category campaigns, Eid posts, rate cards, and a consistent orange-led brand system.</p></div></div>
+          <div class="timeline-item"><span>Editorial Platform</span><div><h3>Cosmopolitan Art Magazine PK</h3><p>Digital magazine website planning, featured artist pages, exhibition coverage, artist outreach, open calls, newsletter concepts, and Instagram carousel direction.</p></div></div>
+          <div class="timeline-item"><span>Creative Production</span><div><h3>Video, YouTube & Social Storytelling</h3><p>Business event edits, travel sequences, podcast teasers, YouTube covers, reel captions, and short-form storytelling across multiple content categories.</p></div></div>
+        </div>
+      </section>
+
+      <section class="closing">
+        <p class="section-label">Private Portfolio</p>
+        <h2>Ready for <em>Work Samples</em></h2>
+        <p>This unlisted page is prepared for final screenshots and visual exports. Once the actual work images are added, it can become a polished shareable portfolio for clients, bosses, publications, or collaborators.</p>
+        <div class="hero-meta" style="justify-content:center"><span class="pill">Noindex</span><span class="pill">Not Linked</span><span class="pill">Direct URL Only</span></div>
+      </section>
+    </main>
+
+    <div class="footer-note">© 2026 Mahaa Ashraf · Private portfolio page · Not listed on the Cosmopolitan Art Magazine website navigation</div>
+  </div>
+</body>
+</html>
