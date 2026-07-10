@@ -24,17 +24,12 @@ nav{height:60px;border-bottom:1px solid var(--border);display:flex;align-items:c
 footer{padding:3rem 2rem;border-top:1px solid var(--border);text-align:center;background:#fafafa}.footer-logo{font-family:'Playfair Display',serif;font-weight:700}.footer-logo em{color:var(--pink);font-style:italic}.footer-note{font-size:.75rem;color:#777;margin-top:.5rem}
 @media(max-width:1100px){.section-head{grid-template-columns:1fr}.artist-editorial-grid{grid-template-columns:1fr}.artist-editorial-card,.artist-editorial-card.featured{grid-column:span 1;grid-template-columns:1fr;min-height:auto}.artist-img{height:520px}.artist-editorial-card.featured .artist-copy,.artist-copy{padding:2.5rem}.artist-editorial-card.featured h3{font-size:clamp(2.8rem,7vw,4.8rem)}}
 @media(max-width:700px){nav{padding:0 1rem}.nav-links,.nav-btn{display:none}.preview-hero{padding:5rem 1.25rem 3rem}.featured-artist-preview{padding:4rem 1.25rem}.section-head{gap:1.5rem;margin-bottom:2.5rem}.artist-img{height:380px}.artist-copy,.artist-editorial-card.featured .artist-copy{padding:2rem}.artist-copy h3{font-size:2.7rem}.artist-editorial-card.featured h3{font-size:3rem}}
-</style>
+.dropdown{position:relative}.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:white;border:1px solid var(--border);min-width:220px;padding:.8rem 0;box-shadow:0 18px 45px rgba(0,0,0,.08);z-index:1005}.dropdown:hover .dropdown-menu{display:block}.dropdown-menu a{display:block;padding:.75rem 1rem;white-space:nowrap}.dropdown-menu a:hover{color:var(--pink)}</style>
 </head>
 <body>
 <nav>
 <a class="logo" href="index.html">Cosmopolitan <em>Art</em> Magazine</a>
-<ul class="nav-links">
-<li><a href="events.html">Events & Culture</a></li>
-<li><a href="artist-feature.html">Featured Artists</a></li>
-<li><a href="issue-01.html">Issue 01</a></li>
-<li><a href="get-featured.html">Get Featured</a></li>
-</ul>
+<ul class="nav-links"><li><a href="events.html">Events & Culture</a></li><li class="dropdown"><a href="people-impact.html">Features</a><div class="dropdown-menu"><a href="artist-feature.html">Featured Artists</a><a href="featured-voices.html">Featured Voices</a><a href="impact-profiles.html">Impact Profiles</a></div></li><li><a href="issue-01.html">Issue 01</a></li><li><a href="get-featured.html">Get Featured</a></li></ul>
 <a class="nav-btn" href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a>
 </nav>
 
