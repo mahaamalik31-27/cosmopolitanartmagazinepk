@@ -49,8 +49,15 @@ nav{height:76px;background:rgba(255,253,251,.94);border-color:#dedede}.logo{font
 .hero-cta span{color:#ff4b8b;font-size:18px;animation:arrowBounce 1.8s ease-in-out infinite}
 .hero-cta:hover{background:#ff4b8b;border-color:#ff4b8b;transform:translateY(-2px)}.hero-cta:hover span{color:#fff}
 .hero-visual{position:absolute;inset:0 0 0 43%;z-index:0;overflow:hidden;animation:heroReveal 1.25s .12s both}
-.hero-poster{position:absolute;inset:-5%;background:url("untold-artists/untold-stories-hero.jpg") center 42%/cover no-repeat;filter:saturate(.88) contrast(1.04);transform:scale(1.07);animation:posterDrift 13s ease-in-out infinite alternate}
-.hero-poster:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,8,22,.05),rgba(7,8,22,.2))}
+.hero-poster{position:absolute;inset:0;background:
+radial-gradient(circle at 68% 43%,rgba(255,190,30,.95) 0 4%,transparent 5%),
+radial-gradient(circle at 62% 38%,rgba(42,121,255,.9) 0 10%,transparent 11%),
+radial-gradient(circle at 71% 50%,rgba(236,47,118,.96) 0 19%,transparent 20%),
+radial-gradient(circle at 53% 52%,rgba(97,54,170,.9) 0 28%,transparent 29%),
+radial-gradient(circle at 56% 49%,rgba(255,75,139,.16) 0 43%,transparent 44%),
+linear-gradient(145deg,#0c0c21 0%,#111027 52%,#070816 100%);transform:scale(1.03);animation:posterDrift 13s ease-in-out infinite alternate}
+.hero-poster:before{content:"";position:absolute;width:46%;height:74%;right:5%;top:15%;border:1px solid rgba(255,255,255,.16);border-radius:50% 46% 58% 42%;transform:rotate(-13deg);box-shadow:0 0 90px rgba(236,47,118,.25),inset 0 0 70px rgba(255,255,255,.06);animation:shapeMorph 9s ease-in-out infinite}
+.hero-poster:after{content:"";position:absolute;width:78%;height:24%;right:-8%;bottom:14%;background:linear-gradient(90deg,transparent,rgba(255,75,139,.42),rgba(69,103,255,.22),transparent);filter:blur(20px);transform:rotate(-9deg);animation:brushSweep 7s ease-in-out infinite}
 .hero-orbit{position:absolute;border:1px solid rgba(255,75,139,.43);border-radius:50%;z-index:2;pointer-events:none}
 .orbit-one{width:360px;height:360px;right:11%;top:17%;animation:orbitFloat 8s ease-in-out infinite}
 .orbit-two{width:18px;height:18px;right:8%;top:31%;background:#ff4b8b;box-shadow:0 0 35px #ff4b8b;animation:dotFloat 6s ease-in-out infinite}
@@ -58,13 +65,15 @@ nav{height:76px;background:rgba(255,253,251,.94);border-color:#dedede}.logo{font
 .hero-date strong{font:600 34px "Playfair Display";color:#ff4b8b}.hero-date span{max-width:125px;font-size:9px;line-height:1.5;letter-spacing:.15em;text-transform:uppercase}
 @keyframes heroRise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @keyframes heroReveal{from{opacity:0;clip-path:inset(0 0 0 100%)}to{opacity:1;clip-path:inset(0)}}
-@keyframes posterDrift{from{transform:scale(1.07) translate3d(0,0,0)}to{transform:scale(1.13) translate3d(-1.2%,1%,0)}}
+@keyframes posterDrift{from{transform:scale(1.03) translate3d(0,0,0)}to{transform:scale(1.08) translate3d(-1%,1%,0)}}
+@keyframes shapeMorph{50%{border-radius:43% 58% 45% 60%;transform:translate(-18px,10px) rotate(7deg) scale(1.05)}}
+@keyframes brushSweep{50%{transform:translate(-28px,-8px) rotate(-4deg);opacity:.65}}
 @keyframes heroGlow{50%{transform:scale(1.14);opacity:.62}}
 @keyframes orbitFloat{50%{transform:translate(-18px,24px) rotate(12deg);border-color:rgba(255,255,255,.35)}}
 @keyframes dotFloat{50%{transform:translate(-45px,34px) scale(.7)}}
 @keyframes arrowBounce{50%{transform:translateY(5px)}}
 @media(max-width:900px){.hero-cinematic{grid-template-columns:1fr;min-height:850px}.hero-cinematic:before{background:linear-gradient(180deg,rgba(7,8,22,.45),#070816 67%)}.hero-visual{inset:0 0 35% 24%}.hero-content{justify-content:end;padding-top:330px}.hero-cinematic h1{font-size:clamp(66px,15vw,110px)}.hero-date{top:96px;right:22px;bottom:auto}.orbit-one{width:260px;height:260px}}
-@media(max-width:600px){.hero-cinematic{min-height:760px}.hero-visual{inset:0 0 43% 9%}.hero-content{padding:315px 23px 65px}.hero-kicker{top:22px;left:23px;right:110px;line-height:1.5}.hero-cinematic h1{font-size:clamp(58px,19vw,88px)}.hero-cinematic .hero-copy{font-size:15px;margin-top:28px}.hero-date{top:66px;right:18px}.hero-date strong{font-size:26px}.hero-date span{display:none}.orbit-one{width:210px;height:210px;right:7%}}
+@media(max-width:600px){.hero-cinematic{min-height:720px}.hero-cinematic:before{background:linear-gradient(180deg,rgba(7,8,22,.08) 0 30%,#070816 52%)}.hero-visual{inset:0 0 48% 0}.hero-content{padding:255px 23px 58px;justify-content:end}.hero-kicker{top:20px;left:23px;right:95px;line-height:1.5}.hero-cinematic .eyebrow{margin-bottom:16px}.hero-cinematic h1{font-size:clamp(56px,18vw,82px);line-height:.76}.hero-cinematic .hero-copy{font-size:14px;margin-top:23px;line-height:1.55}.hero-cta{margin-top:20px}.hero-date{top:58px;right:18px}.hero-date strong{font-size:25px}.hero-date span{display:none}.orbit-one{width:190px;height:190px;right:2%;top:14%}.orbit-two{right:9%;top:38%}}
 @media(prefers-reduced-motion:reduce){.hero-cinematic *{animation:none!important}.hero-poster{transform:scale(1.07)}}
 </style></head><body><div class="noise"></div>
 <nav><a class="logo" href="index.html">Cosmopolitan <i>Art</i> Magazine</a><span class="navtag">Pop-Up Featured Artists · Preview</span></nav>
