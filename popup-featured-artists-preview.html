@@ -75,6 +75,31 @@ linear-gradient(145deg,#0c0c21 0%,#111027 52%,#070816 100%);transform:scale(1.03
 @media(max-width:900px){.hero-cinematic{grid-template-columns:1fr;min-height:850px}.hero-cinematic:before{background:linear-gradient(180deg,rgba(7,8,22,.45),#070816 67%)}.hero-visual{inset:0 0 35% 24%}.hero-content{justify-content:end;padding-top:330px}.hero-cinematic h1{font-size:clamp(66px,15vw,110px)}.hero-date{top:96px;right:22px;bottom:auto}.orbit-one{width:260px;height:260px}}
 @media(max-width:600px){.hero-cinematic{min-height:720px}.hero-cinematic:before{background:linear-gradient(180deg,rgba(7,8,22,.08) 0 30%,#070816 52%)}.hero-visual{inset:0 0 48% 0}.hero-content{padding:255px 23px 58px;justify-content:end}.hero-kicker{top:20px;left:23px;right:95px;line-height:1.5}.hero-cinematic .eyebrow{margin-bottom:16px}.hero-cinematic h1{font-size:clamp(56px,18vw,82px);line-height:.76}.hero-cinematic .hero-copy{font-size:14px;margin-top:23px;line-height:1.55}.hero-cta{margin-top:20px}.hero-date{top:58px;right:18px}.hero-date strong{font-size:25px}.hero-date span{display:none}.orbit-one{width:190px;height:190px;right:2%;top:14%}.orbit-two{right:9%;top:38%}}
 @media(prefers-reduced-motion:reduce){.hero-cinematic *{animation:none!important}.hero-poster{transform:scale(1.07)}}
+</style><style id="artwork-modal-layout-fix">
+/* Final artwork viewer: full images, no decorative overlays, no dead space */
+.modal.open{display:flex;align-items:center;justify-content:center}
+.panel{width:min(1280px,100%);height:min(860px,calc(100vh - 32px));max-height:calc(100vh - 32px);grid-template-columns:minmax(0,1.22fr) minmax(380px,.78fr);overflow:hidden;background:#fff}
+.panel-art,.panel-art.has-work{height:100%;min-height:0;background:#eeeae4}
+.panel-art.gallery{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:max-content;gap:14px;padding:14px;overflow-x:hidden;overflow-y:auto;align-content:start;background:#eeeae4;scrollbar-gutter:stable}
+.panel-art.gallery:before,.panel-art.gallery:after,.panel-art.has-work:before,.panel-art.has-work:after{display:none!important;content:none!important}
+.panel-art.gallery figure{margin:0;min-width:0;align-self:start;background:#fff;border:1px solid #ded8d0}
+.panel-art.gallery figure:last-child:nth-child(odd){grid-column:1/-1}
+.panel-art.gallery img,.panel-art.has-work img{position:static!important;inset:auto!important;display:block;width:100%;height:auto!important;max-height:calc(100vh - 150px);min-height:0;object-fit:contain!important;background:#faf9f7}
+.panel-art.gallery figcaption{padding:12px 14px;background:#fff;color:#252525;border-top:1px solid #e8e3dd;font-size:11px;line-height:1.45;letter-spacing:.09em}
+.panel-copy{min-height:0;padding:48px 42px;overflow-y:auto;justify-content:center}
+.panel-copy h2{font-size:clamp(44px,5vw,70px);line-height:.92;margin:16px 0 24px}
+.profile-actions{padding-bottom:8px}
+.close{position:fixed;right:max(22px,calc((100vw - min(1280px,100vw - 48px))/2 + 18px));top:max(18px,calc((100vh - min(860px,100vh - 32px))/2 + 12px));width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);box-shadow:0 5px 24px rgba(0,0,0,.15);line-height:32px}
+@media(max-width:900px){
+ .modal{padding:0;align-items:flex-start}
+ .panel{width:100%;height:auto;min-height:100dvh;max-height:none;grid-template-columns:1fr;overflow:visible}
+ .panel-art,.panel-art.has-work{height:auto;min-height:0}
+ .panel-art.gallery{grid-template-columns:1fr;height:auto;max-height:none;overflow:visible;padding:8px;gap:8px}
+ .panel-art.gallery figure:last-child:nth-child(odd){grid-column:auto}
+ .panel-art.gallery img,.panel-art.has-work img{max-height:none}
+ .panel-copy{padding:38px 24px 50px;overflow:visible}
+ .close{position:fixed;top:12px;right:12px}
+}
 </style></head><body><div class="noise"></div>
 <nav><a class="logo" href="index.html">Cosmopolitan <i>Art</i> Magazine</a><span class="navtag">Pop-Up Featured Artists · Preview</span></nav>
 <header class="hero hero-cinematic">
