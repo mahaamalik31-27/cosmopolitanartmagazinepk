@@ -44,6 +44,13 @@
         {"src":"untold-artists/aliya-umair-03.jpg","title":"Sun-Catcher","meta":"Oil on canvas · 15 × 15 in · 2025"}
       ],
       "statement":"Aliya Umair’s studio practice magnifies hidden microscopic structures within gemstones, translating inclusions, fractures and light patterns into geometric painted landscapes on canvas."
+    },
+    "Zainab Sabir":{
+      "image":"untold-artists/zainab-sabir-02.png",
+      "images":[
+        {"src":"untold-artists/zainab-sabir-02.png","title":"Selected work"}
+      ],
+      "statement":"Zainab Sabir’s selected work is presented using the clean artwork image supplied for the exhibition."
     }
   });
 
@@ -100,6 +107,20 @@
     header.appendChild(a);
   }
 
+  function fixZainabCard(){
+    document.querySelectorAll('.artist-card').forEach(function(card){
+      var n=card.querySelector('.artist-name');
+      if(n && n.textContent.trim()==='Zainab Sabir'){
+        var img=card.querySelector('.image-box img');
+        if(img){
+          img.src='untold-artists/zainab-sabir-02.png';
+          img.style.objectFit='contain';
+          img.style.objectPosition='center';
+        }
+      }
+    });
+  }
+
   function installProfileEnhancements(){
     if(document.getElementById('untold-profile-enhancements')) return;
     var style=document.createElement('style');
@@ -116,6 +137,8 @@
     document.addEventListener('click',function(e){
       if(e.target.closest && e.target.closest('.artist-card')) setTimeout(addInstagramButton,0);
     });
+    setTimeout(fixZainabCard,0);
+    setTimeout(fixZainabCard,250);
   }
 
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',installProfileEnhancements);
