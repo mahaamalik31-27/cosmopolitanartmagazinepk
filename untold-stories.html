@@ -1,104 +1,78 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Untold Stories — Featured Artists | Cosmopolitan Art Magazine Pakistan</title>
-<meta name="description" content="Untold Stories — featured artists presented by Cosmopolitan Art Magazine Pakistan × DOT Gulberg, Lahore.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Untold Stories | Cosmopolitan Art Magazine Pakistan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--pink:#ec2f76;--ink:#111;--paper:#fffdfa;--line:#f3a8c3;--muted:#6c6c6c}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}button,a{font:inherit}.wrap{width:min(1320px,calc(100% - 36px));margin:auto}
-.topbar{position:sticky;top:0;z-index:30;background:rgba(255,253,250,.96);backdrop-filter:blur(12px);border-bottom:1px solid #eee}.topbar .wrap{height:62px;display:flex;align-items:center;justify-content:space-between;gap:18px}.back{color:#222;text-decoration:none;font-size:12px;letter-spacing:.16em;text-transform:uppercase}.topbrand{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--pink);font-weight:600}.topbar a:hover{color:var(--pink)}
-.masthead{padding:54px 0 22px;text-align:center}.crown{color:var(--pink);font:600 36px/1 "Playfair Display",serif;margin-bottom:13px}.rule{height:1.5px;background:var(--pink);width:100%;margin:0 auto 14px}.brand{font-size:clamp(11px,1.3vw,15px);letter-spacing:.42em;text-transform:uppercase;margin:0}.event-title{margin:50px auto 0;max-width:1000px}.kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink);font-weight:600}.event-title h1{font:600 clamp(50px,8vw,105px)/.9 "Playfair Display",serif;letter-spacing:-.035em;margin:16px 0 17px;text-transform:uppercase}.event-title h1 span{color:var(--pink)}.event-copy{max-width:760px;margin:0 auto;color:#505050;font-size:15px;line-height:1.8}.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:8px 24px;margin-top:23px;font-size:11px;text-transform:uppercase;letter-spacing:.14em}.facts b{color:var(--pink)}
-.featured{padding:72px 0 90px}.section-head{text-align:center;margin-bottom:38px}.section-head h2{margin:0;color:var(--pink);font-size:clamp(32px,4vw,52px);letter-spacing:.025em;text-transform:uppercase}.section-head p{margin:12px 0 0;color:var(--muted);font-size:12px;letter-spacing:.16em;text-transform:uppercase}.artist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}.artist-card{appearance:none;border:1.5px solid var(--line);background:#fff;padding:12px 12px 18px;cursor:pointer;text-align:center;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;min-width:0}.artist-card:hover{transform:translateY(-4px);border-color:var(--pink);box-shadow:0 12px 32px rgba(20,20,20,.08)}.image-box{height:430px;display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden}.image-box img{display:block;width:100%;height:100%;object-fit:contain}.placeholder{width:100%;height:100%;display:grid;place-items:center;background:linear-gradient(145deg,#fff 0,#fff8fb 100%);color:var(--pink);font:500 25px/1.2 "Playfair Display",serif;letter-spacing:.08em;text-transform:uppercase}.artist-name{display:block;margin-top:15px;font:500 clamp(21px,2vw,28px)/1.12 "Playfair Display",serif;letter-spacing:.035em;text-transform:uppercase;color:#111}.artist-card:nth-child(5n+2) .artist-name,.artist-card:nth-child(5n+4) .artist-name{font-family:"DM Sans",sans-serif;font-weight:500;font-size:clamp(18px,1.7vw,23px);letter-spacing:.065em}
-.modal{position:fixed;inset:0;z-index:70;display:none;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);padding:24px;overflow:auto}.modal.open{display:block}.modal-panel{position:relative;width:min(1180px,100%);margin:30px auto;background:var(--paper);border:1.5px solid var(--pink);box-shadow:0 30px 90px rgba(0,0,0,.12)}.modal-close{position:sticky;top:14px;float:right;margin:14px 14px -54px 0;width:42px;height:42px;border:1px solid var(--pink);background:#fff;color:var(--pink);font-size:28px;line-height:1;cursor:pointer;z-index:3}.modal-inner{padding:54px}.profile-header{border-bottom:1px solid var(--line);padding-bottom:26px;margin-bottom:30px}.profile-header .small{color:var(--pink);font-size:10px;letter-spacing:.23em;text-transform:uppercase;font-weight:600}.profile-header h2{font:600 clamp(38px,6vw,78px)/.92 "Playfair Display",serif;margin:10px 0 17px;text-transform:uppercase}.profile-header p{margin:0;max-width:850px;line-height:1.8;color:#555}.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.work{margin:0;border:1px solid var(--line);background:#fff;padding:10px}.work img{width:100%;height:430px;object-fit:contain;background:#fff;display:block}.work figcaption{padding:13px 6px 5px}.work-title{font:500 22px/1.2 "Playfair Display",serif}.work-meta{margin-top:7px;color:#777;font-size:12px;line-height:1.55}.profile-note{padding:50px 0;text-align:center;color:#777}.footer{border-top:1px solid var(--line);padding:36px 0 50px;text-align:center}.footer .mini-crown{color:var(--pink);font-size:25px}.footer p{margin:11px 0 0;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#555}
-@media(max-width:980px){.artist-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.image-box{height:400px}.work img{height:360px}.modal-inner{padding:42px 30px}}
-@media(max-width:640px){.wrap{width:min(100% - 24px,1320px)}.topbrand{display:none}.masthead{padding-top:34px}.brand{letter-spacing:.24em;line-height:1.7}.event-title{margin-top:34px}.event-title h1{font-size:clamp(48px,16vw,78px)}.featured{padding-top:55px}.artist-grid{grid-template-columns:1fr;gap:19px}.artist-card{padding:9px 9px 16px}.image-box{height:460px}.artist-name{font-size:24px}.modal{padding:8px}.modal-panel{margin:8px auto}.modal-inner{padding:62px 17px 28px}.work-grid{grid-template-columns:1fr}.work img{height:auto;max-height:500px}.facts{line-height:1.8}}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}:root{--black:#111;--white:#fff;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8}html{scroll-behavior:smooth}body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black);overflow-x:hidden}img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000}.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700}.logo em{color:var(--pink);font-style:italic}.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.nav-links a:hover{color:var(--pink)}.nav-btn{background:var(--black);color:#fff;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}.nav-btn:hover{background:var(--pink)}.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002}.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001}.mobile-menu.active{right:0}.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase}
+.hero{padding:9rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border)}.hero-label,.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,10vw,8rem);line-height:.9;margin-bottom:2rem}.hero-title em{color:var(--pink);font-style:italic}.hero-text{max-width:800px;margin:0 auto 2rem;line-height:2;color:#555;font-size:1.05rem}.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#666}.facts b{color:var(--pink)}
+.featured{padding:6rem 2rem;max-width:1400px;margin:auto}.section-header{text-align:center;max-width:780px;margin:0 auto 4rem}.section-header h2{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,6vw,5rem);line-height:1;margin-bottom:1.2rem}.section-header h2 em{color:var(--pink);font-style:italic}.section-header p{line-height:2;color:#666}.artist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}.artist-card{appearance:none;border:1px solid #e99ab9;background:#fff;padding:12px 12px 18px;cursor:pointer;text-align:center;transition:.3s;width:100%}.artist-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.07);border-color:var(--pink)}.artist-image{height:430px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}.artist-image img{width:100%;height:100%;object-fit:contain;background:#fff}.artist-name{display:block;margin-top:15px;font-family:'Playfair Display',serif;font-size:1.7rem;line-height:1.1;text-transform:uppercase;letter-spacing:.025em}.placeholder{height:100%;width:100%;display:grid;place-items:center;color:#aaa;background:#fafafa;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.modal{position:fixed;inset:0;z-index:2000;display:none;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);padding:24px;overflow:auto}.modal.open{display:block}.modal-panel{position:relative;width:min(1180px,100%);margin:25px auto;background:#fff;border:1px solid var(--border);box-shadow:0 30px 90px rgba(0,0,0,.14)}.modal-close{position:sticky;top:12px;float:right;margin:14px 14px -54px 0;width:42px;height:42px;border:1px solid #111;background:#fff;font-size:28px;cursor:pointer;z-index:4}.modal-inner{padding:55px}.profile-header{border-bottom:1px solid var(--border);padding-bottom:28px;margin-bottom:30px}.profile-header .small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);font-weight:700}.profile-header h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);line-height:.9;margin:14px 0 20px;text-transform:uppercase}.profile-header p{max-width:900px;color:#555;line-height:1.9;white-space:pre-line}.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.work{border:1px solid var(--border);padding:10px;background:#fff}.work img{width:100%;height:430px;object-fit:contain;background:#fff}.work figcaption{padding:12px 5px 5px}.work-title{font-family:'Playfair Display',serif;font-size:1.45rem}.work-meta{font-size:.75rem;line-height:1.6;color:#777;margin-top:6px}.profile-note{padding:45px 0;text-align:center;color:#777}
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border)}.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem}.footer-logo em{color:var(--pink);font-style:italic}.footer-text{line-height:1.9;color:#666}.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}.footer-links{display:flex;flex-direction:column;gap:.8rem}.footer-links a:hover{color:var(--pink)}.footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777}
+@media(max-width:1050px){.artist-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){.nav-links,.nav-btn{display:none}.menu-toggle{display:block}nav{padding:0 1rem}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-links{align-items:center}.hero{padding:7rem 1.5rem 4rem}.featured{padding:4rem 1.5rem}}@media(max-width:650px){.artist-grid{grid-template-columns:1fr}.artist-image{height:440px}.modal{padding:8px}.modal-inner{padding:62px 17px 28px}.work-grid{grid-template-columns:1fr}.work img{height:auto;max-height:500px}.artist-name{font-size:1.5rem}}
 </style>
 </head>
 <body>
-<header class="topbar"><div class="wrap"><a class="back" href="index.html">← Home</a><div class="topbrand">Cosmopolitan Art Magazine Pakistan</div><a class="back" href="#artists">Artists</a></div></header>
-<main>
-<section class="masthead wrap">
-  <div class="crown">♛</div>
-  <div class="rule"></div>
-  <p class="brand">Cosmopolitan Art Magazine Pakistan</p>
-  <div class="event-title">
-    <div class="kicker">Cosmopolitan Art Magazine × DOT</div>
-    <h1>Untold <span>Stories</span></h1>
-    <p class="event-copy">A presentation of emerging artistic voices and stories expressed through painting, printmaking, photography, mixed media and installation.</p>
-    <div class="facts"><span><b>Venue</b> · DOT Gulberg, Lahore</span><span><b>On display</b> · Until 30 August</span><span><b>Curated by</b> · Mahaa Malik &amp; Maham Malik</span></div>
-  </div>
-</section>
-<section class="featured" id="artists"><div class="wrap">
-  <div class="section-head"><h2>Featured Artists</h2><p>Tap an artist to view selected works</p></div>
-  <div class="artist-grid" id="artistGrid"></div>
-</div></section>
-</main>
+<nav><a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a><ul class="nav-links"><li><a href="events.html">Events & Culture</a></li><li><a href="artist-feature.html">Featured Artists</a></li><li><a href="issue-01.html">Issue 01</a></li><li><a href="get-featured.html">Get Featured</a></li></ul><a href="mailto:feature@cosmopolitanartmagazinepk.online" class="nav-btn">Submit Work</a><div class="menu-toggle" onclick="toggleMenu()">☰</div></nav>
+<div class="mobile-menu" id="mobileMenu"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a><a href="get-featured.html">Get Featured</a><a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a></div>
+<section class="hero"><p class="hero-label">Cosmopolitan Art Magazine × DOT</p><h1 class="hero-title">Untold<br><em>Stories</em></h1><p class="hero-text">A presentation of emerging artistic voices and stories expressed through painting, printmaking, photography, mixed media and installation.</p><div class="facts"><span><b>Venue</b> · DOT Gulberg, Lahore</span><span><b>On display</b> · Until 30 August</span><span><b>Curated by</b> · Mahaa Malik &amp; Maham Malik</span></div></section>
+<section class="featured" id="artists"><div class="section-header"><p class="section-label">Untold Stories</p><h2>Featured <em>Artists</em></h2><p>Artists are listed alphabetically. Select a profile to view the artist statement, submitted works and Instagram where confirmed.</p></div><div class="artist-grid" id="artistGrid"></div></section>
 <div class="modal" id="modal" aria-hidden="true"><div class="modal-panel"><button class="modal-close" id="modalClose" aria-label="Close">×</button><div class="modal-inner" id="modalInner"></div></div></div>
-<footer class="footer"><div class="wrap"><div class="mini-crown">♛</div><p>Cosmopolitan Art Magazine Pakistan · Untold Stories · 2026</p></div></footer>
+<footer><div class="footer-grid"><div><div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div><p class="footer-text">Celebrating contemporary art, emerging voices, exhibitions and visual storytelling across Pakistan.</p></div><div><p class="footer-heading">Explore</p><div class="footer-links"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a></div></div><div><p class="footer-heading">Connect</p><div class="footer-links"><a href="get-featured.html">Get Featured</a><a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a></div></div></div><div class="footer-bottom">© 2026 Cosmopolitan Art Magazine Pakistan · Untold Stories</div></footer>
 <script src="untold-extra-profiles.js"></script>
 <script>
 const ARTISTS=[
-{key:'Hina Ahmed',image:'untold-artists/hina-ahmed-01.jpg'},
-{key:'Horain Mohsin',label:'Horain Mohsin',image:'untold-artists/horain-mohsin-01.jpg'},
-{key:'Hajra Masood',image:'untold-artists/hajra-masood-01.jpg'},
-{key:'Maham Mir',image:'untold-artists/maham-mir-01.jpg'},
-{key:'Laiba Masood',image:'untold-artists/laiba-masood-01.png'},
-{key:'Zainab Sabir',image:'untold-artists/zainab-sabir-01.png'},
-{key:'Huzaila Zahid',image:'untold-artists/huzaila-zahid-01.png'},
-{key:'Aliya Umair',image:'untold-artists/aliya-umair-01.jpg'},
-{key:'Komal Hira',image:'untold-artists/komal-hira-01.jpg'},
-{key:'Durr-e-Shahwar',image:'untold-artists/durr-e-shahwar-01.png'},
-{key:'Nimra Shafiq',image:'untold-artists/nimra-shafiq-01.jpg'},
-{key:'Aiman Zulfiqar',image:'untold-artists/aiman-zulfiqar-01.jpg'},
-{key:'Sehar Seerat Naqvi',image:'untold-artists/sehar-seerat-01.png'},
-{key:'Kaynat Zulfiqar',image:'untold-artists/kaynat-zulfiqar-01.png'},
-{key:'Rabia Shehzad Butt',image:'untold-artists/rabia-shehzad-butt-01.jpg'},
-{key:'Maryum Elahi',label:'Maryum Elahi'},
-{key:'Madiha Manzoor',image:'untold-artists/madiha-manzoor-01.jpg'},
-{key:'Saba Faisal',image:'untold-artists/saba-faisal-01.png'},
-{key:'Khadija Tahir',image:'untold-artists/khadija-tahir-01.jpg'},
-{key:'Hoorain Khan',image:'untold-artists/hoorain-khan-01.jpg'},
-{key:'Saira Dar',image:'untold-artists/saira-dar-01.jpg'},
-{key:'Maha Noor Sohail',image:'untold-artists/maha-noor-sohail-01.jpg'},
-{key:'Saba Asif',image:'untold-artists/saba-asif-01.png'},
-{key:'Fareeha Saqib',label:'Fareeha Saqib'},
 {key:'Adan Fatima',image:'untold-artists/adan-fatima-01.jpg'},
-{key:'Ayeza Nadeem',image:'untold-artists/ayeza-nadeem-01.png'},
+{key:'Ahyaan Batla',image:'untold-artists/ahyaan-batla-01.jpg'},
+{key:'Aiman Zulfiqar',image:'untold-artists/aiman-zulfiqar-01.jpg'},
+{key:'Aliya Umair',image:'untold-artists/aliya-umair-01.jpg'},
+{key:'Ameena Fatima',image:'untold-artists/ameena-fatima-01.png'},
 {key:'Arooj Sultan',image:'untold-artists/arooj-sultan-01.jpg'},
+{key:'Ayeza Nadeem',image:'untold-artists/ayeza-nadeem-01.png'},
+{key:'Baad-e-Saba Naqvi',image:'untold-artists/baad-e-saba-naqvi-01.jpg'},
 {key:'Brishna Amin Khan',image:'untold-artists/brishna-01.jpg'},
 {key:'Dua Mabrook',image:'untold-artists/dua-mabrook-01.jpg'},
-{key:'Muneeza Khan',image:'untold-artists/muneeza-khan-01.png'},
-{key:'Saniah Umer',image:'untold-artists/saniah-umer-01.jpg'},
+{key:'Durr-e-Shahwar',image:'untold-artists/durr-e-shahwar-01.png'},
 {key:'Faiza Irfan',image:'untold-artists/faiza-irfan-01.png'},
-{key:'Kanwal Shehzadi',image:'untold-artists/kanwal-shehzadi-01.jpg'},
-{key:'Ahyaan Batla',image:'untold-artists/ahyaan-batla-01.jpg'},
-{key:'Minahil Mehmood',image:'untold-artists/minahil-mehmood-01.jpg'},
-{key:'Noor ul Seher',image:'untold-artists/noor-ul-seher-01.jpg'},
-{key:'Rija Chaudhry',image:'untold-artists/rija-chaudhry-01.jpg'},
-{key:'Maryam Zahid',image:'untold-artists/maryam-zahid-01.png'},
-{key:'Maham Khan',image:'untold-artists/maham-khan-01.jpg'},
+{key:'Fareeha Saqib'},
+{key:'Hajra Masood',image:'untold-artists/hajra-masood-01.jpg'},
+{key:'Hina Ahmed',image:'untold-artists/hina-ahmed-01.jpg'},
 {key:'Hira Gul',image:'untold-artists/hira-gul-01.jpg'},
-{key:'Baad-e-Saba Naqvi',image:'untold-artists/baad-e-saba-naqvi-01.jpg'},
-{key:'Ameena Fatima',image:'untold-artists/ameena-fatima-01.png'},
-{key:'Sara Ghanghro',image:'untold-artists/sara-ghanghro-01.png'}
+{key:'Hoorain Khan',image:'untold-artists/hoorain-khan-01.jpg'},
+{key:'Horain Mohsin',label:'Hourrain Mohsin',image:'untold-artists/horain-mohsin-01.jpg'},
+{key:'Huzaila Zahid',image:'untold-artists/huzaila-zahid-01.png'},
+{key:'Kanwal Shehzadi',image:'untold-artists/kanwal-shehzadi-01.jpg'},
+{key:'Kaynat Zulfiqar',image:'untold-artists/kaynat-zulfiqar-01.png'},
+{key:'Khadija Tahir',image:'untold-artists/khadija-tahir-01.jpg'},
+{key:'Komal Hira',image:'untold-artists/komal-hira-01.jpg'},
+{key:'Laiba Masood',image:'untold-artists/laiba-masood-01.png'},
+{key:'Madiha Manzoor',image:'untold-artists/madiha-manzoor-01.jpg'},
+{key:'Maha Noor Sohail',image:'untold-artists/maha-noor-sohail-01.jpg'},
+{key:'Maham Khan',image:'untold-artists/maham-khan-01.jpg'},
+{key:'Maham Mir',image:'untold-artists/maham-mir-01.jpg'},
+{key:'Maryam Zahid',image:'untold-artists/maryam-zahid-01.png'},
+{key:'Maryum Elahi'},
+{key:'Minahil Mehmood',image:'untold-artists/minahil-mehmood-01.jpg'},
+{key:'Muneeza Khan',image:'untold-artists/muneeza-khan-01.png'},
+{key:'Nimra Shafiq',label:'Nimra Shafique',image:'untold-artists/nimra-shafiq-01.jpg'},
+{key:'Noor ul Seher',image:'untold-artists/noor-ul-seher-01.jpg'},
+{key:'Rabia Shehzad Butt',image:'untold-artists/rabia-shehzad-butt-01.jpg'},
+{key:'Rija Chaudhry',label:'Rija Chaudhary',image:'untold-artists/rija-chaudhry-01.jpg'},
+{key:'Saba Asif',image:'untold-artists/saba-asif-01.png'},
+{key:'Saba Faisal',image:'untold-artists/saba-faisal-01.png'},
+{key:'Saira Dar',image:'untold-artists/saira-dar-01.jpg'},
+{key:'Saniah Umer',image:'untold-artists/saniah-umer-01.jpg'},
+{key:'Sara Ghanghro',image:'untold-artists/sara-ghanghro-01.png'},
+{key:'Sehar Seerat Naqvi',image:'untold-artists/sehar-seerat-01.png'},
+{key:'Zainab Sabir',image:'untold-artists/zainab-sabir-02.png'}
 ];
-const profiles=window.UNTOLD_EXTRA_PROFILES||{};
-const grid=document.getElementById('artistGrid');
-const modal=document.getElementById('modal');
-const modalInner=document.getElementById('modalInner');
-const modalClose=document.getElementById('modalClose');
-function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
-function profileFor(item){return profiles[item.key]||profiles[item.label]||null}
-function imageFor(item){const p=profileFor(item);return item.image||(p&&p.image)||''}
-function renderGrid(){grid.innerHTML=ARTISTS.map((item,i)=>{const name=item.label||item.key;const src=imageFor(item);return `<button class="artist-card" type="button" data-i="${i}" aria-label="View ${esc(name)}"><div class="image-box">${src?`<img src="${esc(src)}" alt="Artwork by ${esc(name)}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Artwork<br>Profile</div>'">`:`<div class="placeholder">Artwork<br>Profile</div>`}</div><span class="artist-name">${esc(name)}</span></button>`}).join('')}
-function openArtist(i){const item=ARTISTS[i],name=item.label||item.key,p=profileFor(item);let works=[];if(p&&Array.isArray(p.images)&&p.images.length)works=p.images;else if(imageFor(item))works=[{src:imageFor(item),title:'Selected work'}];const statement=(p&&p.statement)||'Selected artwork from the Untold Stories exhibition.';modalInner.innerHTML=`<div class="profile-header"><div class="small">Untold Stories · Featured Artist</div><h2>${esc(name)}</h2><p>${esc(statement)}</p></div>${works.length?`<div class="work-grid">${works.map(w=>`<figure class="work"><img src="${esc(w.src)}" alt="${esc(w.title||'Selected artwork')} by ${esc(name)}"><figcaption><div class="work-title">${esc(w.title||'Selected work')}</div>${w.meta?`<div class="work-meta">${esc(w.meta)}</div>`:''}</figcaption></figure>`).join('')}</div>`:`<div class="profile-note">Artwork details will be added to this profile.</div>`}`;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';modal.scrollTop=0}
-function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-grid.addEventListener('click',e=>{const card=e.target.closest('.artist-card');if(card)openArtist(Number(card.dataset.i))});modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});renderGrid();
+const profiles=window.UNTOLD_EXTRA_PROFILES||{},grid=document.getElementById('artistGrid'),modal=document.getElementById('modal'),modalInner=document.getElementById('modalInner'),modalClose=document.getElementById('modalClose');
+function esc(s){return String(s??'').replace(/[&<>\'\"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
+function profileFor(item){return profiles[item.key]||profiles[item.label]||null}function imageFor(item){const p=profileFor(item);return item.image||(p&&p.image)||''}
+function renderGrid(){grid.innerHTML=ARTISTS.map((item,i)=>{const name=item.label||item.key,src=imageFor(item);return `<button class="artist-card" type="button" data-i="${i}"><div class="artist-image">${src?`<img src="${esc(src)}" alt="Artwork by ${esc(name)}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Artwork image unavailable</div>'">`:`<div class="placeholder">Artwork image unavailable</div>`}</div><span class="artist-name">${esc(name)}</span></button>`}).join('')}
+function openArtist(i){const item=ARTISTS[i],name=item.label||item.key,p=profileFor(item);let works=[];if(p&&Array.isArray(p.images)&&p.images.length)works=p.images;else if(imageFor(item))works=[{src:imageFor(item),title:'Selected work'}];const statement=(p&&p.statement)||'Selected artwork from the Untold Stories exhibition.';modalInner.innerHTML=`<div class="profile-header"><div class="small">Untold Stories · Artist Profile</div><h2>${esc(name)}</h2><p>${esc(statement)}</p></div>${works.length?`<div class="work-grid">${works.map(w=>`<figure class="work"><img src="${esc(w.src||'')}" alt="${esc(w.title||'Artwork')} by ${esc(name)}"><figcaption><div class="work-title">${esc(w.title||'Selected work')}</div>${w.meta?`<div class="work-meta">${esc(w.meta)}</div>`:''}</figcaption></figure>`).join('')}</div>`:`<div class="profile-note">Artwork image is not available in the approved website files yet.</div>`}`;modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden'}
+grid.addEventListener('click',e=>{const b=e.target.closest('.artist-card');if(b)openArtist(Number(b.dataset.i))});function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}modalClose.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}renderGrid();
 </script>
-</body>
-</html>
+</body></html>
