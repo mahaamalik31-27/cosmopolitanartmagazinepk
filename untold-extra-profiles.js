@@ -1,7 +1,13 @@
 (function(){
   var x=new XMLHttpRequest();
   x.open('GET','untold-extra-profiles-base.js',false);
-  try{x.send(null);if(x.status===0||x.status<400){(0,eval)(x.responseText);}}catch(e){console.warn('Untold base profiles could not be loaded',e);}
+  try{
+    x.send(null);
+    if(x.status===0||x.status<400){(0,eval)(x.responseText);}
+  }catch(e){
+    console.warn('Untold base profiles could not be loaded',e);
+  }
+
   window.UNTOLD_EXTRA_PROFILES=Object.assign(window.UNTOLD_EXTRA_PROFILES||{}, {
     "Dua Mabrook":{
       "image":"untold-artists/dua-mabrook-01.jpg",
@@ -32,58 +38,80 @@
     }
   });
 
-  function installEditorialLayout(){
-    if(document.getElementById('untold-editorial-layout')) return;
-    var style=document.createElement('style');
-    style.id='untold-editorial-layout';
-    style.textContent=`
-      :root{--cosmo-pink:#ec2f76;--cosmo-ink:#111;--cosmo-paper:#fffdfb}
-      body{background:var(--cosmo-paper)!important;color:var(--cosmo-ink)!important}
-      .section{background:#fff!important;padding:62px clamp(22px,5vw,72px) 110px!important}
-      .editorial-masthead{text-align:center;margin:0 auto 42px;max-width:980px;color:#111}
-      .editorial-masthead .crown{font-size:30px;line-height:1;color:var(--cosmo-pink);margin-bottom:12px}
-      .editorial-masthead .brand{font-family:"DM Sans",sans-serif;font-size:12px;font-weight:600;letter-spacing:.42em;text-transform:uppercase;white-space:normal}
-      .editorial-masthead .rule{height:1px;background:var(--cosmo-pink);margin:17px 0 0}
-      .toolbar{display:block!important;text-align:center!important;margin:0 0 38px!important}
-      .toolbar h2{font-family:"DM Sans",sans-serif!important;font-size:clamp(30px,4.2vw,52px)!important;font-weight:700!important;letter-spacing:.015em!important;text-transform:uppercase!important;color:var(--cosmo-pink)!important;margin:0!important}
-      .toolbar h2:after{display:none!important;content:none!important}
-      .toolbar p{display:none!important}
-      .grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:24px 22px!important;align-items:start!important}
-      .card,.card.show,.card:nth-child(n),.card.show:nth-child(n){display:flex!important;flex-direction:column!important;position:relative!important;min-height:0!important;height:auto!important;background:#fff!important;border:1px solid rgba(236,47,118,.68)!important;box-shadow:none!important;outline:none!important;transform:none!important;opacity:1!important;overflow:hidden!important;cursor:pointer!important;transition:transform .25s ease,box-shadow .25s ease!important}
-      .card:hover{transform:translateY(-3px)!important;outline:none!important;border-color:var(--cosmo-pink)!important;box-shadow:0 12px 34px rgba(40,20,30,.08)!important}
-      .art,.art.has-work{position:relative!important;inset:auto!important;width:100%!important;height:410px!important;display:flex!important;align-items:center!important;justify-content:center!important;background:#fff!important;padding:14px!important;transform:none!important}
-      .art:before,.art:after,.art.has-work:before,.art.has-work:after{display:none!important}
-      .art img,.art.has-work img{position:relative!important;inset:auto!important;width:100%!important;height:100%!important;object-fit:contain!important;display:block!important;background:#fff!important}
-      .veil,.num,.art-count{display:none!important}
-      .copy{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;z-index:2!important;color:#111!important;background:#fff!important;padding:13px 12px 17px!important;text-align:center!important;min-height:64px!important;display:flex!important;align-items:center!important;justify-content:center!important}
-      .copy small,.copy span{display:none!important}
-      .copy h3{font-family:"DM Sans",sans-serif!important;font-size:clamp(17px,1.55vw,23px)!important;font-weight:500!important;line-height:1.14!important;letter-spacing:.035em!important;text-transform:uppercase!important;color:#111!important;margin:0!important}
-      .card:has(.has-work){outline:none!important}
-      .card:has(.has-work) .num:after{content:none!important}
-      .modal{background:rgba(255,255,255,.78)!important;backdrop-filter:blur(12px)!important}
-      .panel{background:#fff!important;border:1px solid var(--cosmo-pink)!important;box-shadow:0 24px 90px rgba(30,20,25,.18)!important}
-      .panel-copy small{color:var(--cosmo-pink)!important}
-      .panel-copy h2{color:#111!important}
-      .panel-art.gallery{background:#fff!important}
-      .panel-art.gallery figure{border:1px solid #eee!important;background:#fff!important}
-      .panel-art.gallery img{background:#fff!important;object-fit:contain!important}
-      .panel-art.gallery figcaption{color:#111!important}
-      @media(max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.art,.art.has-work{height:390px!important}}
-      @media(max-width:620px){.section{padding:44px 16px 80px!important}.editorial-masthead{margin-bottom:28px}.editorial-masthead .brand{font-size:10px;letter-spacing:.26em;line-height:1.7}.grid{grid-template-columns:1fr!important;gap:18px!important}.art,.art.has-work{height:420px!important}.copy h3{font-size:20px!important}}
-    `;
-    document.head.appendChild(style);
+  /* Confirmed Instagram handles supplied in the artist records / project notes. */
+  var IG={
+    "Fareeha Saqib":"fareeha_saqib14",
+    "Saira Dar":"saira.dar.artist",
+    "Maha Noor Sohail":"mahaartsy",
+    "Saba Asif":"itssaba_artistu",
+    "Hoorain Khan":"i_hooraink",
+    "Khadija Tahir":"zuionthego",
+    "Hina Ahmed":"Studiohinaahmed",
+    "Ayeza Nadeem":"ayeza_nadeem",
+    "Arooj Sultan":"arooj_dumps",
+    "Durr-e-Shahwar":"durayshawar_",
+    "Brishna Amin Khan":"brishna.a.k",
+    "Saba Faisal":"sabafaisal_art",
+    "Kanwal Shehzadi":"ttyl_kanwal",
+    "Faiza Irfan":"art_by_faiza_",
+    "Saniah Umer":"bysaniah",
+    "Komal Hira":"komal.hiraa",
+    "Maryam Zahid":"__artbymariaam",
+    "Muneeza Khan":"_muneezakhan",
+    "Aiman Zulfiqar":"aiman_able",
+    "Rija Chaudhry":"rija.chaudhry",
+    "Ahyaan Batla":"iviiiiiviixiiii",
+    "Baad-e-Saba Naqvi":"elleve_art"
+  };
 
-    var toolbar=document.querySelector('.section .toolbar');
-    if(toolbar && !document.querySelector('.editorial-masthead')){
-      var mast=document.createElement('div');
-      mast.className='editorial-masthead';
-      mast.innerHTML='<div class="crown">♛</div><div class="brand">Cosmopolitan Art Magazine Pakistan</div><div class="rule"></div>';
-      toolbar.parentNode.insertBefore(mast,toolbar);
-      var h=toolbar.querySelector('h2');
-      if(h) h.textContent='Featured Artists';
+  Object.keys(IG).forEach(function(name){
+    if(window.UNTOLD_EXTRA_PROFILES[name]){
+      window.UNTOLD_EXTRA_PROFILES[name].instagram='https://www.instagram.com/'+IG[name]+'/';
+      window.UNTOLD_EXTRA_PROFILES[name].instagramHandle='@'+IG[name];
     }
+  });
+
+  function addInstagramButton(){
+    var modal=document.getElementById('modalInner');
+    if(!modal) return;
+    var title=modal.querySelector('.profile-header h2');
+    if(!title) return;
+    var name=(title.textContent||'').trim();
+    var handle=IG[name];
+    var header=modal.querySelector('.profile-header');
+    if(!header) return;
+    var old=header.querySelector('.artist-instagram-link');
+    if(old) old.remove();
+    if(!handle) return;
+    var a=document.createElement('a');
+    a.className='artist-instagram-link';
+    a.href='https://www.instagram.com/'+handle+'/';
+    a.target='_blank';
+    a.rel='noopener noreferrer';
+    a.textContent='View Instagram · @'+handle;
+    header.appendChild(a);
   }
 
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',installEditorialLayout);
-  else installEditorialLayout();
+  function installProfileEnhancements(){
+    if(document.getElementById('untold-profile-enhancements')) return;
+    var style=document.createElement('style');
+    style.id='untold-profile-enhancements';
+    style.textContent='\
+      .artist-instagram-link{display:inline-flex;align-items:center;justify-content:center;margin-top:20px;padding:12px 18px;border:1px solid #ec2f76;background:#ec2f76;color:#fff;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;transition:.2s ease}\
+      .artist-instagram-link:hover{background:#111;border-color:#111;color:#fff}\
+      .profile-header p{white-space:pre-line}\
+    ';
+    document.head.appendChild(style);
+
+    var modal=document.getElementById('modalInner');
+    if(modal){
+      new MutationObserver(addInstagramButton).observe(modal,{childList:true,subtree:true});
+    }
+    document.addEventListener('click',function(e){
+      if(e.target.closest && e.target.closest('.artist-card')) setTimeout(addInstagramButton,0);
+    });
+  }
+
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',installProfileEnhancements);
+  else installProfileEnhancements();
 })();
