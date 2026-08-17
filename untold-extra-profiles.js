@@ -9,6 +9,15 @@
   }
 
   window.UNTOLD_EXTRA_PROFILES=Object.assign(window.UNTOLD_EXTRA_PROFILES||{}, {
+    "Arooj Sultan":{
+      "image":"untold-artists/arooj-sultan-01.jpg",
+      "images":[
+        {"src":"untold-artists/arooj-sultan-01.jpg","title":"Odyssey — selected work 1"},
+        {"src":"untold-artists/arooj-sultan-02.jpg","title":"Odyssey — selected work 2"},
+        {"src":"untold-artists/arooj-sultan-03.jpg","title":"Odyssey — selected work 3"}
+      ],
+      "statement":"As with the word ‘journey,’ odyssey has both a literal meaning and a figurative one. I chose the word odyssey because it symbolizes the whole struggle of a person from the start to end, and when I started my experimental work from whom I was inspired by artists, in the end I found my own style and I feel fulfilled by it. My visuals were painted with hand gestures. Do gestures speak louder than words? Gestures play a role in human learning and cognition. Gestures are reciprocally tied to our thoughts and even to our ability to learn. My work reflects the multifaceted human physicality through strong visuals with hand gestures and flat backgrounds just to convey my thoughts. I want to carry on my research on hand gestures, visuals, and human emotions."
+    },
     "Dua Mabrook":{
       "image":"untold-artists/dua-mabrook-01.jpg",
       "images":[
@@ -38,7 +47,6 @@
     }
   });
 
-  /* Confirmed Instagram handles supplied in the artist records / project notes. */
   var IG={
     "Fareeha Saqib":"fareeha_saqib14",
     "Saira Dar":"saira.dar.artist",
@@ -104,9 +112,7 @@
     document.head.appendChild(style);
 
     var modal=document.getElementById('modalInner');
-    if(modal){
-      new MutationObserver(addInstagramButton).observe(modal,{childList:true,subtree:true});
-    }
+    if(modal){new MutationObserver(addInstagramButton).observe(modal,{childList:true,subtree:true});}
     document.addEventListener('click',function(e){
       if(e.target.closest && e.target.closest('.artist-card')) setTimeout(addInstagramButton,0);
     });
