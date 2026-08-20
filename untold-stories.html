@@ -1,283 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Untold Stories | Cosmopolitan Art Magazine Pakistan</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unspoken — Stories Left Untold | Cosmopolitan Art Magazine Pakistan</title>
+<meta name="description" content="Unspoken — Stories Left Untold brought together 89 artistic voices at DOT Gulberg, Lahore, with Rashid Rana as Guest of Honour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--black:#111;--white:#fff;--pink:#d4578a;--gray:#777;--light:#fafafa;--border:#e8e8e8}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--black);overflow-x:hidden}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
-nav{position:fixed;top:0;left:0;right:0;height:60px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;z-index:1000}
-.logo{font-family:'Playfair Display',serif;font-size:.9rem;font-weight:700}.logo em{color:var(--pink);font-style:italic}
-.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.nav-links a:hover{color:var(--pink)}
-.nav-btn{background:var(--black);color:#fff;padding:.6rem 1.2rem;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase}.nav-btn:hover{background:var(--pink)}
-.menu-toggle{display:none;font-size:1.6rem;cursor:pointer;z-index:1002;border:0;background:transparent}
-.mobile-menu{position:fixed;top:0;right:-100%;width:100%;height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;transition:.4s;z-index:1001}
-.mobile-menu.active{right:0}.mobile-menu a{font-size:1rem;letter-spacing:.14em;text-transform:uppercase}
-.hero{padding:9rem 2rem 5rem;text-align:center;border-bottom:1px solid var(--border)}
-.hero-label,.section-label{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}
-.hero-title{font-family:'Playfair Display',serif;font-size:clamp(4rem,10vw,8rem);line-height:.9;margin-bottom:2rem}
-.hero-title em{color:var(--pink);font-style:italic}
-.hero-text{max-width:850px;margin:0 auto 2rem;line-height:2;color:#555;font-size:1.05rem}
-.facts{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#666}.facts b{color:var(--pink)}
-.editorial{padding:6rem 2rem;border-bottom:1px solid var(--border)}
-.editorial-wrap{max-width:1100px;margin:auto}
-.editorial h2,.artists-section h2,.profiles h2{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,6vw,5rem);line-height:1;margin-bottom:1.4rem}
-.editorial h2 em,.artists-section h2 em,.profiles h2 em{color:var(--pink);font-style:italic}
-.lead{font-family:'Playfair Display',serif;font-size:clamp(1.45rem,3vw,2.25rem);line-height:1.45;margin-bottom:2rem}
-.editorial-copy{display:grid;grid-template-columns:1fr 1fr;gap:3rem;color:#555;line-height:1.9}
-.highlights{margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
-.highlights h3{font-family:'Playfair Display',serif;font-size:2.2rem;margin-bottom:1.5rem}
-.highlights p{color:#555;line-height:1.9}
-.artists-section{padding:6rem 2rem;background:#fafafa}
-.section-wrap{max-width:1250px;margin:auto}
-.section-intro{max-width:780px;color:#666;line-height:1.8;margin-bottom:3rem}
-.name-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--border);border-left:1px solid var(--border)}
-.name-card{padding:1rem 1.1rem;background:#fff;border-right:1px solid var(--border);border-bottom:1px solid var(--border);font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.2}
-.profiles{padding:6rem 2rem;max-width:1400px;margin:auto}
-.profile-intro{max-width:780px;color:#666;line-height:1.8;margin-bottom:3rem}
-.artist-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2rem}
-.artist-card{appearance:none;border:1px solid #e99ab9;background:#fff;padding:12px 12px 18px;cursor:pointer;text-align:center;transition:.3s;width:100%}
-.artist-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.07);border-color:var(--pink)}
-.artist-image{height:360px;background:#fafafa;display:flex;align-items:center;justify-content:center;overflow:hidden}
-.artist-image img{width:100%;height:100%;object-fit:contain;background:#fff}
-.artist-name{display:block;margin-top:15px;font-family:'Playfair Display',serif;font-size:1.55rem;line-height:1.1}
-.placeholder{height:100%;width:100%;display:grid;place-items:center;color:#aaa;background:#fafafa;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:20px}
-.modal{position:fixed;inset:0;z-index:2000;display:none;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);padding:24px;overflow:auto}
-.modal.open{display:block}.modal-panel{position:relative;width:min(1180px,100%);margin:25px auto;background:#fff;border:1px solid var(--border);box-shadow:0 30px 90px rgba(0,0,0,.14)}
-.modal-close{position:sticky;top:12px;float:right;margin:14px 14px -54px 0;width:42px;height:42px;border:1px solid #111;background:#fff;font-size:28px;cursor:pointer;z-index:4}
-.modal-inner{padding:55px}.profile-header{border-bottom:1px solid var(--border);padding-bottom:28px;margin-bottom:30px}
-.profile-header .small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--pink);font-weight:700}
-.profile-header h2{font-family:'Playfair Display',serif;font-size:clamp(3rem,7vw,6rem);line-height:.9;margin:14px 0 20px}
-.profile-header p{max-width:900px;color:#555;line-height:1.9;white-space:pre-line}
-.work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.work{border:1px solid var(--border);padding:10px;background:#fff}
-.work img{width:100%;height:430px;object-fit:contain;background:#fff}.work figcaption{padding:12px 5px 5px}.work-title{font-family:'Playfair Display',serif;font-size:1.45rem}
-.work-meta{font-size:.75rem;line-height:1.6;color:#777;margin-top:6px}.profile-note{padding:45px 0;text-align:center;color:#777}
-footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--border)}.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
-.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem}.footer-logo em{color:var(--pink);font-style:italic}
-.footer-text{line-height:1.9;color:#666}.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}
-.footer-links{display:flex;flex-direction:column;gap:.8rem}.footer-links a:hover{color:var(--pink)}.footer-bottom{max-width:1200px;margin:3rem auto 0;padding-top:2rem;border-top:1px solid var(--border);text-align:center;font-size:.75rem;color:#777}
-@media(max-width:1050px){.artist-grid{grid-template-columns:repeat(2,1fr)}.name-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:900px){.nav-links,.nav-btn{display:none}.menu-toggle{display:block}nav{padding:0 1rem}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-links{align-items:center}.hero{padding:7rem 1.5rem 4rem}.editorial-copy{grid-template-columns:1fr}}
-@media(max-width:650px){.artist-grid{grid-template-columns:1fr}.artist-image{height:400px}.name-grid{grid-template-columns:1fr}.modal{padding:8px}.modal-inner{padding:62px 17px 28px}.work-grid{grid-template-columns:1fr}.work img{height:auto;max-height:500px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:#111;background:#fff;font-family:"DM Sans",sans-serif;overflow-x:hidden}a{color:inherit;text-decoration:none}.nav{position:sticky;top:0;z-index:20;height:64px;padding:0 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);border-bottom:1px solid #e9e9e9;backdrop-filter:blur(12px)}.brand{font-family:"Playfair Display",serif;font-weight:700}.brand i{color:#d72e73}.links{display:flex;gap:25px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.links a:hover{color:#d72e73}.menu{display:none;border:0;background:none;font-size:24px}.mobile-links{display:none}
+.hero{max-width:1180px;margin:auto;padding:78px 5vw 44px}.eyebrow{margin:0 0 14px;color:#d72e73;font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;animation:rise .7s ease both}.hero h1{max-width:1000px;margin:0;font:700 clamp(46px,8vw,98px)/.96 "Playfair Display",serif;letter-spacing:-.045em;animation:rise .8s .08s ease both}.hero h1 i{color:#d72e73;font-weight:600}.byline{margin:28px 0 0;border-block:1px solid #e7e7e7;display:grid;grid-template-columns:1.35fr .95fr 1fr 1.55fr;align-items:stretch;font-size:13px;animation:rise .8s .16s ease both}.byline>span{min-height:50px;padding:0 18px;display:flex;align-items:center;border-right:1px solid #e7e7e7;white-space:nowrap}.byline>span:first-child{padding-left:0}.byline>span:last-child{border-right:0}.byline b{font-weight:600}.curators{gap:8px;background:#111;color:#fff;justify-content:center}.curators strong{color:#ff6ca8}.hero-image{max-width:1180px;margin:0 auto;padding:0 5vw;animation:reveal 1s .18s ease both}.hero-image img{width:100%;max-height:640px;object-fit:contain;background:#fafafa}.story{max-width:950px;margin:auto;padding:62px 5vw 80px}.lead{font:500 clamp(24px,3vw,38px)/1.45 "Playfair Display",serif}.story-copy{font-size:17px;line-height:1.9;color:#484848}.honour{margin-top:34px;padding:30px;border-left:4px solid #d72e73;background:#fafafa}.honour small{display:block;color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.17em;text-transform:uppercase}.honour b{display:block;margin-top:7px;font:700 clamp(28px,4vw,48px) "Playfair Display",serif}.names{background:#fafafa;padding:80px 5vw}.wrap{max-width:1260px;margin:auto}.section-kicker{color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}.section-title{margin:10px 0 14px;font:700 clamp(38px,6vw,72px)/1 "Playfair Display",serif}.section-title i{color:#d72e73}.section-copy{max-width:700px;margin:0 0 34px;color:#666;line-height:1.75}.name-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid #e4e4e4;border-top:1px solid #e4e4e4}.name-grid div{padding:15px;background:#fff;border-right:1px solid #e4e4e4;border-bottom:1px solid #e4e4e4;font:500 17px "Playfair Display",serif;opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease,background .25s,color .25s}.name-grid div.visible{opacity:1;transform:none}.name-grid div:hover{background:#111;color:#fff}.name-grid div.featured-name{color:#d72e73;font-weight:700}.credits{padding:90px 5vw;text-align:center}.credits p{margin:0;color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase}.credits h2{margin:12px auto 0;max-width:900px;font:700 clamp(40px,7vw,82px)/1.05 "Playfair Display",serif}.credits h2 i{color:#d72e73}.footer{padding:55px 5vw;background:#111;color:#fff}.footer-inner{max-width:1180px;margin:auto}.footer h3{font:600 24px "Playfair Display",serif;margin:0 0 10px}.footer p{color:#bbb;margin:0;line-height:1.7}.copyright{margin-top:32px!important;padding-top:25px;border-top:1px solid #333;font-size:12px}
+.author-line{margin:20px 0 0;color:#555;font-size:14px;animation:rise .8s .12s ease both}.author-line strong{color:#111;font-weight:600}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}@keyframes reveal{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.name-grid div{opacity:1;transform:none}}
+@media(max-width:900px){.links{display:none}.menu{display:block}.mobile-links.open{position:fixed;inset:64px 0 0;z-index:19;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:#fff;font-size:14px;letter-spacing:.13em;text-transform:uppercase}.hero{padding-top:55px}.name-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.byline{grid-template-columns:1fr 1fr}.byline>span{padding:0 14px;border-bottom:1px solid #e7e7e7}.byline>span:first-child{padding-left:14px}.byline>span:nth-child(2){border-right:0}.byline>span:nth-child(3),.byline>span:nth-child(4){border-bottom:0}}
+@media(max-width:620px){.nav{height:58px;padding:0 18px}.brand{font-size:14px}.mobile-links.open{inset:58px 0 0}.hero{padding:42px 20px 30px}.hero h1{font-size:48px;line-height:.98}.byline{grid-template-columns:1fr}.byline>span{min-height:46px;padding:0;border-right:0;border-bottom:1px solid #e7e7e7;white-space:normal}.byline>span:first-child{padding-left:0}.byline>span:nth-child(3){border-bottom:1px solid #e7e7e7}.byline>span:nth-child(4){border-bottom:0}.curators{justify-content:flex-start;padding:0 13px!important}.hero-image{padding:0}.hero-image img{max-height:none}.story{padding:42px 20px 58px}.story-copy{font-size:16px}.names{padding:60px 20px}.name-grid{grid-template-columns:1fr}.name-grid div{font-size:18px}.credits{padding:70px 20px}}
+/* Editorial story expansion */
+.story{max-width:1050px;padding:72px 5vw 88px}.story-label{margin:0 0 12px;color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}.story h2{margin:0 0 28px;font:700 clamp(38px,6vw,68px)/1.04 "Playfair Display",serif}.story h2 i{color:#d72e73}.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;margin-top:34px}.story-grid .story-copy{margin:0;font-size:16px;line-height:1.95}.pullquote{margin:48px 0 0;padding:34px 38px;border-block:1px solid #dedede;text-align:center;font:600 clamp(25px,4vw,42px)/1.35 "Playfair Display",serif}.pullquote i{color:#d72e73}.honour span{display:block;margin-top:8px;color:#666;line-height:1.7}@media(max-width:900px){.story-grid{grid-template-columns:1fr;gap:20px}}
+.highlights{padding:88px 5vw;background:#111;color:#fff}.highlights .section-kicker{color:#ff6ca8}.highlights .section-title{color:#fff}.highlight-intro{max-width:760px;margin:0 0 38px;color:#c9c9c9;line-height:1.8}.highlight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#383838;border:1px solid #383838}.highlight-card{padding:34px;background:#151515}.highlight-card:first-child{background:#25151c}.highlight-card .number{display:block;margin-bottom:28px;color:#ff6ca8;font-size:11px;letter-spacing:.18em}.highlight-card h3{margin:0 0 13px;font:600 27px/1.08 "Playfair Display",serif}.highlight-card p{margin:0;color:#bbb;font-size:14px;line-height:1.75}.highlight-card em{color:#fff}.credits{padding:82px 5vw;text-align:left;font-family:"DM Sans",sans-serif}.credits-inner{max-width:1100px;margin:auto}.credits h2{margin:10px 0 14px;max-width:none;font:600 clamp(36px,5vw,60px)/1.08 "DM Sans",sans-serif;letter-spacing:-.04em}.credits h2 i{font-style:normal;color:#d72e73}.credits-lead{max-width:760px;margin:0 0 34px;color:#666;font-size:16px;line-height:1.75;text-transform:none;letter-spacing:normal}.curator-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.curator-card{padding:36px;border:1px solid #dedede;background:#fff}.curator-card span{display:block;color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}.curator-card h3{margin:10px 0 16px;font:600 31px/1.15 "DM Sans",sans-serif;letter-spacing:-.025em}.curator-card p{margin:0;color:#555;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:400;line-height:1.75;letter-spacing:normal;text-transform:none}.next-call{padding:90px 5vw;background:#f5e9ee;text-align:center}.next-call .call-label{color:#d72e73;font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase}.next-call h2{max-width:900px;margin:12px auto 18px;font:700 clamp(38px,6vw,70px)/1.04 "Playfair Display",serif}.next-call p{max-width:680px;margin:0 auto 28px;color:#5d4c53;line-height:1.75}.gmail-button{display:inline-flex;align-items:center;justify-content:center;padding:16px 24px;background:#111;color:#fff;font-size:12px;font-weight:600;letter-spacing:.08em;transition:.25s}.gmail-button:hover{background:#d72e73}.gmail-address{display:block;margin-top:12px;font-size:13px;color:#765564}@media(max-width:950px){.highlight-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:700px){.highlight-grid,.curator-grid{grid-template-columns:1fr}.highlights{padding:64px 20px}.highlight-card{padding:28px 24px}.credits{padding:64px 20px}.curator-card{padding:28px 24px}.next-call{padding:70px 20px}.gmail-button{width:100%}}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="logo">Cosmopolitan <em>Art</em> Magazine</a>
-  <ul class="nav-links">
-    <li><a href="events.html">Events & Culture</a></li>
-    <li><a href="artist-feature.html">Featured Artists</a></li>
-    <li><a href="issue-01.html">Issue 01</a></li>
-    <li><a href="get-featured.html">Get Featured</a></li>
-  </ul>
-  <a href="mailto:feature@cosmopolitanartmagazinepk.online" class="nav-btn">Submit Work</a>
-  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</button>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="events.html">Events & Culture</a>
-  <a href="artist-feature.html">Featured Artists</a>
-  <a href="issue-01.html">Issue 01</a>
-  <a href="get-featured.html">Get Featured</a>
-  <a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a>
-</div>
-
-<section class="hero">
-  <p class="hero-label">Cosmopolitan Art Magazine × DOT</p>
-  <h1 class="hero-title">Untold<br><em>Stories</em></h1>
-  <p class="hero-text">A collective exhibition bringing together 89 artists and a wide range of emerging contemporary practices, personal narratives and visual languages from across Pakistan.</p>
-  <div class="facts">
-    <span><b>Venue</b> · DOT Gulberg, Lahore</span>
-    <span><b>On display</b> · Until 30 August 2026</span>
-    <span><b>Curated by</b> · Mahaa Malik &amp; Maham Malik</span>
-  </div>
-</section>
-
-<section class="editorial">
-  <div class="editorial-wrap">
-    <p class="section-label">Exhibition Feature</p>
-    <h2>89 Artists. <em>One Collective Story.</em></h2>
-    <p class="lead">Untold Stories creates space for artists to be seen, documented and encountered beyond the conventional boundaries of a gallery.</p>
-    <div class="editorial-copy">
-      <p>Presented by <strong>Cosmopolitan Art Magazine in collaboration with DOT</strong>, the exhibition brings together painting, printmaking, mixed media, works on paper, collage, installation and experimental practices. Rather than asking artists to speak in one visual language, the exhibition celebrates the differences between their approaches, materials and experiences.</p>
-      <p>At the centre of <em>Untold Stories</em> is a simple idea: every artist carries a story worth making visible. At DOT Gulberg, visitors can encounter these works in an open, everyday setting where art becomes part of conversation, community and discovery. The exhibition remains on display through <strong>30 August 2026</strong>.</p>
-    </div>
-    <div class="highlights">
-      <h3>Selected Highlights</h3>
-      <p><strong>Adan Fatima</strong> works through oil painting and observation; <strong>Aiman Zulfiqar</strong> explores the expressive possibilities of linocut and reduction printmaking; <strong>Aliya Umair</strong> translates colour and geometric structure into jewel-like painted surfaces; and <strong>Arooj Sultan</strong> places gesture and psychological expression at the centre of portraiture. Material experimentation continues through <strong>Ayesha Rahman Hamid</strong>, while <strong>Brishna A.K</strong> works with gouache on wasli. <strong>Saira Dar</strong> uses paper collage as a language of fragmentation and composition, while <strong>Sehar Seerat Naqvi</strong> and <strong>Zahra Ishaq</strong> bring distinct approaches to oil painting and sepia-based works on paper. These highlights are only a glimpse into the wider range of practices represented throughout the exhibition.</p>
-    </div>
-  </div>
-</section>
-
-<section class="artists-section" id="artists">
-  <div class="section-wrap">
-    <p class="section-label">Untold Stories</p>
-    <h2>Participating <em>Artists</em></h2>
-    <p class="section-intro">The artists currently confirmed for the exhibition are listed below. Every name is presented as part of the collective story of the show.</p>
-    <div class="name-grid" id="nameGrid"></div>
-  </div>
-</section>
-
-<section class="profiles">
-  <p class="section-label">Explore the Exhibition</p>
-  <h2>Artist <em>Profiles</em></h2>
-  <p class="profile-intro">Where approved artwork files and profile material are available, select an artist below to view submitted works and exhibition information.</p>
-  <div class="artist-grid" id="artistGrid"></div>
-</section>
-
-<div class="modal" id="modal" aria-hidden="true">
-  <div class="modal-panel">
-    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
-    <div class="modal-inner" id="modalInner"></div>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-grid">
-    <div><div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div><p class="footer-text">Celebrating contemporary art, emerging voices, exhibitions and visual storytelling across Pakistan.</p></div>
-    <div><p class="footer-heading">Explore</p><div class="footer-links"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a></div></div>
-    <div><p class="footer-heading">Connect</p><div class="footer-links"><a href="get-featured.html">Get Featured</a><a href="mailto:feature@cosmopolitanartmagazinepk.online">Submit Work</a></div></div>
-  </div>
-  <div class="footer-bottom">© 2026 Cosmopolitan Art Magazine Pakistan · Untold Stories · DOT Gulberg, Lahore</div>
-</footer>
-
-<script src="untold-extra-profiles.js"></script>
+<nav class="nav"><a class="brand" href="index.html">Cosmopolitan <i>Art</i> Magazine</a><div class="links"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a><a href="get-featured.html">Get Featured</a></div><button class="menu" aria-label="Open menu">☰</button></nav>
+<div class="mobile-links"><a href="events.html">Events & Culture</a><a href="artist-feature.html">Featured Artists</a><a href="issue-01.html">Issue 01</a><a href="get-featured.html">Get Featured</a></div>
+<header class="hero"><p class="eyebrow">Exhibition Feature · Cosmopolitan Art Magazine × DOT</p><h1>Unspoken —<br><i>Stories Left Untold</i></h1><p class="author-line">Written by <strong>Mahaa Ashraf Malik</strong></p><div class="byline"><span><b>89 artistic voices</b> from across Pakistan</span><span><b>15–30 August 2026</b></span><span><b>DOT Gulberg, Lahore</b></span><span class="curators">Curated by <strong>Mahaa Malik &amp; Maham Malik</strong></span></div></header>
+<figure class="hero-image"><img src="untold-event-banner.png" alt="Cosmopolitan Art Magazine × DOT — Unspoken exhibition, 15–30 August 2026"></figure>
+<article class="story"><p class="story-label">About the Exhibition</p><h2>When silence becomes <i>visual language.</i></h2><p class="lead">Some stories are spoken aloud. Others live quietly within memory, the body and the spaces we inhabit. <em>Unspoken — Stories Left Untold</em> created a place for those stories to be seen.</p><div class="story-grid"><p class="story-copy">Presented by Cosmopolitan Art Magazine in collaboration with DOT, the exhibition brought together 89 artistic voices from across Pakistan. Emerging artists were invited to reveal an experience that had remained hidden or close to the heart: a life-changing moment, a cherished memory, an inherited silence, a private joy, a heartbreak or a truth still searching for words.</p><p class="story-copy">Across painting, printmaking, mixed media, sculpture, installation and works on paper, each artist responded through a distinct visual language. Together, the works transformed individual experiences into a collective encounter—one in which vulnerability became connection and personal histories entered public conversation.</p></div><blockquote class="pullquote">“Every artwork carried a voice. Together, they became a conversation that could no longer remain <i>unspoken.</i>”</blockquote><div class="story-grid"><p class="story-copy">Set within the everyday surroundings of DOT Gulberg, Lahore, the exhibition moved art beyond the distance of a conventional gallery. Visitors encountered the works over coffee, conversation and shared reflection, allowing contemporary art to become immediate, welcoming and part of daily life.</p><p class="story-copy">Curated by Mahaa Malik and Maham Malik, the exhibition centred emerging practices without asking the artists to conform to a single aesthetic. Instead, it celebrated difference—of material, memory, perspective and expression—while building a wider platform for artists to be witnessed, documented and remembered.</p></div><div class="honour"><small>Guest of Honour</small><b>Rashid Rana</b><span>The exhibition was honoured by the presence of celebrated contemporary artist Rashid Rana, marking a meaningful moment for the participating artists and the wider creative community.</span></div></article>
+<section class="highlights"><div class="wrap"><p class="section-kicker">Selected Practices</p><h2 class="section-title">Stories that <i>stood out.</i></h2><p class="highlight-intro">Among the many voices in the exhibition, these practices offered especially memorable approaches to material, memory and subjects that are often difficult to articulate.</p><div class="highlight-grid"><article class="highlight-card"><span class="number">01 · MEMORY</span><h3>Mahnoor Abid</h3><p>Mahnoor’s work stood out for its intimate exploration of memory through her late mother’s diamond rings. Working with oil paint and acrylic sheets, she translated crystal, light and reflection into images that feel fragile, luminous and enduring—holding joy and pain within the same visual language.</p></article><article class="highlight-card"><span class="number">02 · SILENCE &amp; VIOLENCE</span><h3>Minahil Mehmood</h3><p>Through <em>Aaina</em>, <em>Mirror Maze</em> and <em>Bol Ke Lab Azad Hain Tere</em>, Minahil examined bodily autonomy, victim-blaming and the emotional weight carried by survivors. Mirrors, resin and fractured surfaces turned reflection into a quiet confrontation with social complicity.</p></article><article class="highlight-card"><span class="number">03 · THE RESTLESS MIND</span><h3>Sehar Seerat Naqvi</h3><p>In <em>From Wool to Stone</em>, the familiar comfort of counting sheep slowly becomes psychological weight. Sehar’s work traced how a gentle ritual can become a maze for the sleepless mind, transforming softness and warmth into heaviness and repetition.</p></article><article class="highlight-card"><span class="number">04 · CLIMATE DISPLACEMENT</span><h3>Madiha Manzoor</h3><p>Madiha’s <em>Dreamscape Beyond</em> series followed a tiger, reindeer and heron through collapsing habitats. Her oil-pastel works turned climate-forced displacement into surreal elegies for animals leaving landscapes that can no longer sustain them.</p></article><article class="highlight-card"><span class="number">05 · INHERITED SILENCE</span><h3>Maham Khan</h3><p>In <em>What Was Never Spoken</em>, family portraits confronted grief, absence and generational wounds. Acrylic paint—and, in one work, real blood—made the canvas feel like a living body, insisting that inherited silence be recognized rather than concealed.</p></article><article class="highlight-card"><span class="number">06 · EVERYDAY ROLES</span><h3>Laiba Tanveer</h3><p>Works including <em>Inherited Roles</em>, <em>Small Tendernesses</em> and <em>Bleed in Red</em> brought attention to the emotional weight carried within everyday roles. Through oil painting, Laiba held tenderness and tension together with restraint.</p></article></div></div></section>
+<section class="names"><div class="wrap"><p class="section-kicker">Unspoken — Stories Left Untold</p><h2 class="section-title">Participating <i>Artists</i></h2><p class="section-copy">The exhibition brought together 89 artistic voices from across Pakistan. The selected artists are presented below as part of one collective story.</p><div id="nameGrid" class="name-grid"></div></div></section>
+<section class="credits"><div class="credits-inner"><p>Exhibition Curators</p><h2>Two visions. <i>One exhibition.</i></h2><div class="credits-lead">Mahaa Malik and Maham Malik brought complementary strengths to <em>Unspoken</em>—one building the platform and possibilities, the other shaping the exhibition with precision. Together, the duo transformed an open call into a collective public experience.</div><div class="curator-grid"><article class="curator-card"><span>Platform &amp; Vision</span><h3>Mahaa Malik</h3><p>Mahaa’s vision was to give emerging artists the confidence and power to stand out—to be seen beyond familiar circles and have their stories treated with seriousness. Her focus on access, visibility and community shaped the exhibition into more than a display: it became a platform for new voices to claim space, build connections and move forward.</p></article><article class="curator-card"><span>Curatorial Direction</span><h3>Maham Malik</h3><p>Maham ensured that the curation remained precise and cohesive from beginning to end. Her strong visual judgement, attention to placement and understanding of how artworks speak to one another gave 89 distinct practices room to breathe while holding the exhibition together as one considered experience.</p></article></div></div></section>
+<section class="next-call"><span class="call-label">Coming at the end of September 2026</span><h2>Want to participate in our next exhibition?</h2><p>Our next open call will focus on calligraphy. Artists interested in participating can email Cosmopolitan Art Magazine to share their work and receive submission details.</p><a class="gmail-button" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=artcosmomagazine@gmail.com&amp;su=Calligraphy%20Exhibition%20-%20September%202026" target="_blank" rel="noopener">Apply through Gmail</a><span class="gmail-address">artcosmomagazine@gmail.com</span></section>
+<footer class="footer"><div class="footer-inner"><h3>Cosmopolitan Art Magazine Pakistan</h3><p>Celebrating contemporary art, emerging voices, exhibitions and visual storytelling across Pakistan.</p><p class="copyright">© 2026 Cosmopolitan Art Magazine Pakistan · Unspoken — Stories Left Untold</p></div></footer>
 <script>
-const ARTISTS=[
-{key:'Adan Fatima',label:'Adan Fatima',image:'untold-artists/adan-fatima-01.jpg'},
-{key:'Ahyaan Batla',label:'Ahyaan Batla',image:'untold-artists/ahyaan-batla-01.jpg'},
-{key:'Aiman Zulfiqar',label:'Aiman Zulfiqar',image:'untold-artists/aiman-zulfiqar-01.jpg'},
-{key:'Aleen Haider',label:'Aleen Haider'},
-{key:'Aliya Umair',label:'Aliya Umair',image:'untold-artists/aliya-umair-01.jpg'},
-{key:'Ameena Fatima',label:'Ameena Fatima',image:'untold-artists/ameena-fatima-01.png'},
-{key:'Amna Ghafoor',label:'Amna Ghafoor'},
-{key:'Arooj Sultan',label:'Arooj Sultan',image:'untold-artists/arooj-sultan-01.jpg'},
-{key:'Asma Tahir',label:'Asma Tahir'},
-{key:'Awais Nawaz',label:'Awais Nawaz'},
-{key:'Ayesha Rahman Hamid',label:'Ayesha Rahman Hamid'},
-{key:'Ayeza Nadeem',label:'Ayeza Nadeem',image:'untold-artists/ayeza-nadeem-01.png'},
-{key:'Bahrera Basit',label:'Bahrera Basit'},
-{key:'Brishna Amin Khan',label:'Brishna A.K',image:'untold-artists/brishna-01.jpg'},
-{key:'Dania Asad',label:'Dania Asad'},
-{key:'Doa Askari',label:'Doa Askari'},
-{key:'Dua Mabrook',label:'Doa Mabrook',image:'untold-artists/dua-mabrook-01.jpg'},
-{key:'Durr-e-Shahwar',label:'Dure Shahwar',image:'untold-artists/durr-e-shahwar-01.png'},
-{key:'Eman Ali Khan',label:'Eman Ali Khan'},
-{key:'Eman Kashif',label:'Eman Kashif'},
-{key:'Esha Imran',label:'Esha Imran'},
-{key:'Esha Rashid',label:'Esha Rashid'},
-{key:'Faiza Irfan',label:'Faiza Irfan',image:'untold-artists/faiza-irfan-01.png'},
-{key:'Fareeha Saqib',label:'Fareeha Saqib'},
-{key:'Fatima Irfan',label:'Fatima Irfan'},
-{key:'Fatima Zahra',label:'Fatima Zahra'},
-{key:'Fazila Faiz',label:'Fazila Faiz'},
-{key:'Feroza Amir',label:'Feroza Amir'},
-{key:'Fizza Raghib',label:'Fizza Raghib'},
-{key:'Hadia Khanum',label:'Hadia Khanum'},
-{key:'Haider Abbas',label:'Haider Abbas'},
-{key:'Hajra Masood',label:'Hajra Masood',image:'untold-artists/hajra-masood-01.jpg'},
-{key:'Hajra Rauf',label:'Hajra Rauf'},
-{key:'Haleema Aziz',label:'Haleema Aziz'},
-{key:'Hina Ahmed',label:'Hina Ahmed',image:'untold-artists/hina-ahmed-01.jpg'},
-{key:'Hira Gul',label:'Hira Gul',image:'untold-artists/hira-gul-01.jpg'},
-{key:'Hoorain Khan',label:'Hoorain Khan',image:'untold-artists/hoorain-khan-01.jpg'},
-{key:'Horain Mohsin',label:'Hourrain Mohsin',image:'untold-artists/horain-mohsin-01.jpg'},
-{key:'Huzaila Zahid',label:'Huzaila Zahid',image:'untold-artists/huzaila-zahid-01.png'},
-{key:'Jannat Ullah',label:'Jannat Ullah'},
-{key:'Javaria Sajjad',label:'Javaria Sajjad'},
-{key:'Kanwal Shehzadi',label:'Kanwal Shehzadi',image:'untold-artists/kanwal-shehzadi-01.jpg'},
-{key:'Kaynat Zulfiqar',label:'Kaynat Zulfiqar',image:'untold-artists/kaynat-zulfiqar-01.png'},
-{key:'Khadija Tahir',label:'Khadija Tahir',image:'untold-artists/khadija-tahir-01.jpg'},
-{key:'Kiran Maqsood',label:'Kiran Maqsood'},
-{key:'Komal Hira',label:'Komal Hira',image:'untold-artists/komal-hira-01.jpg'},
-{key:'Laiba Masood',label:'Laiba Masood',image:'untold-artists/laiba-masood-01.png'},
-{key:'Laiba Majeed',label:'Laiba Majeed'},
-{key:'Laiba Tanveer',label:'Laiba Tanveer'},
-{key:'Madiha Idrees',label:'Madiha Idrees'},
-{key:'Madiha Manzoor',label:'Madiha Manzoor',image:'untold-artists/madiha-manzoor-01.jpg'},
-{key:'Maham Khan',label:'Maham Khan',image:'untold-artists/maham-khan-01.jpg'},
-{key:'Maham Mir',label:'Maham Mir',image:'untold-artists/maham-mir-01.jpg'},
-{key:'Mahnoor Abid',label:'Mahnoor Abid'},
-{key:'Mahnoor Babar',label:'Mahnoor Babar'},
-{key:'Mahnoor Fatima',label:'Mahnoor Fatima'},
-{key:'Mahnoor Javaid',label:'Mahnoor Javaid'},
-{key:'Maha Noor Sohail',label:'Maha Noor Sohail',image:'untold-artists/maha-noor-sohail-01.jpg'},
-{key:'Maryam Asghar',label:'Maryam Asghar'},
-{key:'Maryum Elahi',label:'Maryum Elahi'},
-{key:'Maryam Zahid',label:'Maryam Zahid',image:'untold-artists/maryam-zahid-01.png'},
-{key:'Minahil Mehmood',label:'Minahil Mehmood',image:'untold-artists/minahil-mehmood-01.jpg'},
-{key:'Muneeza Khan',label:'Muneeza Khan',image:'untold-artists/muneeza-khan-01.png'},
-{key:'Nahmar Saeed',label:'Nahmar Saeed'},
-{key:'Nimra Shafiq',label:'Nimra Shafique',image:'untold-artists/nimra-shafiq-01.jpg'},
-{key:'Noor ul Seher',label:'Noor Ul Sehar',image:'untold-artists/noor-ul-seher-01.jpg'},
-{key:'Quratulain Fatima',label:'Quratulain'},
-{key:'Rabia Shehzad Butt',label:'Rabia Shehzad',image:'untold-artists/rabia-shehzad-butt-01.jpg'},
-{key:'Rija Chaudhry',label:'Rija Chaudhary',image:'untold-artists/rija-chaudhry-01.jpg'},
-{key:'Rubab Arshad',label:'Rubab Arshad'},
-{key:'Saba Asif',label:'Saba Asif',image:'untold-artists/saba-asif-01.png'},
-{key:'Saba Faisal',label:'Saba Faisal',image:'untold-artists/saba-faisal-01.png'},
-{key:'Sabina Saleem',label:'Sabina Saleem'},
-{key:'Saira Dar',label:'Saira Dar',image:'untold-artists/saira-dar-01.jpg'},
-{key:'Saliha Meraj',label:'Saliha Meraj'},
-{key:'Sana Mehmood',label:'Sana Mehmood'},
-{key:'Saniah Umer',label:'Saniah Umer',image:'untold-artists/saniah-umer-01.jpg'},
-{key:'Sara Ghanghro',label:'Sara Ghanghro',image:'untold-artists/sara-ghanghro-01.png'},
-{key:'Sehar Seerat Naqvi',label:'Sehar Seerat Naqvi',image:'untold-artists/sehar-seerat-01.png'},
-{key:'Syeda Amtul Hussain',label:'Syeda Amtul Hussain'},
-{key:'Tayyaba Bibi',label:'Tayyaba Bibi'},
-{key:'Tayyaba Shahbaz',label:'Tayyaba Shahbaz'},
-{key:'Wasfa Rathore',label:'Wasfa Rathore'},
-{key:'Zahra Aftab',label:'Zahra Aftab'},
-{key:'Zahra Ishaq',label:'Zahra Ishaq'},
-{key:'Zainab Sabir',label:'Zainab Sabir',image:'untold-artists/zainab-sabir-02.png'}
-];
-
-const profiles=window.UNTOLD_EXTRA_PROFILES||{};
-const nameGrid=document.getElementById('nameGrid');
-const grid=document.getElementById('artistGrid');
-const modal=document.getElementById('modal');
-const modalInner=document.getElementById('modalInner');
-const modalClose=document.getElementById('modalClose');
-
-function esc(s){return String(s??'').replace(/[&<>'"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[m]))}
-function profileFor(item){return profiles[item.key]||profiles[item.label]||null}
-function imageFor(item){const p=profileFor(item);return item.image||(p&&p.image)||''}
-
-function renderNames(){
-  nameGrid.innerHTML=ARTISTS.map(item=>`<div class="name-card">${esc(item.label||item.key)}</div>`).join('');
-}
-
-function renderGrid(){
-  const withProfiles=ARTISTS.filter(item=>imageFor(item)||profileFor(item));
-  grid.innerHTML=withProfiles.map((item,i)=>{
-    const name=item.label||item.key,src=imageFor(item);
-    return `<button class="artist-card" type="button" data-key="${esc(item.key)}"><div class="artist-image">${src?`<img src="${esc(src)}" alt="Artwork by ${esc(name)}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=&quot;placeholder&quot;>Artwork image unavailable</div>'">`:`<div class="placeholder">Profile available</div>`}</div><span class="artist-name">${esc(name)}</span></button>`;
-  }).join('');
-}
-
-function openArtistByKey(key){
-  const item=ARTISTS.find(a=>a.key===key);
-  if(!item)return;
-  const name=item.label||item.key,p=profileFor(item);
-  let works=[];
-  if(p&&Array.isArray(p.images)&&p.images.length)works=p.images;
-  else if(imageFor(item))works=[{src:imageFor(item),title:'Selected work'}];
-  const statement=(p&&p.statement)||'Selected artwork from the Untold Stories exhibition.';
-  modalInner.innerHTML=`<div class="profile-header"><div class="small">Untold Stories · Artist Profile</div><h2>${esc(name)}</h2><p>${esc(statement)}</p></div>${works.length?`<div class="work-grid">${works.map(w=>`<figure class="work"><img src="${esc(w.src||'')}" alt="${esc(w.title||'Artwork')} by ${esc(name)}"><figcaption><div class="work-title">${esc(w.title||'Selected work')}</div>${w.meta?`<div class="work-meta">${esc(w.meta)}</div>`:''}</figcaption></figure>`).join('')}</div>`:`<div class="profile-note">Artwork image is not available in the approved website files yet.</div>`}`;
-  modal.classList.add('open');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
-}
-
-grid.addEventListener('click',e=>{const b=e.target.closest('.artist-card');if(b)openArtistByKey(b.dataset.key)});
-function closeModal(){modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow=''}
-modalClose.addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('active')}
-renderNames();renderGrid();
+const NAMES=["Adan Fatima","Ahyaan Batla","Aiman Zulfiqar","Aleen Haider","Aliya Umair","Ameena Fatima","Amna Ghafoor","Arooj Sultan","Asma Tahir","Awais Nawaz","Ayesha Rahman Hamid","Ayeza Nadeem","Bahrera Basit","Brishna A.K","Dania Asad","Doa Askari","Doa Mabrook","Dure Shahwar","Eman Ali Khan","Eman Kashif","Esha Imran","Esha Rashid","Faiza Irfan","Fareeha Saqib","Fatima Irfan","Fatima Zahra","Fazila Faiz","Feroza Amir","Fizza Raghib","Hadia Khanum","Haider Abbas","Hajra Masood","Hajra Rauf","Haleema Aziz","Hina Ahmed","Hira Gul","Hoorain Khan","Hourrain Mohsin","Huzaila Zahid","Jannat Ullah","Javaria Sajjad","Kanwal Shehzadi","Kaynat Zulfiqar","Khadija Tahir","Kiran Maqsood","Komal Hira","Laiba Masood","Laiba Majeed","Laiba Tanveer","Madiha Idrees","Madiha Manzoor","Maham Khan","Maham Mir","Mahnoor Abid","Mahnoor Babar","Mahnoor Fatima","Mahnoor Javaid","Maha Noor Sohail","Maryam Asghar","Maryum Elahi","Maryam Zahid","Minahil Mehmood","Muneeza Khan","Nahmar Saeed","Nimra Shafique","Noor Ul Sehar","Quratulain","Rabia Shehzad","Rija Chaudhary","Rubab Arshad","Saba Asif","Saba Faisal","Sabina Saleem","Saira Dar","Saliha Meraj","Sana Mehmood","Saniah Umer","Sara Ghanghro","Sehar Seerat Naqvi","Syeda Amtul Hussain","Tayyaba Bibi","Tayyaba Shahbaz","Wasfa Rathore","Zahra Aftab","Zahra Ishaq","Zainab Sabir"];
+const grid=document.querySelector('#nameGrid');
+grid.innerHTML=NAMES.map(n=>`<div>${n}</div>`).join('');
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}}),{threshold:.08});
+grid.querySelectorAll('div').forEach((el,i)=>{el.style.transitionDelay=(i%8)*35+'ms';observer.observe(el)});
+document.querySelector('.menu').addEventListener('click',function(){const m=document.querySelector('.mobile-links');m.classList.toggle('open');this.textContent=m.classList.contains('open')?'×':'☰'});
 </script>
 </body>
 </html>
