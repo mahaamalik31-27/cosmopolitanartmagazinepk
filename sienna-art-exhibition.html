@@ -39,9 +39,9 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 .names{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.name{padding:13px 14px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);font:500 16px/1.25 'Playfair Display',serif;background:#fff}
 .event-box{padding:3.2rem 2rem;background:#111;color:#fff;text-align:center}.event-box h2{font-size:clamp(2.2rem,5vw,3.6rem);margin:.55rem 0 1rem}.event-box p{color:#ccc;max-width:700px;margin:0 auto}
 .credit{margin-top:1.3rem;color:#999!important;font-size:.75rem}
-footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--line)}.footer-inner{max-width:1100px;margin:auto;text-align:center;color:#777;font-size:.8rem}
+footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--line)}.footer-grid{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}.footer-logo{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:1rem}.footer-logo em{color:var(--pink);font-style:italic}.footer-text{line-height:1.9;color:#666}.footer-heading{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink);margin-bottom:1rem}.footer-links{display:flex;flex-direction:column;gap:.8rem}.footer-links a{color:var(--ink)}.footer-links a:hover{color:var(--pink)}.footer-follow{text-align:center;padding:4rem 2rem 0;margin-top:4rem;border-top:1px solid var(--line)}.footer-follow-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.5rem);margin-bottom:1rem}.footer-follow-title em{color:var(--pink);font-style:italic}.footer-follow-text{max-width:700px;margin:0 auto 2rem;line-height:2;color:#666}.footer-follow-btn{display:inline-block;background:var(--ink);color:#fff;padding:1rem 2rem;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}.footer-follow-btn:hover{background:var(--pink)}.footer-bottom{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--line);text-align:center;font-size:.75rem;color:#777}
 @media(max-width:900px){.nav-links{display:none}.hero{grid-template-columns:1fr;gap:2.5rem}.meta{grid-template-columns:1fr 1fr}.meta div:nth-child(2n){border-right:0}.meta div{border-bottom:1px solid var(--line)}.note-grid{grid-template-columns:1fr}.note-side{position:static}.team,.works{grid-template-columns:1fr 1fr}.names{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){nav{padding:0 1.2rem}.hero{padding:4.8rem 1.25rem 3rem}.hero h1{font-size:3.45rem}.section{padding:4rem 1.25rem}.meta,.team,.works,.names{grid-template-columns:1fr}.meta div{border-right:0}.work img{height:430px}.team-card{padding:1.4rem}}
+@media(max-width:600px){nav{padding:0 1.2rem}.hero{padding:4.8rem 1.25rem 3rem}.hero h1{font-size:3.45rem}.section{padding:4rem 1.25rem}.meta,.team,.works,.names{grid-template-columns:1fr}.meta div{border-right:0}.work img{height:430px}.team-card{padding:1.4rem}.footer-grid{grid-template-columns:1fr;text-align:center}.footer-links{align-items:center}.footer-follow{padding:3rem 0 0}}
 </style>
 </head>
 <body>
@@ -128,7 +128,7 @@ footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--line)}.fo
 <article class="work"><img src="07-fatima-javaid-red-moon.jpg?v=6" alt="Red Moon by Fatima Javaid" loading="lazy"><div class="work-info"><span class="artist">Fatima Javaid</span><h3>Red Moon</h3><p>Acrylic on canvas · 15 × 9 in · 2026</p></div></article>
 <article class="work"><img src="08-hadia-imtiaz-dreamscape-realm.jpg?v=6" alt="Dreamscape Realm by Hadia Imtiaz" loading="lazy"><div class="work-info"><span class="artist">Hadia Imtiaz</span><h3>Dreamscape Realm</h3><p>Oil on canvas · 30 × 42 in · 2026</p></div></article>
 <article class="work"><img src="10-hafiza-miyal-khan-echoes-of-the-surface-2.jpg?v=6" alt="Echoes of the Surface 2 by Hafiza Miyal Khan" loading="lazy"><div class="work-info"><span class="artist">Hafiza Miyal Khan</span><h3>Echoes of the Surface 2</h3><p>Drypoint on paper with birch bark · 20 × 28 in · 2025</p></div></article>
-</div></div>
+</div>
 </div>
 </section>
 
@@ -155,9 +155,39 @@ footer{padding:4rem 2rem;background:#fafafa;border-top:1px solid var(--line)}.fo
 </div>
 </section>
 
-<footer>
-<div class="footer-inner">© 2026 Cosmopolitan Art Magazine Pakistan · Events & Culture</div>
-<p style="margin-top:1.5rem;text-align:center;font-size:.8rem"><a href="artist-participation-policy.html" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Artist Participation Policy</a></p>
+<footer id="follow">
+<div class="footer-grid">
+<div>
+<div class="footer-logo">Cosmopolitan <em>Art</em> Magazine</div>
+<p class="footer-text">Cosmopolitan Art Magazine Pakistan is a digital platform celebrating contemporary Pakistani art, emerging artists, exhibitions, editorial storytelling, and creative culture across South Asia.</p>
+</div>
+<div>
+<div class="footer-heading">Quick Links</div>
+<div class="footer-links">
+<a href="index.html">Home</a>
+<a href="events.html">Events & Culture</a>
+<a href="artist-feature.html">Featured Artists</a>
+<a href="issue-01.html">Issue 01</a>
+</div>
+</div>
+<div>
+<div class="footer-heading">Contact</div>
+<div class="footer-links">
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="artist-participation-policy.html">Artist Participation Policy</a>
+<a href="get-featured.html">Get Featured</a>
+</div>
+</div>
+</div>
+<section class="footer-follow">
+<p class="kicker">Follow Our Journey</p>
+<h2 class="footer-follow-title">Join Our <em>Creative</em> Community</h2>
+<p class="footer-follow-text">Stay connected with upcoming exhibitions, featured artists, editorial stories, open calls and behind-the-scenes moments from Pakistan's evolving contemporary art landscape.</p>
+<a href="https://instagram.com/cosmopolitanartmagazine.pk" target="_blank" rel="noopener" class="footer-follow-btn">Follow on Instagram</a>
+</section>
+<div class="footer-bottom">© 2026 Cosmopolitan Art Magazine Pakistan · All Rights Reserved</div>
 </footer>
 </body>
 </html>
